@@ -1,0 +1,97 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% The uwthesis.sty file relies on the memoir class!
+%%%% You should be using the memoir class anyway; it makes life easier:
+%%%% http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
+
+\newcommand{\pp}{\Pp\Pp\xspace}
+
+\documentclass[oneside, letterpaper, 12pt, oldfontcommands]{memoir}
+
+\setsecnumdepth{subsection}
+
+%%%% Import uwthesis.sty to get official formatting, then set your variables.
+\usepackage{uwthesis}
+
+\settitle{An Awesome Thesis}
+\setauthor{Tyler Ruggles}
+\setdepartment{Physics}
+\doctors % or \masters
+\setgraddate{2018}
+\setdefensedate{15 May 2018} % or whatever format you want
+
+%%%% Members of the Final Oral Committee (FOC)
+%%%% Give name, rank, and department
+%%%% 
+\setfoca{Sridhara Dasu}{Professor}{Physics} % <- Your advisor
+\setfocb{Wesley H Smith}{Professor}{Physics}
+\setfocc{Matthew F Herndon}{Professor}{Physics}
+%\setfocd{James Madison}{Professor}{Physics}
+%\setfoce{James Monroe}{Professor}{Materials Engineering}
+%\setfocf{Grover Cleveland}{Professor}{Zoology}
+
+%%%% Your abstract, used for the UMI abstract and in your front matter
+\setabstract{%
+  An analysis of the Standard Model Higgs Boson observed decaying to 
+  tau leptons. The analysis utilizes the full 2016 data set collected
+  by the CMS experiment.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Tell the memoir class to set up lowercase roman for pagination, etc.
+\frontmatter
+
+%%%% Uncomment this to create a UMI abstract page.
+%%%% If you are submitting electronically, however, this page is unnecessary.
+% \theumiabstract
+
+% The title page
+\thetitlepage
+\clearpage
+
+% The copyright page, if you want to pay the fee and register copyright.
+\thecopyrightpage
+\cleardoublepage
+
+% These above pages should not be counted, so we reset the counter to 1.
+\setcounter{page}{1}
+
+% An abstract may be required by your department.
+\section{Abstract}
+\uwabstract
+\cleardoublepage
+
+% Acknowledgements go here if you want to include them.
+\section{Acknowledgements}
+This is where any acknowledgements would go.
+\clearpage
+
+% Table of contents
+\maxtocdepth{subsection}
+\tableofcontents* % the * means that there isn't an entry for the TOC itself
+% \clearpage
+% \listoffigures  % if you have any figures
+% \clearpage
+% \listoftables   % if you have any tables
+
+% Tell the memoir class to set up normal pagination, etc. for the main doc
+\mainmatter
+
+\include{introduction}
+\include{standard_model}
+\include{phenomology_of_processes}
+\include{cms_and_lhc}
+\include{simulation}
+\include{object_reconstruction_and_selection}
+\include{higgs_to_taus}
+\include{results}
+\include{conclusions}
+
+\end{document}
