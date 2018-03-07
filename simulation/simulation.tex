@@ -1,5 +1,22 @@
 \chapter{Simulation}
 
+Signal and background processes are modeled with samples of simulated events.
+The signal samples with a Higgs boson produced through gluon fusion ($\cPg\cPg\PH$), vector boson fusion (VBF),
+or in association with a $\PW$ or $\PZ$ boson ($\PW\PH$ or $\PZ\PH$), are generated at next-to-leading order (NLO) in perturbative quantum chromodynamics (pQCD) with the \POWHEG 2.0~\cite{Nason:2004rx,Frixione:2007vw, Alioli:2010xd, Alioli:2010xa, Alioli:2008tz} generator. The \textsc{minlo hvJ}~\cite{Luisoni:2013kna} extension of \POWHEG 2.0 is used for the $\PW\PH$ and $\PZ\PH$ simulated samples. The set of parton distribution functions (PDFs) is NNPDF30\_nlo\_as\_0118~\cite{Ball:2011uy}. The $\ttbar\PH$ process is negligible.
+The various production cross sections and branching fractions for the SM Higgs boson production, and their corresponding uncertainties are taken from Refs.~\cite{deFlorian:2016spz,Denner:2011mq,Ball:2011mu} and references therein.
+
+The \aMCATNLO~\cite{Alwall:2014hca} generator is used for $\PZ+$jets and $\PW+$jets processes. They are simulated at leading order (LO) with the MLM jet matching and merging~\cite{Alwall:2007fs}.
+The \aMCATNLO generator is also used for diboson production simulated at next-to-LO (NLO) with the FxFx jet matching and merging~\cite{Frederix:2012ps}, whereas \POWHEG 2.0 and 1.0 are used for $\ttbar$ and single top quark production, respectively.
+The generators are interfaced with \PYTHIA 8.212 ~\cite{Sjostrand:2014zea} to model the parton showering and fragmentation, as well as the decay of the $\Pgt$ leptons.
+The \PYTHIA parameters affecting the description of the underlying event are set to the {CUETP8M1} tune~\cite{Khachatryan:2015pea}.
+
+Generated events are processed through a simulation of the CMS detector based on
+GEANTfour~\cite{Agostinelli:2002hh}, and are reconstructed with the same algorithms used for data.
+The simulated samples include additional $\Pp\Pp$ interactions per bunch
+crossing, referred to as ``pileup''.
+The effect of pileup is taken into account by generating concurrent minimum bias collision events generated with \PYTHIA.
+The simulated events are weighted such that the distribution of the number of additional pileup interactions, estimated from the measured instantaneous luminosity for each bunch crossing, matches that in data, with an average of approximately 27 interactions per bunch crossing.
+
 \section{Hard Scattering Process}
 \section{Monte Carlo Generator Programs}
 \section{Detector Simulation}

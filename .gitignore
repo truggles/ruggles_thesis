@@ -4,3 +4,5 @@
 *.pdf
 *.gz
 *.toc
+ruggles_thesis.fdb_latexmk
+ruggles_thesis.fls

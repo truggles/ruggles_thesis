@@ -7,6 +7,49 @@
 %%%% http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
 
 \newcommand{\pp}{\Pp\Pp\xspace}
+\newcommand{\PH}{\ensuremath{H}}
+\newcommand{\PZ}{\ensuremath{Z}}
+\newcommand{\PW}{\ensuremath{W}}
+\newcommand{\Pgg}{\ensuremath{\gamma}}
+\newcommand{\cPg}{\ensuremath{g}}
+\newcommand{\Pgt}{\ensuremath{\tau}}
+\newcommand{\tauh}{\ensuremath{\tau_{h}}}
+\newcommand{\Pgm}{\ensuremath{\mu}}
+\newcommand{\Pe}{\ensuremath{e}}
+\newcommand{\PGpz}{\ensuremath{\pi^{0}}}
+\newcommand{\Pp}{\ensuremath{p}}
+\newcommand{\pt}{\ensuremath{p_\mathrm{T}}}
+\newcommand{\kt}{\ensuremath{k_\mathrm{T}}}
+\newcommand{\PT}{\ensuremath{P_\mathrm{T}}}
+\newcommand{\TeV}{\ensuremath{TeV}}
+\newcommand{\GeV}{\ensuremath{GeV}}
+\newcommand{\NA}{\textsc{N/A}}
+\newcommand{\stat}{\ensuremath{(stat.)}}
+\newcommand{\syst}{\ensuremath{(syst.)}}
+\newcommand{\thy}{\ensuremath{(theory)}}
+\newcommand{\ttbar}{\ensuremath{t\bar{t}}}
+\newcommand{\bbbar}{\ensuremath{b\bar{b}}}
+\newcommand{\fbinv}{\ensuremath{f^{-1}}}
+\newcommand{\MT}{\ensuremath{m_\mathrm{T}}}
+\newcommand{\mvis}{\ensuremath{m_\text{vis}}}
+\newcommand{\mtt}{\ensuremath{m_{\Pgt\Pgt}}}
+\newcommand{\hww}{\ensuremath{\PH\to\PW\PW}}
+\newcommand{\htt}{\ensuremath{\PH\to\Pgt\Pgt}}
+\newcommand{\pth}{\ensuremath{\pt^{\tau\tau}}}
+\newcommand{\mjj}{\ensuremath{m_\mathrm{jj}}}
+\newcommand{\aMCATNLO}{\textsc{aMC@NLO}}
+\newcommand{\POWHEG}{\textsc{POWHEG}}
+\newcommand{\PYTHIA}{\textsc{PYTHIA}}
+\newcommand{\HERWIG}{\textsc{HERWIG}}
+\newcommand{\FASTJET}{\textsc{FASTJET}}
+\newcommand{\emu}{\ensuremath{\Pe\Pgm}}
+\newcommand{\etvecmiss}{\ensuremath{\vec{E}^{miss}_T}}
+\newcommand{\MET}{\ensuremath{\etvecmiss}}
+\newlength\cmsTabSkip\setlength\cmsTabSkip{1.6ex}
+\newlength\cmsFigWidth\setlength\cmsFigWidth{0.65\textwidth}
+\newcommand{\ptmiss}{\ensuremath{\pt^\text{miss}}}
+\newcommand{\ptvec}{\ensuremath{\vec{\pt}}}
+\providecommand{\mH}{\ensuremath{m_{\PH}}}
 
 \documentclass[oneside, letterpaper, 12pt, oldfontcommands]{memoir}
 
@@ -14,6 +57,8 @@
 
 %%%% Import uwthesis.sty to get official formatting, then set your variables.
 \usepackage{uwthesis}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 \settitle{A Study of the Standard Model Higgs Boson Decaying to a Pair of Tau Leptons at the CMS Detector}
 \setauthor{Tyler Ruggles}
@@ -92,5 +137,8 @@ This is where any acknowledgements would go.
 \include{higgs_to_taus/higgs_to_taus}
 \include{results/results}
 \include{conclusions/conclusions}
+
+\bibliographystyle{unsrt}
+\bibliography{thesis_bibliography}
 
 \end{document}

@@ -1,5 +1,94 @@
 \chapter{Object Reconstruction and Selection}
 
+The reconstruction of observed and simulated events relies on the particle-flow (PF) algorithm~\cite{Sirunyan:2017ulk},
+which combines the information from the CMS subdetectors to identify
+and reconstruct the particles emerging from $\Pp\Pp$ collisions:
+charged hadrons, neutral hadrons, photons, muons, and electrons.
+Combinations of these PF objects are used to reconstruct
+higher-level objects such as jets, $\tauh$ candidates, or
+missing transverse energy.
+The reconstructed vertex with the largest value of summed physics-object $\pt^2$ is taken to be the primary $\Pp\Pp$ interaction vertex. The physics objects are the objects constructed by a jet finding algorithm~\cite{Cacciari:2008gp,Cacciari:2011ma} applied to all charged tracks associated with the vertex, including tracks from lepton candidates, and the corresponding associated missing transverse energy.
+
+Muons are identified with requirements on the quality of
+the track reconstruction and on the number of measurements in the
+tracker and the muon systems~\cite{Chatrchyan:2012xi}.
+Electrons are identified with a multivariate discriminant
+combining several quantities describing the track quality,
+the shape of the energy deposits in the ECAL,
+and the compatibility of the measurements from the tracker and the
+ECAL~\cite{Khachatryan:2015hwa}.
+To reject non-prompt or misidentified leptons, a relative lepton isolation is defined as:
+\begin{equation}
+I^{\ell} \equiv \frac{\sum_{charged}  \PT + \max\left( 0, \sum_{neutral}  \PT
+                                         - \frac{1}{2} \sum_{charged, PU} \PT  \right )}{\PT^{\ell}}.
+\label{eq:reconstruction_isolation}
+\end{equation}
+In this expression, $\sum_charged  \PT$ is the scalar sum of the
+transverse energy of the charged particles originating from
+the primary vertex and located in a cone of size
+$\Delta R = \sqrt{\smash[b]{(\Delta \eta)^2 + (\Delta \phi)^2}} = 0.4$\,(0.3)
+centered on the muon (electron) direction. The sum
+$\sum_{neutral}  \PT$  represents
+a similar quantity for neutral particles.
+The contribution of photons and neutral hadrons originating from pileup vertices is estimated from the scalar sum of the transverse
+energy of charged hadrons in the cone originating from pileup vertices,
+$\sum_{charged, PU} \PT$. This sum is multiplied by a factor of
+$1/2$, which corresponds approximately to the ratio of neutral to charged
+hadron production in the hadronization process
+of inelastic $\Pp\Pp$ collisions, as estimated from simulation.
+The expression $\PT^{\ell}$ stands for the $\pt$ of the lepton. Isolation requirements used in this analysis, based on $I^{\ell}$, are listed in Table~\ref{tab:inclusive_selection}.
+
+Jets are reconstructed with an anti-\kt clustering algorithm implemented
+in the \FASTJET library~\cite{Cacciari:2011ma, Cacciari:fastjet2}.
+It is based on the clustering of neutral and charged PF candidates within a distance parameter of 0.4. Charged PF candidates
+not associated with the primary vertex of the interaction
+are not considered when building jets. An offset correction is applied to jet energies to take into account the contribution from additional $\Pp\Pp$ interactions within the same or nearby bunch crossings. The energy of a jet is calibrated based on simulation and
+data through correction factors~\cite{CMS-JME-10-011}.
+In this analysis, jets are required to
+have $\pt$ greater than 30\GeV and $\abs{\eta}$ less than 4.7, and
+are separated from the selected leptons by a $\Delta R$ of at least 0.5.
+The combined secondary vertex (CSV) algorithm is used to identify jets that are likely to originate from a b quark (``b jets"). The algorithm exploits the track-based lifetime information together with the secondary vertices associated with the jet to provide a likelihood ratio discriminator for the b jet identification. A set of $\pt$-dependent correction
+factors are applied to simulated events to account for differences in the b tagging efficiency
+between data and simulation. The working point chosen in this analysis gives an efficiency for real b jets of about 70\%, and for about 1\% of light flavor or quark jets being misidentified.
+
+Hadronically decaying $\Pgt$ leptons
+are reconstructed with the hadron-plus-strips (HPS)
+algorithm~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}, which is
+seeded with anti-\kt jets.
+The HPS algorithm reconstructs $\tauh$ candidates on the basis of the
+number of tracks and of the number of ECAL strips in the $\eta$-$\phi$ plane with energy deposits, in the 1-prong,
+1-prong + $\PGpz$(s), and 3-prong decay modes. A
+multivariate (MVA) discriminator~\cite{Hocker:2007ht}, including isolation
+and lifetime information, is used to reduce the rate for  quark- and gluon-initiated jets
+to be identified as $\tauh$ candidates. The working point used in this analysis
+has an efficiency of about 60\% for genuine $\tauh$,
+with about 1\% misidentification rate for quark- and gluon-initiated jets, for a $\pt$ range typical of $\tauh$ originating from a $\PZ$ boson.
+Electrons and muons misidentified as $\tauh$ candidates are suppressed using dedicated criteria
+based on the consistency between the measurements in the tracker, the calorimeters, and the muon detectors~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}.
+The working points of these discriminators depend on the
+decay channel studied.
+The $\tauh$ energy scale in simulation is corrected per decay mode, on the basis of a measurement in $\PZ\to\Pgt\Pgt$ events. The rate and the
+energy scale of electrons and muons misidentified as $\tauh$ candidates are also corrected in simulation, on the basis of a tag-and-probe measurement~\cite{CMS:2011aa} in $\PZ\to\ell\ell$ events.
+
+All particles reconstructed in the event are used to determine the missing transverse energy,
+\etvecmiss. The missing transverse momentum is defined as the negative vectorial sum of the transverse energy of
+all PF candidates~\cite{Khachatryan:2014gga}. It is adjusted for the effect of jet energy corrections.
+Corrections to the $\etvecmiss$ are applied to reduce the mismodeling of the simulated
+$\PZ$+jets, $\PW$+jets and Higgs boson samples.
+The corrections are applied to the simulated events on the basis of the vectorial difference
+of the measured missing transverse energy and total transverse energy of neutrinos
+originating from the decay of the $\PZ$, $\PW$, or Higgs boson. Their average effect is the reduction of the $\etvecmiss$ obtained from simulation by a few \GeV.
+
+The visible mass of the $\Pgt\Pgt$ system, $\mvis$, can be used to separate
+the $\PH\to \Pgt \Pgt$ signal events
+from the large contribution of irreducible $\PZ \to \Pgt \Pgt$ events.
+However, the neutrinos from the $\Pgt$ lepton decays carry a large fraction of
+the $\Pgt$ lepton energy and reduce the discriminating power of this variable.
+The \textsc{svfit} algorithm combines the \etvecmiss with the four-vectors of both $\Pgt$ candidates
+to calculate a more accurate estimate of the mass of the parent boson, denoted as $\mtt$. The resolution of $\mtt$ is between 15 and 20\% depending on the $\Pgt\Pgt$ final state.
+A detailed description of the algorithm can be found
+in Ref.~\cite{Bianchini:2014vza}. Both variables are used in the analysis, as detailed in Section.~\ref{sec:categories}, and $\mvis$ is preferred over $\mtt$ when the background from $\PZ \to \ell\ell$ events is large.
+
 \section{Track and Primary Vertex Reconstruction}
 \section{Particle Flow Reconstruction}
 \subsection{PF Candidates}
