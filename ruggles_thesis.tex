@@ -21,8 +21,8 @@
 \newcommand{\pt}{\ensuremath{p_\mathrm{T}}}
 \newcommand{\kt}{\ensuremath{k_\mathrm{T}}}
 \newcommand{\PT}{\ensuremath{P_\mathrm{T}}}
-\newcommand{\TeV}{\ensuremath{TeV}}
-\newcommand{\GeV}{\ensuremath{GeV}}
+\newcommand{\TeV}{\ensuremath{\mathrm{TeV}}\xspace}
+\newcommand{\GeV}{\ensuremath{\mathrm{GeV}}\xspace}
 \newcommand{\NA}{\textsc{N/A}}
 \newcommand{\stat}{\ensuremath{(stat.)}}
 \newcommand{\syst}{\ensuremath{(syst.)}}
@@ -37,16 +37,16 @@
 \newcommand{\htt}{\ensuremath{\PH\to\Pgt\Pgt}}
 \newcommand{\pth}{\ensuremath{\pt^{\tau\tau}}}
 \newcommand{\mjj}{\ensuremath{m_\mathrm{jj}}}
-\newcommand{\aMCATNLO}{\textsc{aMC@NLO}}
-\newcommand{\POWHEG}{\textsc{POWHEG}}
-\newcommand{\PYTHIA}{\textsc{PYTHIA}}
-\newcommand{\HERWIG}{\textsc{HERWIG}}
-\newcommand{\FASTJET}{\textsc{FASTJET}}
+\newcommand{\aMCATNLO}{\textsc{aMC@NLO}\xspace}
+\newcommand{\POWHEG}{\textsc{POWHEG}\xspace}
+\newcommand{\PYTHIA}{\textsc{PYTHIA}\xspace}
+\newcommand{\HERWIG}{\textsc{HERWIG}\xspace}
+\newcommand{\FASTJET}{\textsc{FASTJET}\xspace}
 \newcommand{\emu}{\ensuremath{\Pe\Pgm}}
 \newcommand{\etvecmiss}{\ensuremath{\vec{E}^{miss}_T}}
 \newcommand{\MET}{\ensuremath{\etvecmiss}}
-\newlength\cmsTabSkip\setlength\cmsTabSkip{1.6ex}
-\newlength\cmsFigWidth\setlength\cmsFigWidth{0.65\textwidth}
+\newlength\cmsTabSkip
+\setlength\cmsTabSkip{1.6ex}
 \newcommand{\ptmiss}{\ensuremath{\pt^\text{miss}}}
 \newcommand{\ptvec}{\ensuremath{\vec{\pt}}}
 \providecommand{\mH}{\ensuremath{m_{\PH}}}
@@ -58,6 +58,8 @@
 %%%% Import uwthesis.sty to get official formatting, then set your variables.
 \usepackage{uwthesis}
 \usepackage{mathtools}
+%\usepackage{latex-tools}
+\usepackage{xspace}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 \settitle{A Study of the Standard Model Higgs Boson Decaying to a Pair of Tau Leptons at the CMS Detector}
