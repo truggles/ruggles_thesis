@@ -1,14 +1,61 @@
-\chapter{Higgs to $\tau\tau$ Analysis Strategy}
+\chapter{Analysis Strategy: Higgs $\to \tau\tau$}
 
-\section{Overview: Higgs to $\tau\tau$}
+This chapter describes a study of Higgs Boson production and subsequent
+decay to a pair of $\tau$ leptons using CMS proton-proton collision data gathered in 2016.  This is the first
+$\htt$ analysis performed using center-of-mass energy 13 TeV data from the LHC. Combining
+these 13 TeV results with 7 TeV and 8 TeV CMS $\htt$ results we produce
+the first single experiment observation of the $\htt$ process, observed at the 5.9 $\sigma$
+confidence level.  Additionally, this study provides the strongest constraints on VBF Higgs 
+production to date for all CMS Higgs Boson analyses.
 
-Selected events are classified into the various decay channels according to
-the number of selected electrons, muons, and $\tauh$ candidates.
-The resulting event samples are made mutually exclusive by discarding events that have additional loosely identified
-and isolated muons or electrons.
-Leptons must meet the minimum requirement
+\section{Overview: Higgs $\to \tau\tau$}
+
+This chapter specifically focuses on studying the Higgs Boson produced via the gluon fusion
+or the VBF production mechanisms.  A study of the Higgs Boson produced in associated production with
+$\PW/\PZ$ is presented in the following chapter~\ref{sec:vh_analysis}. This study utilizes the
+full 2016 $\pp$ dataset collected by CMS corresponding to 35.9$\fbinv$ of integrated luminosity.
+In the following pages the symbol $\ell$ refers to electrons and muons and $\tauh$ refers to hadronically
+decaying $\tau$ leptons.  We study all possible $\tau\tau$ final state combinations with the
+exception of two electron and two muon final states because of the low 
+$\tau\tau \to \tau_{e}\tau_{e}/\tau_{\mu}\tau_{\mu}$
+branching fractions and high background from $\PZ \to ee/\mu\mu$.  The $\htt$ final states which are
+studied are: $\tau_{e}\tauh$ denoted here as $\Pe\tauh$, $\tau_{\mu}\tauh$ denoted as $\Pgm\tauh$,
+$\tau_{e}\tau_{\mu}$ denoted here as $\Pe\Pgm$, and lastly, $\tauh\tauh$ denoted as $\tauh\tauh$.
+This combination of final states covers about 94\% of all possible $\tau\tau$ final states.
+The different $\tau\tau$ final states will be refered to as different channels in the following pages.
+We ensure uniqueness between the four studied channels be applying veto criteria to events based
+on the number of reconstructed and loosely identified electrons and muons.  This ensures that 
+no data or simulated event is double counted in two channels.
+
+Selected events are classified into three different categories targeting different characteristics
+of the gluon fusion and VBF production topologies.  The categories are defined according to the
+number and kinematics of the associated jets in each event along with the reconstructed $\pt^{Higgs}$.
+A number of different control regions are used in the final fit for signal extraction.  This allows
+the fit to simultaneously adjust and constrain all processes targeted by a control region.  This is in
+contrast to extracting a scale factor which is applied as a fixed value in an analysis and not
+allowed to adjust as other background process adjust in the final fit.  The backgrounds which are
+targeted with dedicated control regions are: $\PW$+jets, QCD, and $\ttbar$.
+
+
+
+\subsection{Event Selection}
+
+There are specific baseline criteria applied to all electrons, muons, $\tauh$, and jets for every
+event.  Depending on the final state, additional requirements are placed on these objects based
+on combination or trigger requirements and analysis optimization.  The baseline criteria ensure
+that each object is well reconstructed and well identified and consistent with the analysis
+strategy. 
+
+All electrons and muons must meet the minimum requirement
 that the distance of closest approach to the primary vertex satisfies $\abs{d_z}<0.2$ cm
-along the beam direction, and $\abs{d_{xy}}<0.045$ cm in the transverse plane.
+along the beam direction, and $\abs{d_{xy}}<0.045$ cm in the transverse plane. Ensuring
+compatibility with the primary vertex is consistent with the predicted infinitesimal life-time of
+a Higgs Boson. The HPS reconstruction of $\tauh$ detailed in section~\ref{sec:XXX} can involve
+combining together multiple tracks and $\PGpz$s coming from intermediary $\tau$ decay products.
+Because of these intermediary products the reconstructed $d_{xy}$ for $\tauh$ are often
+larger than those for electrons and muons.  Because of this, the primary vertex matching
+criteria are relaxed for $\tauh$ and only require $\abs{d_z}<0.2$ cm.
+
 The two leptons assigned to the Higgs boson decay are required to have opposite-sign electric charges.
 In the $\Pgm\tauh$ channel, events are selected with a combination of online criteria that require at least one isolated muon trigger candidate, or at least one isolated muon and one $\tauh$ trigger candidate, depending on the offline muon $\pt$. In the $\Pe\tauh$ channel, the trigger system requires at least one isolated
 electron object, whereas in the $\Pe\Pgm$ channel, the triggers  rely on the presence of both an electron and a muon, allowing
@@ -138,8 +185,6 @@ $\Pe\Pgm$ & $\pt^{\Pgm}$, $\mvis$   &     $\mjj$, $\mtt$  &   $\pth$, $\mtt$  \\
 }
 \end{table*}
 
-\subsection{Channels}
-\section{Overivew: ZHiggs to $\ell\ell\tau\tau$}
 \subsection{Channels}
 \section{Data Set}
 \section{MC Samples}
