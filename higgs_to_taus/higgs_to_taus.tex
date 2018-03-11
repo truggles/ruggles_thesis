@@ -46,16 +46,7 @@ on combination or trigger requirements and analysis optimization.  The baseline 
 that each object is well reconstructed and well identified and consistent with the analysis
 strategy. 
 
-All electrons and muons must meet the minimum requirement
-that the distance of closest approach to the primary vertex satisfies $\abs{d_z}<0.2$ cm
-along the beam direction, and $\abs{d_{xy}}<0.045$ cm in the transverse plane. Ensuring
-compatibility with the primary vertex is consistent with the predicted infinitesimal life-time of
-a Higgs Boson. The HPS reconstruction of $\tauh$ detailed in section~\ref{sec:XXX} can involve
-combining together multiple tracks and $\PGpz$s coming from intermediary $\tau$ decay products.
-Due to these intermediary products, the reconstructed $d_{xy}$ for $\tauh$ are often
-larger than those for electrons and muons.  Because of this, the primary vertex matching
-criteria are relaxed for $\tauh$ and only require $\abs{d_z}<0.2$ cm.
-
+\subsection{Triggers}
 Selected events are required to to have fired a trigger consisten with their categorized final
 state channel.  For the $\Pgm\tauh$ channel, events are selected using a combination
 of a single isolationed muon trigger as well as a cross trigger firing on an isolated muon and
@@ -127,6 +118,17 @@ being available towards the end of the 2016 run.
 \end{table*}
 
 
+
+\subsection{Baseline Object Selection}
+All electrons and muons must meet the minimum requirement
+that the distance of closest approach to the primary vertex satisfies $\abs{d_z}<0.2$ cm
+along the beam direction, and $\abs{d_{xy}}<0.045$ cm in the transverse plane. Ensuring
+compatibility with the primary vertex is consistent with the predicted infinitesimal life-time of
+a Higgs Boson. The HPS reconstruction of $\tauh$ detailed in section~\ref{sec:XXX} can involve
+combining together multiple tracks and $\PGpz$s coming from intermediary $\tau$ decay products.
+Due to these intermediary products, the reconstructed $d_{xy}$ for $\tauh$ are often
+larger than those for electrons and muons.  Because of this, the primary vertex matching
+criteria are relaxed for $\tauh$ and only require $\abs{d_z}<0.2$ cm.
 
 The offline selection criteria for all electrons, muons and $\tauh$ are motivated and constrained
 by the High Level Trigger requirements of their path.  Specifically, the offline $\pt$ criteria
@@ -245,65 +247,102 @@ The three categories are defined as:
 \item {0-jet}: This category targets Higgs Boson events produced via gluon fusion.
 The two variables chosen to extract the results are $\mvis$ and
 the reconstructed $\tauh$ decay mode in the $\Pgm\tauh$ and $\Pe\tauh$ decay channels.
-The $\mvis$ and the $\pt$ of the muon is used in the $\Pe\Pgm$ channel.  The $\PZ\to\ell\ell$ background 
+In the $\Pe\Pgm$ channel, $\mvis$ and the $\pt$ of the muon are used.  The $\PZ\to\ell\ell$ background 
 is large in the 1-prong and 1-prong + $\PGpz$(s) $\tauh$ decay modes in the
-$\Pgm\tauh$ and $\Pe\tauh$ channels.  By using $\mvis$ instead of $\mtt$ the \etvecmiss
-is not included in the mass reconstruction.  The shape Z $\mvis$ peak of $\PZ\to\ell\ell$ provides 
+$\Pgm\tauh$ and $\Pe\tauh$ channels.  By using only $\mvis$ instead of $\mtt$ the \etvecmiss
+does not smear the mass reconstruction for $\PZ\to\ell\ell$ and retains a nice sharp peak.
+The shape Z $\mvis$ peak of $\PZ\to\ell\ell$ provides 
 an excellent handel to distinguish $\PZ\to\ell\ell$ from the other background process and
 helps constrain the associated uncertainties for electrons and muons faking $\tauh$.
+As electrons and muons almost exclusively fake 1-prong 1-prong + $\PGpz$(s) $\tauh$,
+the reconstructed $\tauh$ decay mode is used as the second of the 2D variables in the
+$\Pgm\tauh$ and $\Pe\tauh$ channels.  Additionally, the lack of $\PZ\to\ell\ell$ in the
+3-prong decay mode results in increased signal significance.
+Examples of the 2D distributions for the signal and $\PZ\to\ell\ell$ background
+in the 0-jet category of the $\Pgm\tauh$ decay channel are shown in Fig.~\ref{fig:htt_2Dcategories} (top).
+In the $\tauh\tauh$ decay channel, only one observable, $\mtt$, is considered because of the low i
+event yields due to the relatively high $\pt$ thresholds on the $\tauh$ at trigger level, and 
+because of the sharply falling $\tauh$ $\pt$ distribution.  Simulations indicate that about 98\% 
+of signal events in the 0-jet category correspond to Higgs Bosons produced via the gluon 
+fusion production mechanism.\\
 
-
-The reconstructed $\tauh$ candidate decay mode is used as the other discriminant in the $\Pgm\tauh$ and $\Pe\tauh$ decay channels because the $\PZ\to\ell\ell$ background is negligible for $\tauh$
-reconstructed in the 3-prong decay mode, leading to an increased signal-to-background ratio for this particular decay mode, and several systematic uncertainties related to the $\tauh$ decay mode can be constrained with more precision. The 2D distributions for the signal and $\PZ\to\ell\ell$ background
-in the 0-jet category of the $\Pgm\tauh$ decay channel are shown in Fig.~\ref{fig:2Dcategories} (top).
-In the $\tauh\tauh$ decay channel, only one observable, $\mtt$, is considered because of the low event yields
-due to the relatively high $\pt$ thresholds on the $\tauh$ at trigger level, and because of the sharply falling $\tauh$ $\pt$ distribution. Simulations indicate that about 98\% of signal events in the 0-jet category correspond to the gluon fusion production mechanism.\\
-\item {VBF}: This category targets Higgs boson events produced via VBF.
+\item {VBF}: This category targets Higgs boson events produced via the VBF process.
+The presence of jets from the hard scattering process in VBF production leads the study to heavily
+utilize jet kinematics and the jet topology in the VBF category.
 Events are selected with at least two (exactly two) jets with $\pt>30$\GeV in the
 $\tauh\tauh$, $\Pgm\tauh$, and $\Pe\tauh$ ($\Pe\Pgm$) channels.
-In the $\Pgm\tauh$, $\Pe\tauh$, and $\Pe\Pgm$ channels, the two leading jets are required to have an invariant mass, $\mjj$, larger than 300\GeV. The variable $\pth$, defined as the magnitude of the vectorial sum of the $\ptvec$ of the visible decay products of the $\Pgt$ leptons and $\etvecmiss$, is required to be greater than 50 (100)\GeV in the $\Pgm\tauh$
- and $\Pe\tauh$ ($\tauh\tauh$) channels to reduce the contribution from $\PW+\text{jets}$ backgrounds. This selection criterion also suppresses the background from SM events composed uniquely of jets produced through the strong interaction, referred to as quantum chromodynamics (QCD) multijet events.
-In addition, the $\pt$ threshold on the $\tauh$ candidate is raised to 40\GeV in the $\Pgm\tauh$ channel, and the
-two leading jets in the $\tauh\tauh$ channel should be separated in pseudorapidity by $\Delta\eta>2.5$.
-The two observables in the VBF category are $\mtt$ and $\mjj$. The 2D distributions for the signal and $\PZ\to\Pgt\Pgt$ background
-in the VBF category of the $\Pgm\tauh$ decay channel are shown in Fig.~\ref{fig:2Dcategories} (center). Integrating over the whole $\mjj$ phase space, up to 57\% of the signal events in the VBF category are produced in the VBF production mode, but this proportion increases with $\mjj$.\\
-\item {Boosted}: This category contains all the events that do not
-enter one of the previous categories, namely events with one jet and events with several jets that fail the specific requirements of the VBF category.
-It contains gluon fusion events produced in association with one or more jets (78--80\% of signal events),
-VBF events where one of the jets has escaped detection or has low $\mjj$ (11--13\%), as well as
+In the $\Pgm\tauh$, $\Pe\tauh$, and $\Pe\Pgm$ channels, the two leading jets are required to have 
+an invariant mass, $\mjj$, larger than 300\GeV. The variable $\pth$, defined as the magnitude 
+of the vectorial sum of the $\ptvec$ of the visible decay products of the $\Pgt$ leptons 
+and $\etvecmiss$, is required to be greater than 50 (100)\GeV in the $\Pgm\tauh$
+ and $\Pe\tauh$ ($\tauh\tauh$) channels to reduce the contribution from $\PW+\text{jets}$ 
+backgrounds. This selection criterion also suppresses the background from quantum 
+chromodynamics (QCD) multijet events. In addition, the $\pt$ threshold on the $\tauh$ 
+candidate is raised to 40\GeV in the $\Pgm\tauh$ channel, and the two leading jets in the 
+$\tauh\tauh$ channel should be separated in pseudorapidity by $\Delta\eta>2.5$. The $\Delta\eta>2.5$
+cut in the $\tauh\tauh$ channel significantly reduces the contributions QCD events at the cost
+of very few signal events because of the large jet $\Delta\eta$ in true VBF events.
+The two observables used in the VBF category are $\mtt$ and $\mjj$ for all channels. Example 2D 
+distributions for the signal and $\PZ\to\Pgt\Pgt$ background
+in the VBF category of the $\Pgm\tauh$ decay channel are shown in Fig.~\ref{fig:htt_2Dcategories} (center). 
+Integrating over the whole $\mjj$ phase space, up to 57\% of the signal events in the VBF 
+category are produced in the VBF production mode, but this proportion increases with $\mjj$ allowing
+for signal production process discrimination in the highest $\mjj$ ranges.\\
+
+\item {Boosted}: This category contains all selected events that do not enter one of the previous 
+categories, namely events with one jet and events with several jets that fail the specific requirements of the VBF category.
+The Boosted category contains a mix of gluon fusion events produced in association with one or more jets (78--80\% of signal events),
+VBF events where one of the jets escaped detection or has low $\mjj$ (11--13\%), as well as
 Higgs bosons produced in association with a $\PW$ or a $\PZ$ boson decaying hadronically (4--8\%).
-While $\mtt$ is chosen as one of the dimensions of the distributions, $\pth$ is taken as the second dimension to specifically target Higgs boson events produced in gluon fusion,
-with a Lorentz-boosted boson recoiling against jets. Most background processes, including $\PW+\text{jets}$ and QCD multijet events, typically have low $\pth$. The 2D
-distributions for the signal and $\PW+\text{jets}$ background in the boosted category of the $\Pgm\tauh$ decay channel are shown in Fig.~\ref{fig:2Dcategories} (bottom).
+Because these gluon fusion events failed the 0-jet category, the Higgs Boson will be recoiling 
+off of one or more jets making $\pth$ a natural choice for the second distribution variable with
+$\mtt$ as the other of the 2D variables. 
+Most background processes, including $\PW+\text{jets}$ and QCD multijet events, typically have low $\pth$. 
+Example 2D distributions for the signal and $\PW+\text{jets}$ background in the boosted category of 
+the $\Pgm\tauh$ decay channel are shown in Fig.~\ref{fig:htt_2Dcategories} (bottom).
 \end{itemize}
 
-The categories and the variables used to build the 2D distributions are summarized in
-Table~\ref{tab:categories}. The results of the analysis are extracted with a global maximum likelihood fit based on  the 2D distributions in the various signal regions, and on some control regions, detailed in Section~\ref{sec:background_estimation}, that constrain the normalizations of the main backgrounds.
+In figure~\ref{fig:htt_2Dcategories}, the background processes are chosen for illustrative 
+purpose for their separation from 
+the signal. The $\PZ\to\Pgm\Pgm$ background in the 0-jet category is concentrated in 
+the regions where the visible mass is close to 90\GeV and is negligible when the $\tauh$ 
+candidate is reconstructed in the 3-prong decay mode. The $\PZ\to\Pgt\Pgt$ background in 
+the VBF category mostly lies at low $\mjj$ values whereas the distribution of VBF signal 
+events extends to high $\mjj$ values. In the boosted category, the W+jets background, 
+which behaves similarly to the QCD multijet background, is rather flat with respect to $\mtt$, and 
+is concentrated at low $\pth$ values.
+
+The three categories and the variables used to build the 2D distributions are summarized in
+Table~\ref{tab:htt_categories}. 
 
 \begin{figure*}[htbp]
+\label{fig:htt_2Dcategories}
 \centering
-     \includegraphics[width=0.4\textwidth]{figures/Figure_001-a.pdf}
-     \includegraphics[width=0.4\textwidth]{figures/Figure_001-b.pdf}\\
-     \includegraphics[width=0.4\textwidth]{figures/Figure_001-c.pdf}
-     \includegraphics[width=0.4\textwidth]{figures/Figure_001-d.pdf}\\
-     \includegraphics[width=0.4\textwidth]{figures/Figure_001-e.pdf}
-     \includegraphics[width=0.4\textwidth]{figures/Figure_001-f.pdf}
-     \caption{Distributions for the signal (left) and for some dominant background processes (right) of the two observables chosen in the 0-jet (top), VBF (center), and boosted
-(bottom) categories in the $\Pgm\tauh$ decay channel. The background processes are chosen for illustrative purpose for their separation from the signal. The $\PZ\to\Pgm\Pgm$ background in the 0-jet category is concentrated in the regions where the visible mass is close to 90\GeV and is negligible when the $\tauh$ candidate is reconstructed in the 3-prong decay mode. The $\PZ\to\Pgt\Pgt$ background in the VBF category mostly lies at low $\mjj$ values whereas the distribution of VBF signal events extends to high $\mjj$ values. In the boosted category, the W+jets background, which behaves similarly to the QCD multijet background, is rather flat with respect to $\mtt$, and is concentrated at low $\pth$ values. These distributions are not used as such to extract the results.}
-     \label{fig:2Dcategories}
+     \includegraphics[width=0.4\textwidth]{higgs_to_taus/plots/Figure_001-a.pdf}
+     \includegraphics[width=0.4\textwidth]{higgs_to_taus/plots/Figure_001-b.pdf}\\
+     \includegraphics[width=0.4\textwidth]{higgs_to_taus/plots/Figure_001-c.pdf}
+     \includegraphics[width=0.4\textwidth]{higgs_to_taus/plots/Figure_001-d.pdf}\\
+     \includegraphics[width=0.4\textwidth]{higgs_to_taus/plots/Figure_001-e.pdf}
+     \includegraphics[width=0.4\textwidth]{higgs_to_taus/plots/Figure_001-f.pdf}
+     \caption{Two dimensional unit normalized distributions for Higgs Boson events passing event selection 
+for each category are shown (left). The specific Higgs Boson process shown is the one 
+specifically targeted for each category. Distributions for select dominant background 
+processes are shown (right). The rows correspond to the three categories: 0-jet (top), 
+VBF (center), and boosted (bottom).  All distributions are from the $\Pgm\tauh$ decay channel.} 
 \end{figure*}
 
 
 \begin{table*}
 \centering
+\begin{small}
 \begin{tabular}{llll}
  & 0-jet & VBF & Boosted \\
 \hline
  & \multicolumn{3}{c}{Selection} \\ \cline{2-4}
-$\tauh\tauh$ & No jet &  $\geq$2 jets, $\pth>100\GeV$, $\Delta\eta_{\mathrm{jj}}>2.5$ & Others\\
-$\Pgm\tauh$ & No jet &  $\geq$2 jets, $\mjj>300\GeV$, $\pth>50\GeV$, $\pt^{\tauh}>40\GeV$ & Others\\
-$\Pe\tauh$ & No jet &  $\geq$2 jets, $\mjj>300\GeV$, $\pth>50\GeV$ & Others\\
-$\Pe\Pgm$ & No jet & 2 jets, $\mjj>300\GeV$ & Others \\
+$\tauh\tauh$ & No jet &  \scriptsize{$\geq$2 jets, $\pth>100\GeV$, $\Delta\eta_{\mathrm{jj}}>2.5$} & Others\\
+$\Pgm\tauh$ & No jet &  \scriptsize{$\geq$2 jets, $\mjj>300\GeV$, $\pth>50\GeV$, $\pt^{\tauh}>40\GeV$} & Others\\
+$\Pe\tauh$ & No jet &  \scriptsize{$\geq$2 jets, $\mjj>300\GeV$, $\pth>50\GeV$} & Others\\
+$\Pe\Pgm$ & No jet & \scriptsize{2 jets, $\mjj>300\GeV$} & Others \\
 \hline
  & \multicolumn{3}{c}{Observables}\\ \cline{2-4}
 $\tauh\tauh$ & $\mtt$                 &    $\mjj$, $\mtt$  &   $\pth$, $\mtt$  \\
@@ -312,16 +351,71 @@ $\Pe\tauh$ & $\tauh$ decay mode, $\mvis$   &    $\mjj$, $\mtt$  &  $\pth$, $\mtt
 $\Pe\Pgm$ & $\pt^{\Pgm}$, $\mvis$   &     $\mjj$, $\mtt$  &   $\pth$, $\mtt$  \\
 \hline
 \end{tabular}
-\caption{ Category selection and observables used to build the 2D kinematic distributions. The events neither selected in the 0-jet nor in the VBF category are included in the boosted category, as denoted by ``Others".
-\label{tab:categories}
+\caption{ Category selection and observables used to build the 2D kinematic distributions. 
+The events failing the 0-jet and VBF selection are included in the boosted category and are
+denoted by ``Others''.
+\label{tab:htt_categories}
 }
+\end{small}
 \end{table*}
 
-\subsection{Channels}
+The results of the analysis are extracted with a global maximum likelihood fit based on  the 2D distributions in the various signal regions, and on some control regions, detailed in Section~\ref{sec:background_estimation}, that constrain the normalizations of the main backgrounds.
+
 \section{Data Set}
-\section{MC Samples}
-\section{Triggers}
+The $\htt$ study utilizes the full 2016 $\pp$ dataset collected by CMS corresponding to 35.9$\fbinv$ 
+of integrated luminosity.  The data were gathered at center-of-mass energy 13 TeV data from the LHC.
+As data are gathered at CMS, the condition of the CMS detector are recorded simultaneously.
+The CMS experiment uses an offline validation process to ensure that only high quality
+data is used in future analyses.  Data collected while the CMS detector is in a faulty state
+is flagged as such and, when an analyst processes the data, the faulty data is skipped.
+When only considering the data considered good and usable for physics, the CMS experiment
+gathered 35.9$\fbinv$ of integrated lumiosity.
+
+In this analysis only a subset of the total data marked as good is used.  During data
+gathering, data is filtered into primary datasets (PDs) corresponding to which HLT trigger
+made the determination to save a given event.  The HLT triggers using in this analysis,
+detailed in table~\ref{tab:htt_hlt_triggers}, correspond to: the Single Electron/Photon
+PD, the Single Muon PD, the Muon and Electron PD, and the Tau PD.
+
+
+
+\section{Monte Carlo Samples}
+Signal and background processes are modeled with samples of simulated events.
+For details on the production for simulated events, see section~\ref{sec:simulation}.
+
+The signal samples with a Higgs Boson produced vai the gluon fusion production
+mechanism ($\cPg\cPg\PH$), vector boson fusion (VBF), or in association with a $\PW$ or $\PZ$ boson ($\PW\PH$ or $\PZ\PH$), 
+are generated at next-to-leading order (NLO) in perturbative quantum chromodynamics (pQCD) 
+with the \POWHEG 2.0~\cite{Nason:2004rx,Frixione:2007vw, Alioli:2010xd, Alioli:2010xa, Alioli:2008tz} 
+generator. For the $\PW\PH$ and $\PZ\PH$ simulated samples, the \textsc{minlo hvJ}~\cite{Luisoni:2013kna} 
+extension of \POWHEG 2.0 is used. The set of parton distribution functions (PDFs) used for all
+simulates samples is NNPDF30\_nlo\_as\_0118~\cite{Ball:2011uy}. It is found that the $\ttbar\PH$ 
+process is negligible in comparison with the other signal processes and is therefor excluded.
+Mass dependant production cross sections and $\htt$ branching fractions for the SM Higgs Boson production, 
+and their corresponding uncertainties are taken from 
+Refs.~\cite{deFlorian:2016spz,Denner:2011mq,Ball:2011mu} and references therein.
+
+The $\text{MG5}_\aMCATNLO$~\cite{Alwall:2014hca} generator is used for $\PZ+$jets and $\PW+$jets processes. 
+They are simulated at leading order (LO) with MLM jet matching and merging~\cite{Alwall:2007fs}.
+The \aMCATNLO generator is also used for diboson production simulated at next-to-LO (NLO) with the 
+FxFx jet matching and merging~\cite{Frederix:2012ps}. In contrast, \POWHEG 2.0 and 1.0 are used for \ttbar
+and single top quark production, respectively. The generators are interfaced with \PYTHIA 
+8.212 ~\cite{Sjostrand:2014zea} to model the parton showering and fragmentation, as well as 
+the decay of the $\Pgt$ leptons. The \PYTHIA parameters affecting the description of the 
+underlying event are set to the {CUETP8M1} tune~\cite{Khachatryan:2015pea}.
+
+A event-by-event weight is applied to the simulated events such that the distribution of the 
+number of additional pileup interactions in the simulated sample more closely aligns with that in data.
+The distribution of additional pileup interactions in data is estimated from the measured instantaneous 
+luminosity for each bunch crossing. The average number of additional pileup interactions in
+data is approximately 27 interactions per bunch crossing.
+
+
+
 \section{SVFit Algorithm}
+
+
+
 \section{Background Estimation}
 The largest irreducible source of background is the Drell--Yan production
 of $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$.
