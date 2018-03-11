@@ -52,76 +52,208 @@ along the beam direction, and $\abs{d_{xy}}<0.045$ cm in the transverse plane. E
 compatibility with the primary vertex is consistent with the predicted infinitesimal life-time of
 a Higgs Boson. The HPS reconstruction of $\tauh$ detailed in section~\ref{sec:XXX} can involve
 combining together multiple tracks and $\PGpz$s coming from intermediary $\tau$ decay products.
-Because of these intermediary products the reconstructed $d_{xy}$ for $\tauh$ are often
+Due to these intermediary products, the reconstructed $d_{xy}$ for $\tauh$ are often
 larger than those for electrons and muons.  Because of this, the primary vertex matching
 criteria are relaxed for $\tauh$ and only require $\abs{d_z}<0.2$ cm.
 
-The two leptons assigned to the Higgs boson decay are required to have opposite-sign electric charges.
-In the $\Pgm\tauh$ channel, events are selected with a combination of online criteria that require at least one isolated muon trigger candidate, or at least one isolated muon and one $\tauh$ trigger candidate, depending on the offline muon $\pt$. In the $\Pe\tauh$ channel, the trigger system requires at least one isolated
-electron object, whereas in the $\Pe\Pgm$ channel, the triggers  rely on the presence of both an electron and a muon, allowing
-lower online $\pt$ thresholds.
-In the $\tauh\tauh$ channel, the trigger selects events with two loosely isolated $\tauh$ objects.
-The selection criteria are summarized in Table~\ref{tab:inclusive_selection}.
+Selected events are required to to have fired a trigger consisten with their categorized final
+state channel.  For the $\Pgm\tauh$ channel, events are selected using a combination
+of a single isolationed muon trigger as well as a cross trigger firing on an isolated muon and
+an isolated $\tauh$.  The $\Pgm\tauh$ cross trigger allows for a lower possible $\pt$ threshold
+on the selected muon.  In contrast, due to the HLT menu available in 2016, the $\Pe\tauh$ cross triggers
+do not bring a substantial increase in acceptance and were not used in this analysis.
+For the $\Pe\tauh$ channel, events are selected using only a trigger firing on a 
+single isolated electron.  For the $\Pe\Pgm$ channel, events are selected with electron-muon corss
+triggers requiring an isolated online electron and an isolated online muon.  There are two 
+different electron-muon corss triggers used with their HLT $\pt$ thresholds detailed following.
+For the $\tauh\tauh$ channel, events are selected using an online criteria of two loosely isolated $\tauh$.  
+The high level trigger paths used and their online $\pt$ thresholds are detailed in table~\ref{tab:htt_hlt_triggers}.
+
+Due to changing running conditions and a changing HLT menu throughout 2016 data taking, the HLT path
+requirements change throughout 2016 and are era dependant.  The study avoids using any prescaled
+HLT paths; during latter eras, at higher instantaneous luminsity, some HLT paths became diabled
+or prescaled.  When this happens we avoid using that specific trigger for the given prescaled/disabled
+era.  For the $\Pgm\tauh$ channel this 
+leads to changes in the $\abs\eta$ requirement on the online muon in the single muon triggers.
+There are two muon-tau cross triggers available throughout 2016.  One of them requires only the
+presence of a single muon at the Level-1 trigger and has ``SingleL1'' appended to its path
+name.  The other one requires the presence of both a muon and a $\tauh$ at the Level-1 trigger.
+The single electron trigger used in the $\Pe\tauh$ channel remained constant through the year.
+Due to changing pileup conditions and increasing luminosity during the final eras, the online
+isolation criteria was changed for the $\tauh\tauh$ channel triggers.  The online $\tauh$ 
+isolation changed from being based on purely charged energy deposits to being based on a 
+combination of charged and neutral based energy deposits.  The triggers useded in the
+$\Pe\Pgm$ channel changed during the final two eras, G and H, and had a lepton DZ filter
+applied to them.  The DZ filter requires that the electron and muon match to the HLT primary
+vertex and is a common method used to reduce rate at the HLT.  In all channels, the electrons, muons, and
+$\tauh$ in each event must be matched to within $\Delta R < 0.5$ with the associated
+HLT object which triggerd the event.
+
 
 \begin{table*}[htbp]
 \centering
-\begin{tabular}{lllll}
-  Channel           &         Trigger requirement              &    \multicolumn{3}{c}{Lepton selection}                 \\ \cline{3-5}
- & & $\pt$ ($\GeV$) & $\eta$ & Isolation \\
+\begin{footnotesize}
+%\begin{scriptsize}
+\begin{tabular}{|l|l|l|l|}
 \hline
- $\tauh\tauh$    &         $\tauh (35)\,\&\,\tauh (35)$              &     $\pt^{\tauh}>50\,\&\,40$ & $\abs{\eta^{\tauh}}<2.1$  &    MVA $\tauh$ ID              \\
+  Channel           &         Trigger $\pt$ Req.              &     High Level Trigger Path  &   Eras  \\
 \hline
-  $\mu\tauh$       &         $\Pgm(22)$     &     $\pt^\Pgm>23$  &  $\abs{\eta^\Pgm}<2.1$   &   $I^{\Pgm}<0.15$       \\
-                          &       &     $\pt^{\tauh}>30$ &  $\abs{\eta^{\tauh}}<2.3$ &   MVA $\tauh$ ID  \\[\cmsTabSkip]
-
-                   &         $\Pgm(19)\,\&\,\tauh (21)$     &     $20<\pt^\Pgm<23$  &  $\abs{\eta^\Pgm}<2.1$   &   $I^{\mu}<0.15$       \\
-                   &           &     $\pt^{\tauh}>30$ &  $\abs{\eta^{\tauh}}<2.3$ &   MVA $\tauh$ ID  \\
+  $\mu\tauh$       &         $\Pgm(22)$                     &  \scriptsize{HLT\_IsoMu22\_v*} & B-F  \\ 
+                   &         $\Pgm(22)$                     &  \scriptsize{HLT\_IsoTrkMu22\_v*} & B-F   \\ 
+                   &         $\Pgm(22)$                     &  \scriptsize{HLT\_IsoMu22\_eta2p1\_v*} & C-H  \\
+                   &         $\Pgm(22)$                     &  \scriptsize{HLT\_IsoTrkMu22\_eta2p1\_v*} & C-H   \\
+                   &         $\Pgm(19)\,\&\,\tauh (21)$     &  \scriptsize{HLT\_IsoMu19\_eta2p1\_LooseIsoPFTau20\_SingleL1\_v*} &  All Eras  \\
+                   &         $\Pgm(19)\,\&\,\tauh (21)$     &  \scriptsize{HLT\_IsoMu19\_eta2p1\_LooseIsoPFTau20\_v*} &  All Eras \\
 \hline
-  $\Pe\tauh$        &         $\Pe (25)$     &     $\pt^\Pe>26$  & $\abs{\eta^\Pe}<2.1$  &   $I^{\Pe}<0.1$  \\
-                          &       &     $\pt^{\tauh}>30$ &  $\abs{\eta^{\tauh}}<2.3$ &   MVA $\tauh$ ID  \\
+  $\Pe\tauh$       &         $\Pe (25)$                     &  \scriptsize{HLT\_Ele25\_eta2p1\_WPTight\_Gsf\_v*}   & All Eras \\
 \hline
-  $\Pe\Pgm$        &         $\Pe(12)\,\&\,\Pgm (23)$    &     $\pt^{\Pe}>13$ & $\abs{\eta^\Pe}<2.5$             & $I^{\Pe}<0.15$   \\
-                          &              &     $\pt^{\Pgm}>24$ & $\abs{\eta^\Pgm}<2.4$  & $I^{\Pgm}<0.2$ \\[\cmsTabSkip]
-         &         $\Pe(23)\,\&\,\Pgm (8)$    &     $\pt^{\Pe}>24$ & $\abs{\eta^\Pe}<2.5$             & $I^{\Pe}<0.15$   \\
-                          &          &     $\pt^{\Pgm}>15$ & $\abs{\eta^\Pgm}<2.4$  & $I^{\Pgm}<0.2$    \\
+ $\tauh\tauh$      &         $\tauh (35)\,\&\,\tauh (35)$   &  \scriptsize{HLT\_DoubleMediumIsoPFTau35\_Trk1\_eta2p1\_Reg\_v*} & B-G   \\ 
+                   &         $\tauh (35)\,\&\,\tauh (35)$   &  \scriptsize{HLT\_DoubleMediumCombinedIsoPFTau35\_Trk1\_eta2p1\_Reg\_v*} & H  \\
+\hline
+  $\Pe\Pgm$        &         $\Pe(12)\,\&\,\Pgm (23)$       &  \scriptsize{HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v*} & B-F \\
+                   &         $\Pe(12)\,\&\,\Pgm (23)$       &  \scriptsize{HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v*} & G-H  \\
+                   &         $\Pe(23)\,\&\,\Pgm (8)$        &  \scriptsize{HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_v*} & B-F  \\
+                   &         $\Pe(23)\,\&\,\Pgm (8)$        &  \scriptsize{HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v*} & G-H  \\
 \hline
 \end{tabular}
-\caption{Kinematic selection requirements for the four di-$\Pgt$ decay channels.
-The trigger requirement is defined by a combination of trigger candidates with \pt over a given threshold (in \GeV), indicated inside parentheses. The pseudorapidity thresholds come from trigger and object reconstruction constraints. The $\pt$ thresholds for the lepton selection are driven by the trigger requirements, except for the leading $\tauh$ candidate in the $\tauh\tauh$ channel, the $\tauh$ candidate in the $\Pgm\tauh$ and $\Pe\tauh$ channels, and the muon in the $\Pe\Pgm$ channel, where they have been optimized to increase the significance of the analysis.
-\label{tab:inclusive_selection}
+\end{footnotesize}
+%\end{scriptsize}
+\caption{For each channel the online HLT $\pt$ threshold is listed along with the specific associated
+HLT paths.  Through out 2016 data taking, the HLT menu changed to respond to changing online
+conditions at CMS and the LHC.  This is reflected in progressivly tighter triggers
+being available towards the end of the 2016 run.
+\label{tab:htt_hlt_triggers}
 }
 \end{table*}
 
-In the $\ell \tauh$ channels, the large $\PW+\text{jets}$ background is reduced by requiring the transverse mass,
-$\MT$, to satisfy
+
+
+The offline selection criteria for all electrons, muons and $\tauh$ are motivated and constrained
+by the High Level Trigger requirements of their path.  Specifically, the offline $\pt$ criteria
+applied are always higher than the HLT $\pt$ threshold to ensure a stable measurement and application
+of trigger efficiencies.  An offline $\pt$ threshold applied right at the HLT $\pt$ threshold
+makes measurement of the steeply rising efficiency at the HLT threshold absolutly critical.
+This is very difficult to do perfectly and would lead to very large trigger systematics
+at low $\pt$ in the turn-on region.  Additionally, there are offline $\eta$ restrictions
+enforced which align with those at the HLT.
+
+All selected electrons, muons, and $\tauh$ must be well identified and isolated from overlapping
+energy deposits and reconstructed objects.  This study uses identification criteria
+provided centrally by the CMS Physics Object Groups.  All identification and isolation
+working points following have been selected through an optimization process selecting
+for increased analysis sensitivity.  The optimimum working points strike a balance
+between signal efficiency and background rejection.  For electrons an MVA-based ID
+is used in both the $\Pe\tauh$ and $\Pe\Pgm$ channels which has been tuned to provide 
+80\% electron selection efficiency.  Muons in both the $\mu\tauh$ and $\Pe\Pgm$ channels
+the Particle Flow Medium ID is required.  The selection of $\tauh$ relies on MVA-based working
+points.  The $\tauh$ MVA-based working points combine both object identification and object
+isolation together into a single set of working points.  Table~\ref{tab:htt_obj_selection}
+details the $\pt$, $\abs\eta$, identification and isolation criteria for all electrons, muons,
+and $\tauh$ selected in the study.
+
+
+\begin{table*}[htbp]
+\centering
+\begin{small}
+\begin{tabular}{l|l|l|l|l}
+  Channel       & $\pt$ ($\GeV$) & $\eta$ & Identification & Isolation \\
+\hline
+  $\mu\tauh$       &   $\pt^\Pgm>20$     &  $\abs{\eta^\Pgm}<2.1$    &   PF ID Medium &  $I^{\Pgm}<0.15$       \\
+                   &   $\pt^{\tauh}>30$  &  $\abs{\eta^{\tauh}}<2.3$ &   MVA $\tauh$ ID  & MVA $\tauh$ ID \\
+\hline
+ $\tauh\tauh$      &   Leading $\pt^{\tauh}>50$ & $\abs{\eta^{\tauh}}<2.1$  &    MVA $\tauh$ ID    & MVA $\tauh$ ID    \\
+                   &   Subleading $\pt^{\tauh}>40$ & $\abs{\eta^{\tauh}}<2.1$  &    MVA $\tauh$ ID & MVA $\tauh$ ID    \\
+\hline
+  $\Pe\tauh$       &   $\pt^\Pe>26$      & $\abs{\eta^\Pe}<2.1$       &   MVA 80\% WP  &  $I^{\Pe}<0.1$  \\
+                   &   $\pt^{\tauh}>30$  &  $\abs{\eta^{\tauh}}<2.3$  &   MVA $\tauh$ ID & MVA $\tauh$ ID \\
+\hline
+  $\Pe\Pgm$        &   $\pt^{\Pe}>13$    & $\abs{\eta^\Pe}<2.5$   &   MVA 80\% WP   & $I^{\Pe}<0.15$   \\
+                   &   $\pt^{\Pgm}>15$   & $\abs{\eta^\Pgm}<2.4$  & PF ID Medium &  $I^{\Pgm}<0.2$    \\
+\hline
+\end{tabular}
+\end{small}
+\caption{Kinematic, identification and isolation selection requirements for the four di-$\Pgt$ channels.
+\label{tab:htt_obj_selection}
+}
+\end{table*}
+
+
+The three different signal extraction categories rely on the details of reconstructed jets, or
+lack there of, in each event.  Jets are reconstructed using the anti-$k_{\text{T}}$ algorithm with distance
+parameter $\Delta\text{R}=0.4$~\cite{Cacciari:2008gp}.  Charged hardons that are not consistent with
+the primary vertex are removed from the anti-$k_{\text{T}}$ clustering.  Jets are only considered
+if they pass they pass the loose working point of the PF Jet ID discriminator~\cite{jetID}.
+Jets must have $\pt > 30 \GeV$ and $\abs\eta<4.7$.  The $\pt$ and $\eta$ requirements are altered
+for cases where the jet is identfied as having likely originated from a b-quark.  Jets likey originating
+from a b-quark are considered if they pass the CISVv2 Medium working point are then tagged as b-tagged jets.
+B-tagged jets have a relaxed $\pt$ requirement but much tighter $\eta$ requirement of $\pt > 20 \GeV$ 
+and $\abs\eta<2.4$.  The tightened $\eta$ requirment necessitates that b-tagged jets are located within
+the detector volumne fully covered by the CMS pixel and strip tracker.
+Lastly, all jets must be separated from the selected electrons, muons, and $\tauh$ by $\Delta\text{R}>0.5$.
+
+Depending on the di-$\tauh$ channel, there are specific topological cuts targeted at significantly
+reducing the contribution of certain background processes in the signal region.  The large $\PW+\text{jets}$
+cross section combined with a non-negligible jet $\to \tauh$ fake rate leads to a large $\PW+\text{jets}$
+contribution in the $\ell\tauh$ channels.  This contribution is significantly reduced at the cost of
+minimal signal events by cutting on the transverse mass, $\MT$.  Where the $\MT$ selection is defined as
+
 \begin{equation}
 \MT \equiv \sqrt{\smash[b]{2 \pt^\ell \ptmiss [1-\cos(\Delta\phi)]}} < 50\GeV,
 \end{equation}
+
 where $\pt^\ell$ is the transverse momentum of the lepton $\ell$,
 and $\Delta\phi$ is the azimuthal angle between its direction and the \etvecmiss.
 
-In the $\emu$ channel, the \ttbar background is reduced by requiring $p_\zeta - 0.85 \, p_\zeta^{\text{vis}} > -35$ or $-10$\GeV depending on the category,
-where $p_\zeta$ is the component of the \etvecmiss along the bisector of the transverse momenta of the two leptons
-and $p_\zeta^{\text{vis}}$ is the sum of the components of the lepton transverse momenta along
-the same direction~\cite{Khachatryan:2014wca}.
-This selection criterion has a high signal efficiency because the \etvecmiss is typically oriented in the same direction as the visible di-$\Pgt$ system in signal events.
-In addition, events with a b-tagged jet are discarded to further suppress the \ttbar background in the $\emu$ channel.
+FIXME - Add MT plot from ZTT paper?
+
+In the $\Pe\Pgm$ channel, the large \ttbar background is reduced by requiring 
+$p_\zeta - 0.85 \, p_\zeta^{\text{vis}} > -35$ or $-10$\GeV depending on which category the event is
+classified within.  $p_\zeta$ is the component of the \etvecmiss projected along the bisector 
+of the transverse momenta of the two leptons and $p_\zeta^{\text{vis}}$ is the sum of the components 
+of the lepton transverse momenta along the same direction~\cite{Khachatryan:2014wca}, also see
+figure~\ref{fig:htt_pZeta} for visual reference.
+This $p_\zeta$ selection criteria has a high signal efficiency because the \etvecmiss is typically oriented
+in the same direction as the visible di-$\Pgt$ system in signal events because the \etvecmiss is 
+the results of neutrinos from the signal $\tau$s.  The orientation of the \etvecmiss with respect
+to the di-$\tau$ system is much less predictable in \ttbar events.  In addition, events with a b-tagged 
+jet are discarded to further suppress the \ttbar background in the $\Pe\Pgm$ channel.
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.4\textwidth]{higgs_to_taus/plots/pZeta_def.pdf}
+     \includegraphics[width=0.4\textwidth]{higgs_to_taus/plots/htt_em_pZeta.pdf}\\
+     \caption{
+(Left) Diagram showing the construction of the $p_\zeta$ and $p_\zeta^{\text{vis}}$ projections.
+(Right) An example $p_\zeta - 0.85 \, p_\zeta^{\text{vis}}$ distribution is shown for a similar but not
+overlapping selection in the $\Pe\Pgm$ channel.  This distribution is from an analysis focusing on specifically studying the
+$\PZ\to\tau\tau$ process~\ref{HIG-15-007}.
+In the $\htt$ analysis, the Higgs Boson $p_\zeta - 0.85 \, p_\zeta^{\text{vis}}$
+spectrum aligns very closely with the $Z\to\tau\tau$ distribution shown here.
+     }
+     \label{fig:htt_pZeta}
+\end{figure*}
 
 \subsection{Categorization}
 
-The event sample is split into three mutually exclusive categories per decay channel.
-In each category the two variables that maximize the $\PH\to\Pgt\Pgt$ sensitivity are chosen to build two-dimensional (2D) distributions.
+Selected events are split into three mutually exclusive categories per decay channel.
+The categories are designed to target different aspects of the gluon fusion and VBF Higgs Bosont production mechanisms.
+In each category the two variables that maximize the $\PH\to\Pgt\Pgt$ sensitivity are chosen to build 
+two-dimensional (2D) distributions.
 
 The three categories are defined as:
 \begin{itemize}
-\item {0-jet}: This category targets Higgs boson events produced via gluon fusion.
+\item {0-jet}: This category targets Higgs Boson events produced via gluon fusion.
 The two variables chosen to extract the results are $\mvis$ and
-the reconstructed $\tauh$ candidate decay mode (in the $\Pgm\tauh$ and $\Pe\tauh$ decay channels)
-or the $\pt$ of the muon (in the $\Pe\Pgm$ channel). The $\PZ\to\ell\ell$ background is large in the 1-prong and 1-prong + $\PGpz$(s) $\tauh$
-decay modes in the
-$\Pgm\tauh$ and $\Pe\tauh$ channels.
-The $\mvis$ variable is used as a final discriminant in the fit instead of $\mtt$ because it separates the signal from the $\PZ\to\ell\ell$ background, which peaks
-around the $\PZ$ boson mass. The reconstructed $\tauh$ candidate decay mode is used as the other discriminant in the $\Pgm\tauh$ and $\Pe\tauh$ decay channels because the $\PZ\to\ell\ell$ background is negligible for $\tauh$
+the reconstructed $\tauh$ decay mode in the $\Pgm\tauh$ and $\Pe\tauh$ decay channels.
+The $\mvis$ and the $\pt$ of the muon is used in the $\Pe\Pgm$ channel.  The $\PZ\to\ell\ell$ background 
+is large in the 1-prong and 1-prong + $\PGpz$(s) $\tauh$ decay modes in the
+$\Pgm\tauh$ and $\Pe\tauh$ channels.  By using $\mvis$ instead of $\mtt$ the \etvecmiss
+is not included in the mass reconstruction.  The shape Z $\mvis$ peak of $\PZ\to\ell\ell$ provides 
+an excellent handel to distinguish $\PZ\to\ell\ell$ from the other background process and
+helps constrain the associated uncertainties for electrons and muons faking $\tauh$.
+
+
+The reconstructed $\tauh$ candidate decay mode is used as the other discriminant in the $\Pgm\tauh$ and $\Pe\tauh$ decay channels because the $\PZ\to\ell\ell$ background is negligible for $\tauh$
 reconstructed in the 3-prong decay mode, leading to an increased signal-to-background ratio for this particular decay mode, and several systematic uncertainties related to the $\tauh$ decay mode can be constrained with more precision. The 2D distributions for the signal and $\PZ\to\ell\ell$ background
 in the 0-jet category of the $\Pgm\tauh$ decay channel are shown in Fig.~\ref{fig:2Dcategories} (top).
 In the $\tauh\tauh$ decay channel, only one observable, $\mtt$, is considered because of the low event yields
