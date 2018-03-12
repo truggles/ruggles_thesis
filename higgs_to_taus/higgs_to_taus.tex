@@ -418,50 +418,56 @@ data is approximately 27 interactions per bunch crossing.
 
 \section{Background Estimation}
 The largest irreducible source of background is the Drell--Yan production
-of $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$.
-In order to correct the yield and distributions of the $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$ simulations to better reproduce the Drell--Yan process in data, a dedicated control sample of $\PZ/\Pgg^*\to\Pgm\Pgm$
-events is collected in data with a single-muon trigger, and compared to simulation. The control sample is composed of events with two well-identified
-and well-isolated opposite-charge muons with $\pt$ greater than 25\GeV and an invariant mass between 70 and 110\GeV.
-More than 99\% of events in this region come from $\PZ/\Pgg^*\to\Pgm\Pgm$ decays.
-Differences in the distributions of $m_{\ell\ell/\Pgt\Pgt}$ and $\pt(\ell\ell/\Pgt\Pgt)$ in data and in simulations are observed in this control region, and 2D weights based on these variables are derived and applied to simulated $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$ events in the signal region of the analysis. In addition, corrections depending on $\mjj$ are derived from the $\PZ/\Pgg^*\to\Pgm\Pgm$ region and applied to the $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$ simulation for events with at least two jets passing the VBF category selection criteria. After this reweighting, good agreement between data in the $\PZ/\Pgg^*\to\Pgm\Pgm$ region and simulation is found for all other variables.
-The simulated sample is split, on the basis of the matching between objects at the generator and at the detector levels,
-into events with prompt leptons (muons or electrons), hadronic decays of the $\Pgt$ leptons,
-and jets or misidentified objects at the detector level that do not have corresponding objects
-at generator level within $\Delta R < 0.2$.
-The electroweak production of $\PZ$ bosons in association with two jets is also taken into account in the analysis; it
-contributes up to 8\% of the $\PZ$ boson production in the VBF category.
+of $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$. Proper shape and normalization for this
+leading background is critical is critical to the success of the analysis.
+A dedicated, high purity, $\PZ/\Pgg^*\to\Pgm\Pgm$ control region was
+used to measure reweighting factors for application to all Drell--Yan
+simulated events and is detailed in the Monte Carlo Corrections 
+section~\ref{sec:mc_corrections}.
 
+The $\PW+\text{jets}$ process is modelled using simulation.
+In the $\tauh\tauh$ and $\Pe\Pgm$ channels the $\PW+\text{jets}$ contribution 
+is small compared to other backgrounds. In these two channels both the shape and 
+yield are taken from simulation.
 The background from $\PW+\text{jets}$ production contributes significantly to the
 $\Pgm\tauh$ and $\Pe\tauh$ channels, when the $\PW$ boson decays leptonically and
-a jet is misidentified as a $\tauh$ candidate.
-The $\PW+\text{jets}$ distributions are modelled using simulation, while their yields are estimated using data, as detailed below. In the boosted and VBF categories, statistical fluctuations in the distributions from simulations are reduced by relaxing the isolation of the $\tauh$ and $\ell$ candidates, which has been checked not to bias the distributions.
-The simulated sample is normalized in such a way as to obtain agreement between the yields in data and the predicted backgrounds in a control region enriched in the $\PW+\text{jets}$ background,
-which is obtained by applying all selection criteria,
-with the exception that $\MT$ is required to be greater than 80\GeV instead of less than 50\GeV.
-The $\PW+\text{jets}$ event purity in this
-region varies from about 50\% in the boosted category to 85\% in the 0-jet category.
-The high-$\MT$ sidebands described above, for each category, are considered
-as a control regions in this fit.
- The constraints obtained in the boosted category are extrapolated to the VBF category of the corresponding decay channel because
-the topology of the boosted and VBF events is similar, and few data events would pass the high-$\MT$ sideband selection in the VBF category. Figure~\ref{fig:CR1} shows the control regions with $\MT>80$\GeV in the 0-jet and boosted categories of the $\Pgm\tauh$ and $\Pe\tauh$ channels. These control regions are composed of only one bin because they are used solely to constrain the normalization of the $\PW+\text{jets}$ process.
-In the $\Pe\Pgm$ and $\tauh\tauh$ decay channels, the $\PW+\text{jets}$
-background is small compared to other backgrounds, and its contribution is
-estimated from simulations.
+a jet is misidentified as a $\tauh$ candidate. In the $\ell\tauh$ channels
+the shape of the background is simulation based while the yields are estimated 
+using data in a $\PW+\text{jets}$ enriched dedicated side-band region defined
+based on transverse mass, $\MT > 80\GeV$. In this high-$\MT$ side-band region, the $\PW+\text{jets}$
+process is scaled so that the sum total of expected background events is equivalent
+to the sum total of observed data events. The scaling factor is then applied
+in the low transverse mass signale regions $\MT < 50\GeV$. A scaling factor
+is measured for the 0-jet and Boosted categories for both $\Pe\Pgt$ and $\Pgm\Pgt$ resulting
+in four $\PW+\text{jets}$ scaling values. The scaling factor measured in the Boosted
+category is extrapolated to the VBF category. The $\PW+\text{jets}$ purity in these
+side-band regions varies from about 50\% in the boosted category to 85\% in the 0-jet category.
+
+The high-$\MT$ side-bands, described above, are included as a control regions in the final fit.
+These high-$\MT$ $\PW+\text{jets}$ control regions can be seed in Figure~\ref{fig:htt_wj_CR1}.
+The control regions are only a singular bin because they are used solely to constrain 
+the normalization of the $\PW+\text{jets}$ process.
 
 \begin{figure*}[!htbp]
 \centering
-     \includegraphics[width=0.19\textwidth]{figures/Figure_002-a.pdf}
-     \includegraphics[width=0.19\textwidth]{figures/Figure_002-b.pdf}
-     \includegraphics[width=0.19\textwidth]{figures/Figure_002-c.pdf}
-     \includegraphics[width=0.19\textwidth]{figures/Figure_002-d.pdf}
-     \includegraphics[width=0.19\textwidth]{figures/Figure_002-e.pdf}
-     \caption{Control regions enriched in the $\PW+\text{jets}$ background used in the maximum likelihood fit, together with the signal regions, to extract the results. The normalization of the predicted background distributions corresponds to the result of the global fit. These regions, defined with $\MT>80$\GeV,  control the
-yields of the $\PW+\text{jets}$ background in the $\Pgm\tauh$ and $\Pe\tauh$ channels.  The constraints obtained in the boosted categories are propagated to the VBF categories of the corresponding channels.}
-     \label{fig:CR1}
+     \includegraphics[width=0.19\textwidth]{higgs_to_taus/plots/Figure_002-a.pdf}
+     \includegraphics[width=0.19\textwidth]{higgs_to_taus/plots/Figure_002-b.pdf}
+     \includegraphics[width=0.19\textwidth]{higgs_to_taus/plots/Figure_002-c.pdf}
+     \includegraphics[width=0.19\textwidth]{higgs_to_taus/plots/Figure_002-d.pdf}
+     \includegraphics[width=0.19\textwidth]{higgs_to_taus/plots/Figure_002-e.pdf}
+     \caption{the high-$\MT$ control regions enriched in the $\PW+\text{jets}$ background used in 
+the maximum likelihood fit, together with the signal regions, to extract the results. 
+The normalization of the predicted background distributions corresponds to the result of 
+the global fit. These regions, defined with $\MT>80$\GeV, control the yields of the 
+$\PW+\text{jets}$ background in the $\Pgm\tauh$ and $\Pe\tauh$ channels.  
+The constraints obtained in the boosted categories are propagated to the VBF categories 
+of the corresponding channels.}
+     \label{fig:htt_wj_CR1}
 \end{figure*}
 
 
-The QCD multijet events constitute another important source of reducible background in the $\ell \tauh$ channels, and it is entirely estimated from data. Various control samples are constituted to estimate the shape and the yield of the QCD multijet background in these channels, as explained below:
+The QCD multijet events constitute another important source of reducible background 
+in the $\ell \tauh$ and $\tauh\tauh$ channels, and it is entirely estimated from data. Various control samples are constituted to estimate the shape and the yield of the QCD multijet background in these channels, as explained below:
 \begin{enumerate}
 \item The raw yield is extracted using a sample where the
 $\ell$ and the $\tauh$ candidates have the same sign. Using this sample, the QCD multijet process is estimated from data by subtracting the contribution of the Drell--Yan, \ttbar, diboson,
@@ -526,12 +532,29 @@ The contributions from diboson and single top quark production are estimated fro
 \pagebreak
 
 \section{MC Corrections}
+\label{sec:mc_corrections}
 \subsection{Pileup Reweighting}
 \subsection{Tau ID Efficiency}
 \subsection{Lepton ID and Isolation}
 \subsection{Trigger Efficiencies}
 \subsection{Recoil Corrections}
 \subsection{Reweighting Drell-Yan to Data}
+
+The $\PZ/\Pgg^*\to\Pgm\Pgm$ control region used events
+from the Single Muon PD and required the presence of two well-identified
+muons with $\pt > 25 \GeV$ and an invariant mass between 70 and 110\GeV.
+With this selection criteria over 99\% of the events are attributed to
+$\PZ/\Pgg^*\to\Pgm\Pgm$ decays.
+
+
+Differences in the distributions of $m_{\ell\ell/\Pgt\Pgt}$ and $\pt(\ell\ell/\Pgt\Pgt)$ in data and in simulations are observed in this control region, and 2D weights based on these variables are derived and applied to simulated $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$ events in the signal region of the analysis. 
+In addition, corrections depending on $\mjj$ are derived from the $\PZ/\Pgg^*\to\Pgm\Pgm$ region and applied to the $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$ simulation for events with at least two jets passing the VBF category selection criteria. After this reweighting, good agreement between data in the $\PZ/\Pgg^*\to\Pgm\Pgm$ region and simulation is found for all other variables.
+The simulated sample is split, on the basis of the matching between objects at the generator and at the detector levels,
+into events with prompt leptons (muons or electrons), hadronic decays of the $\Pgt$ leptons,
+and jets or misidentified objects at the detector level that do not have corresponding objects
+at generator level within $\Delta R < 0.2$.
+The electroweak production of $\PZ$ bosons in association with two jets is also taken into account in the analysis; it
+contributes up to 8\% of the $\PZ$ boson production in the VBF category.
 \subsection{Tau Energy Correction}
 \subsection{Generator Event Weights}
 \subsection{Luminosity}
