@@ -417,6 +417,7 @@ data is approximately 27 interactions per bunch crossing.
 
 
 \section{Background Estimation}
+\label{sec:background_estimation}
 The largest irreducible source of background is the Drell--Yan production
 of $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$. Proper shape and normalization for this
 leading background is critical is critical to the success of the analysis.
@@ -704,12 +705,13 @@ number of pileup interactions per event.
 
 
 \subsection{Tau Identification Efficiency}
+\label{sec:htt_tau_id_eff}
 The reconstruction efficiency for hadronically decaying taus is observed to be different in data and in simulated samples.
 Correction factors are derived by the Tau POG using the $\Pgm\tauh$ channel using a tag-and-probe method. Essentially,
 the Tau ID Efficiency measurement selects $\PZ/\Pgg^*\to\Pgt\Pgt\to\Pgm\tauh$ events on the $\PZ$
 mass peak and performs a fit with the $\PZ\to\Pgm\tauh$ process treated as a signal. The degree
 to which the $\PZ\to\Pgm\tauh$ process is scaled up to down is the resulting Tau ID Efficiency
-scale factor. The measured scale factor is 0.95 $\pm$ 0.05 for all $\tauh$ passing \texttt{Tight Tau MVA}.
+scale factor. The measured scale factor is 0.95 $\pm$ 5\% for all $\tauh$ passing \texttt{Tight Tau MVA}.
 This correction factor is applied to all simulated $\tauh$ which are matched at the generator
 level to $\tau$ leptons.
 
@@ -772,7 +774,7 @@ Comparison of the trigger efficiencies for the \texttt{HLT\_DoubleMediumIsoPFTau
 which was active in data during eras B-G. The efficiency was measured using tag-and-probe in the
 $\Pgm\tauh$ final state. The efficiency is measured for a single leg of the double-$\tauh$ at a time
 with a muon+$\tauh$ monitoring trigger. The efficiencies shown here are used in the $\tauh\tauh$ channel.
-The specific distribution shown is for real $\tau$ leptons and includes all used decay modes.
+The specific distribution shown is for genuine $\tau$ leptons and includes all used decay modes.
 }
      \label{fig:htt_tt_trig}
 \end{figure*}
@@ -845,7 +847,7 @@ in statistical power is often the trade off for increased precision in the model
 background or signal process.
 
 
-\subsection{Luminosity}
+\subsection{Luminosity Weighting}
 The event weights for simulated events are scaled to the expected yields for each sample. A per-sample
 weight (W) is defined based on the number of generated events (N), the best theory predicted cross section
 for the process ($\sigma$), and the integrated luminosity of the dataset being modeled 
@@ -858,21 +860,51 @@ for the process ($\sigma$), and the integrated luminosity of the dataset being m
 For samples with negative generator weights, N is redefined as the sum total of the event weights to
 properly account for the negative event weights.
 
-\pagebreak
+
+
 
 \section{Systematic Uncertainties}
 \label{sec:htt_systematics}
 
-\subsection{Uncertainties related to object reconstruction and identification}
+The systematic uncertainty model for the $\htt$ study was critical to the success of the analysis.
+The goal of the analysis was to reach an observed significane for the Higgs Boson of 5.0$\sigma$.
+To achieve this the description of the expected background processes and Higgs Boson signal
+needed to be as close to perfect as possible. The previous Monte Carlo Reweighting 
+section~\ref{sec:mc_corrections} detailed this process. Many of the corrections and weights applied
+to the simulated samples have associated unceratinties which must be fully represented in 
+global fit. Other unceratinties come from the measurement of the data itself such as the uncertainty
+on the Integrated Luminosity. In addition to these, there are also theoretical uncertainties on
+aspects such as the production cross sections for the simulated backgrounds and Higgs Boson signal
+samples. These are all detailed in the sections below.
 
-The overall uncertainty in the $\tauh$ identification efficiency for genuine $\tauh$ leptons is 5\%, 
-which has been measured with a tag-and-probe method in $\PZ\to\Pgt\Pgt$ events.
-This number is not fully correlated among the di-$\Pgt$ channels because the $\tauh$ candidates are required to pass
-different working points of the discriminators that reduce the misidentification rate of electrons and muons as $\tauh$ candidates.
+
+\subsection{Object Reconstruction and Identification Uncertainties}
+The overall uncertainty in the $\tauh$ identification efficiency for genuine $\tauh$ leptons is 5\%
+as was mentioned in the Tau Identification Efficiency section~\ref{sec:htt_tau_id_eff} previously.
+Five percent is not fully correlated among the di-$\Pgt$ channels because the $\tauh$ candidates 
+are required to pass different selection criteria specifically for the discriminators that reduce 
+the misidentification rate of electrons and muons as $\tauh$ candidates.
+
+In the decay channels with muons or electrons, the uncertainties in the muon and electron identification, isolation, and 
+trigger efficiencies lead to the rate uncertainty of 2\% for both muons and electrons.
+
+
+\subsection{Trigger Efficiency Uncertainties}
 The trigger efficiency uncertainty per $\tauh$ candidate amounts to an additional 5\%, which leads to a total 
 trigger uncertainty of 10\% for processes estimated from simulation in the $\tauh\tauh$ decay channel. This 
 uncertainty has also been measured with a tag-and-probe method in $\PZ\to\Pgt\Pgt$ events.
 
+
+\subsection{Tau Fake Rate}
+For events where muons or electrons are misidentified as $\tauh$ candidates, essentially $\PZ\to \Pgm\Pgm$ events in 
+the $\Pgm\tauh$ decay channel and $\PZ\to\Pe\Pe$ events in the $\Pe\tauh$ decay channel, the $\tauh$ identification leads 
+to rate uncertainties of 25 and 12\%, respectively, per reconstructed $\tauh$ decay mode. Using $\mvis$ and the reconstructed 
+$\tauh$ decay mode as the observables in the 0-jet category of the $\Pgm\tauh$ and $\Pe\tauh$ channels helps reduce the 
+uncertainty after the signal extraction fit: the uncertainty in the rate of muons or electrons misidentified as $\tauh$ 
+becomes of the order of 5\%. 
+
+\subsection{Energy Scales}
+\subsubsection{Tau Energy Scale}
 An uncertainty of 1.2\% in the visible energy scale of genuine $\tauh$ leptons affects both the distributions and the
 signal and background yields. It is uncorrelated among the 1-prong, 1-prong + $\PGpz$, and
 3-prong decay modes.
@@ -891,22 +923,10 @@ the visible energy scale of genuine $\tauh$ leptons is fully correlated for all 
 same decay mode, irrespective of their $\pt$ and $\eta$. The uncertainties in the visible energy scale for genuine 
 $\tauh$ leptons together contribute an uncertainty of 5\% to the measurement of the signal strength.
 
-In the 0-jet category of the $\Pgm\tauh$ and $\Pe\tauh$ channels, the relative contribution of $\tauh$ in a given
-reconstructed decay mode is allowed to fluctuate by 3\% to account for the possibility that the reconstruction and
-identification efficiencies are different for each decay mode. This uncertainty has been measured in a region enriched 
-in $\PZ\to\Pgt\Pgt$ events with one $\Pgt$ lepton decaying hadronically and the other one decaying to a muon, by 
-comparing the level of agreement in exclusive bins of the reconstructed $\tauh$ decay mode, after adjusting the inclusive 
-normalization of the $\PZ\to\Pgt\Pgt$ simulation to its best-fit value. The effect of migration between the reconstructed 
-$\tauh$ decay modes is negligible in other categories, where
-all decay modes are treated together.
 
-For events where muons or electrons are misidentified as $\tauh$ candidates, essentially $\PZ\to \Pgm\Pgm$ events in 
-the $\Pgm\tauh$ decay channel and $Z\to \Pe\Pe$ events in the $\Pe\tauh$ decay channel, the $\tauh$ identification leads 
-to rate uncertainties of 25 and 12\%, respectively, per reconstructed $\tauh$ decay mode. Using $\mvis$ and the reconstructed 
-$\tauh$ decay mode as the observables in the 0-jet category of the $\Pgm\tauh$ and $\Pe\tauh$ channels helps reduce the 
-uncertainty after the signal extraction fit: the uncertainty in the rate of muons or electrons misidentified as $\tauh$ 
-becomes of the order of 5\%. The energy scale uncertainty for muons or electrons
- misidentified as $\tauh$ candidates is 1.5 or 3\%, respectively, and is uncorrelated between reconstructed $\tauh$ decay
+\subsubsection{Energy Scale for Fake Taus}
+The energy scale uncertainty for muons or electrons
+misidentified as $\tauh$ candidates is 1.5 or 3\%, respectively, and is uncorrelated between reconstructed $\tauh$ decay
 modes. The fit constrains these uncertainties to about one third of their initial values. For events where quark- or 
 gluon-initiated jets are misidentified as $\tauh$ candidates, a linear uncertainty that increases by 20\% per 100\GeV 
 in $\tauh$ $\pt$ accounts for a potential mismodeling of the jet$\to\tauh$ misidentification rate as a
@@ -914,19 +934,12 @@ function of the $\tauh$ $\pt$ in simulations. The uncertainty has been determine
 events, using events with a muon and a $\tauh$ candidate in the final state, characterized by a large transverse mass 
 between the $\ptmiss$ and the muon~\cite{Khachatryan:2015dfa,CMS-PAS-TAU-16-002}.
 
-In the decay channels with muons or electrons, the uncertainties in the muon and electron identification, isolation, and 
-trigger efficiencies lead to the rate uncertainty of 2\% for both muons and electrons.
-The uncertainty in the electron energy scale, which amounts to 2.5\% in the endcaps and 1\% in the barrel of the detector, 
-is relevant only in the $\Pe\Pgm$ decay channel, where it affects the final distributions.
-In all channels, the effect of the uncertainty in the muon energy scale is negligible.
-
+\subsubsection{Jet Energy Scale}
 The uncertainties in the jet energy scale depend on the \pt and $\eta$ of the jet~\cite{CMS-JME-10-011}.
-They are propagated to the computation of the number of jets, which affects the repartition of events between the 0-jet, 
-VBF, and boosted categories, and to the computation of $\mjj$, which is one of the observables in the VBF category.
+They are propagated to the computation of the number of jets, which affects the categorization of events between the 0-jet, 
+VBF, and Boosted categories, and to the computation of $\mjj$, which is one of the observables in the VBF category.
 
-The rate uncertainty related to discarding events with a b-tagged jet in the $\Pe\Pgm$ decay channel is up to
-5\% for the $\ttbar$ background. The uncertainty in the mistagging rate of gluon and light-flavor jets is negligible.
-
+\subsubsection{MET Energy Scale}
 The \etvecmiss scale uncertainties~\cite{CMS-JME-12-002}, which are computed event-by-event, affect the normalization of 
 various processes through the event selection, as well as their distributions through the propagation of these uncertainties 
 to the di-$\Pgt$ mass $\mtt$. The \etvecmiss scale uncertainties arising from unclustered energy deposits in the detector 
@@ -935,8 +948,32 @@ come from four independent sources related to the tracker, ECAL, HCAL, and forwa
 uncertainties in the \etvecmiss calculation, are taken into account. The combination of both sources of uncertainties in 
 the \etvecmiss scale leads to an uncertainty of about 10\% in the measured signal strength.
 
-\subsection{Background estimation uncertainties}
 
+
+\subsubsection{Electron And Muon Energy Scale}
+The uncertainty in the electron energy scale, which amounts to 2.5\% in the endcaps and 1\% in the barrel of the detector, 
+is relevant only in the $\Pe\Pgm$ decay channel, where it affects the final distributions.
+In all channels, the effect of the uncertainty in the muon energy scale is negligible.
+
+
+\subsection{b-Tagging Uncertainties}
+The rate uncertainty related to discarding events with a b-tagged jet in the $\Pe\Pgm$ decay channel is up to
+5\% for the $\ttbar$ background. The uncertainty in the mistagging rate of gluon and light-flavor jets is negligible.
+
+
+
+%In the 0-jet category of the $\Pgm\tauh$ and $\Pe\tauh$ channels, the relative contribution of $\tauh$ in a given
+%reconstructed decay mode is allowed to fluctuate by 3\% to account for the possibility that the reconstruction and
+%identification efficiencies are different for each decay mode. This uncertainty has been measured in a region enriched 
+%in $\PZ\to\Pgt\Pgt$ events with one $\Pgt$ lepton decaying hadronically and the other one decaying to a muon, by 
+%comparing the level of agreement in exclusive bins of the reconstructed $\tauh$ decay mode, after adjusting the inclusive 
+%normalization of the $\PZ\to\Pgt\Pgt$ simulation to its best-fit value. The effect of migration between the reconstructed 
+%$\tauh$ decay modes is negligible in other categories, where
+%all decay modes are treated together.
+
+
+\subsection{Background Estimation Uncertainties}
+\subsubsection{Drell--Yan Uncertainties}
 The $\PZ\to\Pgt\Pgt$ background yield and distribution are corrected based on the agreement between data and the 
 background prediction in a control region enriched in the $\PZ\to\Pgm\Pgm$ events, as explained in 
 Section~\ref{sec:background_estimation}. The extrapolation uncertainty related to kinematic differences in the selections 
@@ -945,21 +982,24 @@ on the category. In addition, shape uncertainties related to the uncertainties i
 they reach 20\% for some ranges of $\mjj$ in the VBF category. These uncertainties arise from the different level of 
 agreement between data and simulation in the $\PZ\to\Pgm\Pgm$ control region obtained when varying the threshold on the muon $\pt$.
 
-The uncertainties in the $\PW+ \text{jets}$ event yield determined from the control regions in the $\Pgm\tauh$ and 
+\subsubsection{$\PW+\text{jets}$ Uncertainties}
+The uncertainties in the $\PW+\text{jets}$ event yield determined from the control regions in the $\Pgm\tauh$ and 
 $\Pe\tauh$ channels account for the statistical uncertainty of the observed data, the statistical uncertainty of the 
-$\PW+ \text{jets}$ simulated sample, and the systematic uncertainties associated with background processes in these 
+$\PW+\text{jets}$ simulated sample, and the systematic uncertainties associated with background processes in these 
 control regions. Additionally, an uncertainty in the extrapolation  of the constraints from the high-\MT 
 ($\MT>80\GeV$) control regions to the low-\MT ($\MT<50\GeV$) signal regions is additionally taken into account. 
 The latter ranges from 5 to 10\%, and is obtained by comparing the \MT distributions of simulated and observed 
 $\PZ\to\Pgm\Pgm$ events where one of the muons is removed and the \etvecmiss adjusted accordingly, to mimic 
 $\PW+\text{jets}$ events. The reconstructed invariant mass of the parent boson in the rest frame is multiplied by the 
 ratio of the $\PW$ and $\PZ$ boson masses before removing the muon.
+
 In the $\tauh\tauh$ and $\Pe\Pgm$ channels, where the $\PW+\text{jets}$ background is estimated from simulation, the 
 uncertainty in the yield of this small background is equal to 4 and 20\%, respectively. The larger value for the 
 $\Pe\Pgm$ channel includes uncertainties in the misidentification rates of jets as electrons and muons, whereas the 
 uncertainty in the misidentification rate of jets as $\tauh$ candidates in the $\tauh\tauh$ channel is accounted for 
 by the linear uncertainty as a function of the $\tauh$ $\pt$ described earlier.
 
+\subsubsection{QCD Multijet Uncertainties}
 The uncertainty in the QCD multijet background yield in the $\Pe\Pgm$ decay channel ranges from 10 to 20\%, depending 
 on the category. It corresponds to the uncertainty in the extrapolation factor from the same-sign to opposite-sign 
 region, measured in events with anti-isolated leptons. In the $\Pgm\tauh$ and $\Pe\tauh$ decay channels, uncertainties from 
@@ -971,21 +1011,24 @@ uncertainties obtained from fitting the dedicated control regions with $\tauh$ c
 criteria, and of extrapolation uncertainties to the signal region ranging from 3 to 15\% and accounting for limited 
 disagreement between prediction and data in signal-free regions with various loose isolation criteria.
 
-The yield of events in a $\ttbar$-enriched region is added to the maximum likelihood fit to control the normalization of this process
+\subsubsection{\ttbar Uncertainties}
+The yield of events in a \ttbar-enriched region is added to the maximum likelihood fit to control the normalization of this process
 in the signal region, as explained in Section~\ref{sec:background_estimation}. The uncertainty from the fit in the 
 control region is automatically propagated to the signal regions, resulting in an uncertainty of about 5\% on the 
-$\ttbar$ cross section. Per-channel uncertainties related to the object reconstruction and identification are 
-considered when extrapolating from the $\Pe\Pgm$ final state to the others. The $\ttbar$ simulation is corrected 
+\ttbar cross section. Per-channel uncertainties related to the object reconstruction and identification are 
+considered when extrapolating from the $\Pe\Pgm$ final state to the others. The \ttbar simulation is corrected 
 for differences in the top quark $\pt$ distributions observed between data and simulation, and an uncertainty 
 in the correction is taken into account.
+
+\subsubsection{Other Background Uncertainties}
+The uncertainty in the integrated luminosity amounts to 2.5\%~\cite{CMS-PAS-LUM-17-001}.
 
 The combined systematic uncertainty in the background yield arising from diboson and single top quark production 
 processes is estimated to be 5\%
 on the basis of recent CMS measurements~\cite{Khachatryan:2016tgp,Sirunyan:2016cdg}.
 
 
-\subsection{Signal prediction uncertainties}
-
+\subsection{Theoretical Uncertainties for Higgs Boson}
 The rate and acceptance uncertainties for the signal processes related to the theoretical calculations are 
 due to uncertainties in the PDFs, variations of the QCD renormalization and factorization scales,
 and uncertainties in the modelling of parton showers.
@@ -1019,13 +1062,7 @@ the calculations, are considered for signal events with $\pth>150\GeV$.
 Theory uncertainties in the signal prediction contribute an uncertainty of 10\% to the measurement of the signal strength.
 
 
-
-
-
 \subsection{Other uncertainties}
-
-The uncertainty in the integrated luminosity amounts to 2.5\%~\cite{CMS-PAS-LUM-17-001}.
-
 Uncertainties related to the finite number of simulated events, or to the limited number of events in data control 
 regions, are taken into account. They are considered for all bins of the distributions used to extract the results 
 if the uncertainty is larger than 5\%. They are uncorrelated across different samples, and across bins of a single 
@@ -1033,12 +1070,13 @@ distribution. Taken together, they contribute an uncertainty of about 12\% to th
 coming essentially from the VBF category, where the background templates are less
 populated than in the other categories.
 
-The systematic uncertainties considered in the analysis are summarized in Table~\ref{tab:uncertainties}.
+The systematic uncertainties considered in the analysis are summarized in Table~\ref{tab:htt_uncertainties}.
 
 \begin{table*}[!ht]
 \centering
 \newcolumntype{x}{D{,}{\text{--}}{2.2}}
-\begin{small}
+%\begin{small}
+\begin{footnotesize}
 \begin{tabular}{llx}
 Source of uncertainty & Prefit & \multicolumn{1}{c}{Postfit (\%) }\\
 \hline
@@ -1076,24 +1114,14 @@ QCD multijet estimation        & Normalization ($\Pe\Pgm$): 10--20\% & 5,20\% \\
  Signal theoretical uncertainty  & Up to 20\% & \multicolumn{1}{c}{\NA} \\
 \hline
 \end{tabular}
-\end{small}
-\label{tab:uncertainties}
+%\end{small}
+\end{footnotesize}
+\label{tab:htt_uncertainties}
 \caption{Sources of systematic uncertainty. If the global fit to the signal and control regions, described 
 in the next section, significantly constrains these uncertainties, the values of the uncertainties after 
 the global fit are indicated in the third column. The acronyms CR and ID stand for control region and 
 identification, respectively.}
 \end{table*}
-\subsection{Luminsity}
-\subsection{Lepton ID and Isolation}
-\subsection{QCD Estimation}
-\subsection{ttbar Estimation}
-\subsection{Tau Take Rate}
-\subsection{Energy Scales}
-\subsubsection{Tau Energy Scale}
-\subsubsection{Jet Energy Scale}
-\subsubsection{MET Energy Scale}
-\subsection{Drell--Yan Reweighting}
-\subsection{Theoretical Uncertainties for Higgs Boson}
 
 
 
