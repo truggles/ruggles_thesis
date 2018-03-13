@@ -715,7 +715,29 @@ level to $\tau$ leptons.
 
 
 \subsection{Tau Energy Correction}
+The energy of each simulated $\tauh$, which matches to a $\tau$ at the generator level, is corrected
+to better represent the observed energy of $\tauh$ in data. The correction is measured and applied
+as a function of $\tauh$ decay mode with each correction listed in table~\ref{tab:htt_tec}. The measurement
+of this correction is performed in the $\Pgm\tauh$ final state by the Tau POG. The effect of
+the shifted $\tauh$ energy is fully propagated through to the \etvecmiss for each event.
 
+\begin{table*}[htbp]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+$\tauh$ Decay Mode   &   Energy Correction   \\
+\hline
+1-prong            &   -1.8\%  $\pm$ 1.2\%  \\
+1-prong+$\PGpz$    &   +1.0\%  $\pm$ 1.2\%  \\
+3-prong            &   +0.4\%  $\pm$ 1.2\%  \\  
+\hline
+\end{tabular}
+\label{tab:htt_tec}
+\caption{
+Energy corrections applied to simulated true $\tauh$. The energy corrections are measured
+and applied depending on the reconstructed decay mode of the $\tauh$.
+}
+\end{table*}
 
 
 
@@ -785,12 +807,56 @@ bosons. Electroweak produced $\PZ$ contributes up to 8\% of the $\PZ$ boson prod
 
 
 
-\subsection{Recoil Corrections}
+\subsection{Hadronic Recoil Corrections}
+Recoil corrections are applied to the Drell--Yan and $\PW+\text{jets}$ simulated background events 
+as well as the simulated signal events for 
+Higgs Bosons produced via the gluon fusion or VBF mechanisms. Recoil corrections correct for the
+mismodeling of \etvecmiss in the simulated samples. A variable, $\vec{U}$, is defined as the 
+vectorial difference of the measured \etvecmiss and the total transverse momentum of neurtrinos
+originating from the decay of the boson.
+\begin{equation}
+\vec{U} = \etvecmiss - \vec{p}_{\text{T},\nu}
+\end{equation}
 
+For $\PZ$ bosons decaying leptonically to $\ell$, $\vec{U}$ can be expressed as,
+
+\begin{equation}
+\vec{U} = \vec{p}_{\text{T,B}} - \vec{H}_{\text{T}}
+\end{equation}
+
+where $\vec{H}_{\text{T}}$ is the transverse momentum of hadronic recoil and $\vec{p}_{\text{T,B}}$
+is the leptonic recoil and is the transverse momentum of leptonically decaying $\PZ$, $\PW$, or Higgs Boson.
+
+Like the Drell--Yan Reweighting mentioned above, $\vec{U}$ is measured in $\PZ\to\Pgm\Pgm$ events.
+It is observed that the $\vec{H}_{\text{T}}$ from simulation in $\PZ\to\Pgm\Pgm$ does not align with
+the $\vec{H}_{\text{T}}$ from data. A reweighting method is derived to align the simulated distribution with 
+data. The $\PZ/\Pgg^*\to\Pgm\Pgm$
+final state is used because of the absence of neutrinos in the $\PZ$ decay making the comparison of
+the simulation to data and derivation of the reweighting technique far more simple. For the measurement
+and application of the corrections $\vec{U}$ is decomposed into two components, one which is
+paralled to $\vec{p}_{\text{T,B}}$ ($\vec{U_{1}}$) and one which is orthogonal ($\vec{U_{2}}$).
 
 
 \subsection{Generator Event Weights}
+Generator weights are applied on a per event basis. Samples produced with the \aMCATNLO generator
+contain both positive and negative event wieghts, as discussed in the Simulation chapter~\ref{sec:simulation}.
+Negative generator weights in a sample reduces the effective statists of that sample. This reduction
+in statistical power is often the trade off for increased precision in the modeling of a choosen
+background or signal process.
+
+
 \subsection{Luminosity}
+The event weights for simulated events are scaled to the expected yields for each sample. A per-sample
+weight (W) is defined based on the number of generated events (N), the best theory predicted cross section
+for the process ($\sigma$), and the integrated luminosity of the dataset being modeled 
+($\mathcal{L}$), 35.9\fbinv.
+
+\begin{equation}
+\text{W} \, = \mathcal{L} \, \,  \frac{\sigma}{\text{N}}
+\end{equation}
+
+For samples with negative generator weights, N is redefined as the sum total of the event weights to
+properly account for the negative event weights.
 
 \pagebreak
 
