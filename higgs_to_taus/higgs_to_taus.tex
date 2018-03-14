@@ -703,7 +703,8 @@ Corrections are applied to the simulated Monte Carlo samples to help correct for
 between observed data and expectations based on simulation. Many of these corrections are designed
 to correct differences in reconstruction and identification efficiencies for objects between data
 and simulation. These corrections are derived in
-fully orthogonal regions from the analysis signal regions when ever possible. There are however many
+fully orthogonal regions from the analysis signal regions when ever possible. There are however a
+number of
 instances where the $\Pgm\tauh$ channel is used to derive corrections. In these cases the measurement
 region used to derive corrections will overlap with a subset of the analysis signal regions. This
 overlap is discussed in the Systematic Uncertainties section~\ref{sec:htt_systematics}.
@@ -713,15 +714,15 @@ overlap is discussed in the Systematic Uncertainties section~\ref{sec:htt_system
 During 2016 data taking, the LHC delivered \pp collisions to CMS with an average of approximately 27
 interactions per bunch crossing. Monte Carlo samples are generated with additional pileup interactions
 added to the hard-scattering process for each event. A reweighting technique is used which improves
-the aligment between the pileup interactions in data and those in Monte Carlo. This is critical because
-there are some reconstructed event characteristics such as \etvecmiss which can be influenced by the
-number of pileup interactions per event.
+the aligment between the pileup interactions in data and those in simulation. This is critical because
+there are some reconstructed event characteristics such as \etvecmiss which have different performance
+in resolution and response depending on the number of pileup interactions in an event.
 
 
 \subsection{Tau Identification Efficiency}
 \label{sec:htt_tau_id_eff}
 The reconstruction efficiency for hadronically decaying taus is observed to be different in data and in simulated samples.
-Correction factors are derived by the Tau POG using the $\Pgm\tauh$ channel using a tag-and-probe method. Essentially,
+Correction factors are derived by the Tau POG in the $\Pgm\tauh$ channel using a tag-and-probe method. Essentially,
 the Tau ID Efficiency measurement selects $\PZ/\Pgg^*\to\Pgt\Pgt\to\Pgm\tauh$ events on the $\PZ$
 mass peak and performs a fit with the $\PZ\to\Pgm\tauh$ process treated as a signal. The degree
 to which the $\PZ\to\Pgm\tauh$ process is scaled up to down is the resulting Tau ID Efficiency
@@ -751,7 +752,7 @@ $\tauh$ Decay Mode   &   Energy Correction   \\
 \end{tabular}
 \label{tab:htt_tec}
 \caption{
-Energy corrections applied to simulated true $\tauh$. The energy corrections are measured
+Energy corrections applied to simulated genuine $\tauh$. The energy corrections are measured
 and applied depending on the reconstructed decay mode of the $\tauh$.
 }
 \end{table*}
@@ -778,7 +779,7 @@ requires one well identified and isolated muon per event. The muon is required t
 Events with at least one $\tauh$ which passes \texttt{decay mode finding} and \texttt{Tight Tau MVA} isolation
 constitute the denominator selection for the efficiency measurement. Events where the $\tauh$
 fires the trigger under study are recorded as passing events. The ratio of passing events to
-denominator events defines the trigger efficiency. Trigger efficiencies for are measured and applied as 
+denominator events defines the trigger efficiency. Trigger efficiencies are measured and applied as 
 a function of $\tauh$: $\pt$, decay mode, and generator matching status. Figure~\ref{fig:htt_tt_trig}
 shows the trigger efficiency versus $\pt$ for the double-$\tauh$ trigger.
 
@@ -788,7 +789,7 @@ shows the trigger efficiency versus $\pt$ for the double-$\tauh$ trigger.
      \caption{
 Comparison of the trigger efficiencies for the \texttt{HLT\_DoubleMediumIsoPFTau35\_Trk1\_eta2p1\_Reg}
 which was active in data during eras B-G. The efficiency was measured using tag-and-probe in the
-$\Pgm\tauh$ final state. The efficiency is measured for a single leg of the double-$\tauh$ at a time
+$\Pgm\tauh$ final state. The efficiency is measured for a single leg of the double-$\tauh$
 with a muon+$\tauh$ monitoring trigger. The efficiencies shown here are used in the $\tauh\tauh$ channel.
 The specific distribution shown is for genuine $\tau$ leptons and includes all used decay modes.
 }
@@ -797,9 +798,9 @@ The specific distribution shown is for genuine $\tau$ leptons and includes all u
 
 The trigger efficiencies for electrons and muons are also measured with a tag-and-probe method.
 Similar to the electron and muon identification and isolation efficiencies, the 
-electron (muon) efficiencies trigger are measured in $\PZ\to\Pe\Pe$ ($\PZ\to\Pgm\Pgm$) events.
-The denominator selection for the probe lepton requires that the same identification and
-isolation criteria used in the analysis be met. The efficiencies are measured as a function of
+electron (muon) trigger efficiencies are measured in $\PZ\to\Pe\Pe$ ($\PZ\to\Pgm\Pgm$) events.
+The denominator selection for the probe lepton requires the same identification and
+isolation criteria used in the analysis. The efficiencies are measured as a function of
 lepton $\pt$ and $\eta$.
 
 
@@ -808,12 +809,12 @@ lepton $\pt$ and $\eta$.
 \label{sec:htt_dy_reweighting}
 The simulated Monte Carlo Drell--Yan sample used in the analysis is simulated at leading order (LO)
 using the \aMCATNLO generator discussed in section~\ref{sec:simulation}. To assess Monte Carlo to
-data agreement we use a dedicated $\PZ/\Pgg^*\to\Pgm\Pgm$ control region with high Drell--Yan purity.
-The $\PZ/\Pgg^*\to\Pgm\Pgm$ control region uses events from the Single Muon PD and requires the 
+data agreement a dedicated $\PZ/\Pgg^*\to\Pgm\Pgm$ control region with high Drell--Yan purity was used.
+The $\PZ/\Pgg^*\to\Pgm\Pgm$ control region selected events from the Single Muon PD and requires the 
 presence of two well-identified muons with $\pt > 25 \GeV$ and an invariant mass between 70 and 110\GeV.
 With this selection criteria over 99\% of the events are attributed to $\PZ/\Pgg^*\to\Pgm\Pgm$ decays.
 
-Differences in the distributions of $m_{\ell\ell/\Pgt\Pgt}$ and $\pt(\ell\ell/\Pgt\Pgt)$ between data and 
+Differences in the distributions of $m_{\ell\ell}$ and $\pt^{\ell\ell}$ between data and 
 in simulations are observed in this control region. To correct for this, 2D weights based on these variables 
 are derived and applied to simulated $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$ events in the signal region of the analysis. 
 In addition, corrections depending on $\mjj$ are derived from the $\PZ/\Pgg^*\to\Pgm\Pgm$ region and 
@@ -821,7 +822,7 @@ applied to the $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$ simulation for events with at l
 VBF category selection criteria. After this reweighting, good agreement between data in the 
 $\PZ/\Pgg^*\to\Pgm\Pgm$ region and simulation is found for all other variables used in the analysis.
 These derived corrections are also applied to the simulated samples of electroweak production of $\PZ$ 
-bosons. Electroweak produced $\PZ$ contributes up to 8\% of the $\PZ$ boson production in the VBF category.
+bosons. Electroweak produced $\PZ$ bosons contribute up to 8\% of the $\PZ$ boson production in the VBF category.
 
 
 
@@ -843,7 +844,7 @@ For $\PZ$ bosons decaying leptonically to $\ell$, $\vec{U}$ can be expressed as,
 \end{equation}
 
 where $\vec{H}_{\text{T}}$ is the transverse momentum of hadronic recoil and $\vec{p}_{\text{T,B}}$
-is the leptonic recoil and is the transverse momentum of leptonically decaying $\PZ$, $\PW$, or Higgs Boson.
+is the leptonic recoil and is the transverse momentum of leptonically decaying $\PZ$, $\PW$, or Higgs Bosons.
 
 Like the Drell--Yan Reweighting mentioned above, $\vec{U}$ is measured in $\PZ\to\Pgm\Pgm$ events.
 It is observed that the $\vec{H}_{\text{T}}$ from simulation in $\PZ\to\Pgm\Pgm$ does not align with
@@ -857,14 +858,14 @@ paralled to $\vec{p}_{\text{T,B}}$ ($\vec{U_{1}}$) and one which is orthogonal (
 
 \subsection{Generator Event Weights}
 Generator weights are applied on a per event basis. Samples produced with the \aMCATNLO generator
-contain both positive and negative event wieghts, as discussed in the Simulation chapter~\ref{sec:simulation}.
+contain both positive and negative event weights, as discussed in the Simulation chapter~\ref{sec:simulation}.
 Negative generator weights in a sample reduces the effective statists of that sample. This reduction
 in statistical power is often the trade off for increased precision in the modeling of a choosen
 background or signal process.
 
 
 \subsection{Luminosity Weighting}
-The event weights for simulated events are scaled to the expected yields for each sample. A per-sample
+The event weights for simulated events are scaled to the expected yields for each sample. A per-event
 weight (W) is defined based on the number of generated events (N), the best theory predicted cross section
 for the process ($\sigma$), and the integrated luminosity of the dataset being modeled 
 ($\mathcal{L}$), 35.9\fbinv.
@@ -890,8 +891,8 @@ section~\ref{sec:mc_corrections} detailed this process. Many of the corrections 
 to the simulated samples have associated unceratinties which must be represented in the
 global fit. Other unceratinties come from the measurement of the data itself such as the uncertainty
 on the integrated luminosity. In addition to these, there are also theoretical uncertainties on
-aspects such as the production cross sections for the simulated backgrounds and Higgs Boson signal
-samples. These are all detailed in the sections below.
+aspects such as the production cross sections for the simulated backgrounds and Higgs Boson signals. 
+These are all detailed in the sections below.
 
 
 \subsection{Integrated Luminosity Uncertainties}
@@ -901,15 +902,15 @@ on this 35.9\fbinv integrated luminosity value amounts to 2.5\%~\cite{CMS-PAS-LU
 
 \subsection{Object Reconstruction, Identification and Trigger Uncertainties}
 The total uncertainty in the $\tauh$ identification efficiency measurement for genuine $\tauh$ leptons is 
-5\% mentioned in the Tau Identification Efficiency section~\ref{sec:htt_tau_id_eff}.
-The $\tauh$ candidates are required to pass different $\tauh$ identification criteria per channel
-specifically aimed at reducing the chance of fakes $\tauh$ originating from the dominant background
+5\% mentioned in Section~\ref{sec:htt_tau_id_eff}.
+The $\tauh$ are required to pass different identification criteria per channel
+specifically aimed at reducing the chance of fake $\tauh$ originating from different background
 processes in each final state. Because of the different anti-$\Pe$ and anti-$\Pgm$ discriminators
 applied in each channel, the 5\% uncertainty is not fully correlated among all the di-$\Pgt$ channels.
 
 The trigger efficiency uncertainty per $\tauh$ candidate amounts to 5\%. This leads to a total 
 trigger uncertainty of 10\% for processes estimated from simulation in the $\tauh\tauh$ decay channel. 
-This uncertainty is based off of the tag-and-probe based trigger efficiency measurement in 
+This uncertainty is based off of the tag-and-probe trigger efficiency measurement in 
 $\PZ\to\Pgt\Pgt$ events detailed in section~\ref{sec:htt_trigger_eff}.
 
 In the decay channels with muons or electrons, the uncertainties for the muon and electron identification, 
@@ -918,7 +919,7 @@ isolation, and trigger efficiencies lead to a total rate uncertainty of 2\% for 
 
 \subsection{Tau Fake Rate}
 For events where muons or electrons are misidentified as $\tauh$ candidates, the $\tauh$ identification leads 
-to rate uncertainties of 25 and 12\%, respectively, per reconstructed $\tauh$ decay mode. These fake $\tauh$
+to rate uncertainties of 25\% and 12\%, respectively, per reconstructed $\tauh$ decay mode. These fake $\tauh$
 dominantly come from $\PZ\to\Pgm\Pgm$ events in the $\Pgm\tauh$ decay channel and $\PZ\to\Pe\Pe$ events 
 in the $\Pe\tauh$ decay channel. Using $\mvis$ and the reconstructed 
 $\tauh$ decay mode as the observables in the 0-jet category of the $\Pgm\tauh$ and $\Pe\tauh$ channels helps constrain these 
@@ -933,7 +934,7 @@ An uncertainty of 1.2\% in the visible energy scale of genuine $\tauh$ leptons a
 signal and background distributions and the expected yields. The 1.2\% uncertainty is treated as uncorrelated 
 among the different $\tauh$ decay modes: 1-prong, 1-prong+$\PGpz$, and 3-prong.
 The magnitude of the uncertainty was determined based on the uncertainties on the measured $\tauh$ energy 
-corrections, section~\ref{sec:htt_tec}. The measurement was conducted in the $\Pgm\tauh$ final state and
+corrections in Section~\ref{sec:htt_tec}. The measurement was conducted in the $\Pgm\tauh$ final state and
 does have some overlap with the $\Pgm\tauh$ channel signal regions. However, the event overlap is found to be
 less than 50\% between the $\tauh$ energy correction/visible $\tauh$ energy scale measurement region and the
 $\Pgm\tauh$ signal region used in this analysis.
@@ -947,7 +948,7 @@ Additionally, the higher number of events in the Monte Carlo simulations and the
 leads to regions with a high $\PZ\to\Pgt\Pgt$ event purity also contribute to the post-fit constraint on the
 visible tau energy scale.
 Even in the most Boosted analysis categories, reconstructed $\tauh$ candidates typically have moderate 
-$\pt$ ($\pt$ less than 100\GeV) and are
+$\pt$ (less than 100\GeV) and are
 found in the barrel region of the detector. Tracks are well measured in the CMS detector in this $\pt$ range.
 Therefore, the visible energy scale of genuine $\tauh$ leptons is fully correlated for all $\tauh$ leptons 
 reconstructed in the same decay mode, irrespective of their $\pt$ and $\eta$. The uncertainties in the 
@@ -963,18 +964,18 @@ gluon-initiated jets are misidentified as $\tauh$ candidates, a linear uncertain
 in $\tauh$ $\pt$ accounts for a potential mismodeling of the jet$\to\tauh$ misidentification rate as a
 function of the $\tauh$ $\pt$ in simulations. The uncertainty has been determined from a region enriched in $\PW+\text{jets}$ 
 events, using events in the $\Pgm\tauh$ final state, characterized by a large transverse mass 
-between the $\ptmiss$ and the muon~\cite{Khachatryan:2015dfa,CMS-PAS-TAU-16-002}.
+between the $\etvecmiss$ and the muon~\cite{Khachatryan:2015dfa,CMS-PAS-TAU-16-002}.
 
 \subsubsection{Jet Energy Scale}
-The uncertainties in the jet energy scale depend on the \pt and $\eta$ of the jet~\cite{CMS-JME-10-011}.
+The uncertainties in the jet energy scale depend on the $\pt$ and $\eta$ of the jet~\cite{CMS-JME-10-011}.
 They are factorized into 27 distinct uncorrelated contributions. These factorized uncertainties target jet related 
-mismodeling for different CMS subdetectors, namely ECAL and HCAL, uncertainties in jet energy correction timing dependance,
+mismodeling for different CMS subdetectors, namely ECAL and HCAL, uncertainties in jet energy corrections, timing dependance,
 high $\pt$ jet extrapolations uncertainties, and large $\abs\eta$ jet related uncertainties. The uncertainties
-affect the $\pt$ of each jet in an event. As the $\pt$ for each jet increasing or decreasing the 
+affect the $\pt$ of each jet in an event. As the $\pt$ for each jet increasing or decreasing, the 
 the number of jets with passing $\pt > 30\GeV$ is recomputed as is the $\mjj$ for each event. The adjusted number of
-jets and $\mjj$ are used to determine the new, uncertainty shifted, event categorization. For example,
+jets and $\mjj$ are used to determine the new, shifted, event categorization. For example,
 events can shift between the 0-jet and Boosted category if a jet has a $\pt$ value near 30\GeV that shifts into
-or out of categorization as a jet by the analysis. As $\mjj$ is shifted, the shifted $\mjj$ value is used when
+or out of categorization as a jet by the analysis (jet $\pt > 30\GeV$). As $\mjj$ is shifted, the shifted $\mjj$ value is used
 to plot the event in the 2D VBF distribution.
 
 
@@ -986,7 +987,7 @@ propagation of these uncertainties
 to the di-$\Pgt$ mass $\mtt$. The \etvecmiss scale uncertainties which have the largest impact on the signal significance
 in this analysis are from jet related uncertainties and unclustered energy deposits in the detector.
 The unclustered energy deposites come from four independent sources related to the tracker, ECAL, HCAL, and 
-forward calorimeters subdetectors. The jet related \etvecmiss scale uncertainties arise from uncertainties
+forward calorimeter subdetectors. The jet related \etvecmiss scale uncertainties arise from uncertainties
 in the jet energy scale measurement. As the scale of the jet energy is varied, these changes are propagated to
 the \etvecmiss. The combination of both sources of uncertainties in 
 the \etvecmiss scale leads to an uncertainty of about 10\% in the measured signal strength.
@@ -1024,7 +1025,7 @@ Section~\ref{sec:htt_dy_reweighting}. The extrapolation uncertainty related to k
 in the signal and control regions ranges between 3 and 10\%, depending
 on the category. Shape uncertainties related to the uncertainties in the applied corrections are considered.
 They reach 20\% for some ranges of $\mjj$ in the VBF category, but are more modest in the $\tauh\tauh$ channel where
-the uncertainties range from 0\% in the lowest $\mjj$ region to 6\% in the 500\GeV to 800\GeV region.
+the uncertainties range from 0\% in the lowest $\mjj$ region to 6\% in the $500\GeV < \mjj < 800\GeV$ region.
 These uncertainties arise from the different level of agreement between data and simulation in the 
 $\PZ\to\Pgm\Pgm$ control region obtained when varying the threshold on the muon $\pt$.
 
@@ -1051,7 +1052,7 @@ by the linear uncertainty as a function of the $\tauh$ $\pt$ described earlier.
 The uncertainty in the QCD multijet background yield in the $\ell\tauh$ and $\Pe\Pgm$ channels ranges from 10 to 20\%.
 They are category dependant and account for the uncertainty on the extrapolation from the same-sign measurement to 
 the opposite-sign signal regions. In the  $\ell\tauh$ channels, statistical uncertainties in the QCD multijet
-control regions are automatically taken into acount by the global fit of all control regions with the signal regions.
+control regions are automatically taken into acount by the global fit with the control regions and signal regions.
 
 In the $\tauh\tauh$ channel, the uncertainty in the QCD mutlijet background yield reflects a combination of the statistical
 uncertainties obtained from fitting the dedicated control regions with $\tauh$ candidates passing relaxed isolation 
@@ -1059,7 +1060,7 @@ criteria, and for extrapolation uncertainties to the signal region. Limited
 disagreement between prediction and data in signal-free regions with various loose isolation criteria is also accounted
 for in the QCD multijet uncertainties. 
 
-The level of a agreement for the $\tauh\tauh$ QCD multijet estimation method
+The level of agreement for the $\tauh\tauh$ QCD multijet estimation method
 is determined in signal free regions where the $\tauh$ have loosened isolation requirements and at least
 one of the $\tauh$ must not meet the signal region \texttt{Tight Tau MVA} criteria. A schematic depiction
 of the signal region, QCD multijet control region, and method validation regions are in 
@@ -1072,16 +1073,16 @@ figure~\ref{fig:htt_tautau_qcd_schematic2}.
      \caption{
 (Left) For reference, previously shown signal region and QCD multijet relaxed isolation estimation region.
 (Right) Schematic of the further loosened MVA isolation selections used for the QCD multijet validation.
-The \texttt{Tighter Validation Region} (red) in the left plot is treated just like the \texttt{Signal Isolation Region}
-on the right plot. The \texttt{Looser Validation Region} (pink) in the left plot is treated just like the 
-\texttt{Looser Isolation Region} on the right plot. With both validation regions constructed to not overlap wit the
+The \texttt{Tighter Validation Region} (red) in the right plot is treated just like the \texttt{Signal Isolation Region}
+on the left plot. The \texttt{Looser Validation Region} (pink) in the right plot is treated just like the 
+\texttt{Looser Isolation Region} on the left plot. With both validation regions constructed to not overlap with the
 signal region, the method closure can be assessed.
      }
      \label{fig:htt_tautau_qcd_schematic2}
 \end{figure*}
 
 The QCD multijet estimation method in the $\tauh\tauh$ channel is found to agree well when validated using closure
-checks in the loosned isolation control regions depicted in figure~\ref{fig:htt_tautau_qcd_schematic2}.
+checks in the loosened isolation control regions depicted in figure~\ref{fig:htt_tautau_qcd_schematic2}.
 Closure is estimated by comparing the ``predicted'' QCD multijet yield in the opposite-sign
 \texttt{Tighter Validation Region} against the ``measured'' QCD multijet yield in the same region. 
 The ``measured'' QCD multijet yield in the \texttt{Tighter Validation Region} is calculated as 
@@ -1109,13 +1110,13 @@ Boosted  & 0.99 & 1.3\%  & 2.3\% & 1.4\%  & 2.7\%  \\\hline
 \caption{
 QCD multijet uncertainties for the $\tauh\tauh$ channel for each category. The ``Estimate'' /
 ``Predicted'' column is the closure found for the QCD multijet estimation method validation.
-The statistical uncertainty on the closure value is found from adding the statistical uncertainty
+The statistical uncertainty on the closure value is found from adding in quadriture the statistical uncertainty
 of each of the four regions used in the comparison (SS vs. OS and Looser vs. Tighter Isolation).
-The total systematic uncertainty is calculated as the deviation from unity for the closure summed
+The QCD method systematic uncertainty is calculated as the deviation from unity for the closure summed
 with the statistical uncertainty on the closure test. The QCD method statisitcal uncertainty
 is derived from the uncertainty in the same-sign regions used to calculate the loose-to-tight
-scale factor. The final QCD total uncertainty is the sum in quadriture of the QCD method systematic
-uncertainty and QCD method statitical uncertainty.
+scale factor. The final uncertainty values used in the analysis, the QCD total uncertainty is the sum in 
+quadriture of the QCD method systematic uncertainty and QCD method statistical uncertainty.
 }
 \end{table*}
 
@@ -1125,7 +1126,7 @@ The uncertainty from the fit in the \ttbar control region, discussed in section~
 is automatically propagated to the signal regions. It results in an uncertainty of about 5\% on the 
 \ttbar cross section. Per-channel uncertainties related to the object reconstruction and identification are 
 considered when extrapolating from the $\Pe\Pgm$ final state to the others. The \ttbar simulation is corrected 
-for differences in the top quark $\pt$ distributions observed between data and simulation, and an uncertainty 
+for differences in the top quark $\pt$ distributions observed between data and simulation. An uncertainty 
 in the correction is taken into account.
 
 
@@ -1151,7 +1152,7 @@ in the renormalization and factorization scale uncertainties are less than 1\%, 
 uncertainties for the $\cPg\cPg\PH$ process are treated as shape uncertainties. The renormalization and 
 factorization scale uncertainties increase linearly with $\pth$ and $\mjj$.
 
-The \pt distribution of the Higgs boson in the {\POWHEG2.0} simulations is tuned to match more closely
+The $\pt$ distribution of the Higgs Boson in the {\POWHEG2.0} simulations is tuned to match more closely
 the next-to-NLO (NNLO) plus next-to-next-to-leading-logarithmic (NNLL) prediction in the
 \textsc{HRes2.1} generator~\cite{deFlorian:2012mx,Grazzini:2013mca}.
 The signal acceptance changes with the variation of the parton shower tune in \HERWIG++ 2.6 samples~\cite{Bellm:2013hwb} 
