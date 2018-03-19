@@ -1,90 +1,169 @@
 \chapter{Object Reconstruction and Selection}
 
-feature properties well suited to particle-flow (PF) reconstruction: a highly-segmented tracker, a fine-grained electromagnetic calorimeter, a hermetic hadron calorimeter, a strong magnetic field, and an excellent muon spectrometer.
+In this chapter I discuss the progression from detector-based signals through to an
+overall event reconstruction within CMS. At CMS, physics-object reconstruction draws
+on input from all detector subseystems simultaneously to build particle tracks
+and cluster together energy deposits, to link together these tracks and energy
+deposits to construct basic physics-objects such as electrons and charged
+hadrons, and to build composit objects such as ``jets'' and hadronically decaying
+$\tau$ leptons. Event based quantities such as the \etvecmiss are also reconstructed.
+To achieve all of this, CMS uses its Particle Flow (PF) reconstruction 
+algorithm~\cite{Sirunyan:2017ulk}. The particle flow concept has been used in the 
+past by other experiments such as ALEPH at LEP~\cite{PF-ALEPH}. CMS is the first
+experiment to fully utilize the particle flow techinque in a hadron collider environment.
+A discussion of the reconstruction of the two basic PF objects, tracks and energy
+clusters, follows in the next section. Afterwards I detail the construction of 
+the PF physics-objects then move to the composit objects and full event variables.
+The PF approach allows particles from pileup interactions to be identified 
+and enables efficient pileup mitigation methods.
 
-For each collision, the comprehensive list of final-state particles identified and reconstructed by the algorithm provides a global event description that leads to unprecedented CMS performance for jet and hadronic $\tau$ decay reconstruction, missing transverse momentum determination, and electron and muon identification.
-
-This approach also allows particles from pileup interactions to be identified and enables efficient pileup mitigation methods.
-
+\section{Particle Flow Input}
+The CMS detector and the PF reconstruction algorithm were specifically designed to
+compliment eachother. The CMS detector features: a highly-segmented tracker well
+suited to track reconstruction, a fine-grained electromagnetic calorimeter necessary
+to separate the individual energy deposits from particles within ``jets'' and
+efficient photon and electron identification, a hermetic hadron 
+calorimeter for the measurement and identification of charged and neutral hadrons, 
+a strong magnetic field for the measurement of the momenta of charged particles and to
+separate the calorimeter energy deposits of charged and neutral hadrons within ``jets'', and 
+an excellent muon spectrometer for muon identification and to disintangle the muon
+tracks from other tracks in the tracker. A schematic of a slice of the CMS detector
+and different physics-objects transversing the detector subsystems can be see in
+figure~\ref{fig:cms_slice}. The different detector systems all contribute
+necessary pieces of information to the PF reconstruction. From the raw detector
+signals two classes of PF objects are created, tracks and energy clusters.
 
 \begin{figure*}[htbp]
 \centering
      \includegraphics[width=1.0\textwidth]{object_reconstruction_and_selection/plots/cms_slice.pdf}
      \caption{
+A schematic of a slice of an x-y cross section of the CMS detector showing different
+physics-objects such as electrons, photons, charged and neutral hadroncs, and muons
+propagating outwards from the collision region within the detector. The schematic
+shows how tracks are linked to energy deposits and in which subdetector regions different
+particles deposit most of their energy on average.
      }
      \label{fig:cms_slice}
 \end{figure*}
 
-A significantly improved event description can be achieved by correlating the basic elements from all detector layers (tracks and clusters) to identify each final-state particle, and by combining the corresponding measurements to reconstruct the particle properties on the basis of this identification. This holistic approach is called particle-flow (PF) reconstruction.
 
---- a large magnetic field, to separate the calorimeter energy deposits of charged and neutral
----articles in jets;
---- afine-grainedtracker,providingapureandefficientcharged-particletrajectoryreconstruction in jets with pT up to around 1 TeV, and therefore an excellent measurement of ∼65\% of the jet energy;
---- a highly-segmented ECAL, allowing energy deposits from particles in jets (charged hadrons, neutral hadrons, and photons) to be clearly separated from each other up to a jet pT of the order of 1 TeV. The resulting efficient photon identification, coupled to the high ECAL energy resolution, allows for an excellent measurement of another ∼25\% of the jet energy;
---- a hermetic HCAL with a coarse segmentation, still sufficient to separate charged and neutral hadron energy deposits in jets up to a jet pT of 200–300 GeV, allowing the remaining 10\% of the jet energy to be reconstructed, although with a modest resolution;
---- an excellent muon tracking system, delivering an efficient and pure muon identification, irrespective of the surrounding particles.
+\subsection{Particle Flow Tracks}
+Energy deposits often called ``hits'' are recorded by the pixel and strip tracks during
+a collision. From these, charged particle tracks are reconstructed in subsequent layers
+mapping the progression of charged particles from the beam axis outwards into the detector
+volume. Attempting to reconstruct tracks from every possible hit combination quickly
+because unreasonable considering the over 70 million tracker pixels and strips which can
+each record a hit. PF uses a combinatorial track finder based on Kalman 
+Filtering (KF); the algorithim is broken down into three successive steps.
+\begin{itemize}
+\item Generate seed tracks from a few hits which are compatible with a charged
+particle trajectory
+\item Gathering other hits along the seed track trajectory when propagated through
+the rest of the tracker subsystem
+\item Final track fitting to determine track properties such as the origin, transverse
+momentum, and direction.
+\end{itemize}
+Only tracks meeting certain quality standards are kept for analysis. These tracks must
+be seeded with two hits in consecutive layers in the pixel detector, and are required 
+to be reconstructed with at least eight tracker hits in total, and with at most one 
+missing hit along the track trajectory. Tracks must also have a curvature corresponding
+to a momentum greater than 0.9\GeV.
 
+There is a balance that must be struck between imposing tight quality cuts on reconstructed
+tracks which increases the purity of genuine track within the reconstructed track collection
+but also decreases the efficiency for reconstructing genuine tracks, and loosening
+quality cuts to reconstruct genuine tracks with a higher efficiency and lower purity.
+After an initial pass through what is called the global combinatorial track finder,
+which has stringent track quality criteria impossed by the eight hit requirement, 
+the efficiency to reconstruct
+genuine tracks is roughly 80\% for charged pions with $\pt = 10\GeV$, and 99\%
+for isolated muons. This corresponds to a misreconstructed track rate in the range of
+about 2.5\% for charged pions with $\pt = 10\GeV$, see figure~\ref{fig:kf_tracking}.
+As hits are recorded in a reconstructed track, they are removed from the available,
+unused hits which can be combined in subsequent passes through the tracking algorithm.
 
-
-
-\section{Track and Primary Vertex Reconstruction}
-
-measuring the momentum of energetic and isolated muons, at identifying energetic and isolated hadronic τ decays, and at tagging b quark jets. Tracking was therefore primarily targeting energetic particles and was limited to well- measured tracks.
-
-A combinatorial track finder based on Kalman Filtering (KF) was used to reconstruct these tracks in three stages: initial seed generation with a few hits compatible with a charged-particle trajectory; trajectory building (or pattern recognition) to gather hits from all tracker layers along this charged-particle trajectory; and final fitting to determine the charged- particle properties: origin, transverse momentum, and direction.
-To be kept for further analysis, the tracks had to be seeded with two hits in consecutive layers in the pixel detector, and were required to be reconstructed with at least eight hits in total and with at most one missing hit along the way.
+There are ten passes through the tracking algorithm in total. Each pass loosens the track quality criteria,
+such as $\chi^2$ and number of hits requirements, beyond the stingent initial criteria.
+This helps to reconstruct difficult to build tracks. Tracks can be difficult to 
+reconstruct for multiple reasons such as detector inefficiencies leading to missing
+detector hits, or particles originating from elsewhere in the detector 
+besides along the beam axis. These tracks could be from hadrons interacting
+within the tracker material before reaching the eight-hits threshold, or from the decay
+of particles with finite life-times. Additionally, there can be difficulty disintangling
+the many tracks within a collimated ``jet'' where many of the tracks are close to or
+nearly overlapping with one another.
+The misreconstruction rate is suppressed in each iterative step despite the loosening
+quality criteria by the removal of the hits which are previously incorporated into
+a reconstructed track. This  suppresses the random hit-to-seed association in the
+next iteration and allows moderate efficiency gains for only small misreconstruction losses.
+The efficiency and misreconstruction rate in figure~\ref{fig:kf_tracking} shows the
+results for the initial pass throug the tracking algorithm, the results after all
+passes which require the track seed to contain hits in the pixel detector, and the
+final results after considering displaced tracks as well.
+After all iterations the efficiency is about 90\% for a charged pions with $\pt = 10\GeV$
+for a misreconstruction rate of 3\%.
 
 \begin{figure*}[htbp]
 \centering
      \includegraphics[width=0.45\textwidth]{object_reconstruction_and_selection/plots/pf_track_eff.pdf}
      \includegraphics[width=0.45\textwidth]{object_reconstruction_and_selection/plots/pf_track_misId.pdf}
      \caption{
-Efficiency (left) and misreconstruction rate (right) of the global combinatorial track finder (black squares); 
-and of the iterative tracking method (green triangles: prompt iterations based on seeds with at least one 
-hit in the pixel detector; red circles: all iterations, including those with displaced seeds), as a function 
+Efficiency (left) and misreconstruction rate (right) of the global combinatorial track finder (black squares) 
+which is the first pass through the tracking algorithm. The prompt iterations of the tracking method (green 
+triangles) show the results after all iterations based on seeds with at least one 
+hit in the pixel detector are completed. The final results after all iterations (red circles) includes
+iterations with displaced seeds. Efficiency and misreconstruction are plotted as a function 
 of the track $\pt$, for charged hadrons in multijet events without pileup interactions. Only tracks with 
-$\abs\eta < 2.5$ are considered in the efficiency and misreconstruction rate determination. The efficiency 
+$\abs\eta < 2.5$ are considered. The efficiency 
 is displayed for tracks originating from within 3.5 cm of the beam axis and $\pm$30 cm of the nominal 
 centre of CMS along the beam axis.
      }
-     \label{fig:cms_slice}
+     \label{fig:kf_tracking}
 \end{figure*}
 
-stringent track quality criteria are instrumental in keeping the misreconstructed track rate at the level of a few per cent, but limit the reconstruction efficiency to only 70–80\% for charged pions with pT above 1 GeV, compared to 99\% for isolated muons.
-The probability for a hadron to interact within the tracker material, before reaching the eight-hits threshold 
--- causing the track to be missed -- ranges between 10 and 30\%. The tracking efficiency is further 
-reduced for $\pt$ values above 10GeV: these high-pT particles are found mostly in collimated jets, in 
-which the tracking efficiency is limited by the silicon detector pitch, i.e. by the capacity to 
-disentangle hits from overlapping particles.
+Tracks which are likely associated with electrons receive special treatment in PF. Electrons
+will often emit bremsstrahlung radiation while propagating through the tracker making their
+tracks difficult to reconstruct because of the sudden kinks. 
+When energetic photons are radiated from an electron, the pattern recognition in the KF algorithm
+may have difficulty accommodating the sudden change in electron momentum. This can cause the track to 
+be reconstructed with a small number of hits than would be associated with the true electron
+path. A new collection of tracks is created based on a preselection on the number of hits and 
+the fit $\chi^2$ for the reconstructed KF-based tracks. The new collection which is a subset of the
+KF-based tracks are fit again with a Gaussian-sum filter (GSF)~\cite{gsf_electrons}. Instead of
+modeling the energy loss of particles as a single gaussian probability density function (PDF) like the KF
+algorithm does, the GSF models the energy loss as a mixture of multiple gaussiand PDFs. 
+The GSF fitting algorithm is more adapted to electrons than the KF used in the iterative tracking.
+It allows for sudden and substantial energy losses along the trajectory. The
+additional freedom here allows much better fits for the electron-based tracks and provides
+better estimates for the track origin, trajector towards the calorimeters, and $\pt$.
 
-Iterative Tracking
-To increase the tracking efficiency while keeping the misreconstructed track rate at a similar level, the combinatorial track finder was applied in several successive iterations, each with moderate efficiency but with as high a purity as possible. At each step, the reduction of the misreconstruction rate is accomplished with quality criteria on the track seeds, on the track fit $\chi^2$, and on the track compatibility with originating from one of the reconstructed primary vertices, adapted to the track $\pt$, $\abs\eta$, and number of hits nhits. In practice, no quality criteria are applied to tracks reconstructed with at least eight hits, as the misreconstruction rate is already small enough for these tracks. The hits associated with the selected tracks are masked in order to reduce the probability of random hit-to-seed association in the next iteration. The remaining hits may thus be used in the next iteration to form new seeds and tracks with relaxed quality criteria, increasing in turn the total tracking efficiency without degrading the purity. The same operation is repeated several times with progressively more complex and time-consuming seeding, filtering, and tracking algorithms.
-With an overall efficiency of $\sim 80\%$, the fractions of hits masked for the next iterations amount to 40\% (20\%) in the pixel (strip) detector.
-Despite the significant improvement, the tracking efficiency at high pT remains limited. The consequences for jet energy and angular resolutions are minute, as the calorimeter resolutions are already excellent at these energies. The significant increase of the misreconstructed track rate at high pT is dealt with when the information from the calorimeters and the muon system becomes available
+Muon tracks are built from a combination of the pixel and strip tracker information and the
+muon spectrometer information. High purity muon hits in the muon spectrometer is granted by the 
+calorimeters and the solenoid which absorb the vast majority of non-muon particles, except neutrinos, 
+before reaching the muon spectrometer. There are three difference categories of muon tracks
+reconstructed:
+\begin{itemize}
+\item Standalone muons are based on hits within each DT or CSC detector. Hits are clustered to form 
+track segments that are used as seeds for the pattern recognition in the muon spectrometer to gather
+other hits in the muon systems along the muon trajectory.
+\item Global muons are reconstructed from a standalone-muon track which is matched to a track 
+in the inner tracker. If the trajectory parameters of the two tracks propagated onto a common surface 
+they are considered compatible and the hits from the inner track and from the standalone-muon track are combined and fit to form a global-muon track.
+\item Tracker muons are built from an extrapolation of a track from the inner track system to a
+single compatibe muon segment within the muon spectrometer system. The inner tracker-based track must have 
+a $\pt > 0.5\GeV$ and a total momentum p in excess of 2.5 GeV.
+\end{itemize}
+
+About 99\% of the muons produced within the geometrical acceptance of the muon system are 
+reconstructed either as a global muon or a tracker muon and very often as both.
+For muons with $\pt > 200\GeV$ the momentum resolution, based on the inner track, is significantly 
+improved by the inclusion of the track extension to the muon system.
+For muons with $\pt < 200\GeV$ the inner tracker already provides a precise measurement of 
+their momentum.
 
 
-Electron Tracking
-for electrons with small pT, whose tracks are significantly bent by the magnetic field, the radiated energy is spread over such an extended region that the supercluster cannot include all deposits.
 
-When energetic photons are radiated, the pattern recognition may be unable to accommodate the change in electron momentum, causing the track to be reconstructed with a small number of hits. A preselection based on the number of hits and the fit $\chi^2$ is therefore applied and the selected tracks are fit again with a Gaussian-sum filter (GSF)
-
-The GSF fitting is more adapted to electrons than the KF used in the iterative tracking, as it allows for sudden and substantial energy losses along the trajectory.
-
-The tracker-based seeding is also effective at selecting electrons and positrons from conversions in the tracker material, for both prompt and bremsstrahlung photons. The recovery of the converted photons of the latter category and their association to their parent electrons is instrumental in minimizing energy double counting in the course of the PF reconstruction.
-
-
-Muon Tracks
-A high purity is granted by the upstream calorimeters, meant to absorb other particles (except neutrinos). The inner tracker provides a precise measurement of the momentum of these muons.
-
-standalone muon. Hits within each DT or CSC detector are clustered to form track segments, used as seeds for the pattern recognition in the muon spectrometer, to gather all DT, CSC, and RPC hits along the muon trajectory.
-
-global muon. Each standalone-muon track is matched to a track in the inner tracker (hereafter referred to as an inner track) if the parameters of the two tracks propagated onto a common surface are compatible. The hits from the inner track and from the standalone-muon track are combined and fit to form a global-muon track.
-
-tracker muon. Each inner track with pT larger than 0.5 GeV and a total momentum p in excess of 2.5 GeV is extrapolated to the muon system. If at least one muon segment matches the extrapolated track, the inner track qualifies as a tracker muon track.
-
-about 99\% of the muons produced within the geometrical acceptance of the muon system are reconstructed either as a global muon or a tracker muon and very often as both.
-
-
+\subsection{Particle Flow Energy Clusters}
 Calorimeter Clusters
 The purpose of the clustering algorithm in the calorimeters is fourfold: (i) detect and measure the energy and direction of stable neutral particles such as photons and neutral hadrons; (ii) separate these neutral particles from charged hadron energy deposits; (iii) reconstruct and identify electrons and all accompanying bremsstrahlung photons; and (iv) help the energy measurement of charged hadrons for which the track parameters were not determined accurately, which is the case for low-quality and high-pT tracks.
 
@@ -139,6 +218,7 @@ Charged-particle tracks may also be linked together through a common secondary v
 Finally, a link between a track in the central tracker and information in the muon detector is established to form global and tracker muons.
 
 \section{Particle Flow Reconstruction}
+\section{Track and Primary Vertex Reconstruction}
 \subsection{PF Candidates}
 \subsubsection{Muons}
 
