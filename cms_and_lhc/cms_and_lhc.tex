@@ -50,11 +50,67 @@ phi is defined in the x-y plane
 
 \subsection{Magnet}
 \subsection{Inner Tracking System}
+
+The tracker measures the pT of charged hadrons at normal incidence with a resolution of 1\% for pT $<$ 20 GeV
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.4\textwidth]{cms_and_lhc/plots/cms_tracker_thickness_radiationL.pdf}
+     \includegraphics[width=0.4\textwidth]{cms_and_lhc/plots/cms_tracker_thickness_interactionL.pdf}
+     \caption{
+Total thickness t of the inner tracker material expressed in units of interaction lengths $\lambda_{l}$ (left) and radiation lengths X0 (right), as a function of the pseudorapidity $\eta$.
+     }
+     \label{fig:cms_tracker_thickness}
+\end{figure*}
+
+
 \subsubsection{Pixels}
 \subsubsection{Strips}
 \subsection{Electromagnetic Calorimeter}
+
+hermetic homogeneous calorimeter made of lead tungstate (PbWO4) crystals. The barrel covers $\abs\eta < 1.479$ and the two endcap disks $1.479 < \abs\eta < 3.0$.
+The barrel (endcap) crystal length of 23 (22) cm corresponds to 25.8 (24.7) radiation lengths, sufficient to contain more than 98\% of the energy of electrons and photons up to 1 TeV.
+The crystal material also amounts to about one interaction length, causing about two thirds of the hadrons to start showering in the ECAL before entering the HCAL.
+The crystal transverse size matches the small Moliere radius of PbWO4, 2.2cm. This fine transverse granularity makes it possible to fully resolve hadron and photon energy deposits as close as 5 cm from one another, for the benefit of exclusive particle identification in jets.
+2.2 × 2.2 \cmsq, equivalent to 0.0174 × 0.0174 in the ($\eta$, $\phi$) plane.
+
+Energy resolution:
+\begin{equation}
+\label{eqn:ecal_res}
+\frac{\sigma}{E} = \frac{2.8\%}{\sqrt{E/\GeV}} \oplus \frac{12\%}{E/\GeV} \oplus 0.3\%
+\end{equation}
+
+typical ECAL electronics noise $\sigma ^{\text{ECAL}} _{\text{noise}}$ is measured to be $\approx$ 40 (150) \MeV per crystal in noise the barrel (endcaps).
+
+
 \subsection{Hadronic Calorimeter}
+
+hermetic sampling calorimeter consisting of several layers of brass absorber and plastic scintillator tiles. It surrounds the ECAL, with a barrel ($\abs\eta$ < 1.3) and two endcap disks ($1.3 < \abs\eta < 3.0$).
+Almost six interaction lengths at normal incidence, and increases to over ten interaction lengths at larger pseudorapidities.
+It is complemented by a tail catcher (HO), installed outside the solenoid coil. The HO material 
+(1.4 interaction lengths at normal incidence) is used as an additional absorber. At small pseudorapidities ($\abs\eta < 0.25$), 
+this thickness is enhanced to a total of three interaction lengths by a 20 cm-thick layer of steel. 
+The total depth of the calorimeter system (including ECAL) is thus extended to a minimum of 
+twelve interaction lengths in the barrel. In the endcaps, the thickness amounts to about ten interaction lengths.
+
+individual towers with a cross section $\Delta\eta \times \Delta\phi = 0.087 \times 0.087$ for $\abs\eta < 1.6$ 
+and $0.17 \times 0.17$ at larger pseudorapidities.
+
+Energy resolution:
+\begin{equation}
+\label{eqn:hcal_res}
+\frac{\sigma}{E} = \frac{110\%}{\sqrt{E/\GeV}} \oplus 9\%
+\end{equation}
+
+typical HCAL electronics noise $\sigma ^{\text{HCAL}} _{\text{noise}}$ is measured to be $\approx$ 200 MeV per tower.
+
 \subsection{Muon System}
+
+Outside the solenoid coil, the magnetic flux is returned through a yoke consisting of three 
+layers of steel interleaved with four muon detector planes. Drift tube (DT) chambers and 
+cathode strip chambers (CSC) detect muons in the regions $\abs\eta < 1.2$ and $0.9 < \abs\eta < 2.4$, 
+respectively, and are complemented by a system of resistive plate chambers (RPC) covering the range $\abs\eta < 1.6$.
+
 \subsubsection{Drift Tubes}
 \subsubsection{Cathode Strip Chambers}
 \subsubsection{Resistive Plate Chambers}
