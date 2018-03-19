@@ -156,7 +156,7 @@ a $\pt > 0.5\GeV$ and a total momentum p in excess of 2.5 GeV.
 
 About 99\% of the muons produced within the geometrical acceptance of the muon system are 
 reconstructed either as a global muon or a tracker muon and very often as both.
-For muons with $\pt > 200\GeV$ the momentum resolution, based on the inner track, is significantly 
+For muons with $\pt > 200\GeV$ the momentum resolution, based on the inner track, is 
 improved by the inclusion of the track extension to the muon system.
 For muons with $\pt < 200\GeV$ the inner tracker already provides a precise measurement of 
 their momentum.
@@ -164,26 +164,75 @@ their momentum.
 
 
 \subsection{Particle Flow Energy Clusters}
-Calorimeter Clusters
-The purpose of the clustering algorithm in the calorimeters is fourfold: (i) detect and measure the energy and direction of stable neutral particles such as photons and neutral hadrons; (ii) separate these neutral particles from charged hadron energy deposits; (iii) reconstruct and identify electrons and all accompanying bremsstrahlung photons; and (iv) help the energy measurement of charged hadrons for which the track parameters were not determined accurately, which is the case for low-quality and high-pT tracks.
+Energy clusters make up the second basic building block to construct PF physics-objects. The PF energy
+clustering algorithm which constructs the energy clusters serves multiple purposes. The energy clustering
+is designed to:
+\begin{itemize}
+\item Detect and measure the energy and direction of stable neutral particles (photons and neutral hadrons)
+\item Separate neutral particles from charged hadron energy deposits
+\item Reconstruct and identify electrons and all accompanying bremsstrahlung photons
+\item Assist the energy measurement of charged hadrons for which the track parameters were not 
+determined accurately; this is primairly the case for low-quality and high-$\pt$ tracks
+\end{itemize}
+The clustering is performem separately in each subdetector, the ECAL barrel and end caps and HCAL barrel
+and end caps with an aim of a high detection efficiency even for low-energy particles and the ability to 
+separat close energy deposits. Clustering begins with seed hits which have an energy above the seed hit
+threshold and an energy larger than the energy of the adjacent hits. In the ECAL barrel, the fine 
+granularity of the ECAL allows
+for the clustering to consider all eight adjacent hits, four on the sides and four on the corners.
+The HCAL barrel has a more coarse granularity, so only the four adjacent sides are considered when
+selecting a seed candidate. From the starting seed, topological clusters are grown outward by aggregating
+hits with at least a corner in common with a cell already included in the cluster. Hits must have an energy
+in excess of two times the subdetector noise level to be considered for clustering. The energy thresholds
+for seeding a cluster and cluster inclusion threshold are in table~\ref{tab:pf_cluster_thresholds}.
 
-aims of a high detection efficiency even for low-energy particles and of separating close energy deposits, as illustrated in figure 2. The clustering is performed separately in each subdetector: ECAL barrel and endcaps, HCAL barrel and endcaps, and the two preshower layers.
 
-cluster seeds are identified as cells with an energy larger than a given seed threshold, and larger than the energy of the neighbouring cells
+\begin{table*}[htbp]
+\centering
+\begin{footnotesize}
+%\begin{scriptsize}
+\begin{tabular}{|l|cc|cc|}
+\hline
+        &       \multicolumn{2}{|c|}{ECAL}        &       \multicolumn{2}{|c|}{HCAL}        \\  %&   Preshower \\
+        &   barrel  &   endcaps        &       barrel   &   endcaps        \\  %&    \\
+\hline
+Cell $E$ threshold (\MeV) & 80 & 300    &   800 &   800 \\   %& 0.06 \\
+\hline
+Seed Number closest cells   &   8 & 8   &   4 & 4 \\    %& 8 \\
+Seed $E$ threshold (\MeV)   &  230  &  600  &  800  & 1100 \\    %& 0.12  \\
+Seed $E_{\text{T}}$ threshold (\MeV)   &  0  &  150  & 0   & 0 \\    %& 0 \\
+%\hline
+%Gaussian width (cm)   &  1.5  &  1.5  &  10.0  & 10.0  \\    %& 0.2 \\
+\hline
+\end{tabular}
+\end{footnotesize}
+%\end{scriptsize}
+\label{tab:pf_cluster_thresholds}
+\caption{
+The clustering parameters used for ECAL and HCAL energy deposit clustering. The ECAL endcap
+requires an additional seed $E_{\text{T}}$ threshold because the detector noise
+increases as a function of $\abs\eta$.
+}
+\end{table*}
 
-topological clusters are grown from the seeds by aggregating cells with at least a corner in common with a cell already in the cluster and with an energy in excess of a cell threshold set to twice the noise level.
+Residual energy calibrations are applied to the ECAL and HCAL energy clusters. The calibrations are
+designed to account for the effects of the hit energy thresholds which will always result in a 
+smaller amount of energy being incorporated into a cluster than was measured by the detector
+for a given single object.
+In the ECAL, the residual energy calibration is determined from simulated single photon events.
+This generic calibration is applied to all ECAL clusters prior to the hadron cluster calibration 
+mentioned next. 
 
-The Gaussian-mixture model postulates that the energy deposits in the M individual cells of the 
-topological cluster arise from N Gaussian energy deposits where N is the number of seeds.
-
-
-ECAL
-A residual energy calibration, required to account for the effects of these thresholds, is determined from simulated single photons. This generic calibration is applied to all ECAL clusters prior to the hadron cluster calibration discussed in the next section, and to the particle identification step described following.
-
-HCAL
-the calorimeter response depends on the fraction of the shower energy deposited in the ECAL, and is not linear with energy. The ECAL and HCAL cluster energies therefore need to be substantially recalibrated to get an estimate of the true hadron energy.
-
-simulated single neutral hadrons (specifically, KL0) is used to determine the calibration coefficients
+ECAL and HCAL energy clusters are linked together as a potential hadronicy decay energy deposit
+if their positions in \etaphi overlap. For a hadronic decay, the total calorimeter response (ECAL + HCAL) depends on 
+the fraction of the shower energy deposited in the ECAL, and is not linear with energy. The 
+ECAL and HCAL cluster energies therefore need to be substantially recalibrated to get an 
+estimate of the true hadron energy. Simulated single neutral hadrons, specifically single 
+$\text{K}^{0}_{\text{L}}$s, are used for the hadronic decay response calibration seen for the
+barrel in figure~\ref{fig:pf_calo_calib}. The applied calibrations in the left plot lead
+to excellent agreement in the calorimeter response in the right plot. It is much harder to
+make larger improvements in the energy resolution without actually changing the available
+input calorimeter hit information granularity.
 
 
 \begin{figure*}[htbp]
@@ -191,50 +240,84 @@ simulated single neutral hadrons (specifically, KL0) is used to determine the ca
      \includegraphics[width=0.45\textwidth]{object_reconstruction_and_selection/plots/calo_calibrations.pdf}
      \includegraphics[width=0.45\textwidth]{object_reconstruction_and_selection/plots/calo_response_and_res.pdf}
      \caption{
-Left: Calibration coefficients obtained from single hadrons in the barrel as a function of their true energy E, for hadrons depositing energy only in the HCAL (blue triangles), and for hadrons depositing energy in both the ECAL and HCAL, for the ECAL (red circles) and for the HCAL (green squares) clusters. Right: Relative raw (blue) and calibrated (red) energy response (dashed curves and triangles) and resolution (full curves and circles) for single hadrons in the barrel, as a function of their true energy E. Here the raw (calibrated) response and resolution are obtained by a Gaussian fit to the distribution of the relative difference between the raw (calibrated) calorimetric energy and the true hadron energy.
+(left) Calibration coefficients obtained from single $\text{K}^{0}_{\text{L}}$s in the barrel as a 
+function of their true energy $E$. The blue triangles show the calibrations for hadrons depositing 
+energy only in the HCAL. The red circles (green squares) show the ECAL (HCAL) calibration for hadrons
+depositing energy in both the ECAL and HCAL.
+(right) Relative raw (blue) and calibrated (red) energy response (dashed curves and triangles) and 
+resolution (full curves and circles) for single $\text{K}^{0}_{\text{L}}$s in the barrel, as a 
+function of their true energy $E$.
+%Here the raw (calibrated) response and resolution are obtained by a Gaussian fit to the distribution of 
+%the relative difference between the raw (calibrated) calorimetric energy and the true hadron energy.
      }
-     \label{fig:cms_slice}
+     \label{fig:pf_calo_calib}
 \end{figure*}
 
-it is worth stressing at this point that this calibration affects only 10\% of the measured event energy. The latter is therefore expected to be modified, on average, by
-only a few per cent by the calibration procedure.
+
+In general, a given particle is expected to result in multiple PF elements (tracks and energy
+clusters) in the various CMS subdetectors. The reconstruction of a particle first proceeds 
+with a link algorithm that connects the PF elements from different subdetectors. For example,
+tracks are linked to energy clusters if the extrapolated position of the track aligns within the
+angular acceptance of an energy cluster in \etaphi. Energy clusters can be linked between subdetectors as mentioned
+in the case of hadronic energy deposits above which span the ECAL and HCAL. A link is established
+when the cluster position in the more granular calorimter, ECAL, is within the cluster envelope
+in the less granular calorimeter, HCAL. Once PF elements are linked together they are referred to as a PF block which can contain 
+elements associated either by a direct link or by an indirect link through common elements.
+The link distance is defined as the distance between the extrapolated track position and the 
+cluster position in the \etaphi plane.
 
 
-Linking
-A given particle is, in general, expected to give rise to several PF elements in the various CMS subdetectors. The reconstruction of a particle therefore first proceeds with a link algorithm that connects the PF elements from different subdetectors.
+\subsection{Particle Flow Candidates}
+Particle Flow candidates are selected from the PF blocks based on designated quality cuts.
 
-The link algorithm then produces PF blocks of elements associated either by a direct link or by an indirect link through common elements.
 
-a link between a track in the central tracker and a calorimeter cluster is established as follows. The track is first extrapolated from its last measured hit in the tracker to — within the corresponding angular acceptance — the two layers of the preshower, the ECAL at a depth corresponding to the expected maximum of a typical longitudinal electron shower profile, and the HCAL at a depth corresponding to one interaction length.
-
-The link distance is defined as the distance between the extrapolated track position and the cluster position in the \etaphi plane.
-
-In case several HCAL clusters are linked to the same track, or if several tracks are linked to the same ECAL cluster, only the link with the smallest distance is kept.
-
-Calorimeter cluster-to-cluster links are sought between HCAL clusters and ECAL clusters, and between ECAL clusters and preshower clusters in the preshower acceptance. A link is established when the cluster position in the more granular calorimeter (preshower or ECAL) is within the cluster envelope in the less granular calorimeter (ECAL or HCAL).
-
-Charged-particle tracks may also be linked together through a common secondary vertex, for nuclear-interaction reconstruction
-
-Finally, a link between a track in the central tracker and information in the muon detector is established to form global and tracker muons.
-
-\section{Particle Flow Reconstruction}
-\section{Track and Primary Vertex Reconstruction}
-\subsection{PF Candidates}
 \subsubsection{Muons}
+Isolated global muons are selected from the global muon track colletion by looking at the inner
+tracker tracks and calorimeter 
+energy deposits within a distance $\Delta \text{R} < 0.3$ to the muon trajectory. 
+The sum of the $\pt$ of the tracks and of the ET of the energy deposits is required not to 
+exceed 10\% of the muon $\pt$. This isolation criterion alone successfully reject hadrons that would
+otherwise be misidentified as muons. No further selection is applied to these muon candidates.
+If the muon track $\pt < 200\GeV$, then the momentum assigned to the muon PF candidate is that of 
+the inner track. For muon tracks with $\pt > 200\GeV$, the momentum assigned is the momentum associated
+with the smallest $\chi^2$ probability from these different track fits: tracker only, tracker and 
+first muon detector plane, global, and global without the muon detector planes featuring a high occupancy.
+The PF elements and blocks that make up a identified PF muon candidate masked against further processing
+to prevent their inclusion in other PF candidates.
 
-Isolated global muons are first selected by considering additional inner tracks and calorimeter 
-energy deposits with a distance $\Delta$ R to the muon direction in the \etaphi plane smaller than 0.3. 
-The sum of the pT of the tracks and of the ET of the deposits is required not to exceed 10\% of the 
-muon $\pt$. This isolation criterion alone is sufficient to adequately reject hadrons that would be 
-misidentified as muons, hence no further selection is applied to these muon candidates.
+In these analyses, there are several additional criteria applied beyond that which is required to
+be a PF candidate. These analyses use muons which pass two different PF muon identification working
+points: \texttt{PF ID Loose} and \texttt{PF ID Medium}~\cite{sm-htt-2017}. The \texttt{PF ID Loose}
+working point is only slightly tighter than the baseline criteria for a PF muon candidate; 
+\texttt{PF ID Loose} must be either a global or a tracker PF muon. This selection is highly efficient
+for prompt muons.
 
-For nonisolated global muons, the tight-muon selection is applied. In addition, it is required either that at least three matching track segments be found in the muon detectors, or that the calorimeter deposits associated with the track be compatible with the muon hypothesis. This selection removes the majority of high-pT hadrons misidentified as muons because of punch- through, as well as accidental associations of tracker and standalone muon tracks.
+The \texttt{PF ID Medium} muon working point requires first that muons pass \texttt{PF ID Loose} then
+applies additional track-quality and muon-quality requirements on the different muon tracks which are
+linked to the PF muon candidate. The number of valide inner tracker
+hits must be greater than 80\%. Additionally either one or the other of the following criteria must be met:
+\begin{outline}
+\1 Option 1 - ``Tight Segment Compatility''
+    \2 Candidate has a segment compatility score of at least 0.451 which ensures that the 
+track is reasonablly compatible with inner tracker-based track
+\1 Option 2 - ``Good Global Muon'':
+    \2 PF muon candidate is a global muon
+    \2 The normalized track $\chi^2 < 3$
+    \2 The compatibility $\chi^2$ between the standalone muon track and the inner tracker muon is
+less than 12
+    \2 The muon track kink-finder, which is desiged to remove muons produced from in-flight decays, 
+must have a value less than 20
+    \2 Candidate has a segment compatility score of at least 0.303 which is looser than the value
+required in Option 1
+\end{outline}
+The \texttt{PF ID Medium} muon working is still very efficienct for prompt muon selection but
+does bring some additional reduction in fake object selection which is helpful in the high
+statistics $htt$ analysis. 
 
-The muon momentum is chosen to be that of the inner track if its pT is smaller than 200 GeV. Above this value, the momentum is chosen according to the smallest $\chi^2$ probability from the different track fits: tracker only, tracker and first muon detector plane, global, and global without the muon detector planes featuring a high occupancy
-
-The PF elements that make up these identified muons are masked against further processing in the corresponding PF block
 
 \subsubsection{Electrons and Prompt Photons}
+Electron identification considers the PF blocks with linked inner tracker tracks and calorimeter
+energy clusters. Because of bremsstrahlung radiation, it is common for electrons to 
 
 Electron reconstruction is based on combined information from the inner tracker and the calori- meters. Due to the large amount of material in the tracker, electrons often emit bremsstrahlung photons and photons often convert to e+e− pairs
 
@@ -278,6 +361,7 @@ raw missing transverse momentum vector is defined in such a way as to balance th
 \subsection{Taus}
 \subsection{b-jet ID and Secondary Vertex}
 
+\section{Primary Vertex Reconstruction}
 
 
 
