@@ -274,7 +274,7 @@ Particle Flow candidates are selected from the PF blocks based on designated qua
 \subsubsection{Muons}
 Isolated global muons are selected from the global muon track colletion by looking at the inner
 tracker tracks and calorimeter 
-energy deposits within a distance $\Delta \text{R} < 0.3$ to the muon trajectory. 
+energy deposits within a distance $\dr < 0.3$ to the muon trajectory. 
 The sum of the $\pt$ of the tracks and of the ET of the energy deposits is required not to 
 exceed 10\% of the muon $\pt$. This isolation criterion alone successfully reject hadrons that would
 otherwise be misidentified as muons. No further selection is applied to these muon candidates.
@@ -282,7 +282,7 @@ If the muon track $\pt < 200\GeV$, then the momentum assigned to the muon PF can
 the inner track. For muon tracks with $\pt > 200\GeV$, the momentum assigned is the momentum associated
 with the smallest $\chi^2$ probability from these different track fits: tracker only, tracker and 
 first muon detector plane, global, and global without the muon detector planes featuring a high occupancy.
-The PF elements and blocks that make up a identified PF muon candidate masked against further processing
+The PF elements and blocks that make up an identified PF muon candidate masked against further processing
 to prevent their inclusion in other PF candidates.
 
 In these analyses, there are several additional criteria applied beyond that which is required to
@@ -316,14 +316,13 @@ statistics $htt$ analysis.
 
 
 \subsubsection{Electrons and Prompt Photons}
-Electron identification considers the PF blocks with linked inner tracker tracks and calorimeter
-energy clusters. Because of bremsstrahlung radiation, it is common for electrons to 
-
-Electron reconstruction is based on combined information from the inner tracker and the calori- meters. Due to the large amount of material in the tracker, electrons often emit bremsstrahlung photons and photons often convert to e+e− pairs
-
-Isolated photon reconstruction is therefore conducted together with electron reconstruction. In a given PF block, an electron candidate is seeded from a GSF track, as described in section 3.2, provided that the corresponding ECAL cluster is not linked to three or more additional tracks. A photon candidate is seeded from an ECAL supercluster with ET larger than 10 GeV, with no link to a GSF track.
-
-sum of the energies measured in the HCAL cells with a distance to the supercluster position smaller than 0.15 in the \etaphi plane must not exceed 10\% of the supercluster energy.
+Electron identification is based on information from the inner tracker tracks and the calorimeter
+energy clusters. Because of bremsstrahlung radiation, electron tracks can be much more kinked
+than those for other particles. Additionally, their energy clusters can be spread out in the
+$\phi$ direction. The sum of the energies measured in HCAL hits behind ($\dr < 0.15$) 
+the electron-linked ECAL-based energy cluster must no exceed 10\% of the ECAL-based 
+energy cluster energy. The ECAL-based energy cluster is called the ``supercluster''.
+This cut significantly reduces the number of hadrons faking electrons.
 
 The final energy assignment for electrons is obtained from a combination of the corrected ECAL energy with the momentum of the GSF track and the electron direction is chosen to be that of the GSF track
 
@@ -392,7 +391,7 @@ I^{\ell} \equiv \frac{\sum_{charged}  \PT + \max\left( 0, \sum_{neutral}  \PT
 In this expression, $\sum_charged  \PT$ is the scalar sum of the
 transverse energy of the charged particles originating from
 the primary vertex and located in a cone of size
-$\Delta R = \sqrt{\smash[b]{(\Delta \eta)^2 + (\Delta \phi)^2}} = 0.4$\,(0.3)
+$\dr = \sqrt{\smash[b]{(\Delta \eta)^2 + (\Delta \phi)^2}} = 0.4$\,(0.3)
 centered on the muon (electron) direction. The sum
 $\sum_{neutral}  \PT$  represents
 a similar quantity for neutral particles.
@@ -412,7 +411,7 @@ are not considered when building jets. An offset correction is applied to jet en
 data through correction factors~\cite{CMS-JME-10-011}.
 In this analysis, jets are required to
 have $\pt$ greater than 30\GeV and $\abs{\eta}$ less than 4.7, and
-are separated from the selected leptons by a $\Delta R$ of at least 0.5.
+are separated from the selected leptons by a $\dr$ of at least 0.5.
 The combined secondary vertex (CSV) algorithm is used to identify jets that are likely to originate from a b quark (``b jets"). The algorithm exploits the track-based lifetime information together with the secondary vertices associated with the jet to provide a likelihood ratio discriminator for the b jet identification. A set of $\pt$-dependent correction
 factors are applied to simulated events to account for differences in the b tagging efficiency
 between data and simulation. The working point chosen in this analysis gives an efficiency for real b jets of about 70\%, and for about 1\% of light flavor or quark jets being misidentified.
