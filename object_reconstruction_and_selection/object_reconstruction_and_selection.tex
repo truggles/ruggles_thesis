@@ -314,108 +314,139 @@ The \texttt{PF ID Medium} muon working is still very efficienct for prompt muon 
 does bring some additional reduction in fake object selection which is helpful in the high
 statistics $htt$ analysis. 
 
+To reject non-prompt or misidentified muons and electrons, a relative lepton isolation is defined as:
+\begin{equation}
+I^{\ell} \equiv \frac{\sum_{charged}  \pt + \max\left( 0, \sum_{neutral}  \pt
+                                         - \frac{1}{2} \sum_{charged, PU} \pt  \right )}{\pt^{\ell}}.
+\label{eq:rel_isolation}
+\end{equation}
+
+Some of the quantities mentioned here refer to descriptions in the following.
+In this expression, $\sum_{charged}  \pt$ is the scalar sum of the transverse energy of the 
+charged particles originating from the primary vertex and located in a cone of size
+$\dr = \sqrt{\smash[b]{(\Delta \eta)^2 + (\Delta \phi)^2}} = 0.4$\,(0.3)
+centered on the muon (electron) direction. The sum, $\sum_{neutral}  \pt$, represents
+a similar quantity for neutral particles. The contribution of photons and neutral hadrons 
+originating from pileup vertices is estimated from the scalar sum of the transverse
+energy of charged hadrons in the cone originating from pileup vertices,
+$\sum_{charged, PU} \pt$. This sum is multiplied by a factor of $1/2$, which corresponds 
+approximately to the ratio of neutral to charged hadron production in the hadronization process
+of inelastic $\Pp\Pp$ collisions, as estimated from simulation. The expression $\pt^{\ell}$ 
+stands for the $\pt$ of the lepton. Isolation requirements used in the following analyses, 
+based on $I^{\ell}$, range from $I^{\ell} < 0.1$ to $I^{\ell} < 0.25$ depending on the signal efficiency and
+background rejection needs of the specific final state. For the $\htt$ analysis, these
+working points are listed in the $\htt$ analysis section, table~\ref{tab:htt_obj_selection}.
+
+
+
 
 \subsubsection{Electrons and Prompt Photons}
+With the muon related PF elements masked from further processing, electron and prompt photon
+identification begins.
 Electron identification is based on information from the inner tracker tracks and the calorimeter
 energy clusters. Because of bremsstrahlung radiation, electron tracks can be much more kinked
-than those for other particles. Additionally, their energy clusters can be spread out in the
-$\phi$ direction. The sum of the energies measured in HCAL hits behind ($\dr < 0.15$) 
-the electron-linked ECAL-based energy cluster must no exceed 10\% of the ECAL-based 
-energy cluster energy. The ECAL-based energy cluster is called the ``supercluster''.
-This cut significantly reduces the number of hadrons faking electrons.
+than those for other particles as was discussed above in relation to the GSF algorithm track
+fitting. Additionally, because of radiated bremsstrahlung photons, the resulting energy clusters 
+from an electron propagating through the detector can be spread out in the
+$\phi$ direction. PF electrons are built from the linking of a GSF track to an
+ECAL-based energy cluster. To suppress the amount of charged hadrons faking electrons, the 
+sum of the energies measured in HCAL hits behind ($\dr < 0.15$) 
+the electron-linked ECAL energy cluster must no exceed 10\% of the ECAL-based 
+energy cluster energy~\cite{Sirunyan:2017ulk}. The energy assignment for an electron candidate is obtained from a 
+combination of the calibrated ECAL energy with the momentum of the GSF track. The electron 
+direction is chosen to be that of the GSF track.
 
-The final energy assignment for electrons is obtained from a combination of the corrected ECAL energy with the momentum of the GSF track and the electron direction is chosen to be that of the GSF track
+Before being saved to the PF electron collection, electron candidates must satisfy additional
+identification criteria targeted at reducing electron fakes. Up to fourteen variables are
+fed into a Boosted Decision Tree (BDT) which selections the passing PF electrons. The BDT
+input variables include track and energy cluster details such as:
+\begin{itemize}
+\item Amount of energy radiated off the GSF track
+\item Distance between the GSF track extrapolation to the ECAL entrance and the position of the ECAL seeding cluster
+\item Ratio between the energies gathered in HCAL and ECAL by the track-cluster association process
+\item The KF and GSF track $\chi^2$ values, and
+\item The numbers of inner tracker hits
+\end{itemize}
 
-Electron candidates must satisfy additional identification criteria. Specifically, up to fourteen variables — including the amount of energy radiated off the GSF track, the distance between the GSF track extrapolation to the ECAL entrance and the position of the ECAL seeding cluster, the ratio between the energies gathered in HCAL and ECAL by the track-cluster association process, and the KF and GSF track $\chi^2$ and numbers of hits — are combined in BDTs trained separately in the ECAL barrel and endcaps acceptance, and for isolated and nonisolated electrons.
+Photon candidates are seeded by ECAL energy clusters with no matching KF or GSF track.
+They are retained as PF photons if they are isolated from other tracks and calorimeter energy clusters, 
+and if the ECAL energy distribution and the ratio between the HCAL and ECAL energies, $H/E$, are 
+compatible with those expected from a photon shower. Similar to the PF masking after the muon 
+reconstruction, tracks and energy clusteres used to
+build PF electron and photons are masked from further processing simplifying the task ahead
+for charged and neutral hadron identification.
 
-Photon candidates are retained if they are isolated from other tracks and calorimeter clusters in the event, and if the ECAL cell energy distribution and the ratio between the HCAL and ECAL energies are compatible with those expected from a photon shower.
-
+There are additional electron identification requirements used in these analyses which are tighter
+than the PF electron criteria. The additional identification criteria relies on a multivariate (MVA) discriminant
+which combines many of the same variables used in the PF electron BDT~\cite{Khachatryan:2015hwa} 
+and addes some additional energy cluster distribution variables such as: $\sigma_{i\eta i\eta}$ and
+$\sigma_{i\phi i\phi}$ cluster shape covariance. The analyses use
+two different MVA working points, one with 90\% signal efficiency and one with 80\% efficiency.
 
 
 \subsubsection{Charged and Neutral Hadrons}
+Once muons, electrons, and isolated photons are identified and removed from the available PF blocks
+and elements, the remaining particles to be identified are hadrons resulting from jet fragmentation and 
+hadronization. The ECAL and HCAL energy clusters which are not linked to any tracks are turned into
+PF neutral hadrons while energy deposits successfully linked to a track are turned into PF charged
+hadrons. Non-isolated photons are indistinguishable from the neutral hadron group and are considered
+as part of that collection. Charged and neutral hadron form the last sets of fundamental physics-objects
+which are reconstructed by PF. The next PF steps involve reconstructing composit object such as ``jets''
+and hadronically decaying tau leptons and calculating event quantities such as the primary vertex and
+\etvecmiss.
 
-Once muons, electrons, and isolated photons are identified and removed from the PF blocks, the remaining particles to be identified are hadrons from jet fragmentation and hadronization. These particles may be detected as charged hadrons (π±, K±, or protons), neutral hadrons (e.g. KL0 or neutrons), nonisolated photons (e.g. from π0 decays), and more rarely additional muons (e.g. from early decays of charged hadrons).
 
-The ECAL and HCAL clusters not linked to any track give rise to photons and neutral hadrons. Within the tracker acceptance (|η| < 2.5), all these ECAL clusters are turned into photons and all these HCAL clusters are turned into neutral hadrons. The precedence given in the ECAL to photons over neutral hadrons is justified by the observation that, in hadronic jets, 25\% of the jet energy is carried by photons, while neutral hadrons leave only 3% of the jet energy in the ECAL.
-
-\subsection{Jets}
-
-If the calibrated calorimetric energy is compatible with the sum of the track momenta, no neutral particle is identified.
+\section{Event Level Quantities}
+There are multiple event level quantities that require input from all PF physics-objects for their
+calculation. The calculation of the primary vertex is specifically needed for the identification of
+composit objects such as ``jets'' and hadronically decaying $\tau$ leptons.
 
 
+\subsection{Primary Vertex Reconstruction}
+The original location of the $\pp$ collisions which gave rise to a given event can be found by tracing
+the reconstructed physics-object tracks back to the collision region and grouping together tracks that share a common
+origin; the origins are called vertices. In any given recorded collision there will be usually be a 
+singular hard-scatter $\pp$ collision and multiple soft-scatter collsion. The hard-scatter vertex is 
+identified as the vertex with the largest quadratic sum of the $\pt$ of the associated physics-objects 
+and is called the primary vertex~\cite{Sirunyan:2017ulk}. The other vertices are referred to as the
+pileup vertices.
 
-\subsection{Taus}
+
 \subsection{Missing Transverse Energy}
-
-raw missing transverse momentum vector is defined in such a way as to balance the vectorial sum of the transverse momenta of all particles
+The CMS detector can detect and measure the energy of all standard model particles with the exception
+of neutrinos which leave the detector undetected. The neutrino energy contribution to an event can
+be estimated using the missing transverse energy, \etvecmiss. The \etvecmiss is calculated from
+the raw missing transverse momentum vector which is defined 
+to balance the vectorial sum of the transverse momentum of all particles.
 
 \begin{equation}
 \vec{p}^{\text{miss}}_{\text{T,PF}}(\text{raw}) = - \sum^{N_{\text{particles}}}_{i=1} \vec{p}_{\text{T},i}
 \end{equation}
 
-\pagebreak
-\section{Object Identification and Selection}
-\subsection{Muons}
-\subsection{Electrons}
+All particles reconstructed in the event are used to determine the missing transverse energy,
+\etvecmiss~\cite{Khachatryan:2014gga}. The specific \etvecmiss used in these analyses is Type-1
+\etvecmiss which is adjusted for the effect of jet energy corrections.
+
+
+\section{Composit Object Identification and Selection}
+Composit objects reconstructed by PF attempt to cluster together physics-objects which likely
+resulted from the jet fragmentation or hadronization process. The three groups used in these
+analyses are discussed below.
+
+ 
+\subsection{Jets}
+Jets are collections of energy deposits and tracks within a defined conical area radiating outward
+from the collision region. They are created when a quark or gluon undergoes the hadronization process.
+Jets are reconstructed with an anti-\kt clustering algorithm implemented in the \FASTJET 
+library~\cite{Cacciari:2008gp, Cacciari:2011ma, Cacciari:fastjet2}. The anti-\kt clustering is based on the grouping
+together of neutral and charged PF candidates within a distance parameter $\dr = 0.4$. Charged PF 
+candidates not associated with the primary vertex are not considered when building jets.
+A correction is applied to jet energies to adjust for the contribution to the jet energy from 
+additional $\pp$ interactions within the same or nearby bunch crossings. The energy of a jet is 
+corrected via calibrations based on simulation and data~\cite{CMS-JME-10-011}.
+
+
 \subsection{Taus}
-\subsection{b-jet ID and Secondary Vertex}
-
-\section{Primary Vertex Reconstruction}
-
-
-
-
-The reconstruction of observed and simulated events relies on the particle-flow (PF) algorithm~\cite{Sirunyan:2017ulk},
-which combines the information from the CMS subdetectors to identify
-and reconstruct the particles emerging from $\Pp\Pp$ collisions:
-charged hadrons, neutral hadrons, photons, muons, and electrons.
-Combinations of these PF objects are used to reconstruct
-higher-level objects such as jets, $\tauh$ candidates, or
-missing transverse energy.
-The reconstructed vertex with the largest value of summed physics-object $\pt^2$ is taken to be the primary $\Pp\Pp$ interaction vertex. The physics objects are the objects constructed by a jet finding algorithm~\cite{Cacciari:2008gp,Cacciari:2011ma} applied to all charged tracks associated with the vertex, including tracks from lepton candidates, and the corresponding associated missing transverse energy.
-
-Muons are identified with requirements on the quality of
-the track reconstruction and on the number of measurements in the
-tracker and the muon systems~\cite{Chatrchyan:2012xi}.
-Electrons are identified with a multivariate discriminant
-combining several quantities describing the track quality,
-the shape of the energy deposits in the ECAL,
-and the compatibility of the measurements from the tracker and the
-ECAL~\cite{Khachatryan:2015hwa}.
-To reject non-prompt or misidentified leptons, a relative lepton isolation is defined as:
-\begin{equation}
-I^{\ell} \equiv \frac{\sum_{charged}  \PT + \max\left( 0, \sum_{neutral}  \PT
-                                         - \frac{1}{2} \sum_{charged, PU} \PT  \right )}{\PT^{\ell}}.
-\label{eq:reconstruction_isolation}
-\end{equation}
-In this expression, $\sum_charged  \PT$ is the scalar sum of the
-transverse energy of the charged particles originating from
-the primary vertex and located in a cone of size
-$\dr = \sqrt{\smash[b]{(\Delta \eta)^2 + (\Delta \phi)^2}} = 0.4$\,(0.3)
-centered on the muon (electron) direction. The sum
-$\sum_{neutral}  \PT$  represents
-a similar quantity for neutral particles.
-The contribution of photons and neutral hadrons originating from pileup vertices is estimated from the scalar sum of the transverse
-energy of charged hadrons in the cone originating from pileup vertices,
-$\sum_{charged, PU} \PT$. This sum is multiplied by a factor of
-$1/2$, which corresponds approximately to the ratio of neutral to charged
-hadron production in the hadronization process
-of inelastic $\Pp\Pp$ collisions, as estimated from simulation.
-The expression $\PT^{\ell}$ stands for the $\pt$ of the lepton. Isolation requirements used in this analysis, based on $I^{\ell}$, are listed in Table~\ref{tab:inclusive_selection}.
-
-Jets are reconstructed with an anti-\kt clustering algorithm implemented
-in the \FASTJET library~\cite{Cacciari:2011ma, Cacciari:fastjet2}.
-It is based on the clustering of neutral and charged PF candidates within a distance parameter of 0.4. Charged PF candidates
-not associated with the primary vertex of the interaction
-are not considered when building jets. An offset correction is applied to jet energies to take into account the contribution from additional $\Pp\Pp$ interactions within the same or nearby bunch crossings. The energy of a jet is calibrated based on simulation and
-data through correction factors~\cite{CMS-JME-10-011}.
-In this analysis, jets are required to
-have $\pt$ greater than 30\GeV and $\abs{\eta}$ less than 4.7, and
-are separated from the selected leptons by a $\dr$ of at least 0.5.
-The combined secondary vertex (CSV) algorithm is used to identify jets that are likely to originate from a b quark (``b jets"). The algorithm exploits the track-based lifetime information together with the secondary vertices associated with the jet to provide a likelihood ratio discriminator for the b jet identification. A set of $\pt$-dependent correction
-factors are applied to simulated events to account for differences in the b tagging efficiency
-between data and simulation. The working point chosen in this analysis gives an efficiency for real b jets of about 70\%, and for about 1\% of light flavor or quark jets being misidentified.
-
 Hadronically decaying $\Pgt$ leptons
 are reconstructed with the hadron-plus-strips (HPS)
 algorithm~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}, which is
@@ -432,24 +463,11 @@ Electrons and muons misidentified as $\tauh$ candidates are suppressed using ded
 based on the consistency between the measurements in the tracker, the calorimeters, and the muon detectors~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}.
 The working points of these discriminators depend on the
 decay channel studied.
-The $\tauh$ energy scale in simulation is corrected per decay mode, on the basis of a measurement in $\PZ\to\Pgt\Pgt$ events. The rate and the
-energy scale of electrons and muons misidentified as $\tauh$ candidates are also corrected in simulation, on the basis of a tag-and-probe measurement~\cite{CMS:2011aa} in $\PZ\to\ell\ell$ events.
 
-All particles reconstructed in the event are used to determine the missing transverse energy,
-\etvecmiss. The missing transverse momentum is defined as the negative vectorial sum of the transverse energy of
-all PF candidates~\cite{Khachatryan:2014gga}. It is adjusted for the effect of jet energy corrections.
-Corrections to the $\etvecmiss$ are applied to reduce the mismodeling of the simulated
-$\PZ$+jets, $\PW$+jets and Higgs boson samples.
-The corrections are applied to the simulated events on the basis of the vectorial difference
-of the measured missing transverse energy and total transverse energy of neutrinos
-originating from the decay of the $\PZ$, $\PW$, or Higgs boson. Their average effect is the reduction of the $\etvecmiss$ obtained from simulation by a few \GeV.
 
-The visible mass of the $\Pgt\Pgt$ system, $\mvis$, can be used to separate
-the $\PH\to \Pgt \Pgt$ signal events
-from the large contribution of irreducible $\PZ \to \Pgt \Pgt$ events.
-However, the neutrinos from the $\Pgt$ lepton decays carry a large fraction of
-the $\Pgt$ lepton energy and reduce the discriminating power of this variable.
-The \textsc{svfit} algorithm combines the \etvecmiss with the four-vectors of both $\Pgt$ candidates
-to calculate a more accurate estimate of the mass of the parent boson, denoted as $\mtt$. The resolution of $\mtt$ is between 15 and 20\% depending on the $\Pgt\Pgt$ final state.
-A detailed description of the algorithm can be found
-in Ref.~\cite{Bianchini:2014vza}. Both variables are used in the analysis, as detailed in Section.~\ref{sec:categories}, and $\mvis$ is preferred over $\mtt$ when the background from $\PZ \to \ell\ell$ events is large.
+\subsection{b-jet ID and Secondary Vertex}
+The combined secondary vertex (CSV) algorithm is used to identify jets that are likely to originate from a b quark (``b jets"). The algorithm exploits the track-based lifetime information together with the secondary vertices associated with the jet to provide a likelihood ratio discriminator for the b jet identification. A set of $\pt$-dependent correction
+factors are applied to simulated events to account for differences in the b tagging efficiency
+between data and simulation. The working point chosen in this analysis gives an efficiency for real b jets of about 70\%, and for about 1\% of light flavor or quark jets being misidentified.
+
+
