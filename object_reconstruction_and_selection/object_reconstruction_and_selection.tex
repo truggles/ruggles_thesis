@@ -508,7 +508,7 @@ leptons decay hadronically to $\tauh$.
 
 \begin{figure*}[htbp]
 \centering
-     \includegraphics[width=0.65\textwidth]{object_reconstruction_and_selection/plots/CMS-TAU-14-001_tau_mass.pdf}
+     \includegraphics[width=0.55\textwidth]{object_reconstruction_and_selection/plots/CMS-TAU-14-001_tau_mass.pdf}
      \caption{
 The reconstructed invariant mass of the $\tauh$ candidate. A spike is seen at 140\MeV for the 1-prong
 $\tauh$ decay mode where the mass is assigned equal to the mass of a $\pi^{\pm}$. The 1-prong+$\PGpz$
@@ -542,14 +542,22 @@ to define the widths of the dynamic strip.
      \label{fig:tau_dyn_strip}
 \end{figure*}
 
-A multivariate (MVA) discriminator~\cite{Hocker:2007ht}, including isolation
-and lifetime information, is used to reduce the rate for  quark- and gluon-initiated jets
-to be identified as $\tauh$ candidates. The working point used in this analysis
+A multivariate (MVA) discriminator~\cite{Hocker:2007ht}, including isolation, shape-based variables
+and lifetime information, is used to reduce the rate for  quark and gluon initiated jets
+to be identified as $\tauh$ candidates. The working point used in the $\htt$ analysis, \texttt{Tight Tau MVA},
 has an efficiency of about 60\% for genuine $\tauh$,
-with about 1\% misidentification rate for quark- and gluon-initiated jets, for a $\pt$ range typical of $\tauh$ originating from a $\PZ$ boson.
-Electrons and muons misidentified as $\tauh$ candidates are suppressed using dedicated criteria
-based on the consistency between the measurements in the tracker, the calorimeters, and the muon detectors~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}.
-The working points of these discriminators depend on the
-decay channel studied.
+with about 1\% misidentification rate for quark- and gluon-initiated jets, for a $\pt$ range typical 
+of $\tauh$ originating from a $\PZ$ boson. A looser working point is used in the Higgs associated 
+production analysis ZH final states, \texttt{Medium Tau MVA}, which as an efficiency of 65\% for genuine
+$\tauh$ with a 2\% misidentification rate.
+
+Electrons and muons can both be reconstructed as $\tauh$ candidates, usually into the 1-prong or
+1-prong+$\PGpz$ decay modes. For electrons this can happen easily when an electron emits a bremsstrahlung
+photon mimicking a $\PGpz$s in the decay mode reconstruction. MVA discriminants have been developed 
+which specifically target the suppression of electrons and muons being misidentified as 
+$\tauh$~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}.
+A range of anti-e and anti-$\Pgm$ discriminant working points are used in these analyses. The choice
+of which working point to use is tailored towards suppressing the dominant backgrounds in different
+final states and is discussed in detail in the analysis sections~\ref{sec:htt_analysis, sec:vh_analysis}.
 
 
