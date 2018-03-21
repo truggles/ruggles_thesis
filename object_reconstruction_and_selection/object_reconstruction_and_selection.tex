@@ -446,15 +446,103 @@ additional $\pp$ interactions within the same or nearby bunch crossings. The ene
 corrected via calibrations based on simulation and data~\cite{CMS-JME-10-011}.
 
 
+\subsection{b-jet ID and Secondary Vertex}
+Jets which result from the decay and hadronization of b quarks are used to help classify events
+in the $\htt$ analyses. B quarks are not produced from the four leading Higgs boson production
+mechanisms. Therefore, in multiple final states, events with jets which are likely caused by the decay and
+hadronization of b quarks are a likely sign of a background event.
+The combined secondary vertex (CSVv2) algorithm is used to identify jets that likely resulted
+from a b quark decay, a ``b-jet''. The CSVv2 algorithm uses track-based lifetime information together with 
+the reconstructed secondary vertices associated with the jet to provide a likelihood ratio 
+discriminator for b-jet identification. The b jet identification working point chosen in the $\htt$ analyses 
+gives an efficiency for identifying genuine b jets of about 70\%, and for misidentifying light flavor jets
+as b jets of about 1\%.
+
+
 \subsection{Taus}
-Hadronically decaying $\Pgt$ leptons
-are reconstructed with the hadron-plus-strips (HPS)
-algorithm~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}, which is
-seeded with anti-\kt jets.
-The HPS algorithm reconstructs $\tauh$ candidates on the basis of the
-number of tracks and of the number of ECAL strips in the $\eta$-$\phi$ plane with energy deposits, in the 1-prong,
-1-prong + $\PGpz$(s), and 3-prong decay modes. A
-multivariate (MVA) discriminator~\cite{Hocker:2007ht}, including isolation
+Hadronically decaying $\Pgt$ leptons are reconstructed in PF with the hadron-plus-strips (HPS)
+algorithm~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002} which is seeded with the collection of 
+anti-\kt jets discussed above. The HPS algorithm reconstructs $\tauh$ candidates based on their
+compatibility with one of the primary $\tau\to\tauh$ decay modes listed in table~\ref{tab:tau_dms}.
+A large number of decay modes involve decays of $\PGpz  \to  \gamma\gamma$. The $\PGpz$ are
+searched for in strips of \etaphi elongated in the $\phi$ direction to catch photon conversions.
+Since the start of Run-II, the HPS algorithm has moved from using a fixed width strip,
+$0.05 \eta \times 0.20 \phi$, to a dynamic width strip where the width depents on the 
+$\pt$ of the electron or photon used to seed the strip. More dynamic strip details in the following paragraph.
+Strips containing one or more electron of photon constituent and passing a cut of $\pt > 2.5\GeV$
+for the sum of the electrons and photons are kept as $\PGpz$ candidates. Based on the number of
+charged hadrons and $\PGpz$s, the $\tauh$ candidate is assigned a decay mode. For the $\tau$
+decay modes involving a meson resonance, there is a mass window requirement that necessitates
+that the $\tauh$ invariant mass be consistent with the meson resonance. $\tauh$ with only a single
+charged hadron are assigned a mass equal to the mass of a $\pi^{\pm}$, 140\MeV. Figure~\ref{fig:tau_mass}
+shows the reconstructed mass for hadronically decaying taus in 2012 data using a selection with
+high genuine tau purity in the $\Pgm\tauh$ final state.
+
+\begin{table*}[htbp]
+\centering
+\begin{tabular}{|l|cc|}
+\hline
+Decay Mode                                             &   Meson Resonanace     & $\mathcal{B}$ (\%) \\
+\hline
+$\tau^{-}  \to  \Pe^{-}\bar{\nu}_{\text{e}}\nu_{\tau}$ &                        &     17.8  \\
+$\tau^{-}  \to  \Pgm^{-}\bar{\nu}_{\mu}\nu_{\tau}$     &                        &     17.4  \\
+$\tau^{-}  \to  h^{-}\nu_{\tau}$                       &                        &     11.5  \\
+$\tau^{-}  \to  h^{-}\PGpz\nu_{\tau}$                  &      $\rho$(770)       &     26.0  \\
+$\tau^{-}  \to  h^{-}\PGpz\PGpz\nu_{\tau}$             &      a1(1260)          &     10.8  \\
+$\tau^{-}  \to  h^{-}h^{+}h^{-}\nu_{\tau}$             &      a1(1260)          &      9.8  \\
+$\tau^{-}  \to  h^{-}h^{+}h^{-}\PGpz\nu_{\tau}$        &                        &      4.8  \\
+Other modes with hadrons                               &                        &      1.8  \\
+\hline
+Total leptonic modes                                   &                        &     35.2  \\
+Total hadronic modes                                   &                        &     64.8  \\
+\hline
+\end{tabular}
+\label{tab:tau_dms}
+\caption{
+Decay modes for $\tau^{-}$ leptons including leptonic decays and hadronic decays. 
+The $h^{\pm}$ stand for $\pi^{\pm}$ or $K^{\pm}$. Inverting all
+of the ``-'' for ``+'' will give the decay modes for $\tau^{+}$ leptons. Nearly 65\% of $\tau$
+leptons decay hadronically to $\tauh$.
+}
+\end{table*}
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.65\textwidth]{object_reconstruction_and_selection/plots/CMS-TAU-14-001_tau_mass.pdf}
+     \caption{
+The reconstructed invariant mass of the $\tauh$ candidate. A spike is seen at 140\MeV for the 1-prong
+$\tauh$ decay mode where the mass is assigned equal to the mass of a $\pi^{\pm}$. The 1-prong+$\PGpz$
+decay mode is seen to peak around 770\MeV while the 3-prong decay mode centers around 1260\MeV.
+     }
+     \label{fig:tau_mass}
+\end{figure*}
+
+The dynamic strip reconstruction has been optimized to best group together the $\PGpz$ 
+decay products within a $\tauh$. It was found that the fixed width strips used in Run-I
+occasionally allowed the $\PGpz$ decay products to escape a strip which would result in
+the escaped particle being added to the isolation sums for the $\tauh$ and not contributing
+to the energy or momentum of the $\tauh$. Widening the fixed width strips can be used to catch
+these escaping particles. However, considering that more boosted $\tauh$ will have a more 
+collimated structure, it is also helpful to narrow the strip at higher $\tauh \pt$ to suppress
+pileup or other non-$\tau$ contributions when possible. The strip widths are calibrated to
+on simulations that target retaining 95\% of the $\PGpz$ decay products, see figure~\ref{fig:tau_dyn_strip}.
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.45\textwidth]{object_reconstruction_and_selection/plots/tau_dyn_strip_eta.pdf}
+     \includegraphics[width=0.45\textwidth]{object_reconstruction_and_selection/plots/tau_dyn_strip_phi.pdf}
+     \caption{
+Distance in $\eta$ (left) and $\phi$ (right) between $\tauh$ and e/$\gamma$, that are due to 
+hadronic tau decay
+products, as a function of e/$\gamma \pt$. The size of the window is larger in the $\phi$
+direction due to bending in the magnetic field. The dotted line shows the 95\%
+quantile while the red line shows the fit to the 95\% quantile. The red line is used
+to define the widths of the dynamic strip.
+     }
+     \label{fig:tau_dyn_strip}
+\end{figure*}
+
+A multivariate (MVA) discriminator~\cite{Hocker:2007ht}, including isolation
 and lifetime information, is used to reduce the rate for  quark- and gluon-initiated jets
 to be identified as $\tauh$ candidates. The working point used in this analysis
 has an efficiency of about 60\% for genuine $\tauh$,
@@ -463,11 +551,5 @@ Electrons and muons misidentified as $\tauh$ candidates are suppressed using ded
 based on the consistency between the measurements in the tracker, the calorimeters, and the muon detectors~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}.
 The working points of these discriminators depend on the
 decay channel studied.
-
-
-\subsection{b-jet ID and Secondary Vertex}
-The combined secondary vertex (CSV) algorithm is used to identify jets that are likely to originate from a b quark (``b jets"). The algorithm exploits the track-based lifetime information together with the secondary vertices associated with the jet to provide a likelihood ratio discriminator for the b jet identification. A set of $\pt$-dependent correction
-factors are applied to simulated events to account for differences in the b tagging efficiency
-between data and simulation. The working point chosen in this analysis gives an efficiency for real b jets of about 70\%, and for about 1\% of light flavor or quark jets being misidentified.
 
 
