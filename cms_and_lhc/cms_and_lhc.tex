@@ -167,53 +167,52 @@ $\lambda_{l}$ (left) and radiation lengths $X_{0}$ (right), as a function of the
 The electromagnetic calorimeter (ECAL) is a homogeneous calorimeter made of lead 
 tungstate $(\textrm{PbWO}_{4})$ crystals. There are 61200 individual crystals mounted
 in the barrel region with 360 crystals completing a ring in $\phi$ and 170 crystals
-spanning the barrel $\eta$ range, $\abs\eta < 1.479$. The corresponding crystal
-cross-section is approximately $0.0174 \times 0.0174$ in \etaphi, or about $22 \times 22 \textrm{mm}^{2}$
+spanning the barrel $\eta$ range, $\abs\eta < 1.479$. 
+The ECAL endcap detectors cover the $\eta$ range $1.479 < \abs\eta < 3.0$. The multiple
+ECAL systems can be seen in Figure~\ref{fig:cms_ecal}.
+The ECAL barrel crystal cross-section is approximately $0.0174 \times 0.0174$ 
+in \etaphi, or about $22 \times 22 \textrm{mm}^{2}$
 on the front face of a crystal. Twenty-two millimeters is also the Moli\`ere radius
 for $(\textrm{PbWO}_{4})$, meaning, on average, an electromagnetic shower could be
-contained by 4 crystals. The total crystal length of 230mm corresponds to a
-radiation length of 25.8 $X_{0}$. 
+contained by 4 crystals. As mentioned earlier, this fine grain resolution is extremely
+helpful for precise energy measurements of electrons and photons and specifically
+enables the $\PH \to \gamma\gamma$ analysis to resolve a relatively narrow Higgs
+boson mass peak. 
+
+The ECAL barrel crystals are 230mm in length corresponding to a
+radiation length of 25.8 $X_{0}$ which is sufficient to contain 98\% of the energy
+of electrons and photons up to 1\TeV. Despite the large number of radiation lengths,
+the crystals have an interaction length, $\lambda_{l}$, of about 1.0. This causes
+roughly two thirds of the hardrons passing through the ECAL to start showering
+within the ECAL. 
+
 As particles interact with the crystals, energy is deposited at a rate of about 4.5
 photoelectrons per \MeV~\cite{dafinei_auffray_lecoq_schneegans_1994}.
-To read-out the energy deposited in each barrel
+The scintillation decay time of the $(\textrm{PbWO}_{4})$ crystals is approximately the
+same order of magnitude as the LHC bunch crossing time; about 80\% of the light is emitted in 25 ns.
+This provides the fast response necessary to separate out-of-time energy ECAL deposite
+from a given LHC bunch crossing. To read-out the energy deposited in each barrel
 crystal, there is an avalanch photodiode (APD) mounted to the backside-facing surface
 of the crystal. For the endcap crystals, a more radiation hardened readout is used,
-vacuum phototriodes (VPTs).
+vacuum phototriodes (VPTs). typical ECAL electronics noise 
+$\sigma ^{\text{ECAL}} _{\text{noise}}$ is measured to be $\approx$ 40 (150) \MeV 
+per crystal in noise the barrel (endcaps).
+The energy resolution of the ECAL barrel crystals is given by
+Equation~\ref{eqn:ecal_res}.
 
-
-
-
-
-
-closed by 7324 crys- tals in each of the two endcaps. Vacuum phototriodes (VPTs) in the endcaps. The use of high density crystals has allowed the design of a calorimeter which is fast, has fine granularity and is radiation resistant, all important characteristics in the LHC environment. One of the driving criteria in the design was the capability to detect the decay to two photons of the postulated Higgs boson. This capability is enhanced by the good energy resolution provided by a homogeneous crystal calorimeter.
-
-The electromagnetic calorimeter (ECAL) is a homogeneous calorimeter made of 61200 lead tungstate (PbWO4) crystals mounted in the central barrel part, closed by 7324 crys- tals in each of the two endcaps. A preshower detector is placed in front of the endcap crystals. Avalanche photodiodes (APDs) are used as photodetectors in the barrel and vacuum phototriodes (VPTs) in the endcaps. The use of high density crystals has allowed the design of a calorimeter which is fast, has fine granularity and is radiation resistant, all important characteristics in the LHC environment. One of the driving criteria in the design was the capability to detect the decay to two photons of the postulated Higgs boson. This capability is enhanced by the good energy resolution provided by a homogeneous crystal calorimeter.
-
-at 18°C about 4.5 photoelectrons per MeV are collected in both APDs and VPTs.
-The high density (8.28g/cm3), short radiation length (0.89cm) and small Molière radius (2.2 cm)
-
-The scintillation decay time of these production crystals is of the same order of magnitude as the LHC bunch crossing time: about 80% of the light is emitted in 25 ns.
-
-Barrel: 
-
-hermetic homogeneous calorimeter made of lead tungstate (PbWO4) crystals. The barrel covers $\abs\eta < 1.479$ and the two endcap disks $1.479 < \abs\eta < 3.0$.
-The barrel (endcap) crystal length of 23 (22) cm corresponds to 25.8 (24.7) radiation lengths, sufficient to contain more than 98\% of the energy of electrons and photons up to 1 TeV.
-The crystal material also amounts to about one interaction length, causing about two thirds of the hadrons to start showering in the ECAL before entering the HCAL.
-The crystal transverse size matches the small Moliere radius of PbWO4, 2.2cm. This fine transverse granularity makes it possible to fully resolve hadron and photon energy deposits as close as 5 cm from one another, for the benefit of exclusive particle identification in jets.
-2.2 × 2.2 \cmsq, equivalent to 0.0174 × 0.0174 in the ($\eta$, $\phi$) plane.
-
-Energy resolution:
 \begin{equation}
 \label{eqn:ecal_res}
 \frac{\sigma}{E} = \frac{2.8\%}{\sqrt{E/\GeV}} \oplus \frac{12\%}{E/\GeV} \oplus 0.3\%
 \end{equation}
 
-typical ECAL electronics noise $\sigma ^{\text{ECAL}} _{\text{noise}}$ is measured to be $\approx$ 40 (150) \MeV per crystal in noise the barrel (endcaps).
+
 
 \begin{figure*}[htbp]
 \centering
      \includegraphics[width=0.8\textwidth]{cms_and_lhc/plots/cms_ecal.png}
      \caption{
+Longitudinal view of the CMS detector depicting the ECAL subdetector.
+The crystals are inclined towards the interaction region.
      }
      \label{fig:cms_ecal}
 \end{figure*}
@@ -221,72 +220,75 @@ typical ECAL electronics noise $\sigma ^{\text{ECAL}} _{\text{noise}}$ is measur
 
 
 \subsection{Hadronic Calorimeter}
+The hadronic calorimeter(s) (HCAL) provide the necessary energy measurements
+to reconstruct charged and neutral hadrons in CMS. These particle are the
+primary measurable constituents in ``jets'' and hadronically decay $\tau$
+leptons. Additionally, measurement of the energy imbalance from a collision
+can indicate the presence of neutrinos or possibly exotic particles~\cite{CMS-Proposal}.
+The HCAL is segmented into four calorimeters: the barrel detector, the endcap detector,
+the forward hadronic detector, and the barrel outer detector. 
+The barrel detector is a sampling calorimeter covering $\abs\eta < 1.3$. It is built
+from flat brass absorber plates interleaved with plastic scintillator segments to
+measure and readout the deposited energy. The HCAL barrel has coarser granularity
+than the ECAL; each segment is $0.087 \times 0.087$ in \etaphi which covers the
+same area as 25 ECAL crystals.
 
-The hadron calorimeters are particularly important for the measurement of hadron jets and neutrinos or exotic particles resulting in apparent missing transverse energy~\cite{CMS-Proposal}
+The HCAL barrel occupies the space between the ECAL and the superconducting magnet
+from a radial distance of 1.77m to 2.95m form the beam line. Particle propagating
+outwards at an angle of $\eta = 0$ will encounter the thinnest portion of the
+HCAL barrel corresponding to 5.82$\lambda_{l}$. The effective thickness increases
+with $\eta$ resulting in 10.6$\lambda_{l}$ at $\abs\eta = 1.3$. The HCAL detector
+is depicted in Figure~\ref{fig:cms_hcal}.
 
-radially restricted between the outer extent of the electromagnetic calorimeter (R = 1.77 m) and the inner extent of the magnet coil (R = 2.95 m).
+To increase the effective
+thickness in the barrel region, $\abs\eta < 1.3$, an outer hadronic calorimeter is placed 
+outside the superconducting magnet which commplements the barrel calorimeter
+extending the effictive thickness to a minimum of 11.8$\lambda_{l}$ in the barrel. 
+The HCAL endcap system partially overlapps with the barrel detector and ranges from
+$1.3 < \abs\eta < 3.0$.
 
-Therefore, an outer hadron calorimeter or tail catcher is placed outside the solenoid complementing the barrel calorimeter. Beyond |η| = 3, the forward hadron calorimeters placed at 11.2 m from the interaction point extend the pseudorapidity coverage down to |η| = 5.2 using a Cherenkov-based, radiation-hard technology.
+Beyond $\abs\eta = 3$, the forward hadronic calorimeter, located
+11.2m from the interaction point, extend the $\eta$ coverage out to $\abs\eta = 5.2$.
+On average, 760\GeV per proton-proton interaction is deposited into the forward 
+calorimeters, compared to only 100\GeV for the rest of the detector~\cite{Chatrchyan:2008zzk}.
+At higher $\abs\eta$ values, closer to the beam pipe, 
+The high particle and radiation flux, at high $\abs\eta$ values, close to the beam pipe,
+severly limits the types of detector systems which can survive years of LHC operating
+conditions. Because of this, the forward hadronic calorimeter is not the same style sampling
+calorimeter like the rest of HCAL. Instead it uses Cherenkov-based, 
+radiation-hard, fused-silica quartz fibres embedded in grooves within the steel structure
+of the absorber material.
 
-The HB is a sampling calorimeter covering the pseudorapidity range |η| < 1.3
-
-flat brass absorber plates (table 5.1) aligned parallel to the beam axis
-
-The plastic scintillator is divided into 16 η sectors, resulting in a segmentation (∆η,∆φ) = (0.087,0.087)
-
-The total absorber thickness at 90◦ is 5.82 interaction lengths (λI ) HB effective thickness increases with polar angle (θ) as 1/sinθ, resulting in 10.6 λI at |η| = 1.3
-
-Scintillator tile and wavelength shifting fibre concept to bring out the light. The CMS hadron calorimeter consists of about 70 000 tiles. plastic scintillator, chosen for its long-term stability and moderate radiation hardness.
- 
-
-
-HO
-for |η| < 1.3
-The total depth of the calorimeter system is thus extended to a minimum of 11.8 λI
-
-HF
-On average, 760 GeV per proton-proton interaction is deposited into the two forward calorimeters, compared to only 100 GeV for the rest of the detector.
-Successful operation critically depends on the radiation hardness of the active material. This was the principal reason why quartz fibres (fused-silica core and polymer hard-cladding) were chosen as the active medium.
-The calorimeter consists of a steel absorber structure that is composed of 5 mm thick grooved
-plates. Fibres are inserted in these grooves.
-full depth of the absorber (165 cm ≈ 10λI)
-where Cherenkov radiation forms the basis of signal generation. Thus, the detector is essentially sensitive only to the electromag- netic shower core and is highly non-compensating (e/h ≈ 5).
-
-
-
-
-hermetic sampling calorimeter consisting of several layers of brass absorber and plastic scintillator tiles. It surrounds the ECAL, with a barrel ($\abs\eta$ < 1.3) and two endcap disks ($1.3 < \abs\eta < 3.0$).
-Almost six interaction lengths at normal incidence, and increases to over ten interaction lengths at larger pseudorapidities.
-It is complemented by a tail catcher (HO), installed outside the solenoid coil. The HO material 
-(1.4 interaction lengths at normal incidence) is used as an additional absorber. At small pseudorapidities ($\abs\eta < 0.25$), 
-this thickness is enhanced to a total of three interaction lengths by a 20 cm-thick layer of steel. 
-The total depth of the calorimeter system (including ECAL) is thus extended to a minimum of 
-twelve interaction lengths in the barrel. In the endcaps, the thickness amounts to about ten interaction lengths.
-
-individual towers with a cross section $\Delta\eta \times \Delta\phi = 0.087 \times 0.087$ for $\abs\eta < 1.6$ 
-and $0.17 \times 0.17$ at larger pseudorapidities.
-
-Energy resolution has been measured for the HB using test beams~\cite{Elvira:800406}, and is:
+The energy resolution of the HCAL barrel has been measured using test beams~\cite{Elvira:800406}, and is:
 \begin{equation}
 \label{eqn:hcal_res}
 \frac{\sigma}{E} = \frac{115\%}{\sqrt{E/\GeV}} \oplus 5.5\%
 \end{equation}
-For HF hadronic energy resolution~\cite{Baiatian:951395},
+For the forward HCAL system the energy resolution is~\cite{Baiatian:951395},
 \begin{equation}
 \label{eqn:hcal_res}
 \frac{\sigma}{E} = \frac{280\%}{\sqrt{E/\GeV}} \oplus 11\%
 \end{equation}
-
-typical HCAL electronics noise $\sigma ^{\text{HCAL}} _{\text{noise}}$ is measured to be $\approx$ 200 MeV per tower.
+These two equations show the much poorer energy resolution of HCAL compared to ECAL.
+There are multiple reasons for this include the fact that the HCAL is a sampling 
+calorimter thus much of the energy deposits occure in absorber layers and the 
+size of the deposits must be estimated and calibrated for.
+Typical HCAL electronics noise $\sigma ^{\text{HCAL}} _{\text{noise}}$ 
+is measured to be $\approx$ 200 MeV per tower about 5 times the noise level of
+the ECAL barrel crystals, but comparable to the ECAL endcap crystals.
 
 \begin{figure*}[htbp]
 \centering
      \includegraphics[width=0.8\textwidth]{cms_and_lhc/plots/cms_hcal.pdf}
      \caption{
-Longitudinal view of the CMS detector showing the locations of the hadron barrel (HB), endcap (HE), outer (HO) and forward (HF) calorimeters.
+Longitudinal view of the CMS detector showing the locations of the hadron 
+barrel (HB), endcap (HE), outer (HO) and forward (HF) calorimeters. The
+effective thickness of the HB detector increases with increasing $\abs\eta$.
      }
      \label{fig:cms_hcal}
 \end{figure*}
+
+
 
 
 \subsection{Muon System}
