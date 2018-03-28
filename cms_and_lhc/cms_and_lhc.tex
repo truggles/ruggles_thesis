@@ -292,17 +292,18 @@ effective thickness of the HB detector increases with increasing $\abs\eta$.
 
 
 \subsection{Muon System}
-
-Muon system key to HZZ 4 muons.  Best momentum resolution over 4 electrons. Key to Higgs analysis.
-
-The muon system has 3 functions: muon identification, momentum measurement, and triggering.
-
-In the barrel region, where the neutron-induced background is small, the muon rate is low, and the 4-T magnetic field is uniform and mostly contained in the steel yoke, drift chambers with standard rectangular drift cells are used. The barrel drift tube (DT) chambers cover the pseudora- pidity region |η| < 1.2
-
-In the 2 endcap regions of CMS, where the muon rates and background levels are high and the magnetic field is large and non-uniform, the muon system uses cathode strip chambers (CSC). With their fast response time, fine segmentation, and radiation resistance, the CSCs identify muons between |η| values of 0.9 and 2.4.
-
-Because of the uncertainty in the eventual background rates and in the ability of the muon system to measure the correct beam-crossing time when the LHC reaches full luminosity, a com- plementary, dedicated trigger system consisting of resistive plate chambers (RPC) was added in both the barrel and endcap regions. The RPCs provide a fast, independent, and highly-segmented trigger with a sharp pT threshold over a large portion of the rapidity range (|η| < 1.6) of the muon system. The RPCs are double-gap chambers, operated in avalanche mode to ensure good operation at high rates. They produce a fast response, with good time resolution but coarser position reso- lution than the DTs or CSCs. They also help to resolve ambiguities in attempting to make tracks from multiple hits in a chamber.~\cite{1748-0221-8-03-T03001}.
-
+With ``Muon'' in the name of the experiment, it is clear that the muon spectrometer
+is important to the physics goals of the CMS experiment. Excellent muon reconstruction, 
+identification, and momenutum measurement allows Higgs analyses, such as $\PH \to \PZ\PZ$
+where $\PZ\PZ \to \Pgm\Pgm\Pgm\Pgm$ to achieve their most precise mass measurements. Using
+2016 data, the $\PH \to \PZ\PZ$ analysis measured the Higgs boson mass with an uncertainty
+of approximately 0.2\%, 
+$m^{4\Pgm}_{\textrm{H}} = 124.94 \pm 0.25 (\stat) \pm 0.08 (\syst)\GeV$~\cite{cms-2016-hzz}.
+In addition to the mentioned functions of the muon system, the high purity of reconstructed
+muons makes the system very useful for selecting data events to store.
+The muon spectrometer is composed of three subsystems, the drift tubes (DT) which cover
+$\abs\eta < 1.2$, the cathode strip chambers (CSC) which cover $0.9 < \abs\eta < 2.4$, and
+the resistive plate chambers (RPC) covering $\abs\eta < 1.6$, see Figure~\ref{fig:cms_muon_syst}.
 
 \begin{figure*}[htbp]
 \centering
@@ -313,12 +314,59 @@ Layout of one quadrant of CMS. The four DT stations in the barrel (MB1-MB4, gree
      \label{fig:cms_muon_syst}
 \end{figure*}
 
+The muon subsystems are each embedded within the magnet's flux-return yoke. Each system
+detects particles through gas ionization techniques. 
+When passing through ionizing gas detectors, charged particles leave a trail of ionized gas 
+molecules which can be detected and measured by different techniques.
+
+The drift tubes are used in the barrel region
+because of the low expected particle rate and the relatively low strength of the local
+magnetic field (which is well contained in the flux-return yoke through the barrel region).
+The DTs rely on 172,000 2.4m long sensitive wires maintained at a high voltage to detect the traces
+of passing charged particles. The wires are housed in a drift cell with a maximum path length
+and time of drift of 21mm and 380ns using a gaseous mixture of 
+$85\% \, \textrm{Argon} \, + \, 15\% \, \textrm{CO}_{2}$~\cite{CMS-Proposal}. The drift cell size and drift
+time are small enough to avoid high occupancy levels during collisions data taking.
+A detailed schmatic of a DT cross-section is in Figure~\ref{fig:cms_muon_dt}.
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.7\textwidth]{cms_and_lhc/plots/cms_muon_dt.jpg}
+     \caption{
+Schematic of a drift tube cell showing drift lines leading to/from the wire 
+and isochrones three of which are seen as the concentric lines surrounding the wire. The voltages applied to the 
+electrodes are +3600V for wires, +1800V for strips, and −1200V for cathodes.
+     }
+     \label{fig:cms_muon_dt}
+\end{figure*}
+
+Progressing outwards from the barrel region towards higher $\abs\eta$ values, the background 
+particle flux increases as does the non-uniformity of the magnetic field in the spacing between
+the flux-return yoke. These considerations lead to a different required muon detection technology.
+In the two endcap regions of CMS the muon system uses cathode strip chambers arranged as large
+disks much like the other subsystem endcaps. The CSCs have a fast 
+response time, fine segmentation, and are more radiation resistant than the DTs. The CSC system
+is depicted in Figure~\ref{fig:cms_muon_csc} showing the relative arangement of the anode
+wires to the cathode strips. The muon coordinate along the anode wires (the $\phi$ coodinate) 
+is obtained by interpolating charges induced on strips~\cite{cms-csc}.
 
 
-Outside the solenoid coil, the magnetic flux is returned through a yoke consisting of three 
-layers of steel interleaved with four muon detector planes. Drift tube (DT) chambers and 
-cathode strip chambers (CSC) detect muons in the regions $\abs\eta < 1.2$ and $0.9 < \abs\eta < 2.4$, 
-respectively, and are complemented by a system of resistive plate chambers (RPC) covering the range $\abs\eta < 1.6$.
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.8\textwidth]{cms_and_lhc/plots/cms_muon_csc2.pdf}
+     \caption{
+Schematic of a CSC module composed of 7 trapezoidal panels with 6 gas gaps between
+the panels housing the anode wires used to detect the ionized molecules from a passing
+muon. The cut-out in the top panel shows the anode wires running horizontally and 
+the cathode strips running vertically.
+     }
+     \label{fig:cms_muon_csc}
+\end{figure*}
+
+
+Because of the uncertainty in the eventual background rates and in the ability of the muon system to measure the correct beam-crossing time when the LHC reaches full luminosity, a com- plementary, dedicated trigger system consisting of resistive plate chambers (RPC) was added in both the barrel and endcap regions. The RPCs provide a fast, independent, and highly-segmented trigger with a sharp pT threshold over a large portion of the rapidity range (|η| < 1.6) of the muon system. The RPCs are double-gap chambers, operated in avalanche mode to ensure good operation at high rates. They produce a fast response, with good time resolution but coarser position reso- lution than the DTs or CSCs. They also help to resolve ambiguities in attempting to make tracks from multiple hits in a chamber.~\cite{1748-0221-8-03-T03001}.
+
+
 
 \subsubsection{Drift Tubes}
 \subsubsection{Cathode Strip Chambers}
