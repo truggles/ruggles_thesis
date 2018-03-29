@@ -348,37 +348,86 @@ disks much like the other subsystem endcaps. The CSCs have a fast
 response time, fine segmentation, and are more radiation resistant than the DTs. The CSC system
 is depicted in Figure~\ref{fig:cms_muon_csc} showing the relative arangement of the anode
 wires to the cathode strips. The muon coordinate along the anode wires (the $\phi$ coodinate) 
-is obtained by interpolating charges induced on strips~\cite{cms-csc}.
+is obtained by interpolating charges induced on strips~\cite{cms_csc_gas}.
+The CSC subsystem has a nominal gas mixture of 
+$40\% \, \textrm{Argon} \, + \, 50\% \, \textrm{CO}_{2} \, + \, 10\% \, \textrm{CF}_{4}$.
 
 
 \begin{figure*}[htbp]
 \centering
      \includegraphics[width=0.8\textwidth]{cms_and_lhc/plots/cms_muon_csc2.pdf}
      \caption{
-Schematic of a CSC module composed of 7 trapezoidal panels with 6 gas gaps between
-the panels housing the anode wires used to detect the ionized molecules from a passing
-muon. The cut-out in the top panel shows the anode wires running horizontally and 
+(left) Schematic of a CSC module composed of 7 trapezoidal panels with 6 gas gaps between
+the panels. The cut away of the top panel reveals the anode wires used to 
+detect ionized molecules from a passing muon. The anode wires running horizontally and 
 the cathode strips running vertically.
+(right) Two diagram showing the inner dimensions of a CSC gas gap. The two views
+show how the orthogonal configuration of the anode wires and cathode strip can be used
+to localize the positions of a transversing muon.
      }
      \label{fig:cms_muon_csc}
 \end{figure*}
 
+To increase the timing precision of the muon spectrometer a third subsystem was added
+built from resistive plate chambers (RPC) which cover the barrel and a portion of the endcap
+region of the detector, $\abs\eta < 1.6$. The RPCs are gaseous parallel-plate ionizing gas 
+detectors with two gas chambers per module. The RPC system is used to compliment the excellent spacial resolution of the
+DTs and CSCs with a high precision timing measurement that can resolve with which LHC bunch
+crossing a certain energy deposit is associated. The timing resolution is comparable
+to that of scintillator-based detectors~\cite{rpc_dev}.
 
-Because of the uncertainty in the eventual background rates and in the ability of the muon system to measure the correct beam-crossing time when the LHC reaches full luminosity, a com- plementary, dedicated trigger system consisting of resistive plate chambers (RPC) was added in both the barrel and endcap regions. The RPCs provide a fast, independent, and highly-segmented trigger with a sharp pT threshold over a large portion of the rapidity range (|η| < 1.6) of the muon system. The RPCs are double-gap chambers, operated in avalanche mode to ensure good operation at high rates. They produce a fast response, with good time resolution but coarser position reso- lution than the DTs or CSCs. They also help to resolve ambiguities in attempting to make tracks from multiple hits in a chamber.~\cite{1748-0221-8-03-T03001}.
+The RPCs are constructed with two chambers per module that are both operated in avalanche mode.
+Common pick-up read-out strips are located in between the two chambers. With the common
+ read-out strips, the total induced signal is the sum total of the signal in each of the
+chambers. The two-fold signal allows the RPCs to operate at a lower voltage than a single
+chamber detector and leads to increased efficiency. 
+The RPC subsystem is operated with a nominal gas mixture of 
+$96.2\% \, \textrm{R134a} \, + \, 3.5\% \, i\textrm{C}_{4}\textrm{H}_{10} \, + \, 0.3\% \, \textrm{SF}_{6}$~\cite{CMS-Proposal}.
+An example of the
+double-chamber construction is in Figure~\ref{fig:cms_muon_rpc}.
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.8\textwidth]{cms_and_lhc/plots/cms_muon_rpc.pdf}
+     \caption{
+A sketch of a double-chamber RPC. The gas chamber is 2mm wide and is surrounded by two
+bakelite layers 2mm thick each.
+     }
+     \label{fig:cms_muon_rpc}
+\end{figure*}
 
 
 
-\subsubsection{Drift Tubes}
-\subsubsection{Cathode Strip Chambers}
-\subsubsection{Resistive Plate Chambers}
 \subsection{Trigger and Data Acquisition}
-40 MHz - high speed electronics capable of operating in close synchronization
-trigger, L1, HLT
-Significant upgrades of the L1 trigger during the first long shutdown of the LHC have benefitted this analysis, especially in the $\tauh\tauh$ channel. These upgrades improved the $\tauh$ identification at L1 by giving more flexibility to object isolation, allowing new techniques to suppress the contribution from additional $\Pp\Pp$ interactions per bunch
-crossing, and to reconstruct the L1 $\tauh$ object in a fiducial region that matches more closely that of a true hadronic $\Pgt$ decay. The flexibility is achieved by employing high bandwidth optical links for data communication and large field-programmable gate arrays (FPGAs) for data processing.
+The CMS Trigger and Data Acquisition (DAQ) system is designed and built to readout detector
+information from each of the CMS subdetectors, make a rapid assessment if the the content
+associated with a specific LHC bunch crossing is worth storing for future physics analysis,
+and, finally, delivering the event content to storage. The 40MHz bunch crossing rate of
+the LHC makes this a remarkable challenge. The Trigger and DAQ system must operate rapidly
+and in close synchronization so that the event content read-out by each subdetector is attributed
+to the proper LHC bunch crossing. In the end, the system reduces the throughput rate from the
+input 40MHz to a storage rate of roughly 1kHz. Storing more data would be.....FIXME
+The CMS experiment must maintain a storage rate 
+no higher than 1kHz because of the 
+
+
 
 \subsubsection{Level-1 Trigger}
+The CMS Trigger system is broken down into two levels. This two leveled approach relies on
+the first level, the Level-1 (L1) Trigger, to assess basic event content from each LHC
+bunch crossing and make an initial determiniation of whether the event appears interesting for
+future analysis or not. The L1 Trigger reduces the input 40MHz rate to a more manageable
+100kHz which is assessed by the High Level Trigger (HLT). The speed and throughput requirements 
+of the L1 Trigger necessitate that nearly all of the hardware is custom designed and built.
+
+
+
+Significant upgrades of the L1 trigger during the first long shutdown of the LHC have benefitted this analysis, especially in the $\tauh\tauh$ channel. These upgrades improved the $\tauh$ identification at L1 by giving more flexibility to object isolation, allowing new techniques to suppress the contribution from additional $\Pp\Pp$ interactions per bunch
+crossing, and to reconstruct the L1 $\tauh$ object in a fiducial region that matches more closely that of a true hadronic $\Pgt$ decay. The flexibility is achieved by employing high bandwidth optical links for data communication and large field-programmable gate arrays (FPGAs) for data processing.
 \subsubsection{Aside for CaloL1 Duties and Online SW}
 \subsubsection{HLT}
 \subsubsection{Aside for 2018 Tau Trigger Updates}
 \subsubsection{Aside for Phase-2 L1EG Discussion}
+
+
+
