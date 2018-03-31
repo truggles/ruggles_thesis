@@ -6,3 +6,6 @@
 *.toc
 ruggles_thesis.fdb_latexmk
 ruggles_thesis.fls
+*.DS_Store
+*.bbl
+*.blg
