@@ -307,7 +307,7 @@ the resistive plate chambers (RPC) covering $\abs\eta < 1.6$, see Figure~\ref{fi
 
 \begin{figure*}[htbp]
 \centering
-     \includegraphics[width=1.0\textwidth]{cms_and_lhc/plots/cms_muon_syst.png}
+     \includegraphics[width=0.8\textwidth]{cms_and_lhc/plots/cms_muon_syst.png}
      \caption{
 Layout of one quadrant of CMS. The four DT stations in the barrel (MB1-MB4, green), the four CSC stations in the endcap (ME1-ME4, blue), and the RPC stations (red) are shown.
      }
@@ -388,7 +388,7 @@ double-chamber construction is in Figure~\ref{fig:cms_muon_rpc}.
 
 \begin{figure*}[htbp]
 \centering
-     \includegraphics[width=0.8\textwidth]{cms_and_lhc/plots/cms_muon_rpc.pdf}
+     \includegraphics[width=0.6\textwidth]{cms_and_lhc/plots/cms_muon_rpc.pdf}
      \caption{
 A sketch of a double-chamber RPC. The gas chamber is 2mm wide and is surrounded by two
 bakelite layers 2mm thick each.
@@ -405,28 +405,156 @@ associated with a specific LHC bunch crossing is worth storing for future physic
 and, finally, delivering the event content to storage. The 40MHz bunch crossing rate of
 the LHC makes this a remarkable challenge. The Trigger and DAQ system must operate rapidly
 and in close synchronization so that the event content read-out by each subdetector is attributed
-to the proper LHC bunch crossing. In the end, the system reduces the throughput rate from the
-input 40MHz to a storage rate of roughly 1kHz. Storing more data would be.....FIXME
-The CMS experiment must maintain a storage rate 
-no higher than 1kHz because of the 
+to the proper LHC bunch crossing. In total, the trigger system reduces the throughput rate from the
+initial 40MHz to a storage rate of roughly 1kHz. Storing more events for physics analysis is
+always desired, but with each event requiring roughly 1 MB of disk space for storage in its
+raw format, storing many more events is not currently an option for the CMS experiment based 
+on available storage space~\cite{CMS-Proposal}. 
 
 
 
 \subsubsection{Level-1 Trigger}
-The CMS Trigger system is broken down into two levels. This two leveled approach relies on
+The CMS Trigger system is broken down into two tiers. The two tiered approach relies on
 the first level, the Level-1 (L1) Trigger, to assess basic event content from each LHC
 bunch crossing and make an initial determiniation of whether the event appears interesting for
 future analysis or not. The L1 Trigger reduces the input 40MHz rate to a more manageable
-100kHz which is assessed by the High Level Trigger (HLT). The speed and throughput requirements 
-of the L1 Trigger necessitate that nearly all of the hardware is custom designed and built.
+100kHz. The speed and throughput requirements of the L1 Trigger necessitate that the system 
+is built from dedicated, custom hardware. The L1 Trigger is restricted to 4 $\mu$s of latency
+to make the determination of whether the event should be passed the the next tier or whether
+the event should be deleted~\cite{Khachatryan:2016bia}. The latency requirement eliminates
+the possibily of using inner tracker information as well as full ECAL crystal-level
+granularity.
+
+The L1 Trigger utilizes input from the calorimeter subsystems, ECAL and HCAL, and the muon 
+subsystems, DT, CSC, and RPC. A systems flow chart of the L1 Trigger is in
+Figure~\ref{fig:cms_l1t}. The L1 Trigger is split into two path the calorimeter system
+and the muon system which merge paths at the micro global trigger ($\mu$GT) for the
+final L1 Trigger decision. The muon system is composed of three muon triggers which are
+geometrically divided by $\abs\eta$. The Barrel Muon Track Finder covers $\abs\eta < 0.85$,
+the Overlap Muon Track Finder covers $0.85 < \abs\eta < 1.25$, and the Endcap Muon
+Track Finder covering $1.25 < \abs\eta < 2.4$. The resulting track from the three
+track finder systems are the L1 muon candidates.
+
+Information from the calorimeter subdetectors is aggregated by the
+Calorimeter Layer-1 trigger where initial processing and calibrations are completed.
+Each of the 18 Layer-1 cards (CTP7s) receive calorimeter information from a single 20 degree $\phi$ slice 
+of the detector~\cite{Cadamuro:2017slr}. The HCAL and ECAL input granularity is $0.087 \times 0.087$ in \etaphi
+through the barrel. Above $\abs\eta > 2.1$ the $\eta$ dimension becomes larger with $\phi$
+staying constant reflecting the geometry of the ECAL and HCAL systems. In the L1 Trigger, 
+ECAL information represents as a trigger tower, the sum of $5 \times 5$ groupings of 
+ECAL crystals~\cite{Khachatryan:2016bia}.
+
+Following the 18 Layer-1 CTP7s is the Layer-2 trigger which further aggregates
+data from a singular event so that one Layer-2 hardware card (MP7) has calorimeter data for
+the full detector. This allows computation
+of full event-based characteristics like the missing transverse energy, see 
+Section~\ref{sec:obj_reco_met} for a description of missing transverse energy. A detailed
+layout of the L1 calorimeter trigger can be found in Figure~\ref{fig:cms_l1t} beginning
+with the 18 Layer-1 cards and progressing to the 9 main Layer-2 MP7s plus 3 spares.
+The Layer-2 MP7s execute rapid, firmware-based, algorithms to reconstruct basic physics
+objet candidates such as electrons and $\gamma$s, hadronically decaying $\tau$ leptons, 
+``jets'', and energy sums~\cite{Cadamuro:2017slr}. For a description of ``jets'', 
+see Section~\ref{sec:obj_reco_jets}.
+The calorimeter-based and muon system-based physics objects are sent to the $\mu$GT
+where the final decision is made whether to pass an event along to the HLT or not.
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.49\textwidth]{cms_and_lhc/plots/cms_l1t_system.pdf}
+     \includegraphics[width=0.49\textwidth]{cms_and_lhc/plots/cms_l1t_hardware.pdf}
+     \caption{
+(left) System flow chart of the L1 trigger, showing the complete trigger system, and
+input detector subsystems.
+(right) The L1 calorimeter trigger showing the number of cards and links between
+each system.
+     }
+     \label{fig:cms_l1t}
+\end{figure*}
+
+The Calorimeter Layer-1 Trigger systems was designed and built by the Univeristy of
+Wisconsin--Madison and is currently operated by a team of engineers, research
+scientists, and graduate students. I was part of the team of graduate students maintaining
+the system and would regularly be on-call in case of any trigger related problems. The
+excellent design and engineering that built the Layer-1 CTP7 hardware and firmware
+has resulted in a very robust system. More often than not, the Layer-1 on-call
+helps other detector systems diagnose their detector and link related problems.
 
 
 
-Significant upgrades of the L1 trigger during the first long shutdown of the LHC have benefitted this analysis, especially in the $\tauh\tauh$ channel. These upgrades improved the $\tauh$ identification at L1 by giving more flexibility to object isolation, allowing new techniques to suppress the contribution from additional $\Pp\Pp$ interactions per bunch
-crossing, and to reconstruct the L1 $\tauh$ object in a fiducial region that matches more closely that of a true hadronic $\Pgt$ decay. The flexibility is achieved by employing high bandwidth optical links for data communication and large field-programmable gate arrays (FPGAs) for data processing.
-\subsubsection{Aside for CaloL1 Duties and Online SW}
 \subsubsection{HLT}
-\subsubsection{Aside for 2018 Tau Trigger Updates}
+Events which pass the L1 Trigger progress to the HLT. The significantly reduced
+event rate, from 40MHz to 100kHz, allows for a higher latency trigger which
+has access to information from all detector subsystems at full granularity.
+Specifically, the full HLT has access to the full ECAL crystal granularity and
+information from the inner tracker subsystem. At the start of Run 2, the HLT
+was composed of 15,000 commercially available CPU cores running Scientific
+Linux~\cite{cms_daq_7097437}. The HLT reconstructs events in a similar way
+to what is used offline for events which are already stored. The exception
+is that the HLT version is optimized to run quicker with some small sacrifices 
+in precision which are mostely related to the track reconstruction 
+algoriths~\cite{Khachatryan:2016bia}.
+
+The HLT event processing is centered around the concept of an \texttt{HLT path}.
+An \texttt{HLT path} is a sequence of algorithmic processing steps containing
+steps which reconstruct physics objects and their attributes and other steps
+which make selections filtering out objects which fail certain 
+requirements~\cite{Khachatryan:2016bia}. Well constructed HLT paths will
+save the most CPU-intensive steps for downstream in the path after many of the
+events have been filtered away by failing earlier selections. A good example
+of an \texttt{HLT path} which progresses from simple towards more complex and CPU-
+intensive is that used for hadronically decaying $\tau$ ($\tauh$) lepton reconstruction.
+A common approach to separate $\tauh$ from quark and gluon induced ``jets'' is
+to select well-isolated objects; the HLT relies on this exact approach.
+The first step of $\tauh$ paths reconstruct basic ``jet''~\ref{sec:obj_reco_jet} objects from
+calorimeter information only. Events which reconstruct calorimeter based ``jets''
+passing selection criteria move to the next sequence which adds track information 
+from the inner tracker to calculate the isolation of the associated ``jet''.
+Only after ``jets'' are determined to be well-isolated is the full HLT event 
+reconstruction run~\cite{Khachatryan:2016bia}. This reduces computing time significantly
+and keeps the $\tauh$ paths within the roughly 200 ms time requirement for
+the HLT.
+
+Just like the L1 Trigger, the HLT is used to decide if an event should progress
+to the next stage of data processing. In this case, an event which \textit{passes}
+an \texttt{HLT path} is saved for future data processing. Events which \textit{fail}
+all \texttt{HLT paths} are not stored. The final output rate of the HLT is
+about 1000Hz on average over the full length of a run~\cite{cms_daq_7097437}.
+
+
+
+\subsubsection{Tau HLT Upgrades in 2018}
+In 2017 and 2018, I have worked to help improve the $\tauh$ \texttt{HLT paths} 
+used at CMS. For all previous years, the $\tauh$ \texttt{HLT paths} have used
+a cone-based $\tauh$ reconstruction. The cone-based reconstruction 
+uses a signal cone of $\dr = 0.18$ containing the $\tau$ lepton decay products,
+and has an isolation annulus of $0.18 < \dr < 0.45$. Improvements in the
+algorithm are designed to increase the alignment between the offline $\tauh$
+reconstruction algorithm and the HLT algorithm. Offline reconstruction uses
+the Hadron Plus Strips (HPS) algorithm, see Section~\ref{sec:obj_reco_tau}.
+I have transfered the offline HPS algorithm to the HLT and tested its
+performance against the previous cone-based reconstruction. For a similar
+selection efficiency the HPS algorithm is able to achieve a HLT rate
+reduction of roughly 20\%~\ref{fig:hlt_hps}. The HPS \texttt{HLT paths}
+will be tested during initial 2018 data taking. If online performance
+follow expectations, all of the primiary $\tauh$ \texttt{HLT paths}
+will be updated to using the HPS algorithm.
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.55\textwidth]{cms_and_lhc/plots/eff_Def_vs_HPS_Med_Iso_WP_offline_pT.png}
+     \caption{
+Monte-carlo based efficiency distribution showing the cone-based HLT
+algorithm as ``Default'' in red and the HPS-based HLT algorithm
+in blue. For nearly identical efficiency performance it is expected that
+the HLT rate can be reduced by up to 20\%. FIXME Hopefully I can put in
+a plot comparing data efficiency in early 2018, I'm not sure if there
+will be time.
+     }
+     \label{fig:hlt_hps}
+\end{figure*}
+
+
+
 \subsubsection{Aside for Phase-2 L1EG Discussion}
 
 
