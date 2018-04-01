@@ -26,23 +26,7 @@ acquisition in the Swiss and French countrysides. Additionally, there are physic
 benefits from housing the detectors underground. There is a reduced rate of cosmic
 ray background~\cite{Voss:2009zz}.
 
-
-
-\subsection{LHC Basics}
-The LHC accelerator complex has been built up over the years as technology progressed,
-physics goals advanced, and continued funding allowed for the expansion and repurposing
-of previous accelerators. The LHC acceleration injector chain begins with 1) the LINAC2 linear
-accelerator which accelerates protons from essentially rest to an energy of 50 \MeV, 
-or $\frac{1}{3}$ the speed of light (c).
-The LINAC2 feeds into 1) the Proton Synchrotron Booster circular accelerator boosting
-the protons to an energy of 1.4 \GeV, or 91.6\% c., followed by 3) the Proton Synchrotron further
-accelerating the protons to 26 \GeV, 99.9\% c. The next stage 4) is the Super Proton Synchrotron
-accelerating the protons to 450 \GeV, the input energy for the LHC. From 450 \GeV the LHC 
-will accelerate the proton bunches to their maximum energy of 6.5 \TeV before 
-collisions~\cite{Voss:2009zz}.
-A diagram of the LHC accelerator complex can be seen in Figure~\ref{fig:lhc_complex}.
-
-The LHC collisions take place at four specified locations around the ring where the two rings
+The LHC particle collisions take place at four specified locations around the ring where the two rings
 cross each other. The crossing regions are where, when ready, the LHC can stear the proton
 beams into collisions. The four crossing regions and their detectors correspond to:
 \begin{itemize}
@@ -70,25 +54,89 @@ achieved for protons is 6.5\TeV.
 
 
 
-\subsection{Proton Acceleration}
+\subsection{LHC Basics}
+The LHC accelerator complex has been built up over the years as technology progressed,
+physics goals advanced, and continued funding allowed for the expansion and repurposing
+of previous accelerators. The LHC acceleration injector chain begins with the LINAC2 linear
+accelerator which accelerates protons from rest to an energy of 50 \MeV, 
+or $\frac{1}{3}$ the speed of light (c).
+The proton acceleartion chain begins with a bottle of hydrogen gas which feeds hydrogen
+into the source chamber of the LINAC2. A large electric field is applied in the source
+chaber which breaks the electron-proton bonds separating the electrons from the protons.
+The positive electric charge of the protons allows them to be accelerated by electric
+fields. The LINAC2 and the subsequent circular accelerators all use radio frequency (RF)
+cavities to accelerate the protons.
+With the electrons removed, a group of protons can begin progressing through the accelerator
+chain; each grouping of protons accelerated in the LINAC2 eventually become one of the 
+circulating proton bunches used for collisions in the LHC.
+
+The LINAC2 feeds into the Proton Synchrotron Booster circular accelerator boosting
+the protons to an energy of 1.4 \GeV, or 91.6\% c., followed by the Proton Synchrotron further
+accelerating the protons to 26 \GeV, 99.9\% c. The next stage is the Super Proton Synchrotron
+accelerating the protons to 450 \GeV, the input energy for the LHC. From 450 \GeV the LHC 
+will accelerate the proton bunches to their maximum energy of 6.5 \TeV before 
+collisions~\cite{Voss:2009zz}.
+A diagram of the LHC accelerator complex can be seen in Figure~\ref{fig:lhc_complex}.
 
 
 
-\subsection{Proton Beam Bending}
+\subsection{LHC Magnets}
+The path of the proton and proton bunches is controled by magnetic fields throughout
+the accelerator chain. In all of the circular accelerators, magnetic fields are applied
+at right angles to the protons direction of travel which applies a force orthogonal to
+the magnetic field and proton velocity bending the proton into a circular path. The LHC
+relies on 1232 15-m long superconducting dipole magnets, see Figure~\ref{fig:lhc_dipole},
+to bend the path of the protons into a circular path.
+The maximum magnetic field the superconducting dipole magnets can attain is 8.33 T which
+corresponds to proton beam energy of 7 \TeV. However, the field is limited to 6.5 \TeV by the LHC
+beam losses which heat up the interior of the superconducting dipole magnets~\cite{Voss:2009zz}.
+The LHC diople magnets must be cooled by liquid helium to 1.9 Kelvin to maintain their superconducting
+characteristics~\cite{lhc_magnets}. The superconducting coils are made from NbTi Rutherford
+cables~\cite{1018583}.
 
 \begin{figure*}[htbp]
 \centering
      \includegraphics[width=0.6\textwidth]{cms_and_lhc/plots/lhc_dipole_cross_section.pdf}
      \caption{
+Cross section of an LHC superconducting dipole magnet showing the two beam pipes in the middle
+surrounded by the the superconducting coils.
      }
      \label{fig:lhc_dipole}
 \end{figure*}
 
+The LHC superconducting dipole magnets are complimented by 392 main superconducting quadrupole
+magnets, 688 sextupole magnets, and 168 octupole-type magnets, which are dedicated to proton 
+beam focusing~\cite{lhc_magnets, Voss:2009zz}. 
 
+The accelerator chain and sophisticated magnets of the LHC provide a proton beam segmented
+into discrete bunches which can be focused, defocused, and otherwise adjsuted to adjust
+the rate and characteristics of the proton-proton collision delivered at the beam crossing 
+regions~\cite{Benedikt:2004wm} delivering collisions to the LHC experiments. Basic proton 
+beam design parameters are detailed in Table~\ref{tab:lhc_beam}.
 
-\subsection{Beam Focusing}
-
-
+\begin{table*}[htbp]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+                  & Units     &   LHC Design  &   2016 LHC Operations \\
+\hline
+Center of Mass Energy & [\TeV] &    14      &       13      \\
+Energy per Beam     & [\TeV]  &       7       &       6.5     \\
+Peak Luminosity        & [$\textrm{cm}^{-2}\textrm{s}^{-1}$]   & $1 \times 10^{34}$ & $1.53 \times 10^{34}$  \\
+Number of Bunches   & N/A  &   2808    &  2208     \\
+Bunch Spacing      & [ns]  &       25      & 25        \\
+Protons per Bunch   &  N/A     &   $1.15 \times 10^{11}$   & $1.25 \times 10^{11}$      \\
+Bunch Length, total (4$\sigma$) & [ns] &    1.0     &   1.0 \\
+\hline
+\end{tabular}
+\caption{
+LHC beam characteristics after LHC ramp has increased the energy of the proton beam from
+the input 450 \GeV to collision energy. The bunch length is measured in ns which is the
+relevant value for determining the frequency of the LHC RF cavities (400 MHz) used
+to accelerate the beam; this length roughly corresponds to 1 meter.
+}
+\label{tab:lhc_beam}
+\end{table*}
 
 
 
@@ -639,10 +687,5 @@ will be time.
      }
      \label{fig:hlt_hps}
 \end{figure*}
-
-
-
-\subsubsection{Aside for Phase-2 L1EG Discussion}
-
 
 
