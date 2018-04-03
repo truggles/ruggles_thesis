@@ -1,9 +1,92 @@
 \chapter{Simulation}
 \label{sec:simulation}
+In this chapter I discusses how particle physicists simulate high energy particle physics
+interactions. Simulated interactions, based on knowledge of the Standard Model, provide 
+the foundation of our predictions in high energy particle physics. 
+The wealth of particle physics knowledge accumulated over the last 
+60 years provides has provided a testing grounds to compare experimental results with
+simulated particle interactions. Based on extensive work from the simulation community,
+we are able to simulate and model the the proton-proton collisions which take place in the
+CMS detector with a high degree of precision. Knowledge of what processes should take place
+in our detector allows us to construct a prediction of what we will find. In the following
+analyses, we are specifically interested in comparing two physics scenarios: the Standard Model 
+without the existance of a 125 \GeV Higgs boson versus the Standard Model with the existance
+of a 125 \GeV Higgs boson. Both of these predictions rely on the Standard Model processing and
+Higgs boson processes be well modeled.
+In this chapter, I specifically focus on how events are simulated for proton-proton collisions,
+how the initial products of the collision decay, and how the decay products are modeled
+to interact with a simulation of the CMS detector.
+
+
+\section{Hard Scattering Process}
+Monte Carlo Generator Programs
+FSR ISR
+
+\subsection{Parton Distribution Functions}
+One of the unique complexities present at a hadron collider which is avoided with a
+lepton collider is accounting for the substructure of the colliding hadrons. For proper simulations
+of LHC proton-proton collisions we must account for this. The internal structure of the proton
+has been probed over the past half century using deep inelastic scattering~\cite{Breidenbach:1969kd, PhysRevLett.23.930}.
+Experimental results showed the internal structure of protons revealing the existance of
+quarks and gluons. The internal structure of the colliding protons at the LHC are taken into
+account using what are called Parton Distribution Function (PDFs). PDFs give the probability
+density for finding a particle a parton with a certain longitudinal momentum fraction $x$ at a given
+energy scale. The momentum fraction $x$ is the the parton's fractional momentum with respect
+to the hadron under consideration, protons for CMS related simulations. 
+%Figure~\ref{fig:sim_pdf} 
+%shows example PDFs for two given energy scales. 
+The specific PDFs which are used in the
+following analyses are provided by \texttt{NNPDF3.0} with the exact PDF set being 
+\texttt{NNPDF30\_nlo\_as\_0118}~\cite{Ball:2014uwa, Ball:2011uy}. The \texttt{NNPDF3.0} PDFs
+use a global dataset including, but not limited to, data from HERA, ZEUS, ATLAS, LHCb, and CMS.
+Functional forms derived from theoretical QCD predictions with electroweak corrections are fit
+to the available data resulting in the provided PDFs used by CMS for event simulation~\cite{Ball:2014uwa}.
+
+
+
+\section{Parton Showers}
+    Shower evolution is viewed as a probabilistic process which occures with unit total probability
+    the cross section is not directly affected, but indirectly it is via the changed event shape
+
+
+\section{Underlying Event}
+In addition to the particles resulting from the hard scattering portion of a proton-proton collision,
+there is what is called the underlying event. The underlying event consists of particles coming from
+the hadronization of the partons in the colliding protons which are not the two partons associated the
+hard scattering event, this is often called the beam-beam remenants. The underlying event also
+consists of the particles resulting from multiple-parton interactions. The underlying event in 
+event generators predominantly characterize the kinematics and compostion of soft ``jets''.
+There are specific ``jet'' related physics observabes which are sensitive to the characteristics of the underlying
+event~\cite{Khachatryan:2015pea, Field:cdf2008}. For a description of ``jets'' see Section~\ref{sec:obj_reco_jets}.
+The initial underlying event tune for \POWHEG 8 is the Monash Tune. A CMS specific tuning of 
+\POWHEG 8 has been constructed using the parameters of the Monash Tune. The tune is based
+on data from CDF and 7 \TeV CMS data and is called \texttt{CUETP8M1}. The differences between
+\texttt{CUETP8M1} and the Monash Tune related to the treatement of the energy-dependence 
+parameters in the fit. Considering \texttt{CUETP8M1} is derived based largely on data from
+CMS, there is very good agreement between CMS data and simulations based on the
+\texttt{CUETP8M1} tune~\cite{Khachatryan:2015pea}. 
+ 
+
+
+
+Hard process
+Resonance Decays
+
+\section{Particle Decays}
+Color flow
+Hadronization - quark confinement
+Ordinary decays
+    Tau decays
+    B jet
+
+\section{Detector Simulation}
+GEANT
+
 
 Signal and background processes are modeled with samples of simulated events.
 The signal samples with a Higgs boson produced through gluon fusion ($\cPg\cPg\PH$), vector boson fusion (VBF),
-or in association with a $\PW$ or $\PZ$ boson ($\PW\PH$ or $\PZ\PH$), are generated at next-to-leading order (NLO) in perturbative quantum chromodynamics (pQCD) with the \POWHEG 2.0~\cite{Nason:2004rx,Frixione:2007vw, Alioli:2010xd, Alioli:2010xa, Alioli:2008tz} generator. The \textsc{minlo hvJ}~\cite{Luisoni:2013kna} extension of \POWHEG 2.0 is used for the $\PW\PH$ and $\PZ\PH$ simulated samples. The set of parton distribution functions (PDFs) is NNPDF30\_nlo\_as\_0118~\cite{Ball:2011uy}. The $\ttbar\PH$ process is negligible.
+or in association with a $\PW$ or $\PZ$ boson ($\PW\PH$ or $\PZ\PH$), are generated at next-to-leading order (NLO) in perturbative quantum chromodynamics (pQCD) with the \POWHEG 2.0~\cite{Nason:2004rx,Frixione:2007vw, Alioli:2010xd, Alioli:2010xa, Alioli:2008tz} generator. The \textsc{minlo hvJ}~\cite{Luisoni:2013kna} extension of \POWHEG 2.0 is used for the $\PW\PH$ and $\PZ\PH$ simulated samples. 
+The $\ttbar\PH$ process is negligible.
 The various production cross sections and branching fractions for the SM Higgs boson production, and their corresponding uncertainties are taken from Refs.~\cite{deFlorian:2016spz,Denner:2011mq,Ball:2011mu} and references therein.
 
 The \aMCATNLO~\cite{Alwall:2014hca} generator is used for $\PZ+$jets and $\PW+$jets processes. They are simulated at leading order (LO) with the MLM jet matching and merging~\cite{Alwall:2007fs}.
@@ -17,9 +100,4 @@ The simulated samples include additional $\Pp\Pp$ interactions per bunch
 crossing, referred to as ``pileup''.
 The effect of pileup is taken into account by generating concurrent minimum bias collision events generated with \PYTHIA.
 The simulated events are weighted such that the distribution of the number of additional pileup interactions, estimated from the measured instantaneous luminosity for each bunch crossing, matches that in data, with an average of approximately 27 interactions per bunch crossing.
-
-\section{Hard Scattering Process}
-\section{Monte Carlo Generator Programs}
-\section{Detector Simulation}
-
 
