@@ -35,18 +35,16 @@ energy scale. The momentum fraction $x$ is the the parton's fractional momentum 
 to the hadron under consideration, protons for CMS related simulations. 
 %Figure~\ref{fig:sim_pdf} 
 %shows example PDFs for two given energy scales. 
+
 The specific PDFs which are used in the
 following analyses are provided by \texttt{NNPDF3.0} with the exact PDF set being 
 \texttt{NNPDF30\_nlo\_as\_0118}~\cite{Ball:2014uwa, Ball:2011uy}. The \texttt{NNPDF3.0} PDFs
 use a global dataset including, but not limited to, data from HERA, ZEUS, ATLAS, LHCb, and CMS.
 Functional forms derived from theoretical QCD predictions with electroweak corrections are fit
 to the available data resulting in the provided PDFs used by CMS for event simulation~\cite{Ball:2014uwa}.
+Uncertainties from the PDF estimation method are applied in the following analyses to cover
+potential mismodeling of the proton PDFs used in the CMS simulations.
 
-
-
-\section{Parton Showers}
-    Shower evolution is viewed as a probabilistic process which occures with unit total probability
-    the cross section is not directly affected, but indirectly it is via the changed event shape
 
 
 \section{Underlying Event}
@@ -65,22 +63,73 @@ on data from CDF and 7 \TeV CMS data and is called \texttt{CUETP8M1}. The differ
 parameters in the fit. Considering \texttt{CUETP8M1} is derived based largely on data from
 CMS, there is very good agreement between CMS data and simulations based on the
 \texttt{CUETP8M1} tune~\cite{Khachatryan:2015pea}. 
- 
 
 
 
-Hard process
-Resonance Decays
-
-\section{Particle Decays}
-Color flow
-Hadronization - quark confinement
+\section{Parton Showers}
+The generators are interfaced with \PYTHIA 8.212 ~\cite{Sjostrand:2014zea} to model the parton showering and fragmentation, as well as the decay of the $\Pgt$ leptons.
+    Shower evolution is viewed as a probabilistic process which occures with unit total probability
+    the cross section is not directly affected, but indirectly it is via the changed event shape
+    Resonance Decays
 Ordinary decays
     Tau decays
     B jet
 
+
+
+\section{Hadronization}
+The Lund string model used in Pythia8 vs. cluster model
+Color flow
+Hadronization - quark confinement
+
+
+
+\section{Pileup}
+There where 27 proton-proton collisions per bunch crossing on average
+in the 2016 data collected by CMS.
+For most bunch crossings all of these proton-proton collisions are soft
+scattering events and, with no hard process present, the event it unlikely to be stored for
+future physics analysis because it will fail the Level-1 or High Level Trigger selections. 
+When there is a hard scattering process present in a bunch crossing,
+these soft scattering collisions will still be present and must be modeled. 
+To emulate this effect in simulated events, in addition to the two protons involved in the 
+hard scattering interaction, additional proton-proton interactions are added. 
+These additional proton-proton collisions are
+dominated by the same type of soft scattering collisions observed in data and are referred to as ``pileup''.
+\textsc{Pythia8} is used to generate these soft scattering collision. 
+The distribution of the number of soft scattering events added to a simulated 
+sample is intended to align with the distribution observed in the 2016 data.
+As alignment is never 100\% perfect immediately after the samples are simulated, the simulated events
+are weighted to adjust their distribution to the data based on the measured instantaneous
+luminosity for each bunch crossing, see Section~\ref{sec:htt_mc_samples}.
+
+
+
 \section{Detector Simulation}
-GEANT
+At this stage of event simulation, the simulated events model our best approximation
+of the proton-proton collisions and resulting decays and hadronization taking place
+in the CMS detector. There is one critical last step to complete the event
+simulations. The decay products from the collisions must interact with a simulated
+model of the CMS detector. The result of this final stage is simulated events that
+are stored in the same data format as the data gathered by the detector itself,
+raw energy deposits.
+
+The \textsc{Geant4} software toolkit is used to simulate the CMS 
+detector~\cite{Agostinelli:2002hh}. At its most basic, \textsc{Geant4} is a 
+toolkit for simulating the passage of particles through matter. It contains a 
+vast library of functionality allowing the creation of model physics detectors
+made out of any desired material and in any desired geometrical configuration.
+To validate the \textsc{Geant4} modeling of the CMS detector, test beam data and
+collision data are used. Good agreement is seen between the data and the
+simulated particles passing through the CMS detector for the energy response
+and resolution for pions and protons~\cite{geant4_cms_2017}.
+
+After the decay products of the simulated events have passed through the \textsc{Geant4}
+simulation, they are stored in the same format as data is originally gathered. From
+this point forward, data and simulated events are reconstructed with the same 
+algorithms.
+
+
 
 
 Signal and background processes are modeled with samples of simulated events.
@@ -91,13 +140,6 @@ The various production cross sections and branching fractions for the SM Higgs b
 
 The \aMCATNLO~\cite{Alwall:2014hca} generator is used for $\PZ+$jets and $\PW+$jets processes. They are simulated at leading order (LO) with the MLM jet matching and merging~\cite{Alwall:2007fs}.
 The \aMCATNLO generator is also used for diboson production simulated at next-to-LO (NLO) with the FxFx jet matching and merging~\cite{Frederix:2012ps}, whereas \POWHEG 2.0 and 1.0 are used for $\ttbar$ and single top quark production, respectively.
-The generators are interfaced with \PYTHIA 8.212 ~\cite{Sjostrand:2014zea} to model the parton showering and fragmentation, as well as the decay of the $\Pgt$ leptons.
-The \PYTHIA parameters affecting the description of the underlying event are set to the {CUETP8M1} tune~\cite{Khachatryan:2015pea}.
 
-Generated events are processed through a simulation of the CMS detector based on
-GEANTfour~\cite{Agostinelli:2002hh}, and are reconstructed with the same algorithms used for data.
-The simulated samples include additional $\Pp\Pp$ interactions per bunch
-crossing, referred to as ``pileup''.
-The effect of pileup is taken into account by generating concurrent minimum bias collision events generated with \PYTHIA.
-The simulated events are weighted such that the distribution of the number of additional pileup interactions, estimated from the measured instantaneous luminosity for each bunch crossing, matches that in data, with an average of approximately 27 interactions per bunch crossing.
+
 
