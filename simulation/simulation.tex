@@ -1,27 +1,65 @@
 \chapter{Simulation}
 \label{sec:simulation}
-In this chapter I discusses how particle physicists simulate high energy particle physics
+In this chapter I discusses how particle physicists simulate high energy particle
 interactions. Simulated interactions, based on knowledge of the Standard Model, provide 
 the foundation of our predictions in high energy particle physics. 
 The wealth of particle physics knowledge accumulated over the last 
-60 years provides has provided a testing grounds to compare experimental results with
+60 years has provided a testing grounds to compare experimental results with
 simulated particle interactions. Based on extensive work from the simulation community,
 we are able to simulate and model the the proton-proton collisions which take place in the
-CMS detector with a high degree of precision. Knowledge of what processes should take place
-in our detector allows us to construct a prediction of what we will find. In the following
+CMS detector with a high degree of precision. Knowledge of what Standard Model processes take place
+in our detector allows us to construct simulation-based prediction of what we will find. In the following
 analyses, we are specifically interested in comparing two physics scenarios: the Standard Model 
 without the existance of a 125 \GeV Higgs boson versus the Standard Model with the existance
-of a 125 \GeV Higgs boson. Both of these predictions rely on the Standard Model processing and
-Higgs boson processes be well modeled.
-In this chapter, I specifically focus on how events are simulated for proton-proton collisions,
-how the initial products of the collision decay, and how the decay products are modeled
-to interact with a simulation of the CMS detector.
+of a 125 \GeV Higgs boson. Both of these predictions rely on the Standard Model processes and
+Higgs boson processes be well modeled via simulation.
+Following, I briefly discuss how events are simulated for proton-proton collisions,
+how the initial products of the collision decay, and how the decay products are simulated
+to interact with a model of the CMS detector.
+
+There are many different Monte Carlo (MC) event generators which can contribute to the 
+simulation of high energy particle collisions and decays. There are three main MC event
+generators which are commonly used to model the full proton-proton collision: 
+\PYTHIA~\cite{Sjostrand:2014zea}, \HERWIG~\cite{Bahr:2008pv}, and \textsc{Sherpa}~\cite{Gleisberg:2008ta}. 
+In this thesis, the \textsc{Pythia8} MC event generator is used. \textsc{Pythia8} includes a set of physics models
+which can simulate the particle evolution from a few-body hard-scattering process through
+to a complex multiparticle final states.
+
+To produce some of the physics processes used in this
+thesis we rely on a MC event generator besides \textsc{Pythia8} for the hard-scattering process 
+then use switch back to \textsc{Pythia8} to evolve the hard-scatter products through 
+to their final state products. The
+choice to stitch together multiple MC generators is made in cases where the internal
+hard-scattering physics library in \textsc{Pythia8} is not as complete as others or other
+generators are able to achieve higher order accuracy in their treatment of the
+hard-scattering matrix elements. The two MC generators which are used here for their hard-scatter
+process then stitched to \textsc{Pythia8} are \POWHEG~\cite{Alioli:2010xd} and 
+\MGAMCNLO~\cite{Alwall:2011uj,Alwall:2014hca}.
+
+The signal samples with a Higgs boson produced through gluon fusion ($\cPg\cPg\PH$), vector boson fusion (VBF),
+or in association with a $\PW$ or $\PZ$ boson ($\PW\PH$ or $\PZ\PH$), are all
+generated at next-to-leading order (NLO) in perturbative quantum chromodynamics 
+(pQCD) with the 
+\POWHEG 2.0~\cite{Nason:2004rx,Frixione:2007vw, Alioli:2010xd, Alioli:2010xa, Alioli:2008tz} 
+generator. The \textsc{minlo hvJ}~\cite{Luisoni:2013kna} extension of \POWHEG 2.0 
+is used for the $\PW\PH$ and $\PZ\PH$ simulated samples. 
+%The $\ttbar\PH$ process has a is negligible.
+The \POWHEG 2.0 generator is used for $\ttbar$, and \POWHEG 1.0 is used for simulating 
+single top quark production.
+The \MGAMCNLO generator is used for $\PZ+$jets and $\PW+$jets 
+processes to simulate events at leading order (LO)~\cite{Alwall:2007fs}.
+The \MGAMCNLO generator is used for diboson production simulated at next-to-LO (NLO) 
+%with the FxFx jet matching and merging
+~\cite{Frederix:2012ps}.
 
 
-\section{Hard Scattering Process}
+
+\section{Hard-Scattering Process}
 Monte Carlo Generator Programs
 FSR ISR
     Resonance Decays
+
+
 
 \section{Parton Distribution Functions}
 One of the unique complexities present at a hadron collider which is avoided with a
@@ -49,10 +87,10 @@ potential mismodeling of the proton PDFs used in the CMS simulations.
 
 
 \section{Underlying Event}
-In addition to the particles resulting from the hard scattering portion of a proton-proton collision,
+In addition to the particles resulting from the hard-scattering portion of a proton-proton collision,
 there is what is called the underlying event. The underlying event consists of interactions between
-partons not directly associated with hard scattering event. This comes from interactions of 
-secondary partons within the colliding protons which are not the two hard scatter partons.
+partons not directly associated with hard-scattering event. This comes from interactions of 
+secondary partons within the colliding protons which are not the two hard-scatter partons.
 The soft, low energy nature of the underlying event interactions limits the range of physics
 processes which can result from their interactions. At this level in simulated event generation,
 the most common underlying event interactions result in two partons interacting resulting in a 
@@ -63,8 +101,8 @@ The underlying event in
 Monte Carlo event generators predominantly characterize the kinematics and compostion of soft ``jets''.
 There are specific ``jet'' related physics observabes which are sensitive to the characteristics of the underlying
 event~\cite{Khachatryan:2015pea, Field:cdf2008}. For a description of ``jets'' see Section~\ref{sec:obj_reco_jets}.
-The initial underlying event tune for \POWHEG 8 is the Monash Tune. A CMS specific tuning of 
-\POWHEG 8 has been constructed using the parameters of the Monash Tune. The tune is based
+The initial underlying event tune for \textsc{Pythia8} is the Monash Tune. A CMS specific tuning of 
+\textsc{Pythia8} has been constructed using the parameters of the Monash Tune. The tune is based
 on data from CDF and 7 \TeV CMS data and is called \texttt{CUETP8M1}. The differences between
 \texttt{CUETP8M1} and the Monash Tune related to the treatement of the energy-dependence 
 parameters in the fit. Considering \texttt{CUETP8M1} is derived based largely on data from
@@ -76,7 +114,7 @@ CMS, there is very good agreement between CMS data and simulations based on the
 \section{Parton Showers}
 The next step in created simulated events deals with the partons resulting from ISR,
 FSR, and the underlying event. 
-While matrix elements are used to calculate the hard scattering event plus ISR and FSR, 
+While matrix elements are used to calculate the hard-scattering event plus ISR and FSR, 
 the use of matrix element to fully describe the production and decay of all of the
 partons is technically not possible with current best Monte Carlo generators~\cite{PhysRevD.94.074005}. 
 Instead, these partons are decayed using the parton shower method. 
@@ -86,8 +124,10 @@ of radiating another parton. Partons iteratively decay through three
 dominant processes: $\textrm{q} \to \textrm{gq}$, $\textrm{g} \to \textrm{gg}$, 
 and $\textrm{g} \to \textrm{q}\bar{\textrm{q}}$. 
 
-Technically, there is a matching and merging of the hard scatter matrix element with the
+Technically, there is a matching and merging of the hard-scatter matrix element with the
 parton shower contribution. This does not affect the total process cross section.
+%The $\PZ+$jets and $\PW+$jets samples, which were simulated with \MGAMCNLO, 
+%use MLM jet matching and merging~\cite{Alwall:2007fs}.
 The Monte Carlo generators used in this thesis are interfaced with 
 \PYTHIA 8.212~\cite{Sjostrand:2014zea} to model the parton shower evolution.
 
@@ -96,7 +136,7 @@ The Monte Carlo generators used in this thesis are interfaced with
 \section{Hadronization}
 As mentioned previously, due to color confinement, quarks and gluons can not exist in isolation
 and must be transformed in color-neutral final states~\cite{Hoche:2014rga}. 
-To resolve the lone quarks and gluons which resulted from the hard scatter process and the parton 
+To resolve the lone quarks and gluons which resulted from the hard-scatter process and the parton 
 shower, the partons undergo hadronization. Hadronization is the process where hadrons are formed 
 out of quarks and gluons. There are multiple phenomenological models of hadronization, the
 specific ones used in this thesis is the Lund String Model. The Lund String Model of jet
@@ -115,8 +155,8 @@ oscillate about eachother, represented as the zig-zag lines in Figure~\ref{fig:s
      \includegraphics[width=0.7\textwidth]{simulation/plots/lund_time-space.png}
      \caption{
 (left) Lund String Model flux tubes connecting a quark-antiquark pair. (right) A
-space-time representation of the breakup of an original quark-antiquark pair with
-excess energy. The final representation here depicts seven mesons.
+space-time representation of the hadronization of a quark-antiquark pair. 
+The final representation depicts a seven mesons final state.
      }
      \label{fig:sim_lund_string}
 \end{figure*}
@@ -129,10 +169,10 @@ in the 2016 data collected by CMS.
 For most bunch crossings all of these proton-proton collisions are soft
 scattering events and, with no hard process present, the event it unlikely to be stored for
 future physics analysis because it will fail the Level-1 or High Level Trigger selections. 
-When there is a hard scattering process present in a bunch crossing,
+When there is a hard-scattering process present in a bunch crossing,
 these soft scattering collisions will still be present and must be modeled. 
 To emulate this effect in simulated events, in addition to the two protons involved in the 
-hard scattering interaction, additional proton-proton interactions are added. 
+hard-scattering interaction, additional proton-proton interactions are added. 
 These additional proton-proton collisions are
 dominated by the same type of soft scattering collisions observed in data and are referred to as ``pileup''.
 \textsc{Pythia8} is used to generate these soft scattering collision. 
@@ -168,17 +208,6 @@ simulation, they are stored in the same format as data is originally gathered. F
 this point forward, data and simulated events are reconstructed with the same 
 algorithms.
 
-
-
-
-Signal and background processes are modeled with samples of simulated events.
-The signal samples with a Higgs boson produced through gluon fusion ($\cPg\cPg\PH$), vector boson fusion (VBF),
-or in association with a $\PW$ or $\PZ$ boson ($\PW\PH$ or $\PZ\PH$), are generated at next-to-leading order (NLO) in perturbative quantum chromodynamics (pQCD) with the \POWHEG 2.0~\cite{Nason:2004rx,Frixione:2007vw, Alioli:2010xd, Alioli:2010xa, Alioli:2008tz} generator. The \textsc{minlo hvJ}~\cite{Luisoni:2013kna} extension of \POWHEG 2.0 is used for the $\PW\PH$ and $\PZ\PH$ simulated samples. 
-The $\ttbar\PH$ process is negligible.
-The various production cross sections and branching fractions for the SM Higgs boson production, and their corresponding uncertainties are taken from Refs.~\cite{deFlorian:2016spz,Denner:2011mq,Ball:2011mu} and references therein.
-
-The \aMCATNLO~\cite{Alwall:2014hca} generator is used for $\PZ+$jets and $\PW+$jets processes. They are simulated at leading order (LO) with the MLM jet matching and merging~\cite{Alwall:2007fs}.
-The \aMCATNLO generator is also used for diboson production simulated at next-to-LO (NLO) with the FxFx jet matching and merging~\cite{Frederix:2012ps}, whereas \POWHEG 2.0 and 1.0 are used for $\ttbar$ and single top quark production, respectively.
 
 
 
