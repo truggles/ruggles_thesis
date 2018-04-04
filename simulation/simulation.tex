@@ -21,8 +21,9 @@ to interact with a simulation of the CMS detector.
 \section{Hard Scattering Process}
 Monte Carlo Generator Programs
 FSR ISR
+    Resonance Decays
 
-\subsection{Parton Distribution Functions}
+\section{Parton Distribution Functions}
 One of the unique complexities present at a hadron collider which is avoided with a
 lepton collider is accounting for the substructure of the colliding hadrons. For proper simulations
 of LHC proton-proton collisions we must account for this. The internal structure of the proton
@@ -49,11 +50,17 @@ potential mismodeling of the proton PDFs used in the CMS simulations.
 
 \section{Underlying Event}
 In addition to the particles resulting from the hard scattering portion of a proton-proton collision,
-there is what is called the underlying event. The underlying event consists of particles coming from
-the hadronization of the partons in the colliding protons which are not the two partons associated the
-hard scattering event, this is often called the beam-beam remenants. The underlying event also
-consists of the particles resulting from multiple-parton interactions. The underlying event in 
-event generators predominantly characterize the kinematics and compostion of soft ``jets''.
+there is what is called the underlying event. The underlying event consists of interactions between
+partons not directly associated with hard scattering event. This comes from interactions of 
+secondary partons within the colliding protons which are not the two hard scatter partons.
+The soft, low energy nature of the underlying event interactions limits the range of physics
+processes which can result from their interactions. At this level in simulated event generation,
+the most common underlying event interactions result in two partons interacting resulting in a 
+single parton. This is only an intermediary stage as color confinement eliminates the possibility
+of a single isolated parton propagating through the CMS detector, this will be revisited shortly.
+
+The underlying event in 
+Monte Carlo event generators predominantly characterize the kinematics and compostion of soft ``jets''.
 There are specific ``jet'' related physics observabes which are sensitive to the characteristics of the underlying
 event~\cite{Khachatryan:2015pea, Field:cdf2008}. For a description of ``jets'' see Section~\ref{sec:obj_reco_jets}.
 The initial underlying event tune for \POWHEG 8 is the Monash Tune. A CMS specific tuning of 
@@ -67,20 +74,52 @@ CMS, there is very good agreement between CMS data and simulations based on the
 
 
 \section{Parton Showers}
-The generators are interfaced with \PYTHIA 8.212 ~\cite{Sjostrand:2014zea} to model the parton showering and fragmentation, as well as the decay of the $\Pgt$ leptons.
-    Shower evolution is viewed as a probabilistic process which occures with unit total probability
-    the cross section is not directly affected, but indirectly it is via the changed event shape
-    Resonance Decays
-Ordinary decays
-    Tau decays
-    B jet
+The next step in created simulated events deals with the partons resulting from ISR,
+FSR, and the underlying event. 
+While matrix elements are used to calculate the hard scattering event plus ISR and FSR, 
+the use of matrix element to fully describe the production and decay of all of the
+partons is technically not possible with current best Monte Carlo generators~\cite{PhysRevD.94.074005}. 
+Instead, these partons are decayed using the parton shower method. 
+Parton shower evolution can be viewed as a probabilistic process 
+which occures with unit total probability where each produced parton has a probability
+of radiating another parton. Partons iteratively decay through three 
+dominant processes: $\textrm{q} \to \textrm{gq}$, $\textrm{g} \to \textrm{gg}$, 
+and $\textrm{g} \to \textrm{q}\bar{\textrm{q}}$. 
+
+Technically, there is a matching and merging of the hard scatter matrix element with the
+parton shower contribution. This does not affect the total process cross section.
+The Monte Carlo generators used in this thesis are interfaced with 
+\PYTHIA 8.212~\cite{Sjostrand:2014zea} to model the parton shower evolution.
 
 
 
 \section{Hadronization}
-The Lund string model used in Pythia8 vs. cluster model
-Color flow
-Hadronization - quark confinement
+As mentioned previously, due to color confinement, quarks and gluons can not exist in isolation
+and must be transformed in color-neutral final states~\cite{Hoche:2014rga}. 
+To resolve the lone quarks and gluons which resulted from the hard scatter process and the parton 
+shower, the partons undergo hadronization. Hadronization is the process where hadrons are formed 
+out of quarks and gluons. There are multiple phenomenological models of hadronization, the
+specific ones used in this thesis is the Lund String Model. The Lund String Model of jet
+hadronization is based the observation that within a meson system the quark-antiquark 
+potential rises linearly with the distance between quarks~\cite{Bali:1992ab}. In the model, this
+potential energy is stored in flux lines connecting the quark-antiquark pair, see left pane 
+Figure~\ref{fig:sim_lund_string}. As a quark-antiquark 
+pair with high energy moves apart the energy stored between them in the flux lines increases. If the energy
+is sufficiently high the flux line can be severed as a second quark-antiquark pair are created from
+the freed energy. This can be visualized the right pane of Figure~\ref{fig:sim_lund_string}.
+This process repeats itself creating stable mesons and baryons where the low energy (anti)quarks
+oscillate about eachother, represented as the zig-zag lines in Figure~\ref{fig:sim_lund_string}.
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.7\textwidth]{simulation/plots/lund_time-space.png}
+     \caption{
+(left) Lund String Model flux tubes connecting a quark-antiquark pair. (right) A
+space-time representation of the breakup of an original quark-antiquark pair with
+excess energy. The final representation here depicts seven mesons.
+     }
+     \label{fig:sim_lund_string}
+\end{figure*}
 
 
 
