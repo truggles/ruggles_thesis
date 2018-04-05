@@ -396,9 +396,9 @@ Mass dependant production cross sections and $\htt$ branching fractions for the 
 and their corresponding uncertainties are taken from 
 Refs.~\cite{deFlorian:2016spz,Denner:2011mq,Ball:2011mu} and references therein.
 
-The $\text{MG5}_\aMCATNLO$~\cite{Alwall:2014hca} generator is used for $\PZ+$jets and $\PW+$jets processes. 
+The \MGAMCNLO~\cite{Alwall:2014hca} generator is used for $\PZ+$jets and $\PW+$jets processes. 
 They are simulated at leading order (LO) with MLM jet matching and merging~\cite{Alwall:2007fs}.
-The \aMCATNLO generator is also used for diboson production simulated at next-to-LO (NLO) with the 
+The \MGAMCNLO generator is also used for diboson production simulated at next-to-LO (NLO) with the 
 FxFx jet matching and merging~\cite{Frederix:2012ps}. In contrast, \POWHEG 2.0 and 1.0 are used for \ttbar
 and single top quark production, respectively. The generators are interfaced with \PYTHIA 
 8.212 ~\cite{Sjostrand:2014zea} to model the parton showering and fragmentation, as well as 
@@ -820,7 +820,7 @@ lepton $\pt$ and $\eta$.
 \subsection{Drell--Yan Reweighting}
 \label{sec:htt_dy_reweighting}
 The simulated Monte Carlo Drell--Yan sample used in the analysis is simulated at leading order (LO)
-using the \aMCATNLO generator discussed in section~\ref{sec:simulation}. To assess Monte Carlo to
+using the \MGAMCNLO generator discussed in section~\ref{sec:simulation}. To assess Monte Carlo to
 data agreement a dedicated $\PZ/\Pgg^*\to\Pgm\Pgm$ control region with high Drell--Yan purity was used.
 The $\PZ/\Pgg^*\to\Pgm\Pgm$ control region selected events from the Single Muon PD and requires the 
 presence of two well-identified muons with $\pt > 25 \GeV$ and an invariant mass between 70 and 110\GeV.
@@ -869,7 +869,7 @@ paralled to $\vec{p}_{\text{T,B}}$ ($\vec{U_{1}}$) and one which is orthogonal (
 
 
 \subsection{Generator Event Weights}
-Generator weights are applied on a per event basis. Samples produced with the \aMCATNLO generator
+Generator weights are applied on a per event basis. Samples produced with the \MGAMCNLO generator
 contain both positive and negative event weights, as discussed in the Simulation chapter~\ref{sec:simulation}.
 Negative generator weights in a sample reduces the effective statists of that sample. This reduction
 in statistical power is often the trade off for increased precision in the modeling of a choosen

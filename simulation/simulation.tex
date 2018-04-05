@@ -1,18 +1,17 @@
 \chapter{Simulation}
 \label{sec:simulation}
-In this chapter I discusses how particle physicists simulate high energy particle
-interactions. Simulated interactions, based on knowledge of the Standard Model, provide 
+In this chapter I discusses how high energy particle
+collisions are simulated. Simulated collisions, based on knowledge of the Standard Model, provide 
 the foundation of our predictions in high energy particle physics. 
 The wealth of particle physics knowledge accumulated over the last 
 60 years has provided a testing grounds to compare experimental results with
-simulated particle interactions. Based on extensive work from the simulation community,
+simulated particle collisions. Based on past experiments and extensive work from the simulation community,
 we are able to simulate and model the the proton-proton collisions which take place in the
-CMS detector with a high degree of precision. Knowledge of what Standard Model processes take place
-in our detector allows us to construct simulation-based prediction of what we will find. In the following
-analyses, we are specifically interested in comparing two physics scenarios: the Standard Model 
-without the existance of a 125 \GeV Higgs boson versus the Standard Model with the existance
+CMS detector with a high degree of precision. 
+In this thesis, we are specifically interested in comparing two physics scenarios: the Standard Model 
+without the existence of a 125 \GeV Higgs boson versus the Standard Model with the existence
 of a 125 \GeV Higgs boson. Both of these predictions rely on the Standard Model processes and
-Higgs boson processes be well modeled via simulation.
+Higgs boson processes being well modeled via simulation.
 Following, I briefly discuss how events are simulated for proton-proton collisions,
 how the initial products of the collision decay, and how the decay products are simulated
 to interact with a model of the CMS detector.
@@ -25,28 +24,27 @@ In this thesis, the \textsc{Pythia8} MC event generator is used. \textsc{Pythia8
 which can simulate the particle evolution from a few-body hard-scattering process through
 to a complex multiparticle final states.
 
-To produce some of the physics processes used in this
-thesis we rely on a MC event generator besides \textsc{Pythia8} for the hard-scattering process 
-then use switch back to \textsc{Pythia8} to evolve the hard-scatter products through 
+To produce the physics processes used in this
+thesis we rely on MC event generators besides \textsc{Pythia8} for the hard-scattering process.
+Then we switch back to \textsc{Pythia8} to evolve the hard-scatter products through 
 to their final state products. The
-choice to stitch together multiple MC generators is made in cases where the internal
-hard-scattering physics library in \textsc{Pythia8} is not as complete as others or other
+choice to stitch together multiple MC generators is made when the internal
+hard-scattering physics library in \textsc{Pythia8} is not as complete as other generators or other
 generators are able to achieve higher order accuracy in their treatment of the
-hard-scattering matrix elements. The two MC generators which are used here for their hard-scatter
-process then stitched to \textsc{Pythia8} are \POWHEG~\cite{Alioli:2010xd} and 
+hard-scattering process. The two MC generators which are used for the hard-scatter
+process are \POWHEG~\cite{Alioli:2010xd,Frixione:2007vw} and 
 \MGAMCNLO~\cite{Alwall:2011uj,Alwall:2014hca}.
 
 The signal samples with a Higgs boson produced through gluon fusion ($\cPg\cPg\PH$), vector boson fusion (VBF),
 or in association with a $\PW$ or $\PZ$ boson ($\PW\PH$ or $\PZ\PH$), are all
 generated at next-to-leading order (NLO) in perturbative quantum chromodynamics 
-(pQCD) with the 
-\POWHEG 2.0~\cite{Nason:2004rx,Frixione:2007vw, Alioli:2010xd, Alioli:2010xa, Alioli:2008tz} 
-generator. The \textsc{minlo hvJ}~\cite{Luisoni:2013kna} extension of \POWHEG 2.0 
-is used for the $\PW\PH$ and $\PZ\PH$ simulated samples. 
+with the \POWHEG 2.0~\cite{Nason:2004rx,Frixione:2007vw, Alioli:2010xa, Alioli:2008tz} 
+generator. The \textsc{minlo hvJ} extension of \POWHEG 2.0 
+is used for the $\PW\PH$ and $\PZ\PH$ simulated samples~\cite{Luisoni:2013kna}. 
 %The $\ttbar\PH$ process has a is negligible.
 The \POWHEG 2.0 generator is used for $\ttbar$, and \POWHEG 1.0 is used for simulating 
 single top quark production.
-The \MGAMCNLO generator is used for $\PZ+$jets and $\PW+$jets 
+The \MGAMCNLO generator is used for the $\PZ+$jets and $\PW+$jets 
 processes to simulate events at leading order (LO)~\cite{Alwall:2007fs}.
 The \MGAMCNLO generator is used for diboson production simulated at next-to-LO (NLO) 
 %with the FxFx jet matching and merging
@@ -55,34 +53,68 @@ The \MGAMCNLO generator is used for diboson production simulated at next-to-LO (
 
 
 \section{Hard-Scattering Process}
-Monte Carlo Generator Programs
-FSR ISR
-    Resonance Decays
+The hard-scattering process is the main process of interest in a simulated event.
+It is the portion of the simulation describing the interaction and annihilation of the
+two partons from the colliding protons. The hard-scattering process creates the 
+signal and background processes of interest in this thesis,
+such as $\PW$, $\PZ$, and Higgs bosons. For all simulated signal and background samples,
+the hard-scattering process is defined by the Standard Model lagrangian. The specific processes
+studied in this thesis can be represented by the lagrangian matrix elements and their
+resulting Feynman diagrams. The hard-scattering process is described by two
+MC event generators in this thesis, \MGAMCNLO and \POWHEG. 
+
+The \MGAMCNLO generator can be
+operated a both LO and NLO. After supplying \MGAMCNLO with a process of interest including
+the input partons and resulting particles, it generates the Feynman rules describing the 
+process and can translate them into Feynman diagrams~\cite{Christensen:2008py}. 
+At LO, this process is fully automated using \textsc{FeynRules}~\cite{Christensen:2008py,Alloul:2013bka}.
+At NLO QCD, the process is fully automated via \textsc{FeynRules}; other NLO contributions 
+%such as UV counter-terms 
+must be added with dedicated computations~\cite{Alwall:2014hca}.
+
+The \POWHEG event generator is favored for production of the Higgs boson signal processes.
+\POWHEG does not have the convenient automation which comes with \MGAMCNLO, instead each
+physics process must be coded separately. However, the large amount of interest in Higgs boson physics
+has led to a thoroughly developed and validated process library 
+~\cite{Alioli:2010xa,Alioli:2008tz,Brein:2003wg,Ravindran:2003um,deFlorian:2012mx}.
+%Additionally, \POWHEG is used for the Higgs signal process because it often produces a more 
+%reliable $\pt$ spectrum and more accurate description of the hard jets~\cite{Frixione:2007vw,Alioli:2010xd}.
+
+Initial state radiation (ISR) and final state radiation (FSR) are both taken into account
+during the hard-scattering process. These are both probabilistic processes that are not 
+guaranteed to happen in any given simulated event. 
+ISR is the process where a particle is radiated off of
+one of the partons involved in the hard-scattering process before the hard-scattering process
+takes place. When this happens the energy of the parton is decreased altering the event
+kinematics. The same process can happen after the hard-scattering process to one of the
+hard-scattering products reducing their energy and, again, changing the event kinematics.
 
 
 
 \section{Parton Distribution Functions}
-One of the unique complexities present at a hadron collider which is avoided with a
-lepton collider is accounting for the substructure of the colliding hadrons. For proper simulations
+One of the unique complexities present at a hadron collider, which is avoided with a
+lepton collider, is accounting for the substructure of the colliding hadrons. For proper simulations
 of LHC proton-proton collisions we must account for this. The internal structure of the proton
 has been probed over the past half century using deep inelastic scattering~\cite{Breidenbach:1969kd, PhysRevLett.23.930}.
-Experimental results showed the internal structure of protons revealing the existance of
+Experimental results showed the internal structure of protons revealing the existence of
 quarks and gluons. The internal structure of the colliding protons at the LHC are taken into
 account using what are called Parton Distribution Function (PDFs). PDFs give the probability
-density for finding a particle a parton with a certain longitudinal momentum fraction $x$ at a given
+density for finding a parton with a certain momentum fraction $x$ at a given
 energy scale. The momentum fraction $x$ is the the parton's fractional momentum with respect
-to the hadron under consideration, protons for CMS related simulations. 
+to the hadron under consideration, protons for these CMS related simulations. 
 %Figure~\ref{fig:sim_pdf} 
 %shows example PDFs for two given energy scales. 
 
-The specific PDFs which are used in the
-following analyses are provided by \texttt{NNPDF3.0} with the exact PDF set being 
+The specific PDFs which are used in this thesis
+ are provided by \texttt{NNPDF3.0} with the exact PDF set being 
 \texttt{NNPDF30\_nlo\_as\_0118}~\cite{Ball:2014uwa, Ball:2011uy}. The \texttt{NNPDF3.0} PDFs
 use a global dataset including, but not limited to, data from HERA, ZEUS, ATLAS, LHCb, and CMS.
 Functional forms derived from theoretical QCD predictions with electroweak corrections are fit
 to the available data resulting in the provided PDFs used by CMS for event simulation~\cite{Ball:2014uwa}.
-Uncertainties from the PDF estimation method are applied in the following analyses to cover
-potential mismodeling of the proton PDFs used in the CMS simulations.
+The PDFs provide proper normalization based on the probabilistic distribution of the 
+available partons and their energies as inputs to the hard-scattering process.
+%Uncertainties from the PDF estimation method are applied in the following analyses to cover
+%potential mismodeling of the proton PDFs used in the CMS simulations.
 
 
 
@@ -98,13 +130,13 @@ single parton. This is only an intermediary stage as color confinement eliminate
 of a single isolated parton propagating through the CMS detector, this will be revisited shortly.
 
 The underlying event in 
-Monte Carlo event generators predominantly characterize the kinematics and compostion of soft ``jets''.
-There are specific ``jet'' related physics observabes which are sensitive to the characteristics of the underlying
+Monte Carlo event generators predominantly characterize the kinematics and composition of soft ``jets''.
+There are specific ``jet'' related physics observables which are sensitive to the characteristics of the underlying
 event~\cite{Khachatryan:2015pea, Field:cdf2008}. For a description of ``jets'' see Section~\ref{sec:obj_reco_jets}.
 The initial underlying event tune for \textsc{Pythia8} is the Monash Tune. A CMS specific tuning of 
 \textsc{Pythia8} has been constructed using the parameters of the Monash Tune. The tune is based
 on data from CDF and 7 \TeV CMS data and is called \texttt{CUETP8M1}. The differences between
-\texttt{CUETP8M1} and the Monash Tune related to the treatement of the energy-dependence 
+\texttt{CUETP8M1} and the Monash Tune related to the treatment of the energy-dependence 
 parameters in the fit. Considering \texttt{CUETP8M1} is derived based largely on data from
 CMS, there is very good agreement between CMS data and simulations based on the
 \texttt{CUETP8M1} tune~\cite{Khachatryan:2015pea}. 
@@ -119,7 +151,7 @@ the use of matrix element to fully describe the production and decay of all of t
 partons is technically not possible with current best Monte Carlo generators~\cite{PhysRevD.94.074005}. 
 Instead, these partons are decayed using the parton shower method. 
 Parton shower evolution can be viewed as a probabilistic process 
-which occures with unit total probability where each produced parton has a probability
+which occurs with unit total probability where each produced parton has a probability
 of radiating another parton. Partons iteratively decay through three 
 dominant processes: $\textrm{q} \to \textrm{gq}$, $\textrm{g} \to \textrm{gg}$, 
 and $\textrm{g} \to \textrm{q}\bar{\textrm{q}}$. 
@@ -148,7 +180,7 @@ pair with high energy moves apart the energy stored between them in the flux lin
 is sufficiently high the flux line can be severed as a second quark-antiquark pair are created from
 the freed energy. This can be visualized the right pane of Figure~\ref{fig:sim_lund_string}.
 This process repeats itself creating stable mesons and baryons where the low energy (anti)quarks
-oscillate about eachother, represented as the zig-zag lines in Figure~\ref{fig:sim_lund_string}.
+oscillate about each other, represented as the zig-zag lines in Figure~\ref{fig:sim_lund_string}.
 
 \begin{figure*}[htbp]
 \centering
@@ -160,6 +192,12 @@ The final representation depicts a seven mesons final state.
      }
      \label{fig:sim_lund_string}
 \end{figure*}
+
+While not technically part of the hadronization process, \textsc{Pythia8} is also used for the 
+decay of any hard-scatter resonances such as $\PZ$ or $\PW$ bosons and their subsequent
+decay products. \textsc{Pythia8} is also used to model $\tau$ lepton decays where the spin
+correlations are fully included. All $\tau$ decay modes with branch ratios greater than 0.04\%
+are included in the simulation~\cite{ILTEN201477}.
 
 
 
