@@ -59,30 +59,28 @@ two partons from the colliding protons. The hard-scattering process creates the
 signal and background processes of interest in this thesis,
 such as $\PW$, $\PZ$, and Higgs bosons. For all simulated signal and background samples,
 the hard-scattering process is defined by the Standard Model lagrangian. The specific processes
-studied in this thesis can be represented by the lagrangian matrix elements and their
-resulting Feynman diagrams. The hard-scattering process is described by two
-MC event generators in this thesis, \MGAMCNLO and \POWHEG. 
+studied in this thesis can be represented by matrix elements and their
+resulting Feynman diagrams.
 
 The \MGAMCNLO generator can be
-operated a both LO and NLO. After supplying \MGAMCNLO with a process of interest including
+operated a both LO and NLO accuracies. After supplying \MGAMCNLO with a process of interest including
 the input partons and resulting particles, it generates the Feynman rules describing the 
 process and can translate them into Feynman diagrams~\cite{Christensen:2008py}. 
 At LO, this process is fully automated using \textsc{FeynRules}~\cite{Christensen:2008py,Alloul:2013bka}.
-At NLO QCD, the process is fully automated via \textsc{FeynRules}; other NLO contributions 
+At NLO, the NLO QCD, the process is fully automated via \textsc{FeynRules}; other NLO contributions 
 %such as UV counter-terms 
 must be added with dedicated computations~\cite{Alwall:2014hca}.
 
 The \POWHEG event generator is favored for production of the Higgs boson signal processes.
 \POWHEG does not have the convenient automation which comes with \MGAMCNLO, instead each
 physics process must be coded separately. However, the large amount of interest in Higgs boson physics
-has led to a thoroughly developed and validated process library 
+has led to a thoroughly developed and validated process library resulting in NLO accuracy
 ~\cite{Alioli:2010xa,Alioli:2008tz,Brein:2003wg,Ravindran:2003um,deFlorian:2012mx}.
 %Additionally, \POWHEG is used for the Higgs signal process because it often produces a more 
 %reliable $\pt$ spectrum and more accurate description of the hard jets~\cite{Frixione:2007vw,Alioli:2010xd}.
 
 Initial state radiation (ISR) and final state radiation (FSR) are both taken into account
-during the hard-scattering process. These are both probabilistic processes that are not 
-guaranteed to happen in any given simulated event. 
+during the hard-scattering process. These are both probabilistic processes.
 ISR is the process where a particle is radiated off of
 one of the partons involved in the hard-scattering process before the hard-scattering process
 takes place. When this happens the energy of the parton is decreased altering the event
@@ -93,14 +91,16 @@ hard-scattering products reducing their energy and, again, changing the event ki
 
 \section{Parton Distribution Functions}
 One of the unique complexities present at a hadron collider, which is avoided with a
-lepton collider, is accounting for the substructure of the colliding hadrons. For proper simulations
-of LHC proton-proton collisions we must account for this. The internal structure of the proton
-has been probed over the past half century using deep inelastic scattering~\cite{Breidenbach:1969kd, PhysRevLett.23.930}.
-Experimental results showed the internal structure of protons revealing the existence of
+lepton collider, is accounting for the substructure of the colliding hadrons. 
+We must account for this to create proper simulations
+of LHC proton-proton collisions. The internal structure of the proton
+has been probed over the past half century through deep inelastic scattering
+experiments~\cite{Breidenbach:1969kd, PhysRevLett.23.930}.
+Experimental results show the internal structure of protons revealing the existence of
 quarks and gluons. The internal structure of the colliding protons at the LHC are taken into
-account using what are called Parton Distribution Function (PDFs). PDFs give the probability
+account using what are called Parton Distribution Functions (PDFs). PDFs give the probability
 density for finding a parton with a certain momentum fraction $x$ at a given
-energy scale. The momentum fraction $x$ is the the parton's fractional momentum with respect
+energy scale within a hadron. The momentum fraction $x$ is the the parton's fractional momentum with respect
 to the hadron under consideration, protons for these CMS related simulations. 
 %Figure~\ref{fig:sim_pdf} 
 %shows example PDFs for two given energy scales. 
@@ -108,9 +108,9 @@ to the hadron under consideration, protons for these CMS related simulations.
 The specific PDFs which are used in this thesis
  are provided by \texttt{NNPDF3.0} with the exact PDF set being 
 \texttt{NNPDF30\_nlo\_as\_0118}~\cite{Ball:2014uwa, Ball:2011uy}. The \texttt{NNPDF3.0} PDFs
-use a global dataset including, but not limited to, data from HERA, ZEUS, ATLAS, LHCb, and CMS.
+are derived using a global dataset including, but not limited to, data from HERA, ZEUS, ATLAS, LHCb, and CMS.
 Functional forms derived from theoretical QCD predictions with electroweak corrections are fit
-to the available data resulting in the provided PDFs used by CMS for event simulation~\cite{Ball:2014uwa}.
+to the available data~\cite{Ball:2014uwa}.
 The PDFs provide proper normalization based on the probabilistic distribution of the 
 available partons and their energies as inputs to the hard-scattering process.
 %Uncertainties from the PDF estimation method are applied in the following analyses to cover
@@ -120,41 +120,43 @@ available partons and their energies as inputs to the hard-scattering process.
 
 \section{Underlying Event}
 In addition to the particles resulting from the hard-scattering portion of a proton-proton collision,
-there is what is called the underlying event. The underlying event consists of interactions between
-partons not directly associated with hard-scattering event. This comes from interactions of 
-secondary partons within the colliding protons which are not the two hard-scatter partons.
-The soft, low energy nature of the underlying event interactions limits the range of physics
-processes which can result from their interactions. At this level in simulated event generation,
-the most common underlying event interactions result in two partons interacting resulting in a 
+there are additional particles resulting from what is called the underlying event. 
+The underlying event consists of interactions between
+partons which are not the two directly associated with hard-scattering event, secondary partons 
+within the colliding protons.
+Underlying event collisions are softer and lower energy in nature which limits the range of 
+the resulting physics processes. 
+The most common underlying event interactions result in two partons interacting resulting in a 
 single parton. This is only an intermediary stage as color confinement eliminates the possibility
 of a single isolated parton propagating through the CMS detector, this will be revisited shortly.
 
 The underlying event in 
-Monte Carlo event generators predominantly characterize the kinematics and composition of soft ``jets''.
+Monte Carlo event generators characterize the kinematics and composition of soft ``jets''.
 There are specific ``jet'' related physics observables which are sensitive to the characteristics of the underlying
 event~\cite{Khachatryan:2015pea, Field:cdf2008}. For a description of ``jets'' see Section~\ref{sec:obj_reco_jets}.
 The initial underlying event tune for \textsc{Pythia8} is the Monash Tune. A CMS specific tuning of 
-\textsc{Pythia8} has been constructed using the parameters of the Monash Tune. The tune is based
-on data from CDF and 7 \TeV CMS data and is called \texttt{CUETP8M1}. The differences between
-\texttt{CUETP8M1} and the Monash Tune related to the treatment of the energy-dependence 
-parameters in the fit. Considering \texttt{CUETP8M1} is derived based largely on data from
+\textsc{Pythia8} has been constructed based off of the parameters of the Monash Tune but adding 
+some additional energy-dependent parameters to the fit. The tune is based
+on data from CDF and 7 \TeV CMS data and is called \texttt{CUETP8M1}.
+Considering \texttt{CUETP8M1} is derived based largely on data from
 CMS, there is very good agreement between CMS data and simulations based on the
 \texttt{CUETP8M1} tune~\cite{Khachatryan:2015pea}. 
 
 
 
 \section{Parton Showers}
-The next step in created simulated events deals with the partons resulting from ISR,
+The next step in creating simulated events deals with the partons resulting from ISR,
 FSR, and the underlying event. 
 While matrix elements are used to calculate the hard-scattering event plus ISR and FSR, 
-the use of matrix element to fully describe the production and decay of all of the
+the use of matrix elements to fully describe the production and decay of all of the
 partons is technically not possible with current best Monte Carlo generators~\cite{PhysRevD.94.074005}. 
 Instead, these partons are decayed using the parton shower method. 
 Parton shower evolution can be viewed as a probabilistic process 
 which occurs with unit total probability where each produced parton has a probability
 of radiating another parton. Partons iteratively decay through three 
 dominant processes: $\textrm{q} \to \textrm{gq}$, $\textrm{g} \to \textrm{gg}$, 
-and $\textrm{g} \to \textrm{q}\bar{\textrm{q}}$. 
+and $\textrm{g} \to \textrm{q}\bar{\textrm{q}}$. Swap $\textrm{q}$ for $\bar{\textrm{q}}$
+to complete the set. 
 
 Technically, there is a matching and merging of the hard-scatter matrix element with the
 parton shower contribution. This does not affect the total process cross section.
@@ -177,10 +179,10 @@ potential rises linearly with the distance between quarks~\cite{Bali:1992ab}. In
 potential energy is stored in flux lines connecting the quark-antiquark pair, see left pane 
 Figure~\ref{fig:sim_lund_string}. As a quark-antiquark 
 pair with high energy moves apart the energy stored between them in the flux lines increases. If the energy
-is sufficiently high the flux line can be severed as a second quark-antiquark pair are created from
-the freed energy. This can be visualized the right pane of Figure~\ref{fig:sim_lund_string}.
+is sufficiently high the flux line can be severed and a second quark-antiquark pair created from
+the freed energy. This can be visualized in the right pane of Figure~\ref{fig:sim_lund_string}.
 This process repeats itself creating stable mesons and baryons where the low energy (anti)quarks
-oscillate about each other, represented as the zig-zag lines in Figure~\ref{fig:sim_lund_string}.
+oscillate about each other stably, represented as the zig-zag lines in Figure~\ref{fig:sim_lund_string}.
 
 \begin{figure*}[htbp]
 \centering
@@ -208,15 +210,14 @@ For most bunch crossings all of these proton-proton collisions are soft
 scattering events and, with no hard process present, the event it unlikely to be stored for
 future physics analysis because it will fail the Level-1 or High Level Trigger selections. 
 When there is a hard-scattering process present in a bunch crossing,
-these soft scattering collisions will still be present and must be modeled. 
+the soft scattering collisions will still be present and must be modeled. 
 To emulate this effect in simulated events, in addition to the two protons involved in the 
-hard-scattering interaction, additional proton-proton interactions are added. 
-These additional proton-proton collisions are
-dominated by the same type of soft scattering collisions observed in data and are referred to as ``pileup''.
-\textsc{Pythia8} is used to generate these soft scattering collision. 
+hard-scattering interaction, additional soft proton-proton collisions are added.
+These collisions are referred to as ``pileup'' and are generated using
+\textsc{Pythia8}. 
 The distribution of the number of soft scattering events added to a simulated 
 sample is intended to align with the distribution observed in the 2016 data.
-As alignment is never 100\% perfect immediately after the samples are simulated, the simulated events
+Because alignment is never 100\% perfect immediately after the samples are simulated, the simulated events
 are weighted to adjust their distribution to the data based on the measured instantaneous
 luminosity for each bunch crossing, see Section~\ref{sec:htt_mc_samples}.
 
@@ -226,7 +227,7 @@ luminosity for each bunch crossing, see Section~\ref{sec:htt_mc_samples}.
 At this stage of event simulation, the simulated events model our best approximation
 of the proton-proton collisions and resulting decays and hadronization taking place
 in the CMS detector. There is one critical last step to complete the event
-simulations. The decay products from the collisions must interact with a simulated
+simulations. The decay products must interact with a simulated
 model of the CMS detector. The result of this final stage is simulated events that
 are stored in the same data format as the data gathered by the detector itself,
 raw energy deposits.
@@ -243,7 +244,7 @@ and resolution for pions and protons~\cite{geant4_cms_2017}.
 
 After the decay products of the simulated events have passed through the \textsc{Geant4}
 simulation, they are stored in the same format as data is originally gathered. From
-this point forward, data and simulated events are reconstructed with the same 
+this point forward, data and simulated events are reconstructed with the exact same 
 algorithms.
 
 
