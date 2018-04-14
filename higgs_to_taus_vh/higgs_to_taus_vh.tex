@@ -1,35 +1,19 @@
-\chapter{Analysis Strategy: Higgs Produced in Associated Production with $\PW/\PZ$}
+\chapter{Higgs $\to \Pgt\Pgt$ via Associated Production}
 \label{sec:vh_analysis}
 
-\section{Overview: ZHiggs to $\ell\ell\tau\tau$}
-\subsection{Channels}
-\section{Data Set}
-\section{MC Samples}
-\section{Triggers}
-\section{SVFit Algorithm}
-\section{Background Estimation}
-\section{Systematic Uncertainties}
-\subsection{Uncertainties related to object reconstruction and identification}
-\subsection{Background estimation uncertainties}
-\subsection{Signal prediction uncertainties}
-\subsection{Other uncertainties}
-\subsection{Luminsity}
-\subsection{Lepton ID and Isolation}
-\subsection{Tau Fake Rate}
-\subsection{Energy Scales}
-\subsubsection{Tau Energy Scale}
-\subsubsection{Jet Energy Scale}
-\subsubsection{MET Energy Scale}
-\subsection{Theoretical Uncertainties for Higgs Boson}
+This chapter describes a study of Higgs boson produced via the $\PW\PH$ and
+$\PZ\PH$ associated production processes. The Higgs boson subsequently
+decays to a pair of $\tau$ leptons and uses CMS proton-proton collision data gathered in 2016. 
+This study provides the completion of the previously described
+$\htt$ analysis in Section~\ref{sec:htt_analysis} and is performed 
+using center-of-mass energy 13 TeV data from the LHC. Combining
+the results from this associated production targeted analysis with the results 
+of the gluon fusion and VBF targeted analysis
+we produce the first single experiment observation of the $\htt$ process at 13 TeV, 
+observed at the 5.5 $\sigma$ confidence level. 
 
-
-\section{Introduction\label{sec:intro}}
-
-This paper summarizes the search for the SM Higgs boson 
-produced in association with a $\PW$ or $\PZ$ boson in proton-proton
-collisions at $\sqrt{s}=13$\TeV using a data set collected 
-in 2016 with the CMS experiment corresponding to a total integrated luminosity of 35.9\fbinv.
-In this search, the SM Higgs boson decays to a pair of $\Pgt$ leptons. The symbol $\tauh$ denotes $\Pgt$ leptons decaying hadronically.
+This analysis uses the previously described proton-proton CMS dataset gathered during 2016 
+corresponding to a total integrated luminosity of 35.9\fbinv.
 For the $\PZ\PH$ search, $\PZ\rightarrow \Pe\Pe$
 and $\PZ \to \Pgm\Pgm$ decays are considered combined with four possible $\Pgt\Pgt$ 
 final states from the Higgs boson decay: $\Pe\tauh$, $\Pgm\tauh$,
@@ -37,209 +21,91 @@ $\Pe\Pgm$ and $\tauh\tauh$. For the $\PW\PH$ search, four final states are consi
 the $\PW$ boson decaying leptonically to an electron or muon, and at least one $\tauh$ from the Higgs leptons:
 $\Pgm\Pgm\tauh$, $\Pe\Pgm\tauh$, $\Pe\tauh\tauh$ and $\Pgm\tauh\tauh$. 
 
-
-
-\section{Simulated samples}
-
-Signal and background processes are modeled with samples of simulated events.
-The signal samples with a Higgs boson produced in association with a $\PW$ or 
-$\PZ$ boson ($\PW\PH$ or $\PZ\PH$), are generated at next-to-leading order 
-(NLO) in perturbative quantum chromodynamics (pQCD) with the \POWHEG 
-2.0~\cite{Nason:2004rx,Frixione:2007vw, Alioli:2010xd, Alioli:2010xa, Alioli:2008tz} 
-generator where the \textsc{minlo hvJ}~\cite{Luisoni:2013kna} extension of 
-\POWHEG 2.0 is used. The set of parton distribution functions (PDFs) is 
-NPDF30\_nlo\_as\_0118~\cite{Ball:2011uy}. Because the analysis focuses on
-measuring the $\PW\PH$ and $\PZ\PH$ processes, the $\ttbar\PH$ process is 
-included as background. The \pt distribution of 
-the Higgs boson in the {\POWHEG2.0} simulations is tuned to match more closely
-the next-to-NLO (NNLO) plus next-to-next-to-leading-logarithmic (NNLL) prediction in the
-\textsc{HRes2.3} generator~\cite{deFlorian:2012mx,Grazzini:2013mca}. 
-The various production cross sections and branching fractions for the SM Higgs 
-boson production, and their corresponding uncertainties are taken from 
-Refs.~\cite{deFlorian:2016spz,Denner:2011mq,Ball:2011mu} and references therein.
-
-The qq$\to \PZ\PZ$, $\PW\PZ$, and $\ttbar$ processes are generated with 
-$\POWHEG$, as are the $\PW\PH \to \PW\PW\PW$, $\PZ\PH \to \PZ\PW\PW$, and $\PH \to ZZ$ backgrounds. 
-The $\Pg\Pg \to \PZ\PZ$ process is generated at leading order (LO) with 
-\textsc{MCFM}~\cite{Campbell:2010ff}. The \MGAMCNLO generator is used for 
-triboson, $\ttbar \PW$, and $\ttbar \PZ$  productions simulated either at 
-NLO with the FxFx jet matching and merging~\cite{Frederix:2012ps} 
-or at LO with the MLM jet matching and merging~\cite{Alwall:2007fs}.  
-The generators are interfaced with \PYTHIA 8.212 ~\cite{Sjostrand:2014zea} 
-to model the parton showering and fragmentation, as well as the decay of the $\Pgt$ leptons.
-The \PYTHIA parameters affecting the description of the underlying event are 
-set to the {CUETP8M1} tune~\cite{Khachatryan:2015pea}.
-
-Generated events are processed through a simulation of the CMS detector based on
-\textsc{Geant4}~\cite{Agostinelli:2002hh}, and are reconstructed with the same algorithms 
-which are used for data.
-The simulated samples include additional $\Pp\Pp$ interactions per bunch
-crossing, referred to as pileup.
-The effect of pileup is taken into account by generating concurrent minimum 
-bias collision events. The simulated events are weighted 
-such that the distribution of the number of additional pileup interactions, 
-estimated from the measured instantaneous luminosity for each bunch crossing, 
-matches that in data, with an average of approximately 27 interactions per bunch crossing.
+There are many similarities between the gluon fusion and VBF targeted $\htt$ analysis
+and the associated production targeted $\htt$ analysis. When appropriate, instead of repeating
+what has already been documented in other chapters, I refer back to the appropriate sections.
 
 
 
-\section{Event reconstruction}
-\label{sec:reconstruction}
-
-The reconstruction of observed and simulated events relies on the 
-particle-flow (PF) algorithm~\cite{Sirunyan:2017ulk}. PF combines 
-information from all CMS subdetectors to identify
-and reconstruct the particles emerging from $\Pp\Pp$ collisions:
-charged hadrons, neutral hadrons, photons, muons, and electrons.
-Combinations of these PF objects are used to reconstruct
-higher-level objects such as jets, $\tauh$ candidates, or
-the missing transverse momentum.
-The missing transverse momentum vector \etvecmiss is defined as 
-the projection onto the plane perpendicular to the beam axis of the 
-negative vectorial sum of the momenta of all reconstructed particle-flow 
-objects in an event. Its magnitude is referred to as \ptmiss.
-The reconstructed vertex with the largest value of summed physics-object 
-$\pt^2$ is taken to be the primary $\Pp\Pp$ interaction vertex. 
-Physics-objects are constructed by a jet finding 
-algorithm~\cite{Cacciari:2008gp,Cacciari:2011ma} applied to all charged 
-tracks.
-
-Muons are identified with requirements on the quality of
-the track reconstruction and on the number of measurements in the
-inner tracker and the muon systems~\cite{Chatrchyan:2012xi}.
-Electrons are identified with a multivariate discriminant
-combining several quantities describing the track quality,
-the shape of the energy deposits in the ECAL,
-and the compatibility of the measurements from the tracker and the
-ECAL~\cite{Khachatryan:2015hwa}.
-To reject non-prompt or misidentified leptons, a relative lepton isolation is defined as:
-
-\begin{equation}
-I^{\ell} \equiv \frac{\sum_\text{charged}  \PT + \max\left( 0, \sum_\text{neutral}  \PT
-                 - \frac{1}{2} \sum_\text{charged, PU} \PT  \right )}{\PT^{\ell}}.
-\label{eq:reconstruction_isolation}
-\end{equation}
-
-In this expression, $\sum_\text{charged}  \PT$ is the scalar sum of the
-transverse momenta of the charged particles originating from
-the primary vertex and located in a cone of size
-$\Delta R = \sqrt{\smash[b]{(\Delta \eta)^2 + (\Delta \phi)^2}} = 0.4$\,(0.3)
-centered on the muon (electron) direction. The sum
-$\sum_\text{neutral}  \PT$  represents
-a similar quantity for neutral particles.
-The contribution of photons and neutral hadrons originating from pileup 
-vertices is estimated from the scalar sum of the transverse
-momenta of charged hadrons in the cone originating from pileup vertices,
-$\sum_\text{charged, PU} \PT$. This sum is multiplied by a factor of
-$1/2$, which corresponds approximately to the ratio of neutral to charged
-hadron production in the hadronization process
-of inelastic $\Pp\Pp$ collisions, as estimated from simulation.
-The expression $\PT^{\ell}$ stands for the $\pt$ of the lepton. Isolation 
-requirements   used in this analysis, based on $I^{\ell}$, are listed 
-in Table~\ref{tab:inclusive_selection}.
-
-Jets are reconstructed with an anti-\kt clustering algorithm implemented
-in the \FASTJET library~\cite{Cacciari:2011ma, Cacciari:fastjet2}.
-It is based on the clustering of neutral and charged PF candidates within 
-a distance parameter of 0.4. Charged PF candidates not associated with 
-the primary vertex of the interaction are not considered when building jets. 
-The combined secondary vertex (CSV) algorithm is used to identify jets 
-that are likely to originate from a b quark 
-(``b jets'')~\cite{1748-0221-8-04-P04013}. The algorithm 
-exploits the track-based lifetime information together with the secondary 
-vertices associated with the jet to provide a likelihood ratio discriminator 
-for the b jet identification. A set of $\pt$-dependent correction
-factors are applied to simulated events to account for differences in the 
-b tagging efficiency between data and simulation. The working point chosen 
-in this analysis gives an efficiency for real b jets of about 70\% for 
-about 1\% of light flavor or quark jets being misidentified.
-
-Hadronically decaying $\Pgt$ leptons are reconstructed with the hadron-plus-strips (HPS)
-algorithm~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}, which is
-seeded with anti-\kt jets. The HPS algorithm reconstructs $\tauh$ 
-candidates on the basis of the number of tracks and on the number of ECAL 
-strips in the $\eta$-$\phi$ plane with energy deposits, in the 1-prong,
-1-prong + $\PGpz$, and 3-prong decay modes. A
-multivariate (MVA) discriminator~\cite{Hocker:2007ht}, including isolation
-and lifetime information, is used to reduce the rate for  quark- and gluon-initiated jets
-to be identified as $\tauh$ candidates. The three working points used in this analysis,
-Very Tight, Tight, and Medium MVA ID,
-have an efficiency of about 55\%, 60\%, 65\% for genuine $\tauh$,
-with about 1\%, 1.5\%, 2.5\% misidentification rate for quark- and gluon-initiated jets, 
-within a $\pt$ range typical of $\tauh$ originating from a $\PZ$ boson.
-Electrons and muons misidentified as $\tauh$ candidates are suppressed using 
-dedicated criteria based on the consistency between the measurements in the 
-tracker, the calorimeters, and the muon detectors~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}.
-The working points of these discriminators are
-decay channel specific. The $\tauh$ energy scale in simulation is corrected 
-per decay mode, on the basis of a measurement in $\PZ\to\Pgt\Pgt$ events. 
-The rate and the energy scale of electrons and muons misidentified as $\tauh$ 
-candidates are also corrected in simulation, on the basis of a tag-and-probe 
-measurement~\cite{CMS:2011aa} in $\PZ\to\ell\ell$ events.
-
-The visible mass of the $\Pgt\Pgt$ system, $\mvis$, can be used to separate
-the $\PH\to \Pgt \Pgt$ signal events
-from the large contribution of irreducible $\PZ \to \Pgt \Pgt$ events.
-However, the neutrinos from the $\Pgt$ lepton decays carry a large fraction of
-the $\Pgt$ lepton energy and reduce the discriminating power of this variable.
-The \textsc{svfit} algorithm~\cite{Bianchini:2014vza} combines the \etvecmiss 
-with the four-vectors of both $\Pgt$ candidates to calculate a more accurate 
-estimate of the mass of the parent boson, denoted as $\mtt$. The resolution 
-of $\mtt$ is between 15 and 20\% depending on the $\Pgt\Pgt$ final state. The 
-$\mtt$ variable is used in the $\PZ\PH$ channel, while $\mvis$ is used in the 
-$\PW\PH$ channel because the \textsc{svfit} algorithm cannot account for the 
-additional \etvecmiss from the $\PW$ boson decay. 
+\section{Overview}
+This chapter specifically focuses on studying the Higgs boson produced via the associated
+production mechanisms, $\PW\PH$/$\PZ\PH$. A study of the Higgs boson produced in the gluon fusion or VBF processes
+is presented in Chapter~\ref{sec:htt_analysis}. This study utilizes the
+full 2016 $\pp$ dataset collected by CMS corresponding to 35.9$\fbinv$ of integrated luminosity.
+In the following pages the symbol $\ell$ refers to electrons and muons and $\tauh$ refers to hadronically
+decaying $\tau$ leptons. We study all possible $\tau\tau$ final state combinations with the
+exception of two electron and two muon final states because of the low 
+$\tau\tau \to \tau_{e}\tau_{e}/\tau_{\mu}\tau_{\mu}$
+branching fractions. The $\htt$ final states which are
+studied are: $\tau_{e}\tauh$ denoted here as $\Pe\tauh$, $\tau_{\mu}\tauh$ denoted as $\Pgm\tauh$,
+$\tau_{e}\tau_{\mu}$ denoted here as $\Pe\Pgm$, and lastly, $\tauh\tauh$ denoted as $\tauh\tauh$.
+This combination of final states covers about 94\% of all possible $\tau\tau$ final states.
+We ensure uniqueness between the studied channels be applying veto criteria to events based
+on the number of reconstructed loosely identified electrons and muons. This ensures that 
+no data or simulated event is double counted between the two $\htt$ studies or in 
+multiple final states.
 
 
 
-\section{Event selection}
-\label{sec:selection}
-
+\subsection{Triggers}
 Events in the $\PW\PH$ and $\PZ\PH$ production channels are selected using single or 
-double lepton triggers, since the $\PW$ and $\PZ$ bosons ensure the presence of one or two well-isolated leptons with sufficiently 
-high $\pt$. The list of the trigger and offline selection requirements for 
-all possible decay modes is presented in Table~\ref{tab:inclusive_selection}.
-All reconstructed objects in the events are required to be separated from each 
-other by $\Delta R > 0.3$. In the case of $\tauh$, they are required to be 
-separated from all other objects by $\Delta R > 0.5$. The resulting event samples are made mutually 
-exclusive by discarding events that have additional loosely identified 
-and isolated muons or electrons.
+double lepton triggers, since the $\PW$ and $\PZ$ bosons ensure the presence of one 
+or two well-isolated leptons with sufficiently high $\pt$. 
+The $\PW\PH$ targeted final states rely on a set of single lepton triggers
+which must be fired by the $\PW$ boson associated lepton. These single
+lepton triggers are the same single electron and single muon triggers which are 
+described in the $ggH$ and VBF targeted analysis described in 
+Section~\ref{sec:htt_triggers}. In general, the $\PW$ boson associated lepton
+will have a higher $\pt$ than the Higgs boson associated leptons providing
+higher efficiency for trigger selection. By requiring that only the $\PW$
+boson associated lepton fires the trigger, we ensure that there is negligible
+bias in the selection of the Higgs boson associated leptons from the trigger
+requirements. The non-biased Higgs boson associated lepton selection 
+allows us to use specific background estimation techniques which are described
+in the background estimation Section~\ref{sec:vh_background_estimation}.
+
+The $\PZ\PH$ targeted final states utilize the presenece of the $\PZ$ boson
+for passing trigger selections. Double electron and double muon triggers are used in these
+final states. The presence of two simultaneous leptons in the double lepton
+triggers allows for lower $\pt$ thresholds on each lepton which increases
+the acceptance of $\PZ\PH$ events. The $\PZ$ boson associated electrons
+or muons must be match to the leptons which fired the high level trigger.
+Similar to the $\PW\PH$ final states, this removes selection bias from the
+Higgs boson associate leptons and enables the use of specific background
+estimation methods.
+
+The trigger selection criteria for the $\PW\PH$ and $\PZ\PH$ targeted final 
+states is detailed in Table~\ref{tab:vh_triggers}.
+
 
 \begin{table*}[htbp]
 \centering
 \begin{small}
-\begin{tabular}{llll}
-%  Channel           &         Trigger ($\pt/\eta$)         &    \multicolumn{2}{c|}{Lepton selection}                 \\ \cline{3-4}
-% & & $\pt/\eta$   & Isolation  \\
-     \multicolumn{4}{c}{$\PW\PH$ selection requirements}                 \\ 
-     \multicolumn{4}{c}{$\pt^{\tauh}>20$, $|\eta^{\tauh}|<2.3$, $I^\Pe<0.1$, $I^\Pgm<0.15$, b-veto }                 \\ 
+\begin{tabular}{lll}
+     \multicolumn{3}{c}{$\PW\PH$ trigger selection requirements}                 \\ 
 \hline
-  Channel           &         Trigger ($\pt/\eta$)         & Lepton Selection: $\pt$   & Lepton Selection: Iso.  \\
+  Channel           &         Trigger ($\pt/\eta$)         & Lepton Selection: $\pt$     \\
 \hline
- $\Pe\Pgm\tauh$      &  $\Pgm (22/2.1)$ or $\Pe (25/2.1)$  &     $\pt^\Pe>15, \pt^\Pgm>23$ or $\pt^\Pe>26, \pt^\Pgm>15$ &  MVA $\tauh$ ID Tight  \\
- $\Pgm\Pgm\tauh$     &  $\Pgm (22/2.1)$                    &     $\pt^\Pgm>23,\pt^\Pgm>15$                              &  MVA $\tauh$  Tight  \\
- $\Pe\tauh\tauh$     &  $\Pe (25/2.1)$                     &     $\pt^\Pe>26$                                           &   MVA $\tauh$ Medium/VTight  \\
- $\Pgm\tauh\tauh$    &  $\Pgm (22/2.1)$                    &     $\pt^\Pgm>23$                                          &  MVA $\tauh$ Medium/VTight  \\
+ $\Pe\Pgm\tauh$      &  $\Pgm (22/2.1)$ or $\Pe (25/2.1)$  &     $\pt^\Pe>15, \pt^\Pgm>23$ or $\pt^\Pe>26, \pt^\Pgm>15$  \\ 
+ $\Pgm\Pgm\tauh$     &  $\Pgm (22/2.1)$                    &     $\pt^\Pgm>23,\pt^\Pgm>15$                               \\ 
+ $\Pe\tauh\tauh$     &  $\Pe (25/2.1)$                     &     $\pt^\Pe>26$                                            \\ 
+ $\Pgm\tauh\tauh$    &  $\Pgm (22/2.1)$                    &     $\pt^\Pgm>23$                                           \\ 
 \hline \\
 
 \\
-     \multicolumn{4}{c}{$\PZ\PH$ selection requirements}                 \\ 
-     \multicolumn{4}{c}{$\PZ$ boson reconstructed from opposite charge, same-flavor light leptons, $60\GeV < \textrm{m}_{\ell\ell} < 120\GeV$}  \\ 
-     \multicolumn{4}{c}{$\tauh$ baseline requirements: $\pt^{\tauh}>20$, $|\eta|<2.3$, MVA $\tauh$ Medium}   \\ 
-     \multicolumn{4}{c}{$\Pe$ baseline requirements: $\pt^\Pe>10$, $|\eta|<2.5$, MVA Loose ID }   \\ 
-     \multicolumn{4}{c}{$\Pgm$ baseline requirements: $\pt^\Pgm>10$, $|\eta|<2.4$, ID Loose, $I^\Pgm<0.25$ }   \\ 
+     \multicolumn{3}{c}{$\PZ\PH$ trigger selection requirements}                 \\ 
 \hline
-  Channel           &         Trigger ($\pt/\eta$)         & Lepton Selection: $\pt$   & Lepton Selection: Isolation  \\
+  Channel           &         Trigger ($\pt/\eta$)         & Lepton Selection: $\pt$             \\
 \hline
-  $\Pe\Pe\Pgm\tauh$     &                                    &                                    &  $I^\Pgm<0.15$       \\
-  $\Pe\Pe\Pe\tauh$      & $\Pe(23/2.5)\,\&\,\Pe(12/2.5)$,    &  $\pt^\Pe>24\,\&\,\pt^\Pe>13$, &  $\Pe$ Tight ID, $I^\Pe<0.15$ \\
-  $\Pe\Pe\tauh\tauh$    & or $\Pe(27/2.5)$                   &  or $\pt^\Pe>28$                   &  baseline selection       \\
-  $\Pe\Pe\Pe\Pgm$       &                                    &                                    &  $\Pe$ Tight ID, $I^\Pe<0.15$, $I^\Pgm<0.15$ \\
+  $\Pe\Pe\Pgm\tauh$     &                                    &                                   \\ 
+  $\Pe\Pe\Pe\tauh$      & $\Pe(23/2.5)\,\&\,\Pe(12/2.5)$,    &  $\pt^\Pe>24\,\&\,\pt^\Pe>13$,    \\ 
+  $\Pe\Pe\tauh\tauh$    & or $\Pe(27/2.5)$                   &  or $\pt^\Pe>28$                  \\ 
+  $\Pe\Pe\Pe\Pgm$       &                                    &                                   \\ 
 \hline
-  $\Pgm\Pgm\Pgm\tauh$   &                                    &                                    &  $I^\Pgm<0.15$       \\
-  $\Pgm\Pgm\Pe\tauh$    &  $\Pgm(17/2.4)\,\&\,\Pgm(8/2.4)$,  &  $\pt^\Pgm>18\,\&\,\pt^\Pgm>10$,   &  $\Pe$ Tight ID, $I^\Pe<0.15$ \\
-  $\Pgm\Pgm\tauh\tauh$  &   or $\Pgm(24/2.4)$                &  or $\pt^\Pgm>25$                  &  baseline selection       \\
-  $\Pgm\Pgm\Pe\Pgm$     &                                    &                                    &  $\Pe$ Tight ID, $I^\Pe<0.15$, $I^\Pgm<0.15$ \\
+  $\Pgm\Pgm\Pgm\tauh$   &                                    &                                   \\ 
+  $\Pgm\Pgm\Pe\tauh$    &  $\Pgm(17/2.4)\,\&\,\Pgm(8/2.4)$,  &  $\pt^\Pgm>18\,\&\,\pt^\Pgm>10$,  \\ 
+  $\Pgm\Pgm\tauh\tauh$  &   or $\Pgm(24/2.4)$                &  or $\pt^\Pgm>25$                 \\ 
+  $\Pgm\Pgm\Pe\Pgm$     &                                    &                                   \\ 
 \hline
 \end{tabular}
 \end{small}
@@ -247,10 +113,16 @@ and isolated muons or electrons.
 The trigger requirement is defined by a combination of trigger candidates with 
 \pt over a given threshold (in \GeV), indicated inside parentheses. The 
 pseudorapidity thresholds come from trigger and object reconstruction constraints.
-\label{tab:inclusive_selection}
+The trigger requirements for the $\PZ\PH$ events are defined by the $\PZ$ boson
+decay products, either $\PZ\to\Pe\Pe$ or $\PZ\to\Pgm\Pgm$.
+\label{tab:vh_triggers}
 }
 \end{table*}
 
+
+
+\subsection{Event Selection}
+\label{sec:vh_evt_selection}
 In the $\Pe\Pgm\tauh$ and $\Pgm\Pgm\tauh$ final states of the $\PW\PH$ channel, 
 the two light leptons are required to have the same charge to reduce the $\ttbar$ 
 and $\PZ+\textrm{jets}$ backgrounds where one or more jets is misidentified as a $\tauh$ 
@@ -293,7 +165,7 @@ assigned to the $\PZ$ boson compare to those assigned to the Higgs boson. A loos
 selection is applied for the $\PZ$ boson associated leptons to increase signal acceptance
 while a tighter selection is applied to those assigned to the Higgs boson to
 decrease the background contributions from $\PZ+\textrm{jets}$ and other reducible
-backgrounds. The specific selections detailed in Table~\ref{tab:inclusive_selection},
+backgrounds. The specific selections detailed in Table~\ref{tab:vh_inclusive_selection},
 including those chosen for the $\tauh$ candidates, where chosen based on 
 optimizing for best signal sensitivity.
 
@@ -315,16 +187,144 @@ side-by-side.
 
 
 
-\section{Background estimation}
-\label{sec:background_estimation}
+\subsection{Baseline Object Selection}
+\label{sec:vh_obj_selection}
 
-The irreducible backgrounds ($\PZ\PZ$, $\ttbar\PZ$, $\PW\PW\PZ$, $\PW\PZ\PZ$, 
-$\PZ\PZ\PZ$, as well as $\PW\PZ$ and $\ttbar \PW$ in the $\PW\PH$ channels) are 
+The expression $\pt^{\ell}$ stands for the $\pt$ of the lepton. The isolation 
+requirements used in this analysis, based on $I^{\ell}$~\ref{eqn:rel_isolation}, 
+are listed in Table~\ref{tab:vh_inclusive_selection}.
+In the associated production analysis we reject events which have been tagged as likely
+including heavy flavor jet decays from b-quarks.
+The working point chosen 
+in this analysis gives an efficiency for real b jets of about 70\% for 
+about 1\% of light flavor or quark jets being misidentified~\ref{sec:reco_b_jet}.
+For negligible signal loss, this requirements significantly decreases the $\ttbar$,
+$\ttbar+\PW$, and $\ttbar+\PZ$ background contributions.
+
+The $\tauh$ candidates are identified using the MVA discriminant discussed in
+Section~\ref{sec:obj_reco_tau}.
+Three $\tauh$ MVA working points are used in this analysis,
+\texttt{Very Tight}, \texttt{Tight}, and \texttt{Medium Tau MVA} ID. Each working point was selected based on
+optimizing the analysis for highest sensitivity to the associated production
+$\htt$ processes. 
+
+A summary of the object selection details for each final state in the associated
+production analysis is in Table~\ref{tab:vh_inclusive_selection}.
+All reconstructed objects in the events are required to be separated from each 
+other by $\Delta R > 0.3$. In the case of $\tauh$, they are required to be 
+separated from all other objects by $\Delta R > 0.5$. The resulting event samples are made mutually 
+exclusive by discarding events that have additional loosely identified 
+and isolated muons or electrons.
+
+\begin{table*}[htbp]
+\centering
+\begin{small}
+\begin{tabular}{ll}
+     \multicolumn{2}{c}{$\PW\PH$ selection requirements}                 \\ 
+     \multicolumn{2}{c}{$\pt^{\tauh}>20$, $|\eta^{\tauh}|<2.3$, $I^\Pe<0.1$, $I^\Pgm<0.15$, b-veto }                 \\ 
+\hline
+  Channel           &       Lepton Selection: Iso.  \\
+\hline
+ $\Pe\Pgm\tauh$      &  \texttt{Tight Tau MVA}  \\
+ $\Pgm\Pgm\tauh$     &  \texttt{Tight Tau MVA}  \\
+ $\Pe\tauh\tauh$     &  \texttt{Medium/Very Tight Tau MVA} \\
+ $\Pgm\tauh\tauh$    &  \texttt{Medium/Very Tight Tau MVA} \\
+\hline \\
+
+\\
+     \multicolumn{2}{c}{$\PZ\PH$ selection requirements}                 \\ 
+     \multicolumn{2}{c}{$\PZ$ boson reconstructed from opposite charge, same-flavor light leptons, $60\GeV < \textrm{m}_{\ell\ell} < 120\GeV$}  \\ 
+     \multicolumn{2}{c}{$\tauh$ baseline requirements: $\pt^{\tauh}>20$, $|\eta|<2.3$, MVA $\tauh$ Medium}   \\ 
+     \multicolumn{2}{c}{$\Pe$ baseline requirements: $\pt^\Pe>10$, $|\eta|<2.5$, MVA Loose ID }   \\ 
+     \multicolumn{2}{c}{$\Pgm$ baseline requirements: $\pt^\Pgm>10$, $|\eta|<2.4$, ID Loose, $I^\Pgm<0.25$ }   \\ 
+\hline
+  Channel           &          Lepton Selection: Isolation  \\
+\hline
+  $\Pe\Pe\Pgm\tauh$     &   $I^\Pgm<0.15$       \\
+  $\Pe\Pe\Pe\tauh$      &   $\Pe$ Tight ID, $I^\Pe<0.15$ \\
+  $\Pe\Pe\tauh\tauh$    &   baseline selection       \\
+  $\Pe\Pe\Pe\Pgm$       &   $\Pe$ Tight ID, $I^\Pe<0.15$, $I^\Pgm<0.15$ \\
+\hline
+  $\Pgm\Pgm\Pgm\tauh$   &   $I^\Pgm<0.15$       \\
+  $\Pgm\Pgm\Pe\tauh$    &   $\Pe$ Tight ID, $I^\Pe<0.15$ \\
+  $\Pgm\Pgm\tauh\tauh$  &   baseline selection       \\
+  $\Pgm\Pgm\Pe\Pgm$     &   $\Pe$ Tight ID, $I^\Pe<0.15$, $I^\Pgm<0.15$ \\
+\hline
+\end{tabular}
+\end{small}
+\caption{
+Electron, muon and $\tauh$ selection criteria for each final state in the
+associated production $\htt$ analysis.
+}
+\label{tab:vh_inclusive_selection}
+\end{table*}
+
+
+
+\section{Data Set}
+\label{sec:vh_dataset}
+The associated production targeted $\htt$ study utilizes the same dataset as the
+$ggH$ and VBF targeted study. The dataset used is the full 2016 $\pp$ 
+dataset collected by CMS corresponding to 35.9$\fbinv$ 
+of integrated luminosity. The data were gathered at center-of-mass energy 13 TeV.
+For further details see Section~\ref{sec:htt_dataset}.
+
+
+
+\section{Monte Carlo Samples}
+\label{sec:vh_mc_samples}
+Signal and background processes are modeled with samples of simulated events.
+For details on the production for simulated events, see section~\ref{sec:simulation}.
+%Because the analysis focuses on
+%measuring the $\PW\PH$ and $\PZ\PH$ processes, the $\ttbar\PH$ process is 
+%included as background.
+
+For each simulated event, a number of additional pileup interactions is simulated and added. 
+The number of pileup interactions added is based on best efforts to match the simulated
+events to the pileup in data which is estimated from the measured instantaneous
+luminosity for each bunch crossing. The average number of additional pileup interactions in
+the 2016 CMS data is approximately 27 interactions per bunch crossing.
+
+
+
+\section{SVFit Algorithm}
+The visible mass of the $\Pgt\Pgt$ system, $\mvis$, can be used to separate
+the $\PH\to \Pgt \Pgt$ signal events
+from the large contribution of irreducible $\PZ \to \Pgt \Pgt$ events.
+However, the neutrinos from the $\Pgt$ lepton decays carry a large fraction of
+the $\Pgt$ lepton energy and reduce the discriminating power of this variable.
+The \textsc{svfit} algorithm used in the $ggH$ and VBF targeted analysis
+and discussed in Section~\ref{sec:svfit} is used in the associated production
+analysis as well. It combines the \etvecmiss 
+with the four-vectors of both $\Pgt$ candidates to calculate a more accurate 
+estimate of the mass of the parent boson and is denoted as $\mtt$. The resolution 
+of $\mtt$ is between 15 and 20\% depending on the $\Pgt\Pgt$ final state. The 
+$\mtt$ variable is used in the $\PZ\PH$ channel where the majority of 
+\etvecmiss is attributable to the $\Pgt$ decays. The variable $\mvis$ is used in the 
+$\PW\PH$ channel because the \textsc{svfit} algorithm cannot properly account for the 
+additional \etvecmiss associated with the neutrino from the $\PW$ boson decay. 
+
+
+
+\section{Background Estimation}
+\label{sec:vh_background_estimation}
+
+The irreducible backgrounds for the associated production analysis can
+be split into those for the $\PZ\PH$ four lepton final and those
+with three lepton final states. When a lepton escapes the fiducial
+volume of the detector or is otherwise poorly reconstructed, the four
+lepton irreducible backgrounds can populate the $\PW\PH$ three
+lepton final states as well.
+Backgrounds typically with four or more genuine leptons composing
+the irreducible background for the $\PZ\PH$ final states are: $\PZ\PZ$, 
+$\ttbar\PZ$, $\PW\PW\PZ$, $\PW\PZ\PZ$, and $\PZ\PZ\PZ$. The dominant
+three lepton irreducible backgrounds for the $\PW\PH$ final states are:
+$\PW\PZ$ and $\ttbar \PW$. The irreducible backgrounds are 
 estimated from simulations and scaled to their theoretical cross section. Higgs 
 boson decays to pairs of $\PW$ or $\PZ$ bosons 
 are also estimated from simulations and considered as background processes. 
 Additionally, the $\ttbar\PH$ production process with all Higgs boson decay
-paths is estimated from simulations and considered as background processes.
+paths is estimated from simulations and considered a background processes.
 
 The reducible backgrounds, which have at least one jet misidentified as an electron, 
 muon, or $\tauh$ candidate, are estimated from data. 
@@ -332,7 +332,7 @@ Data events meeting specific requirements detailed below are reweighted
 as a function of a misidentification rate to estimate the 
 contribution of processes with jets misidentified as leptons in the signal region. 
 
-In the $\PW\PH$ analysis, the misidentification rate of jets as electrons, muons, 
+In the $\PW\PH$ final states, the misidentification rate of jets as electrons, muons, 
 or $\tauh$ candidates is measured in $\PZ+\textrm{jets}$ events. The $\PZ$ boson is reconstructed 
 in its dielectron decay mode for measuring the jet to muon  misidentification
 rate, and is reconstructed in its dimuon decay mode for measuring the jet to electron
@@ -346,62 +346,98 @@ selection except that the subleading light lepton or the $\tauh$ do not
 pass the isolation or identification conditions.
 To remove double-counting of events, events in simulation that have a jet that is 
 misidentified as the $\tauh$ or as the subleading lepton, are discarded. Simulated 
-events that have a jet misidentified as the leading lepton, but two real leptons 
-for the subleading lepton and the $\tauh$, are estimated from simulations as their 
+events that have a jet misidentified as the leading $\PW$ boson associated lepton, but two real leptons 
+for the Higgs boson associated subleading lepton and $\tauh$, are estimated from simulations as their 
 contribution is not taken into account with the misidentification rate method 
 described above. Such events mostly arise from $\ttbar$ and $\PZ+\textrm{jets}$ processes, 
 and account for a small fraction of the total expected background in the signal region. 
 In the $\Pe\tauh\tauh$ and $\Pgm\tauh\tauh$ final states of the $\PW\PH$ channels, 
-the method is essentially the same, except that the object susceptible to being misidentified 
+the method is essentially the same, except that the object susceptible to being misidentified,
+thus having the misidentificantion estimation method applied to it, 
 is the $\tauh$ candidate that has the same charge as the light lepton.  
 
-In the $\PZ\PH$ analysis, a very similar misidentification rate is used
+In the $\PZ\PH$ final states, a very similar misidentification rate is used
 to estimate the contribution of jets misidentified as electrons, muons, or $\tauh$
 candidates to the signal region events. The misidentification rate is measured in four object final states which
 is dominated by $\PZ+\textrm{jets}$ events with a small contribution from 
 $\ttbar$ events. Identical to the $\PW\PH$ final states, the rates are measured 
 in bins of the lepton $\pt$, and are split between reconstructed decay modes for 
 the $\tauh$ candidates. 
+
 In these four lepton final states, the objects most susceptible 
 to being misidentified jets are the $\PH$ boson associated objects.
-In the $\PZ\PH$ analysis, data events which pass the full
+In the $\PZ\PH$ final states, data events which pass the full
 signal region selection, except either or both of the $\PH$ boson associated objects
 fail identification or isolation criteria, are weighted by the misidentification
-rate for the failing object and assigned to the ``jet fakes'' background.
+rate for the failing object and are assigned to the ``jet fakes'' background.
 To avoid double counting, events with both $\PH$ boson associated objects failing have their weight
 subtracted from the events which only have a single object failing. 
 This misidentification rate method is used to estimate the yield of the reducible
 backgrounds. The shape of the reducible background contribution is taken from
 data in the signal free region with same charge objects assigned to the $\PH$ boson.
 A high statistics, relaxed identification and isolation selection is used to reduce
-statistical uncertainties. Kolmogorov, Smirnov test have been performed to validate
+statistical uncertainties. Kolmogorov-Smirnov tests have been performed to validate
 shape compatibility between this relaxed same charge selection and the signal region
-reducible background backgrounds.
+reducible background distributions.
+
+
+
+\section{Monte Carlo Corrections}
+\label{sec:vh_mc_corrections}
 
 
 
 \section{Systematic uncertainties}
-\label{sec:systematics}
+\label{sec:vh_systematics}
+\subsection{Uncertainties related to object reconstruction and identification}
+\subsection{Background estimation uncertainties}
+\subsection{Signal prediction uncertainties}
+\subsection{Other uncertainties}
+\subsection{Luminsity}
+\subsection{Lepton ID and Isolation}
+\subsection{Tau Fake Rate}
+\subsection{Energy Scales}
+\subsubsection{Tau Energy Scale}
+\subsubsection{Jet Energy Scale}
+\subsubsection{MET Energy Scale}
+\subsection{Theoretical Uncertainties for Higgs Boson}
 
-The overall uncertainty in the $\tauh$ identification efficiency for genuine $\tauh$ 
-leptons is 5\%, which has been measured with a tag-and-probe method in $\PZ\to\Pgt\Pgt$ events.
-This number is not fully correlated among the various channels because the $\tauh$ 
-candidates are required to pass different working points of the discriminators that 
-reduce the misidentification rate of electrons and muons as $\tauh$ candidates.
+Diff RB
+MET - not applied to all WH
 
-An uncertainty of 1.2\% in the visible energy scale of genuine $\tauh$ leptons 
-affects both the distributions and yields of the signals and backgrounds. It is 
-uncorrelated among the 1-prong, 1-prong + $\PGpz$, and 3-prong decay modes.
+SAME
+$\tauh$ identification efficiency for genuine $\tauh$
+visible energy scale of genuine $\tauh$ leptons
+uncertainties in the muon and electron identification, isolation, and trigger
+rate uncertainty related to discarding events with a b-tagged jet
+\etvecmiss scale uncertainties
+    WH skipped
+uncertainty in the integrated luminosity
+finite number of simulated events
 
-The uncertainties in the muon and electron identification, isolation, and trigger 
-efficiencies lead to a rate uncertainty of 2\% for both muons and electrons.
-The uncertainty in the electron energy scale, which amounts to 2.5\% in the endcaps 
-and 1\% in the barrel of the detector, affects the final distributions and rate.
-In all channels, the effect of the uncertainty in
-the muon energy scale is negligible.
 
-The rate uncertainty related to discarding events with a b-tagged jet is
-4.5\% for processes with heavy-flavor jets, and 0.15\% for processes with light-flavor jets.
+
+%The overall uncertainty in the $\tauh$ identification efficiency for genuine $\tauh$ 
+%leptons is 5\%, which has been measured with a tag-and-probe method in $\PZ\to\Pgt\Pgt$ events.
+%This number is not fully correlated among the various channels because the $\tauh$ 
+%candidates are required to pass different working points of the discriminators that 
+%reduce the misidentification rate of electrons and muons as $\tauh$ candidates.
+%
+%An uncertainty of 1.2\% in the visible energy scale of genuine $\tauh$ leptons 
+%affects both the distributions and yields of the signals and backgrounds. It is 
+%uncorrelated among the 1-prong, 1-prong + $\PGpz$, and 3-prong decay modes.
+%
+%The uncertainties in the muon and electron identification, isolation, and trigger 
+%efficiencies lead to a rate uncertainty of 2\% for both muons and electrons.
+%The uncertainty in the electron energy scale, which amounts to 2.5\% in the endcaps 
+%and 1\% in the barrel of the detector, affects the final distributions and rate.
+%In all channels, the effect of the uncertainty in
+%the muon energy scale is negligible.
+%
+%The rate uncertainty related to discarding events with a b-tagged jet is
+%4.5\% for processes with heavy-flavor jets, and 0.15\% for processes with light-flavor jets.
+
+
 
 Uncertainties from the renormalization and the factorization scales, and from the 
 choice of the PDF set, are taken into account for the $\PZ\PZ$ and $\PW\PZ$ 
@@ -437,7 +473,7 @@ additional uncertainty comes from potentially different misidentification rates
 in $\PZ$ + jets events, where the rates are measured, and in $\PW$ + jets or 
 $\ttbar$ events, which constitute a large fraction of the reducible background 
 in the signal region. This leads to a 10\% yield uncertainty for the reducible 
-background in each final state of the $\PW\PH$ analysis. In the $\PZ\PH$ final
+background in each final state of the $\PW\PH$ final states. In the $\PZ\PH$ final
 states a similar uncertainty is applied based on potential differences in the
 measurement region versus the application region. These uncertainties
 range from 26\% in the $\ell\ell\Pgm\tauh$ final states to 100\% in the
@@ -445,16 +481,16 @@ $\ell\ell\Pe\Pgm$ final states. The large uncertainty in the $\ell\ell\Pe\Pgm$
 final states results from the very low expected reducible background yields 
 which makes any comparison of the method susceptible to large statistical fluctuations.
 
-The \etvecmiss scale uncertainties~\cite{CMS-JME-12-002}, which are computed 
-event-by-event, affect the normalization of various processes through the event 
-selection, as well as their distributions through the propagation of these 
-uncertainties to the di-$\Pgt$ mass $\mtt$ in the $\PZ\PH$ channels. The 
-\etvecmiss scale uncertainties arising from unclustered energy deposits in the 
-detector come from four independent sources related to the tracker, ECAL, HCAL, 
-and forward calorimeters subdetectors. Additionally, \etvecmiss scale 
-uncertainties related to the uncertainties in the jet energy scale measurement, 
-which lead to uncertainties in the \etvecmiss calculation, are taken into 
-account. 
+%The \etvecmiss scale uncertainties~\cite{CMS-JME-12-002}, which are computed 
+%event-by-event, affect the normalization of various processes through the event 
+%selection, as well as their distributions through the propagation of these 
+%uncertainties to the di-$\Pgt$ mass $\mtt$ in the $\PZ\PH$ channels. The 
+%\etvecmiss scale uncertainties arising from unclustered energy deposits in the 
+%detector come from four independent sources related to the tracker, ECAL, HCAL, 
+%and forward calorimeters subdetectors. Additionally, \etvecmiss scale 
+%uncertainties related to the uncertainties in the jet energy scale measurement, 
+%which lead to uncertainties in the \etvecmiss calculation, are taken into 
+%account. 
 
 The rate and acceptance uncertainties for the signal processes related to the 
 theoretical calculations are due to uncertainties in the PDFs, variations of 
@@ -467,14 +503,14 @@ respectively, for the $\PW\PH$, and $\PZ\PH$ production modes~\cite{deFlorian:20
 corresponding uncertainty for the variation of the renormalization and 
 factorization scales is 0.7 and 3.8\%, respectively~\cite{deFlorian:2016spz}.
 
-The uncertainty in the integrated luminosity amounts to 2.5\%~\cite{CMS-PAS-LUM-17-001}.
+%The uncertainty in the integrated luminosity amounts to 2.5\%~\cite{CMS-PAS-LUM-17-001}.
 
-Uncertainties related to the finite number of simulated events, or to the 
-limited number of events in data control regions, are taken into account. They 
-are considered for all bins of the distributions used to extract the results.
-They are uncorrelated across different samples, and across bins of a single distribution. 
+%Uncertainties related to the finite number of simulated events, or to the 
+%limited number of events in data control regions, are taken into account. They 
+%are considered for all bins of the distributions used to extract the results.
+%They are uncorrelated across different samples, and across bins of a single distribution. 
 
-The systematic uncertainties considered in the analysis are summarized in Table~\ref{tab:uncertainties}.
+The systematic uncertainties considered in the analysis are summarized in Table~\ref{tab:vh_uncertainties}.
 
 \begin{table*}[!ht]
 \centering
@@ -499,21 +535,23 @@ Source of uncertainty & Magnitude \\
 \hline
 \end{tabular}
 \caption{Sources of systematic uncertainty.}
-\label{tab:uncertainties}
+\label{tab:vh_uncertainties}
 \end{table*}
 
 
 
 \section{Results}
-\label{sec:results}
+\label{sec:vh_results}
 
 
 In the $\PZ\PH$ final states, the $\mtt$ distribution is
 used for signal extraction. The Low-$L_{T}^{\textrm{Higgs}}$ and
 High-$L_{T}^{\textrm{Higgs}}$ regions are plotted side-by-side
-in the following distributions. Figs.~\ref{fig:zh_results_svFitLLXX} 
+in the following distributions. 
+%Figs.~\ref{fig:zh_results_svFitLLXX} 
+Figs.~\ref{fig:zh_all_eight1}, ~\ref{fig:zh_all_eight2}, 
 and \ref{fig:zh_results_svFitAll} show the
-$\mtt$ distributions for each of the $\htt$ final states and
+$\mtt$ distributions for each of the $\PZ\PH$ final states and
 the combined distribution for all eight $\PZ\PH$ channels.
 The eight $\PZ\PH$ final states are each fit separately in the global
 fit; combining them together helps reduce statistical
@@ -522,26 +560,63 @@ The distributions are post-fit and show full uncertainties.
 The $\PW\PH$ and $\PZ\PH$ signals are shown as 5x larger than their best-fit
 signal strength value of $2.5 \times$ SM.
 
+\begin{figure}[h!]
+ \begin{center}
+  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/eeet_postfit.pdf}
+  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/emmt_postfit.pdf}
+  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/eemt_postfit.pdf}
+  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/mmmt_postfit.pdf}
+ \end{center}
+ \caption{The postfit $\mtt$ distributions used to extract the signal shown
+  for the (top left) $\Pe\Pe\Pe\tauh$, (top right) $\Pgm\Pgm\Pe\tauh$, 
+  (bottom left) $\Pe\Pe\Pgm\tauh$, and (bottom right) $\Pgm\Pgm\Pgm\tauh$
+  final states. The final state is listed in the
+  top left corner of each distribution.
+  The distributions show full uncertainties.
+  The $\PW\PH$ and $\PZ\PH$ signal are shown as 5x larger than their best-fit
+  signal strength value of $2.5 \times$ SM.
+ }
+ \label{fig:zh_all_eight1}
+\end{figure}
 
 \begin{figure}[h!]
  \begin{center}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/llet_postfit.pdf}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/llmt_postfit.pdf}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/lltt_postfit.pdf}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/llem_postfit.pdf}
+  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/eett_postfit.pdf}
+  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/mmtt_postfit.pdf}
+  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/eeem_postfit.pdf}
+  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/emmm_postfit.pdf}
  \end{center}
  \caption{The postfit $\mtt$ distributions used to extract the signal shown
-  for (top left) $\ell\ell\Pe\tauh$, (top right) $\ell\ell\Pgm\tauh$, 
-  (bottom left) $\ell\ell\tauh\tauh$, and (bottom right) $\ell\ell\Pe\Pgm$.
-  The left half of each distribution is the Low-$L_{T}^{\textrm{Higgs}}$ region
-  while the right half of each distribution is the High--$L_{T}^{\textrm{Higgs}}$ region.
-  $\ell\ell$ covers both $\PZ \to \Pgm\Pgm$ and $\PZ \to \Pe\Pe$ events.
+  for the (top left) $\Pe\Pe\tauh\tauh$, (top right) $\Pgm\Pgm\tauh\tauh$, 
+  (bottom left) $\Pe\Pe\Pe\Pgm$, and (bottom right) $\Pgm\Pgm\Pe\Pgm$
+  final states. The final state is listed in the
+  top left corner of each distribution.
   The distributions show full uncertainties.
-  The $\PW\PH$ and $\PZ\PH$ signals are shown as 5x larger than their best-fit
+  The $\PW\PH$ and $\PZ\PH$ signal are shown as 5x larger than their best-fit
   signal strength value of $2.5 \times$ SM.
  }
- \label{fig:zh_results_svFitLLXX}
+ \label{fig:zh_all_eight2}
 \end{figure}
+
+%\begin{figure}[h!]
+% \begin{center}
+%  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/llet_postfit.pdf}
+%  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/llmt_postfit.pdf}
+%  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/lltt_postfit.pdf}
+%  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/llem_postfit.pdf}
+% \end{center}
+% \caption{The postfit $\mtt$ distributions used to extract the signal shown
+%  for (top left) $\ell\ell\Pe\tauh$, (top right) $\ell\ell\Pgm\tauh$, 
+%  (bottom left) $\ell\ell\tauh\tauh$, and (bottom right) $\ell\ell\Pe\Pgm$.
+%  The left half of each distribution is the Low-$L_{T}^{\textrm{Higgs}}$ region
+%  while the right half of each distribution is the High--$L_{T}^{\textrm{Higgs}}$ region.
+%  $\ell\ell$ covers both $\PZ \to \Pgm\Pgm$ and $\PZ \to \Pe\Pe$ events.
+%  The distributions show full uncertainties.
+%  The $\PW\PH$ and $\PZ\PH$ signals are shown as 5x larger than their best-fit
+%  signal strength value of $2.5 \times$ SM.
+% }
+% \label{fig:zh_results_svFitLLXX}
+%\end{figure}
 
 
 \begin{figure}[h!]
@@ -710,7 +785,10 @@ for a significance of 2.3 standard deviations (1.0 expected).
 To fully exploit the $\PH \to \Pgt\Pgt$ data in the 2016 CMS dataset, the results
 of this dedicated $\PW\PH$ and $\PZ\PH$ associated production analysis are combined with the prior
 $\PH \to \Pgt\Pgt$ analysis~\cite{HIG-16-043}, which targeted the Gluon Fusion and
-VBF Higgs boson production processes. By combining these two analyses of
+VBF Higgs boson production processes. 
+%The combined results of these two analyses
+%is discussed in the following chapter, Combine $\htt$ Results~\ref{sec:results_cmb}.
+By combining these two $\htt$ analyses of
 2016 CMS data, we have signal regions targeted each of the four leading Higgs 
 boson production processes. The resulting signal strenghts, significance and, Higgs
 boson couplings can be probed with greater precision than either analysis alone.
@@ -797,47 +875,5 @@ affected. The resulting measured couplings are consistent with SM predictions
 within one standard deviation.
 
 \clearpage
-
-
-The signal extraction distributions are shown for all eight $\PZ\PH$ final states,
-Figs.~\ref{fig:zh_all_eight1} and ~\ref{fig:zh_all_eight2}.
-
-\begin{figure}[h!]
- \begin{center}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/eeet_postfit.pdf}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/emmt_postfit.pdf}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/eemt_postfit.pdf}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/mmmt_postfit.pdf}
- \end{center}
- \caption{The postfit $\mtt$ distributions used to extract the signal shown
-  for the (top left) $\Pe\Pe\Pe\tauh$, (top right) $\Pgm\Pgm\Pe\tauh$, 
-  (bottom left) $\Pe\Pe\Pgm\tauh$, and (bottom right) $\Pgm\Pgm\Pgm\tauh$
-  final states. The final state is listed in the
-  top left corner of each distribution.
-  The distributions show full uncertainties.
-  The $\PW\PH$ and $\PZ\PH$ signal are shown as 5x larger than their best-fit
-  signal strength value of $2.5 \times$ SM.
- }
- \label{fig:zh_all_eight1}
-\end{figure}
-
-\begin{figure}[h!]
- \begin{center}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/eett_postfit.pdf}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/mmtt_postfit.pdf}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/eeem_postfit.pdf}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/zh/emmm_postfit.pdf}
- \end{center}
- \caption{The postfit $\mtt$ distributions used to extract the signal shown
-  for the (top left) $\Pe\Pe\tauh\tauh$, (top right) $\Pgm\Pgm\tauh\tauh$, 
-  (bottom left) $\Pe\Pe\Pe\Pgm$, and (bottom right) $\Pgm\Pgm\Pe\Pgm$
-  final states. The final state is listed in the
-  top left corner of each distribution.
-  The distributions show full uncertainties.
-  The $\PW\PH$ and $\PZ\PH$ signal are shown as 5x larger than their best-fit
-  signal strength value of $2.5 \times$ SM.
- }
- \label{fig:zh_all_eight2}
-\end{figure}
 
 

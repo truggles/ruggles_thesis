@@ -316,7 +316,7 @@ To reject non-prompt or misidentified muons and electrons, a relative lepton iso
 \begin{equation}
 I^{\ell} \equiv \frac{\sum_{charged}  \pt + \max\left( 0, \sum_{neutral}  \pt
                                          - \frac{1}{2} \sum_{charged, PU} \pt  \right )}{\pt^{\ell}}.
-\label{eq:rel_isolation}
+\label{eqn:rel_isolation}
 \end{equation}
 
 Some of the quantities mentioned here refer to descriptions in the following sections.
@@ -445,6 +445,7 @@ corrected via calibrations based on simulation and data~\cite{CMS-JME-10-011}.
 
 
 \subsection{b-jet Identification}
+\label{sec:reco_b_jet}
 Jets which result from the decay and hadronization of b quarks are used to help classify events
 in the $\htt$ analyses. B quarks are not produced from the four leading Higgs boson production
 mechanisms. Therefore, in multiple final states, events with jets which are likely caused by the decay and
@@ -548,10 +549,11 @@ A multivariate (MVA) discriminator~\cite{Hocker:2007ht}, including isolation, sh
 and lifetime information, is used to reduce the rate for  quark and gluon initiated jets
 to be identified as $\tauh$ candidates. The working point used in the $\htt$ analysis, \texttt{Tight Tau MVA},
 has an efficiency of about 60\% for genuine $\tauh$,
-with about 1\% misidentification rate for quark- and gluon-initiated jets, for a $\pt$ range typical 
+with about 1.5\% misidentification rate for quark- and gluon-initiated jets, for a $\pt$ range typical 
 of $\tauh$ originating from a $\PZ$ boson. A looser working point is used in the Higgs associated 
 production analysis ZH final states, \texttt{Medium Tau MVA}, which as an efficiency of 65\% for genuine
-$\tauh$ with a 2\% misidentification rate.
+$\tauh$ with a 2\% misidentification rate. In the $\PW\PH$ final states, the \texttt{Very Tight Tau MVA}
+is used in certain circumstances and has a 55\% efficiency for a 1\% misidentification rate.
 
 Electrons and muons can both be reconstructed as $\tauh$ candidates, usually into the 1-prong or
 1-prong+$\PGpz$ decay modes. For electrons this can happen easily when an electron emits a bremsstrahlung
