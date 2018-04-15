@@ -1,15 +1,18 @@
 
-\chapter{Higgs $\to \tau\tau$: Results}
+\section{Results}
 
 The extraction of the results uses a global maximum likelihood fit based on the 2D distributions in all 
 channels simultaneously fit together with the control regions for the $\ttbar$, QCD multijet, and $\PW +\text{jets}$ backgrounds. 
-The following section~\ref{sec:htt_2d} shows six of the tweleve distributions used in the
+The following Section~\ref{sec:htt_2d} shows six of the tweleve distributions used in the
 global maximum likelihood fit. A more detailed description of the fit and fitting process is 
 laid out afterwards in section~\ref{sec:htt_fit_details}. After these two sections,
 the rest of the $\htt$ results are discussed.
+The following Chapter~\ref{sec:vh_analysis} discusses the $\PW\PH$ and $\PZ\PH$ associated production $\htt$ analysis.
+A combination of this $ggH$ and VBF targeted analysis with the associated production analysis
+follows in Chapter~\ref{sec:cmb_results}.
 
 
-\section{Two-Dimensional Distributions}
+\subsection{Two-Dimensional Distributions}
 \label{sec:htt_2d}
 A selection of the 2D distributions used in the fit, including the three $\tauh\tauh$ distributions and
 the three $\Pgm\tauh$ distributions, is shown in figures~\ref{fig:mass_tt_vbf}--\ref{fig:mass_mt_0jet}.
@@ -116,7 +119,7 @@ The signal is shown both as a stacked filled histogram and as an open overlaid n
 %\end{figure*}
 
 
-\section{Results Extraction}
+\subsection{Results Extraction}
 \label{sec:htt_fit_details}
 The 2D distributions of the final discriminating variables obtained for each category and each channel in the 
 signal regions, along with the control regions, are combined in a binned likelihood fit involving the 
@@ -140,7 +143,7 @@ Overall, the statistical uncertainty in the observed event yields is the dominan
 for the combined results.
 
 
-\section{Analysis Sensitivity Details}
+\subsection{Analysis Sensitivity Details}
 The 2D distributions shown in figures~\ref{fig:mass_tt_vbf}--\ref{fig:mass_mt_0jet} give an intuitive
 impression of which bins are the most sensitive to the Higgs boson signal. Each bin in these distributions
 can be reordered and group based on the sensitivity of that bin. For visualization purposes only, we regroup 
@@ -199,7 +202,7 @@ The contribution from Higgs boson decays to a pair of $\PW$ bosons is zero in th
 \end{table*}
 
 
-\section{Mass Distributions}
+\subsection{Mass Distributions}
 Another way to visualize the results of the global maximum likelihood fit
 is to collapse the second dimension of the 2D distributions. An excess of observed events relative 
 to the best fit background expectation is visible in figure~\ref{fig:htt_massweighted},
@@ -240,7 +243,7 @@ with the signal expectation. The signal yield is not affected by the reweighting
 \end{figure}
 
 
-\section{Signal Significance And Signal Strength}
+\subsection{Signal Significance And Signal Strength}
 The excess in data is quantified by calculating the corresponding local $p$-value using a profile likelihood 
 ratio test statistic~\cite{LHC-HCG-Report,Chatrchyan:2012tx,Junk,Read:2002hq} for each Higgs boson mass
 point included in the analysis.
@@ -278,30 +281,30 @@ The combined best fit signal strength is $\mu = 1.09 ^{+0.27} _{-0.26}$.}
 \end{figure}
 
 
-\section{Higgs Boson Couplings}
-\label{sec:htt_kFkV}
-A likelihood scan is performed for $\mH=125.09$\GeV in the ($\kappa_\mathrm{V}$,$\kappa_\mathrm{f}$) parameter 
-space. $\kappa_\mathrm{V}$ and $\kappa_\mathrm{f}$ quantify the ratio between the measured 
-and the SM value for the couplings of the Higgs boson to vector bosons and fermions, respectively. 
-The couplings are considered for both Higgs boson production and decay.
-A full description of the $\kappa$ framework and method used here is described 
-in Ref.~\cite{Chatrchyan:2014nva}. For this scan only, Higgs boson decays to pairs of $\PW$ bosons are 
-considered as part of the signal. All nuisance parameters are profiled for each point of the scan. As shown in 
-figure~\ref{fig:htt_kVkf}, the observed likelihood contour is consistent with the SM expectation of $\kappa_\mathrm{V}$ 
-and $\kappa_\mathrm{f}$ equal to unity.
+%\subsection{Higgs Boson Couplings}
+%\label{sec:htt_kFkV}
+%A likelihood scan is performed for $\mH=125.09$\GeV in the ($\kappa_\mathrm{V}$,$\kappa_\mathrm{f}$) parameter 
+%space. $\kappa_\mathrm{V}$ and $\kappa_\mathrm{f}$ quantify the ratio between the measured 
+%and the SM value for the couplings of the Higgs boson to vector bosons and fermions, respectively. 
+%The couplings are considered for both Higgs boson production and decay.
+%A full description of the $\kappa$ framework and method used here is described 
+%in Ref.~\cite{Chatrchyan:2014nva}. For this scan only, Higgs boson decays to pairs of $\PW$ bosons are 
+%considered as part of the signal. All nuisance parameters are profiled for each point of the scan. As shown in 
+%figure~\ref{fig:htt_kVkf}, the observed likelihood contour is consistent with the SM expectation of $\kappa_\mathrm{V}$ 
+%and $\kappa_\mathrm{f}$ equal to unity.
+%
+%
+%\begin{figure}[!ht]
+%  \centering
+%    \includegraphics[width=0.65\textwidth]{higgs_to_taus/plots/Figure_022.pdf}
+%   \caption{Scan of the negative log-likelihood difference as a function of $\kappa_V$ and $\kappa_f$, for 
+%$\mH = 125.09$\GeV.  All nuisance parameters are profiled for each point. For this scan, the $\Pp\Pp\to \PH\to\PW\PW$ 
+%contribution is treated as a signal process.}
+%\label{fig:htt_kVkf}
+%\end{figure}
 
 
-\begin{figure}[!ht]
-  \centering
-    \includegraphics[width=0.65\textwidth]{higgs_to_taus/plots/Figure_022.pdf}
-   \caption{Scan of the negative log-likelihood difference as a function of $\kappa_V$ and $\kappa_f$, for 
-$\mH = 125.09$\GeV.  All nuisance parameters are profiled for each point. For this scan, the $\Pp\Pp\to \PH\to\PW\PW$ 
-contribution is treated as a signal process.}
-\label{fig:htt_kVkf}
-\end{figure}
-
-
-\section{Impact of Uncertainties}
+\subsection{Impact of Uncertainties}
 The uncertainty on the best fit signal strength, $\mu$, can be decomposed into four components: theoretical uncertainties, 
 bin-by-bin statistical uncertainties on the backgrounds, other systematic uncertainties, and the statistical 
 uncertainty of the data gathered. In this format, the best fit signal strength is:
@@ -334,8 +337,8 @@ reduced to zero.
 \end{figure*}
 
 
-\section{Combination with Run-I Results}
-The results of this study are combined with the results of the search for $\PH\to\Pgt\Pgt$ performed with the data collected with 
+\subsection{Combination with Run-I Results}
+The results of this study can be combined with the results of the search for $\PH\to\Pgt\Pgt$ performed with the data collected with 
 the CMS detector at center-of-mass energies of 7 and 8\TeV~\cite{Khachatryan:2014jba}. A common signal strength is used
 for all data taking periods. All uncertainties are considered as fully uncorrelated between the different 
 center-of-mass energies. The combination of these two results leads to an observed and an expected significance of 5.9 standard 
@@ -348,6 +351,6 @@ single-experiment observation of the SM Higgs boson decaying to fermions. This i
 experiment and the high energy particle physics commuinty as a whole. There is still room to improve this
 measurement using the 2016 13 TeV center-of-mass energy data collected by the CMS experiment. The analysis
 detailed here did not include any channels dedicated to targeting Higgs bosons produced in associated production.
-The following chapter discusses the $\PW/\PZ+\PH$, with $\htt$ analysis.
+The following chapter discusses the $\PW\PH$ and $\PZ\PH$ associated production $\htt$ analysis.
 
 
