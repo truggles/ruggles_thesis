@@ -3,11 +3,11 @@
 
 This chapter describes a study of Higgs boson produced via the $\PW\PH$ and
 $\PZ\PH$ associated production processes. The Higgs boson subsequently
-decays to a pair of $\tau$ leptons and uses CMS $\pp$ collision data gathered in 2016. 
+decays to a pair of $\tau$ leptons.
 This study is complimentary to the previously described $ggH$ and VBF targeted
-$\htt$ analysis in Section~\ref{sec:htt_analysis} and is performed 
+$\htt$ analysis in Chapter~\ref{sec:htt_analysis} and is performed 
 using data corresponding to 35.9\fbinv of integrated luminosity 
-collected at center-of-mass energy 13\TeV from the LHC. Combining
+collected at center-of-mass energy 13\TeV. Combining
 the results from this associated production targeted analysis with the results 
 of the $ggH$ and VBF targeted analysis
 we produce the first single experiment observation of the $\htt$ process at 13\TeV, 
@@ -21,7 +21,8 @@ the $\PW$ boson decaying leptonically to an electron or muon plus a neutrino,
 and at least one $\tauh$ from the Higgs boson decay:
 $\Pgm\Pgm\tauh$, $\Pe\Pgm\tauh$, $\Pe\tauh\tauh$ and $\Pgm\tauh\tauh$. 
 
-There are many similarities between the $ggH$ and VBF targeted $\htt$ analysis
+There are many similarities in the treatment of simulated samples, Monte Carlo
+corrections, and uncertainties between the $ggH$ and VBF targeted $\htt$ analysis
 and the associated production targeted $\htt$ analysis. When appropriate, instead of repeating
 what has already been documented in other chapters, I refer back to the previous sections for
 full details.
@@ -30,10 +31,9 @@ full details.
 
 \section{Overview}
 This chapter specifically focuses on studying the Higgs boson produced via the associated
-production mechanisms, $\PW\PH$/$\PZ\PH$. A study of the Higgs boson produced in the $ggH$ or VBF processes
-is presented in Chapter~\ref{sec:htt_analysis}.
+production mechanisms, $\PW\PH$/$\PZ\PH$.
 In the following pages the symbol $\ell$ refers to light leptons (electrons and muons) and $\tauh$ refers to hadronically
-decaying $\tau$ leptons. Leptons refers to electrons, muons, and $\Pgt$ including their decay products:
+decaying $\tau$ leptons. Leptons refers inclusively to electrons, muons, and $\Pgt$ including their decay products:
 $\tau_{e}$, $\tau_{\mu}$, $\tauh$.
 We study all possible $\tau\tau$ final state combinations with the
 exception of two electron and two muon final states because of the low 
@@ -62,6 +62,7 @@ Section~\ref{sec:htt_triggers}. In general, the $\PW$ boson lepton
 will have a higher $\pt$ than the Higgs boson leptons providing
 higher efficiency for trigger selection. Requiring that the $\PW$
 boson lepton fires the trigger ensures that there is negligible
+isolation or identification
 bias in the selection of the Higgs boson leptons from the trigger
 requirements. The lack of bias in the Higgs boson lepton selection 
 allows us to use specific background estimation techniques which are described
@@ -69,14 +70,15 @@ in the background estimation Section~\ref{sec:vh_background_estimation}.
 
 Double electron and double muon triggers are used in 
 the $\PZ\PH$ targeted final states to trigger on the $\PZ$ decay products.
-The presence of two simultaneous leptons in the double lepton
-triggers allows for lower $\pt$ thresholds on each lepton which increases
-the acceptance of $\PZ\PH$ events. 
-Similar to the $\PW\PH$ final states, this removes selection bias from the
+The presence of two leptons in the double lepton
+triggers allows for lower $\pt$ thresholds online which increases
+the acceptance of $\PZ\PH$ events after offline selections are applied. 
+Similar to the $\PW\PH$ final states, triggering on the vector boson associated
+leptons removes selection bias from the
 Higgs boson associate leptons and enables the use of specific background
 estimation methods. Additionally, $\PZ\PH$ events can be selected using
-single lepton triggers. This helps increase the overall trigger selection
-efficiency.
+single lepton triggers applied to either of the $\PZ$ leptons. 
+This helps increase the overall trigger selection efficiency.
 
 The trigger selection criteria for the $\PW\PH$ and $\PZ\PH$ targeted final 
 states is detailed in Table~\ref{tab:vh_triggers}.
@@ -88,7 +90,7 @@ states is detailed in Table~\ref{tab:vh_triggers}.
 \begin{tabular}{lll}
      \multicolumn{3}{c}{$\PW\PH$ trigger selection requirements}                 \\ 
 \hline
-  Channel           &         Trigger ($\pt/\eta$)         & Lepton Selection: $\pt$     \\
+  Final State           &         Trigger ($\pt/\eta$)         & Lepton Selection: $\pt$     \\
 \hline
  $\Pe\Pgm\tauh$      &  $\Pgm (22/2.1)$ or $\Pe (25/2.1)$  &     $\pt^\Pe>15, \pt^\Pgm>23$ or $\pt^\Pe>26, \pt^\Pgm>15$  \\ 
  $\Pgm\Pgm\tauh$     &  $\Pgm (22/2.1)$                    &     $\pt^\Pgm>23,\pt^\Pgm>15$                               \\ 
@@ -99,7 +101,7 @@ states is detailed in Table~\ref{tab:vh_triggers}.
 \\
      \multicolumn{3}{c}{$\PZ\PH$ trigger selection requirements}                 \\ 
 \hline
-  Channel           &         Trigger ($\pt/\eta$)         & Lepton Selection: $\pt$             \\
+  Final State           &         Trigger ($\pt/\eta$)         & Lepton Selection: $\pt$             \\
 \hline
   $\Pe\Pe\Pgm\tauh$     &                                    &                                   \\ 
   $\Pe\Pe\Pe\tauh$      & $\Pe(23/2.5)\,\&\,\Pe(12/2.5)$,    &  $\pt^\Pe>24\,\&\,\pt^\Pe>13$,    \\ 
@@ -136,8 +138,8 @@ light lepton is considered as coming from the $\PW$ boson, while the Higgs boson
 candidate is formed from the $\tauh$ and the subleading (lowest $\pt$) light lepton. The 
 correct pairing is achieved in about 75\% of events. The leading light lepton is required 
 to fire the single lepton triggers and to have a $\pt$ that is 1\GeV above the online 
-thresholds, whereas the subleading light lepton has $\pt>15\GeV$. This $\pt$ threshold
-is the result of optimizing the selection for signal significance. 
+thresholds, whereas the subleading light lepton has $\pt>15\GeV$; this $\pt$ threshold
+is the result of optimizing the selection for maximum signal significance. 
 Selection criteria based on three variables have been found to 
 improve the sensitivity of the results in both final states:
 \begin{itemize}
@@ -157,7 +159,7 @@ have $\pt > 35\GeV$. This is driven
 by the fact that the $\tauh$ that has the same charge as the light lepton is almost 
 always a jet misidentified as a $\tauh$ candidate, and the jet misidentification 
 rate strongly decreases with $\pt$. 
-The subleading $\tauh$ must pass $\pt > 20\GeV$. 
+The subleading $\tauh$ must have $\pt > 20\GeV$. 
 Selection criteria based on three variables 
 have been found to increase the sensitivity of the results in both final states:
 \begin{itemize}
@@ -183,10 +185,10 @@ where chosen based on optimizing for the best signal sensitivity.
 
 The signal region is split into a High-$L_{\text{T}}^{\textrm{Higgs}}$ and Low-$L_{\text{T}}^{\textrm{Higgs}}$
 region; $L_{\text{T}}^{\textrm{Higgs}}$ is defined as the scalar $\pt$ sum of the decay 
-products of the $\PH$ boson. This splitting helps separate the $\PZ+\text{jets}$
-background from the $\PZ\PH$ signal which is more dominant in the
+products of the Higgs boson. This splitting helps separate the $\PZ+\text{jets}$
+background from the $\PZ\PH$ signal which is concentrated in the
 High-$L_{\text{T}}^{\textrm{Higgs}}$ region.
-The $L_{\text{T}}^{\textrm{Higgs}}$ regions are defined based on the $\htt$ final 
+The $L_{\text{T}}^{\textrm{Higgs}}$ regions are group based on the $\htt$ final 
 states of an event. The split between the High- and Low-$L_{\text{T}}^{\textrm{Higgs}}$
 regions are:
 \begin{itemize}
@@ -204,7 +206,7 @@ and ~\ref{fig:zh_results_svFitAll}.
 \subsection{Baseline Object Selection}
 \label{sec:vh_obj_selection}
 
-The expression $\pt^{\ell}$ stands for the $\pt$ of the lepton. The isolation 
+The expression $\pt^{\ell}$ stands for the $\pt$ of the lepton. The electron and muon isolation 
 requirements used in this analysis, based on $I^{\ell}$~\ref{eqn:rel_isolation}, 
 are listed in Table~\ref{tab:vh_inclusive_selection}. As stated above, all 
 identification and isolation criteria where chosen based on optimizing for the best signal sensitivity.
@@ -215,8 +217,8 @@ Three $\tauh$ MVA working points are used in this analysis,
 \texttt{Very Tight Tau MVA}, \texttt{Tight Tau MVA}, and \texttt{Medium Tau MVA} ID. Each working point was selected based on
 optimizing the analysis for highest sensitivity to the associated production
 $\htt$ processes. In the lower statistics, $\PZ\PH$ final states the higher
-efficiency \texttt{Medium Tau MVA}. In the $\PW\PH$ final states the 
-hadronic final states use a combination of two working points; the 
+efficiency \texttt{Medium Tau MVA} is used. In the hadronic $\PW\PH$ final states
+a combination of two working points is used. The 
 $\tauh$ that has same charge as the light lepton, which 
 is likely to be a fake, has to pass the \texttt{Very Tight Tau MVA} working 
 point. The other $\tauh$ that has opposite charge to the light lepton
@@ -251,16 +253,16 @@ $\ttbar\PW$, and $\ttbar\PZ$ background contributions.
 \begin{small}
 \begin{tabular}{ll}
      \multicolumn{2}{c}{$\PW\PH$ selection requirements}                 \\ 
-     \multicolumn{2}{c}{$\tauh$ baseline req: $\pt^{\tauh}>20$, $|\eta|<2.3$, Anti-e VL, Anti-$\mu$ L}    \\
+     \multicolumn{2}{c}{$\tauh$ baseline req: $\pt^{\tauh}>20$, $|\eta|<2.3$, anti-e VL, anti-$\mu$ L}    \\
      \multicolumn{2}{c}{$\Pe$ baseline req: $\pt^\Pe>10$, $|\eta|<2.5$, $I^\Pe<0.10$, $\Pe$ MVA Tight ID}                 \\ 
      \multicolumn{2}{c}{$\Pgm$ baseline req: $\pt^\Pgm>10$, $|\eta|<2.4$, $I^\Pgm<0.15$, Medium ID}          \\
 \hline
-  Channel            &      Additional $\tauh$ Criteria  \\
+  Final State            &      Additional $\tauh$ Criteria  \\
 \hline
- $\Pe\Pgm\tauh$      &   \texttt{Tight Tau MVA}, Anti-e VL/T, Anti-$\mu$ T/L             \\
- $\Pgm\Pgm\tauh$     &   \texttt{Tight Tau MVA}, Anti-$\mu$ T             \\
- $\Pe\tauh\tauh$     &   \texttt{Medium/Very Tight Tau MVA}, Anti-e T \\
- $\Pgm\tauh\tauh$    &   \texttt{Medium/Very Tight Tau MVA}, Anti-$\mu$ T \\
+ $\Pe\Pgm\tauh$      &   \texttt{Tight Tau MVA}, anti-e VL/T, anti-$\mu$ T/L             \\
+ $\Pgm\Pgm\tauh$     &   \texttt{Tight Tau MVA}, anti-$\mu$ T             \\
+ $\Pe\tauh\tauh$     &   \texttt{Medium/Very Tight Tau MVA}, anti-e T \\
+ $\Pgm\tauh\tauh$    &   \texttt{Medium/Very Tight Tau MVA}, anti-$\mu$ T \\
 \hline \\
 
 \\
@@ -270,7 +272,7 @@ $\ttbar\PW$, and $\ttbar\PZ$ background contributions.
      \multicolumn{2}{c}{$\Pe$ baseline req: $\pt^\Pe>10$, $|\eta|<2.5$, MVA Loose ID }   \\ 
      \multicolumn{2}{c}{$\Pgm$ baseline req: $\pt^\Pgm>10$, $|\eta|<2.4$, Loose ID, $I^\Pgm<0.25$ }   \\ 
 \hline
-  Channel           &        Additional Lepton Criteria  \\
+  Final State           &        Additional Higgs Boson Lepton Criteria  \\
 \hline
   $\Pe\Pe\Pgm\tauh$     &   $I^\Pgm<0.15$       \\
   $\Pe\Pe\Pe\tauh$      &   $\Pe$ Tight MVA ID, $I^\Pe<0.15$ \\
@@ -288,8 +290,8 @@ $\ttbar\PW$, and $\ttbar\PZ$ background contributions.
 Electron, muon, and $\tauh$ selection criteria for each final state in the
 associated production $\htt$ analysis. In the $\Pe\Pgm\tauh$ final state there
 are two different working points listed for electron and muon rejection.
-Anti-e VL, Anti-$\mu$ T applies for events where the electron and $\tauh$
-are same charge and Anti-e T, Anti-$\mu$ L applies for events where the muon
+Anti-e VL, anti-$\mu$ T applies for events where the electron and $\tauh$
+are same charge and anti-e T, anti-$\mu$ L applies for events where the muon
 and $\tauh$ are same charge.
 }
 \label{tab:vh_inclusive_selection}
@@ -310,7 +312,7 @@ For further details see Section~\ref{sec:htt_dataset}.
 \section{Monte Carlo Samples}
 \label{sec:vh_mc_samples}
 Signal and background processes are modeled with samples of simulated events.
-For details on the production for simulated events, see section~\ref{sec:simulation}.
+For details on the production of simulated events, see Section~\ref{sec:simulation}.
 %Because the analysis focuses on
 %measuring the $\PW\PH$ and $\PZ\PH$ processes, the $\ttbar\PH$ process is 
 %included as background.
@@ -328,14 +330,14 @@ the $\htt$ signal events
 from the large contribution of irreducible $\PZ \to \Pgt \Pgt$ events.
 However, the neutrinos from the $\Pgt$ lepton decays carry a large fraction of
 the $\Pgt$ lepton energy and reduce the discriminating power of this variable.
-The \textsc{svfit} algorithm used in the $ggH$ and VBF targeted analysis
-discussed in Section~\ref{sec:svfit} is used in the $\PZ\PH$ final states.
+The \textsc{svfit} algorithm used in the $ggH$ and VBF targeted analysis,
+discussed in Section~\ref{sec:svfit}, is used in the $\PZ\PH$ final states.
 It combines the \etvecmiss 
 with the four-vectors of both $\Pgt$ candidates to calculate a more accurate 
 estimate of the mass of the parent boson and is denoted as $\mtt$. The resolution 
 of $\mtt$ is between 15 and 20\% depending on the $\Pgt\Pgt$ final state. The 
 $\mtt$ variable is used in the $\PZ\PH$ final state where the majority of 
-\etvecmiss is attributable to the $\Pgt$ decays. The variable $\mvis$ is used in the 
+\etvecmiss is attributable to the $\Pgt$ decays. The $\mvis$ is used in the 
 $\PW\PH$ final state because the \textsc{svfit} algorithm cannot properly account for the 
 additional \etvecmiss associated with the neutrino from the $\PW$ boson decay. 
 
@@ -345,27 +347,27 @@ additional \etvecmiss associated with the neutrino from the $\PW$ boson decay.
 \label{sec:vh_background_estimation}
 
 The irreducible backgrounds for the associated production analysis can
-be split into those for the $\PZ\PH$ four lepton final and those
-with three lepton final states. When a lepton escapes the fiducial
+be split into those with four lepton final states for $\PZ\PH$ and those
+with three lepton final states for $\PW\PH$. When a lepton escapes the fiducial
 volume of the detector, or is otherwise poorly reconstructed, the four
 lepton irreducible backgrounds can populate the $\PW\PH$ three
 lepton final states.
-Backgrounds typically with four or more genuine leptons composing
+Backgrounds typically composing
 the irreducible background for the $\PZ\PH$ final states are: $\PZ\PZ$, 
 $\ttbar\PZ$, $\PW\PW\PZ$, $\PW\PZ\PZ$, and $\PZ\PZ\PZ$. The dominant
 irreducible backgrounds for the $\PW\PH$ final states are:
 $\PW\PZ$ and $\ttbar\PW$. The irreducible backgrounds are 
-estimated from simulations and scaled to their theoretical cross section. Higgs 
+estimated from simulation and scaled to their theoretical cross section. Higgs 
 boson decays to pairs of $\PW$ or $\PZ$ bosons 
-are also estimated from simulations and considered as background processes. 
+are also estimated from simulation and considered as background processes. 
 Additionally, the $\ttbar\PH$ production process with all Higgs boson decay
-paths is estimated from simulations and considered a background processes.
+paths is estimated from simulation and considered a background processes.
 
 The reducible backgrounds, which have at least one jet misidentified as an electron, 
 muon, or $\tauh$ lepton, are estimated from data. 
 Data events meeting specific requirements detailed below are reweighted 
 as a function of a misidentification rate to estimate the 
-contribution of these processes with jets misidentified as leptons in the signal region. 
+contribution of these processes in the signal region. 
 
 In the $\PW\PH$ final states, the misidentification rate of jets as electrons, muons, 
 or $\tauh$ candidates is measured in $\PZ+\textrm{jets}$ events. The $\PZ$ boson is reconstructed 
@@ -382,31 +384,31 @@ pass the isolation or identification conditions.
 To remove the overlap between this method and the simulated samples, events in simulation that have a jet that is 
 misidentified as the $\tauh$ or as the subleading lepton, are discarded. Simulated 
 events that have a jet misidentified as the leading $\PW$ boson lepton, but two real leptons 
-for the Higgs boson associated subleading lepton and $\tauh$, are estimated from simulations as their 
+for the Higgs boson leptons, are estimated from simulation as their 
 contribution is not taken into account with the misidentification rate method 
 described above. These events mostly arise from $\ttbar$ and $\PZ+\textrm{jets}$ processes, 
 and account for a small fraction of the total expected background in the signal region. 
 In the hadronic $\Pe\tauh\tauh$ and $\Pgm\tauh\tauh$ final states, 
-the method is essentially the same, except that the lepton susceptible to being misidentified,
+the method is essentially the same, except that the lepton most susceptible to being misidentified,
 thus having the misidentificantion estimation method applied to it, 
 is the $\tauh$ candidate that has the same charge as the light lepton.  
 
-In the $\PZ\PH$ final states, a very similar misidentification rate is used
+In the $\PZ\PH$ final states, a similar misidentification rate is used
 to estimate the contribution of jets misidentified as electrons, muons, or $\tauh$
-leptons in signal region events. The misidentification rate is measured in four lepton final states which
+in signal region events. The misidentification rate is measured in four lepton final states which
 is dominated by $\PZ+\textrm{jets}$ events with a small contribution from 
 $\ttbar$ events. Identical to the $\PW\PH$ final states, the rates are measured 
 in bins of the lepton $\pt$, and are split between reconstructed decay modes for 
 the $\tauh$ candidates.
 
 In these four lepton final states, the leptons most susceptible 
-to being misidentified jets are the $\PH$ boson leptons.
+to being misidentified jets are the Higgs boson leptons.
 In the $\PZ\PH$ final states, data events which pass the full
-signal region selection, except either or both of the $\PH$ boson leptons 
+signal region selection, except either or both of the Higgs boson leptons 
 fail identification or isolation criteria, are weighted by the misidentification
 rate for the failing lepton.
 To avoid double counting events with misidentified leptons, 
-events with both $\PH$ boson leptons failing have their weight
+events with both Higgs boson leptons failing have their weight
 subtracted from the events which only have a single lepton failing. 
 To remove the overlap between this method and the simulated samples, events in simulation that have a jet that is 
 misidentified as an electron, muon, or $\tauh$ are discarded.
@@ -414,14 +416,16 @@ This misidentification rate method is used to estimate the yield of the reducibl
 backgrounds.
 
 The shape of the reducible background contribution is taken from
-data in a signal free region with same charge $\PH$ boson leptons. The
+data in a signal free region with same charge Higgs boson leptons. The
 contribution of irreducible backgrounds in the same charge region used to 
-derive the shape template is less than 1\%. This means that the data derived template is from
+derive the shape template is less than 1\%. This means that the data derived template is
 a very pure reducible background selection.
 A high statistics, relaxed identification and isolation selection is used to reduce
-statistical uncertainties for the shape template. Kolmogorov-Smirnov tests have been performed to validate
+statistical uncertainties for the shape template. Kolmogorov-Smirnov (KS) tests have been performed to validate
 shape compatibility between this relaxed same charge selection and the signal region
-reducible background distributions.
+reducible background distributions. The KS tests indicate there is likely no
+shape bias.
+
 The events estimated from these misidentification methods are labled
 as ``jet fakes'' in the following distributions.
 
@@ -434,8 +438,8 @@ between observed data and expectations based on simulation. Many of these correc
 to correct differences in reconstruction and identification efficiencies for leptons between data
 and simulation. These corrections are derived in
 fully orthogonal regions from the associated production analysis signal regions.
-The Monte Carlo correction applied in the associated production analysis are identical to those
-applied in the $ggH$ and VBF targeted analysis when ever applicable, see 
+The Monte Carlo corrections applied in the associated production analysis are identical to those
+applied in the $ggH$ and VBF targeted analysis when applicable, see 
 Section~\ref{sec:mc_corrections} for details.
 
 
@@ -542,7 +546,7 @@ Source of uncertainty & Magnitude \\
                                     & $\PZ\PH$: 26--100\% yield \\
 \hline
 \end{tabular}
-\caption{Sources of systematic uncertainty.}
+\caption{Sources of systematic uncertainty}
 \label{tab:vh_uncertainties}
 \end{table*}
 
@@ -553,13 +557,13 @@ Source of uncertainty & Magnitude \\
 
 The extraction of the results uses a global maximum likelihood fit based on a 
 simultaneously fit of all the $\PW\PH$ and $\PZ\PH$ final state signal regions. 
-The following Section~\ref{sec:vh_sr} shows the twelve signal region distributions
+Section~\ref{sec:vh_sr} shows the twelve signal region distributions
 used in the global maximum likelihood fit. 
 The global maximum likelihood fit results in a best fit signal
 strength for this dedicated $\PW\PH$ and $\PZ\PH$ associated production analysis of
 $\mu = 2.5 ^{+1.4} _{-1.3}$. This corresponds to 
 a significance of 2.3 standard deviations while a significance of 1.0 standard deviation was expected.
-The following Chapter~\ref{sec:cmb_results} discusses results for the combination of the
+Chapter~\ref{sec:cmb_results} discusses results for the combination of the
 $ggH$ and VBF targeted analysis with the associated production targeted
 analysis.
 
@@ -577,7 +581,7 @@ fit separately in the global fit; combining them together helps reduce statistic
 fluctuations for visualization purposes only.
 The distributions are post-fit and show full uncertainties.
 The $\PW\PH$ and $\PZ\PH$ signals are shown as 5x larger than their best-fit
-signal strength value of $2.5 \times$ SM.
+value $\mu = 2.5$.
 
 \begin{figure}[h!]
  \begin{center}
@@ -593,7 +597,7 @@ signal strength value of $2.5 \times$ SM.
   top left corner of each distribution.
   The distributions show full uncertainties.
   The $\PW\PH$ and $\PZ\PH$ signal are shown as 5x larger than their best-fit
-  signal strength value of $2.5 \times$ SM.
+  value $\mu = 2.5$.
  }
  \label{fig:zh_all_eight1}
 \end{figure}
@@ -612,7 +616,7 @@ signal strength value of $2.5 \times$ SM.
   top left corner of each distribution.
   The distributions show full uncertainties.
   The $\PW\PH$ and $\PZ\PH$ signal are shown as $5\times$ larger than their best-fit
-  signal strength value of $2.5 \times \text{SM}$.
+  value $\mu = 2.5$.
  }
  \label{fig:zh_all_eight2}
 \end{figure}
@@ -632,7 +636,7 @@ signal strength value of $2.5 \times$ SM.
 %  $\ell\ell$ covers both $\PZ \to \Pgm\Pgm$ and $\PZ \to \Pe\Pe$ events.
 %  The distributions show full uncertainties.
 %  The $\PW\PH$ and $\PZ\PH$ signals are shown as 5x larger than their best-fit
-%  signal strength value of $2.5 \times$ SM.
+%  value $\mu = 2.5$.
 % }
 % \label{fig:zh_results_svFitLLXX}
 %\end{figure}
@@ -648,7 +652,7 @@ signal strength value of $2.5 \times$ SM.
   The left half of the distribution is the Low-$L_{\text{T}}^{\textrm{Higgs}}$ region
   while the right half corresponds to the High-$L_{\text{T}}^{\textrm{Higgs}}$ region.
   The $\PW\PH$ and $\PZ\PH$ signals are shown as 5x larger than their best-fit
-  signal strength value of $2.5 \times$ SM.
+  value $\mu = 2.5$.
  }
  \label{fig:zh_results_svFitAll}
 \end{figure}
@@ -656,9 +660,9 @@ signal strength value of $2.5 \times$ SM.
 
 
 The results in the $\PW\PH$ final states are obtained from the distributions of the 
-visible mass of the $\tauh$ leptons in the $\ell\tauh\tauh$ final states, 
+visible mass of the $\tauh$ leptons in the hadronic $\ell\tauh\tauh$ final states, 
 and of the visible mass of the $\tauh$ and subleading light lepton in the 
-$\ell\ell\tauh$ final states. The mass distributions
+semileptonic $\ell\ell\tauh$ final states. The mass distributions
 are shown in Figure~\ref{fig:mass_llt} for the semileptonic final states 
 and Figure~\ref{fig:mass_ltt} for the hadronic final states. 
 Figure~\ref{fig:mass_wh} shows all four $\PW\PH$ final states combined together
@@ -673,7 +677,7 @@ for visualization purposes only.
  $\Pgm\Pgm\tauh$ (right) final states.
  The distributions show full uncertainties.
  The $\PW\PH$ and $\PZ\PH$ signals are shown as 5x larger than their best-fit
- signal strength value of $2.5 \times$ SM.
+ value $\mu = 2.5$.
  }
  \label{fig:mass_llt}
 \end{figure}
@@ -687,7 +691,7 @@ for visualization purposes only.
  and $\Pgm\tauh\tauh$ (right) final states.
  The distributions show full uncertainties.
  The $\PW\PH$ and $\PZ\PH$ signals are shown as 5x larger than their best-fit
- signal strength value of $2.5 \times$ SM.
+ value $\mu = 2.5$.
  }
  \label{fig:mass_ltt}
 \end{figure}
@@ -700,26 +704,27 @@ for visualization purposes only.
  combined together. 
  The distributions show full uncertainties.
  The $\PW\PH$ and $\PZ\PH$ signals are shown as 5x larger than their best-fit
- signal strength value of $2.5 \times$ SM.
+ value $\mu = 2.5$.
  }
  \label{fig:mass_wh}
 \end{figure}
 
 
 \subsection{Analysis Sensitivity Details}
-Grouping events in the signal regions by their decimal logarithm of the ratio of the 
-signal ($S$) to signal-plus-background ($S+B$) in each bin
-an excess of observed events with respect to the SM background expectation is 
+An excess of observed events with respect to the SM background expectation is 
 visible in the most sensitive bins of the analysis, Figure~\ref{fig:sb}.
+This distribution is created by grouping events in the signal regions 
+by their decimal logarithm of the ratio of the 
+signal ($S$) to signal-plus-background ($S+B$) in each bin
 
 The postfit background and signal yields and the observed yields for the
-$\PW\PH$ final states is shown in Table~\ref{tab:sb_wh} while that
-for the $\PZ\PH$ final states is shown in Table~\ref{tab:sb_zh}. 
+$\PW\PH$ final states are shown in Table~\ref{tab:sb_wh} while those
+for the $\PZ\PH$ final states are shown in Table~\ref{tab:sb_zh}. 
 The $\PZ\PH$ final states are grouped according to the Higgs boson decay.
 
 \begin{figure}[!ht]
  \begin{center}
-  \includegraphics[width=0.45\textwidth]{higgs_to_taus_vh/plots/combined/wh_vs_zh_sbweight.pdf}
+  \includegraphics[width=0.55\textwidth]{higgs_to_taus_vh/plots/combined/wh_vs_zh_sbweight.pdf}
  \end{center}
  \caption{
  Distribution of the decimal logarithm of the ratio between the expected signal, 
@@ -758,8 +763,6 @@ Observed &  \multicolumn{1}{c}{28 $\pm$ 5.3} &  \multicolumn{1}{c}{29 $\pm$ 5.4}
 \caption{Background and signal expectations for the $\PW\PH$ final states, 
 together with the number of observed 
 events, for the post-fit signal region distributions.
-$S$ and $B$ are, respectively, the number of expected signal events for a Higgs boson 
-with a mass $\mH = 125.09\GeV$ and of expected background events, in those bins. 
 The background uncertainty accounts for all sources of background uncertainty, 
 systematic as well as statistical, after the global fit. The contribution from 
 ``Rare'' includes events from triboson, $\ttbar\PW$, $\ttbar\PZ$, $\ttbar\PH$ production,
@@ -777,8 +780,8 @@ and other rare processes.
 Process & \multicolumn{1}{c}{$\ell\ell\Pe\tauh$} &  \multicolumn{1}{c}{$\ell\ell\Pgm\tauh$} &  \multicolumn{1}{c}{$\ell\ell\tauh\tauh$} &  \multicolumn{1}{c}{$\ell\ell\Pe\Pgm$} \\
 \hline
 $\PZ\PZ$                        & 14.40, 0.36 & 26.91, 0.55 & 25.58, 1.05 & 9.33, 0.18 \\   
-Rare                            & 0.62, 0.08  & 1.54, 0.61  & 0.81, 0.42  & 3.02, 0.23 \\
 Jet Fakes                       & 14.01, 1.55 & 17.58, 1.17 & 58.05, 2.87 & 3.66, 4.60 \\
+Rare                            & 0.62, 0.08  & 1.54, 0.61  & 0.81, 0.42  & 3.02, 0.23 \\
 Total backgrounds               & 29.03, 1.59 & 46.03, 1.43 & 84.44, 3.08 & 16.01, 4.61\\             
 \hline
 $\PW\PH, \PH \to\Pgt\Pgt$       & 0.008, 0.002  & 0.01, 0.003  & 0.016, 0.005  & 0.002, 0.001 \\
@@ -794,11 +797,9 @@ together with the number of observed
 events, for the post-fit signal region distributions. The $\PZ\PH$ final states
 are each grouped according to the Higgs boson decay products. 
 $\ell\ell$ covers both $\PZ \to \Pgm\Pgm$ and $\PZ \to \Pe\Pe$ events.
-$S$ and $B$ are, respectively, the number of expected signal events for a Higgs boson 
-with a mass $\mH = 125.09$\GeV and of expected background events, in those bins. 
 The background uncertainty accounts for all sources of background uncertainty, 
 systematic as well as statistical, after the global fit. The contribution from 
-``Rare'' includes events from triboson, $\ttbar\PW$, $\ttbar\PZ$, $\ttbar\PH$ production,
+``Rare'' includes events from triboson, $\ttbar\PZ$, $\ttbar\PH$ production,
 and other rare processes.
 }
 \label{tab:sb_zh}
