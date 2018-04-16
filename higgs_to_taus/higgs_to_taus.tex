@@ -132,7 +132,7 @@ All electrons and muons must meet the minimum requirement
 that the distance of closest approach to the primary vertex satisfies $\abs{d_z}<0.2$ cm
 along the beam direction, and $\abs{d_{xy}}<0.045$ cm in the transverse plane. Ensuring
 compatibility with the primary vertex is consistent with the predicted infinitesimal life-time of
-a Higgs boson. The HPS reconstruction of $\tauh$ detailed in section~\ref{sec:XXX} can involve
+a Higgs boson. The HPS reconstruction of $\tauh$ detailed in section~\ref{sec:obj_reco_tau} can involve
 combining together multiple tracks and $\PGpz$s coming from intermediary $\tau$ decay products.
 Due to these intermediary products, the reconstructed $d_{xy}$ for $\tauh$ are often
 larger than those for electrons and muons. Because of this, the primary vertex matching
@@ -234,7 +234,7 @@ jet are discarded to further suppress the \ttbar background in the $\Pe\Pgm$ cha
 (Left) Diagram showing the construction of the $p_\zeta$ and $p_\zeta^{\text{vis}}$ projections.
 (Right) An example $p_\zeta - 0.85 \, p_\zeta^{\text{vis}}$ distribution is shown for a similar but not
 overlapping selection in the $\Pe\Pgm$ channel.  This distribution is from an analysis focusing on specifically studying the
-$\PZ\to\tau\tau$ process~\ref{HIG-15-007}.
+$\PZ\to\tau\tau$ process~\cite{Sirunyan:2018qio}.
 In the $\htt$ analysis, the Higgs boson $p_\zeta - 0.85 \, p_\zeta^{\text{vis}}$
 spectrum aligns very closely with the $Z\to\tau\tau$ distribution shown here.
      }
@@ -242,6 +242,7 @@ spectrum aligns very closely with the $Z\to\tau\tau$ distribution shown here.
 \end{figure*}
 
 \subsection{Categorization}
+\label{sec:htt_categorization}
 
 Selected events are split into three mutually exclusive categories per decay channel.
 The categories are designed to target different aspects of the gluon fusion and VBF Higgs boson production mechanisms.
@@ -429,9 +430,12 @@ from the large contribution of irreducible $\PZ \to \Pgt \Pgt$ events.
 However, the neutrinos from the $\Pgt$ lepton decays carry a large fraction of
 the $\Pgt$ lepton energy and reduce the discriminating power of this variable.
 The \textsc{svfit} algorithm combines the \etvecmiss with the four-vectors of both $\Pgt$ candidates
-to calculate a more accurate estimate of the mass of the parent boson, denoted as $\mtt$. The resolution of $\mtt$ is between 15 and 20\% depending on the $\Pgt\Pgt$ final state.
+to calculate a more accurate estimate of the mass of the parent boson, denoted as $\mtt$. 
+The resolution of $\mtt$ is between 15 and 20\% depending on the $\Pgt\Pgt$ final state.
 A detailed description of the algorithm can be found
-in Ref.~\cite{Bianchini:2014vza}. Both variables are used in the analysis, as detailed in Section.~\ref{sec:categories}, and $\mvis$ is preferred over $\mtt$ when the background from $\PZ \to \ell\ell$ events is large.
+in Ref.~\cite{Bianchini:2014vza}. Both variables are used in the analysis, as detailed in 
+Section~\ref{sec:htt_categorization}, and $\mvis$ is preferred over $\mtt$ when the background 
+from $\PZ \to \ell\ell$ events is large.
 
 
 \section{Background Estimation}
