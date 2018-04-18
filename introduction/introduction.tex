@@ -2,12 +2,12 @@
 \label{sec:introduction}
 
 In this thesis, I discuss the observation of the Higgs boson decaying to a pair
-of tau leptons ($\tau^{+}\tau^{-}$). The thesis includes two analyses which target different
+of tau leptons ($\Pgt^{+}\Pgt^{-}$). The thesis includes two analyses which target different
 ways in which the Higgs boson is produced. The analyses a performed using
 13\TeV center-of-mass energy proton-proton collision data from the CERN LHC.
 The data is gathered by the CMS experiment and corresponds to an integrated
 luminosity of 35.9\fbinv. The observation here is the first observation of the
-Higgs boson decay to $\tau^{+}\tau^{-}$ at 13\TeV and constitutes an important
+Higgs boson decay to $\Pgt^{+}\Pgt^{-}$ at 13\TeV and constitutes an important
 milestone in the effort to better understand the Higgs boson, one of the fundamental
 particles of the Standard Model (SM) of physics, and the fundamental
 properties of nature.
@@ -54,8 +54,11 @@ of the Higgs boson when produced via the gluon fusion or vector boson fusion
 processes and Chapter~\ref{sec:vh_analysis} covers the Higgs boson associated
 production processes. In Chapter~\ref{sec:cmb_results}, the results of
 both analysis are combined together to achieve the strongest 13\TeV Higgs
-boson decaying to $\tau^{+}\tau^{-}$ results possible. Finally, the thesis
+boson decaying to $\Pgt^{+}\Pgt^{-}$ results possible. Finally, the thesis
 is drawn to a conclusion in Chapter~\ref{sec:conclusion}.
+The mentioned Higgs boson decay process to a pair of $\Pgt$ leptons will be denoted
+$\htt$ through out this thesis where the $\pm$ are dropped from the $\Pgt$ superscript
+for convenience.
 
 
 \section{The Standard Model of Particle Physics}
@@ -195,12 +198,60 @@ of a particle--antiparticle pair, and total charge must be conserved.
 Antiparticles are denoted in this thesis with a ``bar'' over the top of a particle symbol. For example
 a top-quark is $t$ while an antitop-quark is $\bar{t}$.
 
+For a more thorough treatment of the SM, its particles, and its forces see
+Chapter~\ref{sec:pheno}.
 
-\section{Experimental Context: Previous Higgs Measurements}
 
-\subsection{Early Higgs Boson Searches}
-Searches for a Higgs boson decaying to a $\Pgt$ lepton pair were performed at the LEP~\cite{Barate:2000ts,Abdallah:2003ip,Achard:2001pj,Abbiendi:2000ac},
-Tevatron~\cite{Aaltonen:2012jh, Abazov:2012zj}, and LHC colliders.
+
+\section{The Standard Model: Experimental Context}
+The gap between the prediction of the Higgs boson and its discovery was a long 40 years.
+Many of the particles making up the SM were not discovered when the Higgs boson
+was originally being theorized. In fact, the existance of quarks or the discovery 
+of gluons, the mediator of the strong force, or the $\PW$ and the $\PZ$ bosons,
+the mediators of the weak force, we all still to be found. The decades after the
+1960s saw discovery after discovery, slowly piecing together and validating
+the SM.
+
+The internal structure of protons was illuminated by
+deep inelastic scatter experiments carried out at SLAC which eventually led to 
+the observation of the three least massive quarks: up ($u$), down ($d$), and strange ($s$)
+~\cite{PhysRevLett.23.930,Breidenbach:1969kd}. In 1974, the $J/\Psi$ particle, a composit 
+particle made from a charm quark ($c$) and a charm anti-quark ($\bar{c}$) was 
+discovered~\cite{PhysRevLett.33.1404,PhysRevLett.33.1406}. 
+The bottom quark ($b$) was discovered in 1977 via the decays of a new particle, the Upsilon
+meson~\cite{PhysRevLett.39.252}. The top quark ($t$) was the last quark of the three
+known generations discovered
+and was not found until 1995 at Fermilab~\cite{PhysRevLett.74.2626,PhysRevLett.74.2632}.
+The gluon which mediates the strong force for all of the quarks was not discovered until 
+1979 at DESY~\cite{PhysRevLett.43.830}.
+
+Beyond the partons there were discoveries of new bosons, speciically the mediators
+of the weak force.
+In 1983 the $\PW$ and the $\PZ$ bosons were discovered~\cite{AUBERT1983275,1983398}. 
+These two bosons were the
+most massive fundamental particles by far at the time of their discovery with values of
+84.4\GeV and 91.2\GeV respectively.
+A very important discovery laying the foundation for the analyses in this thesis was
+the discovery of the third generation charged lepton. The $\Pgt$ lepton was discovered
+in 1975 by Martin Perl~\cite{PhysRevLett.35.1489}. While far from an exhaustive list,
+these many discoveries give an indication of the very strong background of experimental
+research which supports the SM.
+
+\subsection{Higgs Boson Searches: Experimental Results}
+As more piecies of the SM were validated and particle accelerators became more powerful
+searches for the Higgs boson were conducted at multiple experiments.
+Searches for a Higgs boson were performed at the 
+LEP at CERN~\cite{Barate:2000ts,Abdallah:2003ip,Achard:2001pj,Abbiendi:2000ac}.
+In the datasets corresponding to these searches, there were few enough potential Higgs
+boson events that no discoveries could be made.
+Instead, these searchs all resulted in placing limits on the possible mass of the Higgs boson.
+The Tevatron at Fermilab was active in Higgs boson searches through the early 2000s
+with multiple analyses targeting the same decay process studied in this thesis, the Higgs
+boson decaying to a pair of $\Pgt$ leptons. Similar to the LEP results, these analyses
+placed limits on the possible mass and cross section of the Higgs boson~\cite{Aaltonen:2012jh, Abazov:2012zj}.
+
+%FIXME XXX XXX
+
 Using $\Pp\Pp$ collision data at $\sqrt{s}=7$ and $8\TeV$, the CMS Collaboration showed evidence for this process with an observed\,(expected)
 significance of 3.2\,(3.7) standard deviations (s.d.)~\cite{Chatrchyan:2014nva}. The ATLAS
 experiment reported evidence for Higgs bosons decaying into pairs
@@ -209,7 +260,7 @@ s.d. for a Higgs boson mass of 125\GeV~\cite{Aad:2015vsa}.
 The combination of the results from both experiments yields an observed (expected)
 significance of 5.5\,(5.0) s.d.~\cite{Khachatryan:2016vau}.
 
-\subsection{CMS and ATLAS at 7 and 8 TeV}
+
 A particle compatible with such a boson was observed by the ATLAS and CMS experiments at the CERN LHC
 in the $\PZ\PZ$, $\Pgg \Pgg$, and $\PW\PW$ decay channels~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba},
 during the proton-proton ($\Pp\Pp$) data taking period in 2011 and 2012
