@@ -1,19 +1,18 @@
 \chapter{Introduction}
 \label{sec:introduction}
 
-Wesley -
-One more point about the introduction. It should introduce your thesis topic.
-It should explain how your topics fit into or expand the standard model and
-how your topic(s) enhance our understanding beyond what preceded. You
-need to cover both the theoretical and experimental context (e.g. include
-a summary of the measurements that came before).
+In this thesis, I discuss the observation of the Higgs boson decaying to a pair
+of tau leptons ($\tau^{+}\tau^{-}$). The thesis includes two analyses which target different
+ways in which the Higgs boson is produced. The analyses a performed using
+13\TeV center-of-mass energy proton-proton collision data from the CERN LHC.
+The data is gathered by the CMS experiment and corresponds to an integrated
+luminosity of 35.9\fbinv. The observation here is the first observation of the
+Higgs boson decay to $\tau^{+}\tau^{-}$ at 13\TeV and constitutes an important
+milestone in the effort to better understand the Higgs boson, one of the fundamental
+particles of the Standard Model (SM) of physics, and the fundamental
+properties of nature.
 
-Dasu - 
-As a hint, the intro should be accessible to non specialist. So, keep it simple, written in English rather than CMSish. You should introduce SM as the most well tested theory of nature at the fundamental level. The Higgs boson completes it.
-
-
-
-The Standard Model (SM) of physics is a mathematical framework for explaining
+The Standard Model of physics is a mathematical framework for explaining
 the interactions and behavior of the fundamental particles observed in nature.
 It has been built up and defined through the 1950s and 60s culminating in the
 theoretical prediction of the existance of a neutral scalar boson, now called the
@@ -24,10 +23,10 @@ The force which is not described in the SM is the gravitational force. This omis
 physicists are working to both develop and experimentally test more comprehensive 
 theories of nature.
 
-For 40 XXX years after the establishement of the
-theoretical prediction of the Higgs boson, the Higgs boson eluded conclusive
-observation by experimental particle physicsts. The Higgs boson was discovered in 2012 XXX
-by the CMS and ATLAS collaborations at CERN XXX.
+The Higgs boson eluded observation by experimental particle physicsts
+for about 40 years after the establishement of its theoretical prediction. 
+The Higgs boson was discovered in 2012
+by the CMS and ATLAS collaborations at CERN~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba}.
 With this discovery, all particles predicted and described in the SM have been observed.
 Based on research leading up to today, the SM is the most well tested theory of nature at the fundamental level.
 Over all, the SM shows remarkable continuity between the theoretical predictions and
@@ -45,6 +44,18 @@ experimental results. Significant discrepancies between the SM
 theoretical predictions and the observed Higgs boson properties could point to
 flaws in the SM and would lead to a more full and complete understanding of nature.
 
+This thesis is arranged to build up a theoretical understand of the SM and the
+Higgs boson in Chapter~\ref{sec:pheno}. A description of the LHC machine and
+CMS detector follows in Chapter~\ref{sec:cms_lhc}. The next two Chapters, ~\ref{sec:simulation} and
+~\ref{sec:obj_reconstruction}, discuss the foundations of physics analyses at CMS, the physics
+simulations and details of how detector information is processed to created tau
+leptons and other particles. Chapter~\ref{sec:htt_analysis} covers the analysis
+of the Higgs boson when produced via the gluon fusion or vector boson fusion
+processes and Chapter~\ref{sec:vh_analysis} covers the Higgs boson associated
+production processes. In Chapter~\ref{sec:cmb_results}, the results of
+both analysis are combined together to achieve the strongest 13\TeV Higgs
+boson decaying to $\tau^{+}\tau^{-}$ results possible. Finally, the thesis
+is drawn to a conclusion in Chapter~\ref{sec:conclusion}.
 
 
 \section{The Standard Model of Particle Physics}
@@ -53,16 +64,19 @@ the best framework for mathematical predictions and explanations of the behavior
 of the fundamental particles of nature. These fundamental particles can be grouped
 together by behavoir and common characteristis and arranged diagramatically as in
 Figure~\ref{fig:sm_particles}. The particles are split vertically into two categories:
-fermions which have $\frac{1}{2}$ integer spin, and the bosons which have integer
+fermions which have spin--$\frac{1}{2}$, and the bosons which have integer
 spin of either 0 or 1. In general, the fermions constitute what we are familiar of
 as matter while the bosons are the mediators of the fundamental forces.
+The rest of this chapter introduces the particles and forces of the SM as well
+as preivous experimental results. For a more detailed mathematical treatement
+of the phenomology of SM see the following Chapter~\ref{sec:pheno}.
 
 \begin{figure*}[htbp]
 \centering
      \includegraphics[width=0.7\textwidth]{introduction/plots/sm_particles.pdf}
      \caption{
 The fundamental particles of the SM and some of their properties including their:
-mass, charge, and spin. The units for mass are reported as electron volts divided by
+mass, electric charge, and spin. The units for mass are reported as electron volts divided by
 the speed of light ($c$) squared and use scientific notation prefixes.
 M for million, G for billion.
      }
@@ -71,9 +85,10 @@ M for million, G for billion.
 
 The fermions can be further grouped into either quarks or leptons based on whether
 they carry ``color'' charge or not. 
-Quarks carry a color charge and have a charge of either $\frac{-1}{3}$ or $\frac{2}{3}$. 
+Quarks carry a color charge and have an electric charge of either $-\frac{1}{3}e$ or $\frac{2}{3}e$
+where $e$ is the elementary charge ($1.602 \times 10^{-19}$ Coulombs).
 Where as the leptons are colorless (carry no color charge) and
-have integer charge of 0 or -1. In Figure~\ref{fig:sm_particles} the fermions are
+have integer electric charge of 0$e$ or -1$e$. In Figure~\ref{fig:sm_particles} the fermions are
 arranged according to what is called their mass ``generation'' with more massive
 particles appearing to the right in the third mass generation column.
 
@@ -116,16 +131,44 @@ There has been no observed mediator for the gravitational force.
 
 The strong force has the largest relative strength of the fundamental forces but
 the reach or distance over which the force can be felt is very limited and is 
-confined to the sub-atomic scale, $10^{-15} m$. The strong force is experienced
+confined to the sub-atomic scale, $10^{-15}$m. The strong force is experienced
 between particles with a color charge, exclusively gluons and quarks.
+Figure~\ref{fig:sm_particles} shows a diagram of the SM particles with blue
+lines linking particles which experience a force with the mediating boson particle.
+For example, a blue line links the quarks with the gluons representing the
+strong force.
 
-The electromagnetic force follows after the strong force for largest relative
+The electromagnetic force follows after the strong force in order of largest relative
 strength. The reach of the electromagnetic force is infinite and decreases with
 distance as $\frac{1}{r^{2}}$. Despite its infinite reach, the electromagnetic 
-force is not experienced on the macro scale because all stable matter is composed
-of equal parts positively charged matter and negatively charged matter leading to
-a neutrally charged universe. The electromagnetic force is experienced by all
-charged particles XXX XXX XXX
+force is not experienced on the macroscopic scale because all stable matter is composed
+of both electrically positively charged and negatively charged matter and leads to
+an overall neutral electrical charge for the universe. The electromagnetic force is experienced by all
+electrically charged particles: quarks, the non-neutrino leptons, and the $\PW^{\pm}$ bosons.
+This force is mediated by the photon which has neutral electric charged.
+% XXX Add example of electrons holding you up in your chair, preventing you from
+% falling through it?
+
+The next force in descending order of relative strength is the weak force.
+The weak force is experienced by
+all of the leptons and the quarks and is mediated by the $\PW^{\pm}$ and $\PZ$ 
+bosons. It is responsible for familiar phenomena such as the radioactive decay of atoms. 
+Beta decay is one example of radioactive decay where, within an atomic nucleus,
+a neutron is transformed into a proton and an electron and an electron antineutrino
+(more on antiparticles following). Fundamentally, what happens
+is the quark composition within the proton changes thereby changing the proton to a
+neutron. This process is mediated by a $\PW^{-}$ boson which subsequently decays
+to an electron and the antielecton neutrino.
+
+The final and weakest force is the one we are most familiar with, the gravitational
+force. Just like the electromagnetic force, the reach of the gravitational force 
+is infinite and decreases with distance as $\frac{1}{r^{2}}$. Yet, unlike the
+electromagnetic force, gravity is felt over extremly large distances. This is because
+gravity is a purely attractive force which acts on all massive particles.
+It is amazing that the force we are most colloquially familiar with is actually the
+weakest of the four fundamental forces. Because the gravitational force is so weak
+when talking about the effect on a single particle, it can be ignored for
+all of the particle physics calculations throughout this thesis.
 
 \begin{figure*}[htbp]
 \centering
@@ -139,55 +182,23 @@ boson. The Higgs boson in the center is discussed in Chapter~\ref{sec:pheno}.
      \label{fig:sm_particles}
 \end{figure*}
 
+In addition to the particles shown in Figure~\ref{fig:sm_particles}, there exist antiparticles.
+which were mentioned in the context of an example of the weak force, beta decay.
+Each of the SM particles has an antiparticle, though some particles, such as the photon
+are their own antiparticle. Antiparticles have the same mass as their
+``normal'' particle pair except they have opposite electric charge. The antiparticle
+partner of the electron is the positron which is sometimes called an antielectron.
+Antiparticles can be created in many types of interactions in particle physics experiments
+and are very common. A particle and its antiparticle can annihilate each other resulting in,
+for example, a photo. The photon is a possible result because of the neutral overall charge
+of a particle--antiparticle pair, and total charge must be conserved.
+Antiparticles are denoted in this thesis with a ``bar'' over the top of a particle symbol. For example
+a top-quark is $t$ while an antitop-quark is $\bar{t}$.
 
-
-Anti-particles
-
-
-electroweak symmetry breaking is achieved via the Brout--Englert--Higgs
-mechanism~\cite{Englert:1964et,Higgs:1964ia,Higgs:1964pj,Guralnik:1964eu,Higgs:1966ev,Kibble:1967sv},
-leading, in its minimal version, to the prediction of the existence of one physical neutral scalar particle,
-commonly known as the Higgs boson ($\PH$).
-
-
-
-
-
-
-
-
-
-To establish the mass generation mechanism for fermions,
- it is necessary to probe the direct coupling of
-the Higgs boson to such particles.
-The most promising decay channel is $\Pgt^+\Pgt^-$,
-because of the large event rate expected in the SM compared to the $\Pgm^+\Pgm^-$ decay channel ($\mathcal{B}(\PH\to\Pgt^+\Pgt^-)=6.3$\% for a mass of 125.09\GeV), and of the smaller contribution from background events
-with respect to the $\bbbar$ decay channel.
-
-\subsection{Electroweak Symmetry Breaking}
-
-\subsubsection{W/Z Higgs Associated Production}
-
-\subsection{Cross Sections and Decay Rates}
-
-\subsection{QCD and Proton Structure}
 
 \section{Experimental Context: Previous Higgs Measurements}
 
-\subsection{CMS and ATLAS at 7 and 8 TeV}
-A particle compatible with such a boson was observed by the ATLAS and CMS experiments at the CERN LHC
-in the $\PZ\PZ$, $\Pgg \Pgg$, and $\PW\PW$ decay channels~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba},
-during the proton-proton ($\Pp\Pp$) data taking period in 2011 and 2012
-at center-of-mass energies of $\sqrt{s} = 7$ and 8\TeV, respectively.
-Subsequent results from both experiments, described in
-Refs.~\cite{Aad:2015gba, Khachatryan:2014jba, Chatrchyan:2012jja, Aad:2013xqa, Khachatryan:2014kca,Sirunyan:2017exp},
-established that the measured properties of the new particle,
-including its spin, CP properties,
-and coupling strengths to SM particles, are consistent with those expected for the Higgs boson predicted by the SM.
-The mass of the Higgs boson has been determined to be
-$125.09\pm0.21\stat\pm0.11\syst\GeV$, from a combination of
-ATLAS and CMS measurements~\cite{Aad:2015zhl}.
-
+\subsection{Early Higgs Boson Searches}
 Searches for a Higgs boson decaying to a $\Pgt$ lepton pair were performed at the LEP~\cite{Barate:2000ts,Abdallah:2003ip,Achard:2001pj,Abbiendi:2000ac},
 Tevatron~\cite{Aaltonen:2012jh, Abazov:2012zj}, and LHC colliders.
 Using $\Pp\Pp$ collision data at $\sqrt{s}=7$ and $8\TeV$, the CMS Collaboration showed evidence for this process with an observed\,(expected)
@@ -198,10 +209,38 @@ s.d. for a Higgs boson mass of 125\GeV~\cite{Aad:2015vsa}.
 The combination of the results from both experiments yields an observed (expected)
 significance of 5.5\,(5.0) s.d.~\cite{Khachatryan:2016vau}.
 
+\subsection{CMS and ATLAS at 7 and 8 TeV}
+A particle compatible with such a boson was observed by the ATLAS and CMS experiments at the CERN LHC
+in the $\PZ\PZ$, $\Pgg \Pgg$, and $\PW\PW$ decay channels~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba},
+during the proton-proton ($\Pp\Pp$) data taking period in 2011 and 2012
+at center-of-mass energies of $\sqrt{s} = 7$ and 8\TeV, respectively.
+
+Subsequent results from both experiments, described in
+Refs.~\cite{Aad:2015gba, Khachatryan:2014jba, Chatrchyan:2012jja, Aad:2013xqa, Khachatryan:2014kca,Sirunyan:2017exp},
+established that the measured properties of the new particle,
+including its spin, CP properties,
+and coupling strengths to SM particles, are consistent with those expected for the Higgs boson predicted by the SM.
+The mass of the Higgs boson has been determined to be
+$125.09\pm0.21\stat\pm0.11\syst\GeV$, from a combination of
+ATLAS and CMS measurements~\cite{Aad:2015zhl}.
 
 
 
 
 
+
+
+
+
+
+Wesley -
+One more point about the introduction. It should introduce your thesis topic.
+It should explain how your topics fit into or expand the standard model and
+how your topic(s) enhance our understanding beyond what preceded. You
+need to cover both the theoretical and experimental context (e.g. include
+a summary of the measurements that came before).
+
+Dasu - 
+As a hint, the intro should be accessible to non specialist. So, keep it simple, written in English rather than CMSish. You should introduce SM as the most well tested theory of nature at the fundamental level. The Higgs boson completes it.
 
 
