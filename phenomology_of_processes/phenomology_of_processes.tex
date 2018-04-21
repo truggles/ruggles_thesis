@@ -21,7 +21,7 @@ to say that physics is the study of symmetry''~\cite{pw_anderson:1972}.
 One way of expressing many types of patterns mathematically is with symmetries, properties which 
 remain invariant under certain transformations. The SM is defined by a group of symmetries
 representing certain conserved properties. Specifically, the SM is represented by  the
-symmetries of the unitary product group SU(3)$_{\text{C}} \times$ SU(2)$_{\text{L}} \times$ U(1)$_{\text{Y}}$.
+symmetries of the unitary product group SU(3)$_{\text{C}} \,\times \,$ SU(2)$_{\text{L}} \, \times\,$ U(1)$_{\text{Y}}$.
 These three terms all reflect symmetries and conserved quantities discussed below.
 
 Electric charge ($Q$), the third component of weak isospin ($T_{3}$), and hypercharge ($Y$) act together to define a conserved 
@@ -32,39 +32,120 @@ The two SU($n$) groups are special unitary groups which represent rotations.
 In the SM, the SU(2) group provides a description of particle spin.
 The ``L'' subscript for the SU(2)$_{\text{L}}$ group indicates that that it only couples to
 and describest left handed fermions.
-The SU(3)$_{\text{C}}$ group describes the local symmetry of color charge conservation.
+The SU(3)$_{\text{C}}$ group describes the local symmetry of color charge.
 
 
 \section{Electroweak Symmetry Breaking}
-In the SM, the electromagnetic force and weak force are described together by
-the electroweak Lagrangian~\cite{Glashow:1961tr,SM1,SM3}.
+Glashow, Weinberg, and Salam demonstrated a unified description of the electromagnetic force 
+and weak force which merge at energies around 100\GeV into the electroweak force,
+described by the electroweak Lagrangian~\cite{Glashow:1961tr,SM1,SM3}.
+The electroweak Lagrangian defines a gauge field theory which is 
+invariant under the SU(2)$_{\text{L}} \, \times \, $U(1)$_{\text{Y}}$ symmetry group. 
 Prior to the introduction of Electroweak Symmetry Breaking (EWSB),
 the electroweak Lagrangian describes massless $\PW$ and $\PZ$ bosons.
+However, as previously mentioned, the $\PW$ and $\PZ$ bosons were discovered in 1983
+and found to be two of the most massive particles~\cite{AUBERT1983275,1983398}. 
 EWSB rescues what would be a collasal disagreement between theoretical prediction
 and experimental results. The introduction of EWSB to the theory preserves the structure of
 the electroweak interactions and succeedes in endowing the $\PW$ and $\PZ$ bosons
 with mass.
 
-The electroweak Lagrangian defines a gauge field theory which is 
-invariant under the SU(2)$_{\text{L}} \, \times \, $U(1)$_{\text{Y}}$ symmetry group. 
-
-
-
-
-
-The EWSB mechanism posits a self-interacting complex doublet scalar field, whose CP-even neutral component acquires a vacuum expectation value (VEV) v ≈ 246GeV, which sets the scale of electroweak symmetry breaking. Three massless Goldstone bosons are generated and are absorbed to give masses to the W and Z gauge bosons. The remaining component of the complex doublet becomes the Higgs boson – a new fundamental scalar particle. The masses of all fermions are also a consequence of EWSB since the Higgs doublet is postulated to couple to the fermions through Yukawa interactions.
-
-
-The Higgs boson must have couplings to W/Z gauge bosons and fermions precisely as those in the SM to maintain the consistency of the theory at high energies, hence, formally there is no need for new physics at the EW scale.
-
-
-
-the spontaneous breaking of the SM gauge symmetry SU(3)C × SU(2)L × U(1)Y into SU(3)C × U(1)em
-
-electroweak symmetry breaking is achieved via the Brout--Englert--Higgs
+Electroweak symmetry breaking is an application of spontaneous symmetry breaking to
+the electroweak Lagrangian. It is achieved via the Brout--Englert--Higgs
 mechanism~\cite{Englert:1964et,Higgs:1964ia,Higgs:1964pj,Guralnik:1964eu,Higgs:1966ev,Kibble:1967sv},
 leading, in its minimal version, to the prediction of the existence of one physical neutral scalar particle,
-commonly known as the Higgs boson ($\PH$).
+commonly known as the Higgs boson. The EWSB mechanism, defined by Brout, Englert, and Higgs,
+proposes a self-interacting complex doublet scalar field,
+\begin{equation}
+\phi = \Bigg(\frac{\phi_{\alpha}}{\phi_{\beta}}\Bigg) = 
+    \sqrt{\frac{1}{2}} \Bigg(\frac{\phi_{1} + i\phi_{1}}{\phi_{3} + i\phi_{4}}\Bigg),
+\label{eqn:phi_doublet}
+\end{equation}
+
+that is applied to the electroweak Lagrangian, 
+\begin{equation}
+\mathcal{L} = \big(D_{\mu}\phi\big)^{\dagger} \big(D^{\mu}\phi\big) - V\big(\phi\big),
+\end{equation}
+
+where $D^{\mu}$ is the covariant derivative and the potential, $V\big(\phi\big)$, 
+is expressly defined with two terms, 
+\begin{equation}
+V\big(\phi\big) = \mu^{2}\phi^{\dagger}\phi + \lambda\big(\phi^{\dagger}\phi\big)^{2}
+\label{eqn:v_pot}
+\end{equation}
+
+The Lagrangian describes a system of four scalar particles, the $\phi_{i}$,
+of equation~\ref{eqn:phi_doublet} each with mass $\mu$. 
+To achieve EWSB, the constants in the potential $V\big(\phi\big)$ are defined such that $\mu^{2} < 0$
+and $\lambda > 0$. The choice $\mu^{2} < 0$ and $\lambda > 0$ lead to a potential $V\left(\phi\right)$
+similar to what is shown in Figure~\ref{fig:higgs_potential}. Expanding around a choosen minima of the potential
+$V\big(\phi\big)$, $v$, and taking $\phi_{1} = \phi_{2} = \phi_{4} = 0$ and
+$\phi_{3}^{2} = -\frac{\mu^{2}}{\lambda} \equiv v^{2}$, $\phi$ becomes
+\begin{equation}
+\phi = \sqrt{\frac{1}{2}} \Bigg(\frac{0}{v}\Bigg),
+\label{eqn:phi_doublet_exp}
+\end{equation}
+
+where the scalar doublet, $\phi$ acquires a non-zero vacuum expectation value (VEV), $v \approx 246\GeV$.
+In this process a neutral and two charged massless Goldstone bosons~\cite{PhysRev.127.965} are generated. These Goldstone
+bosons mix with the fields corresponding to the broken SU(2)$_{\text{L}} \,\times\,$ U(1)$_{\text{Y}}$
+symmetries giving masses to the $\PW$ and $\PZ$ bosons. The single remaining component of the
+original complex doublet $\phi$ becomes a new fundamental scalar particle 
+known as the Higgs boson with a mass
+\begin{equation}
+\mH^{2} = 2\lambda v^2
+\end{equation}
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.55\textwidth]{phenomology_of_processes/plots/higgs_potential.pdf}
+     \caption{
+The potential $V\left(\phi\right)$ from Equation~\ref{eqn:v_pot} showing a non-stable state
+at the origin and a stable state in the circular trough.
+     }
+     \label{fig:higgs_potential}
+\end{figure*}
+
+In addition to providing a mechanism for the $\PW$ and $\PZ$ bosons to gain mass in the SM, EWSB also
+provides a mechanism for the fermions to acquire mass through their interactions with the Higgs boson
+via Yukawa couplings. A Yukawa coupling is an interaction between a scalar field and a Dirac field
+similar to,
+\begin{equation}
+V \approx h_{f}\bar{\psi_{f}}\phi\psi_{f},
+\end{equation}
+
+where the Dirac fields describe fermions and the scalar field is taken to be that of the Higgs boson. 
+The introduction of a Yukawa interaction linking together the fermions and the Higgs boson,
+results in massive fermions where their mass can be written as,
+\begin{equation}
+m_{f} = \frac{h_{f} v}{\sqrt{2}}
+\label{eqn:yukawa_c}
+\end{equation}
+
+which covers the masses for the nine charged fermions: the three charged leptons and six quarks.
+The EWSB mechanism nor the Yukawa interaction provide insight into the larger variety of fermion
+masses. Instead, the fermion masses are taken as free parameters of the SM and the values
+$h_{f}$ represent the Yukawa coupling parameter for each of the fermions.
+
+The mass of the $\Pgt$ lepton is known experimentally to high precision, $1776.82\pm0.16\MeV$~\cite{PDG}.
+Knowing this, the $\Pgt$ lepton to Higgs boson Yukawa coupling can be calculated from theory
+and compared against experimental results.
+
+%with equation~\ref{eqn:yukawa_c},
+%\begin{equation}
+%h_{\Pgt} = \frac{\sqrt{2} \, m_{\Pgt}}{v} = \sqrt{2}\frac{1.78\GeV}{246\GeV} = 0.0102
+%\label{eqn:yukawa_tau}
+%\end{equation}
+
+Applying EWSB to the SM takes the symmetries expressed as 
+SU(3)$_{\text{C}} \,\times \,$ SU(2)$_{\text{L}} \,\times \,$ U(1)$_{\text{Y}}$ and turns them into
+SU(3)$_{\text{C}} \, \times \,$ U(1)$_{\text{em}}$.
+
+
+
+
+
+
 
 
 \section{Higgs Yukawa Couplings}
