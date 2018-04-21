@@ -151,27 +151,29 @@ Section~\ref{sec:higgs_decays} where this discussion continues.
 
 
 \section{Higgs Production}
-The Higgs boson is produced according to it couplings and interactions in the SM
+The Higgs boson is produced through interactions with the particles it couples to in the SM
 Lagrangian. Understanding the different production mechanisms for the Higgs boson
 allows experimentalists to search for unique signatures in collisions to better
-help separate the Higgs boson process from the many other interactions.
+help separate Higgs bosons from the myriad other interactions occuring in collisions at the LHC.
 At a hadron collider like the LHC, the Higgs boson production
 mechanisms begin from initial states of quarks and gluons. The Higgs boson
 only couples to massive particles eliminating direct gluon to Higgs boson processes
 as is seen in Figure~\ref{fig:sm_forces} from the introduction.
-However, the largest Higgs boson production process at the LHC begins with a gluon
-initial state and is called gluon fusion and is discussed below.
+However, the Higgs boson production process at the LHC which occures most often
+begins with two gluons in the initial state, is called gluon fusion, and is discussed below.
 
 Feynman diagrams of the leading Higgs boson production processes for
-proton-proton collsisions, at the LHC, when operating at 13\TeV center-of-mass energy,
-are shown in Figure~\ref{fig:higgs_feyn}. 
+proton-proton based colliders, like the LHC, are shown in Figure~\ref{fig:higgs_feyn}. 
 The cross sections for the leading Higgs boson production processes
 are shown in Figure~\ref{fig:higgs_production}. The values for the leading
-processes are approximately: $ggH \approx 49\pb$, VBF$ \approx 3.8\pb$, $\PW\PH \approx 1.4\pb$,
-and $\PZ\PH \approx 0.88\pb$~\cite{deFlorian:2016spz}. The $\ttbar\PH$ process,
+processes are approximately: gluon fusion ($ggH$) $\approx 49\pb$, 
+vector boson fusion (VBF) $\approx 3.8\pb$, $\PW$ boson associated production ($\PW\PH$) $\approx 1.4\pb$,
+and $\PZ$ boson associated production ($\PZ\PH$) $\approx 0.88\pb$~\cite{deFlorian:2016spz}. 
+The top-quark associated process ($\ttbar\PH$),
 which is found to be relatively insignificant in the following analyses, has a cross
 section approximatly half the size of the next smallest one, $\PZ\PH$, where
-$\ttbar\PH \approx 0.51\pb$.
+$\ttbar\PH \approx 0.51\pb$ and accounts for less than 1\% of the total Higgs boson
+cross section.
 
 
 \begin{figure*}[htbp]
@@ -182,10 +184,10 @@ $\ttbar\PH \approx 0.51\pb$.
      \includegraphics[width=0.35\textwidth]{phenomology_of_processes/plots/feyn_ttH.pdf}
      \caption{
 Feynman diagrams representing the leading Higgs boson production processes.
-Progressing in order of largest to smallest of these production cross sections:
-(top left) gluon fusion, (top right) vector boson fusion, (bottom left)
-associated production covering both the $\PW\PH$ and $\PZ\PH$ processes,
-and (bottom right) top-quark associated production.
+Progressing in order of largest to smallest in production cross sections:
+(top left) $ggH$, (top right) VBF, (bottom left)
+$\PW\PH$ and $\PZ\PH$ processes,
+and (bottom right) $\ttbar\PH$.
      }
      \label{fig:higgs_feyn}
 \end{figure*}
@@ -195,8 +197,8 @@ and (bottom right) top-quark associated production.
 \centering
      \includegraphics[width=0.65\textwidth]{phenomology_of_processes/plots/plot_13tev_H_sqrt.pdf}
      \caption{
-The theorized Higgs boson production cross sections and their uncertainties,
-as a function of the Higgs boson mass, are shown. The gluon fusion process ($ggH$)
+The theorized Higgs boson production cross sections and their uncertainties
+as a function of the Higgs boson mass, are shown. The $ggH$ process
 is denoted as pp $\to$ H in the figure.
 The CMS and ATLAS experiments have determined $\mH = 125.09\GeV$~\cite{Aad:2015zhl}.
      }
@@ -205,25 +207,64 @@ The CMS and ATLAS experiments have determined $\mH = 125.09\GeV$~\cite{Aad:2015z
 
 
 \subsection{Gluon Fusion}
-$ggH$ - mediated by the exchange of a virtual, heavy top quark, Contributions from lighter quarks propagating in the loop are suppressed proportional to $m^{2}_{q}$.
-To a very good approximation, the leading top-quark contribution can be evaluated in the limit $m_{t} \to \inf$ [24,25].
+The Higgs boson does not couple directly to gluons. Thus, the $ggH$ process is mediated by 
+a virtual top quark loop, Figure~\ref{fig:higgs_feyn}. There are contributions from the other lighter quarks; however,
+their contribution in the loop is suppressed proportional to $m^{2}_{q}$.
+Because of the relatively large mass of the top-quark, to a very good approximation, 
+the leading top-quark contribution can be evaluated in the limit 
+$m_{t} \to \inf$~\cite{ELLIS1976292,Shifman:1979eb}.
+
+Despite the $ggH$ process having the largest cross section, it is the hardest process to 
+isolate from background events. A portion of $ggH$ produced Higgs bosons are produced in
+in conjunction with one or multiple ``jets''~\ref{sec:obj_reco_jets}. In these
+cases the Higgs boson recoils off of the jet creating a boosted topology
+which is a more unique event signature. In this thesis the boosted event topology
+is used as a handle in the ``Boosted'' event selection category discussed in
+Section~\ref{sec:htt_categorization}. The majority of $ggH$ events are produced without
+additional jets. While not having as clear or a handel to separat these events from
+the background, these events are kept and are categorized into the less sensative ``0-Jet'' category.
+
 
 \subsection{Vector Boson Fusion}
-Higgs production via VBF, qq → qqH, proceeds by the scattering of two (anti-)quarks, mediated by t- or u-channel exchange of a W or Z boson, with the Higgs boson radiated off the weak-boson propagator. The scattered quarks give rise to two hard jets in the forward and backward regions of the detector. Because of the color-singlet nature of the weak-gauge boson exchange, gluon radiation from the central-rapidity regions is strongly suppressed. These characteristic features of VBF processes can be exploited to distinguish them from overwhelming QCD backgrounds, including gluon-fusion induced Higgs + 2 jet production, and from s-channel WH or ZH production with a hadronically decaying weak gauge boson. After the application of specific selection cuts, the VBF channel provides a particularly clean environment, not only for Higgs searches but also for the determination of Higgs boson couplings at the LHC [74].
+The second largest Higgs boson production process is VBF. This process originates by
+the scattering of two quarks or anti-quarks. The scattering is mediated by the t-
+or u-channel exchange of a $\PW$ or $\PZ$ boson. The Higgs boson is radiated off
+of the $\PW$ or $\PZ$ boson~\cite{PhysRevD.70.113009}, Figure~\ref{fig:higgs_feyn}. 
+The quarks or anti-quarks which are scattered
+lead to the generation of high-energy jets present in the Higgs boson event.
+This is a highly unique event signature and is used in nearly all Higgs analyses
+to identify Higgs bosons produced via VBF. In this thesis, events with two high-energy
+jets consistent with VBF topology are categorized into a ``VBF'' category for analysis.
+
 
 \subsection{Associated Production}
+The Higgs boson associated production mechanism makes up the third and fourth largest
+Higgs boson cross sections for $\PW\PH$ and $\PZ\PH$ respctively. Both processes are 
+depicted in the lower left Feynman diagram in Figure~\ref{fig:higgs_feyn} where
+the $V$ represents vector bosons covering both $\PW$ and $\PZ$. Associated
+production is often called Higgs-strahlung in reference to bremsstrahlung, the
+process where a deccelerating charged particle emits radiation, often an electron
+emitting a photon. In the case of Higgs-strahlung, the vector boson created 
+from two initial state quarks or anti-quarks emits a Higgs boson. The associated
+production event topology is quite unique with the presence of a $\PW$ or $\PZ$
+boson plus a Higgs boson. In this thesis there is an analysis targeted at each
+of these process, $\PW\PH$ and $\PZ\PH$.
+
+
 
 \section{Higgs Decays}
 \label{sec:higgs_decays}
-
 After a Higgs boson is produced, it will decay extremly rapidly. The theorized lifetime of a Higgs
-boson particle is $1.6 \times 10^{-22}$ s~\cite{Dittmaier:2012vm} meaning that, when created
+boson particle is $1.6 \times 10^{-22}$ s~\cite{Dittmaier:2012vm}. This means that when created
 inside of the CMS detector, a Higgs boson will always decay
-within the CMS detector . There are multiple possible decay
-paths each with their own probability or branching ratio with the largest branching ratio
-processes shown in Figure~\ref{fig:higgs_decay}. The $\htt$ process has a branching
-ratio of approximately 6.3\% for $\mH = 125\GeV$.
-
+within the CMS detector. In all Higgs boson analyses, experimentalists search for the
+signatures of the decay products in energy deposits in their detectors, not the Higgs
+boson itself. There are multiple possible decay
+paths each with its own branching ratio; the largest branching ratio
+processes are shown in Figure~\ref{fig:higgs_decay}. The $\htt$ process has a branching
+ratio of approximately 6.3\% with a relative theoretical uncertainty of 
+$\pm5.7\%$~\cite{deFlorian:2016spz} for $\mH = 125\GeV$. This places $\htt$ below $\PH\to\bbbar$, 
+$\PH\to\PW\PW$, and $\PH\to\Pg\Pg$ in branching fraction.
 
 \begin{figure*}[htbp]
 \centering
@@ -236,34 +277,31 @@ The CMS and ATLAS experiments have determined $\mH = 125.09\GeV$~\cite{Aad:2015z
      \label{fig:higgs_decay}
 \end{figure*}
 
+The leading Higgs boson decay processes each have certain advantages and disadvantages
+to elucidating the properties of the Higgs boson. The dominant Higgs boson decay 
+process, $\PH\to\bbbar$, comprises well over half of all Higgs boson decays yet suffers
+from very large background processes making it difficult to distinguish Higgs bosons.
+Additionally, the $m_{\bar{b}b}$ resolution is limited making the expected Higgs boson
+signal a broad distribution ontop of a large background~\cite{PDG}.
+The $\PH\to\PW\PW$ process has a large branching ratio which is reduced after requiring
+$\PW\to\ell + \bar{\nu}$ where $\ell$ is a charged lepton. Additionally, the presence of neutrinos
+in the final state decreases the Higgs boson mass resolution, $\approx 20\% \, \mH$~\cite{PDG}.
+The $\PH\to\Pg\Pg$ is an extraordinairly difficult process to attempt to observe at a
+hadron collider because the final state provides no helpful handles to disintangle it from
+the dominant multijet backgrounds.
 
-To establish the mass generation mechanism for fermions,
- it is necessary to probe the direct coupling of
-the Higgs boson to such particles.
-The most promising decay channel is $\Pgt^+\Pgt^-$,
-because of the large event rate expected in the SM compared to the $\Pgm^+\Pgm^-$ decay channel ($\mathcal{B}(\PH\to\Pgt^+\Pgt^-)=6.3$\% for a mass of 125.09\GeV), and of the smaller contribution from background events
-with respect to the $\bbbar$ decay channel.
+The $\htt$ process is the largest direct Higgs boson to leptons decay process.
+This provides a unique opportunity to probe the Higgs boson Yukawa couplings to the leptons,
+while both the $\PH\to\bbbar$ and $\htt$ processes can directly probe the Higgs boson
+Yukawa couplings to fermions. Similar to the $\PH\to\PW\PW$ process, $\htt$ has neutrinos
+in the final state making reconstructing the Higgs boson mass non-trivial.
+The relative size of the backgrounds with event signatures similar to the Higgs boson
+are much smaller for the $\htt$ process versus the $\PH\to\bbbar$ process. This is one
+of the significant benefits of studying the Higgs boson through the $\htt$ process.
 
-\subsection{Higgs to $\tau\tau$ Decay Process}
-
-Estimated as 6.3\% with a relative theoretical uncertainty of $\pm5.7\%$~\cite{deFlorian:2016spz}.
-
-
-
-
-The various production cross sections and branching fractions for the SM Higgs 
-boson production, and their corresponding uncertainties are taken from 
-References.~\cite{deFlorian:2016spz,Denner:2011mq,Ball:2011mu} and references therein.
-
-
-
-
-%\subsection{QCD and Proton Structure}
-
-
-
-
-
+In this thesis, the various Higgs boson production cross sections and branching fractions 
+for Higgs boson production, and their corresponding uncertainties are taken from 
+References~\cite{deFlorian:2016spz,Denner:2011mq,Ball:2011mu} and references therein.
 
 
 
