@@ -1,9 +1,8 @@
 \chapter{Higgs Phenomology}
 \label{sec:pheno}
 
-Dasu -
-The pheno chapter need not start from the Dirac equation and build up. It should have crisp intro to Higgs phenomenology starting from that portion of the Lagrangian. You don’t need all the myriad details of SM like the quark mixing matrices, etc.
-
+%Dasu -
+%The pheno chapter need not start from the Dirac equation and build up. It should have crisp intro to Higgs phenomenology starting from that portion of the Lagrangian. You don’t need all the myriad details of SM like the quark mixing matrices, etc.
 
 In this chapter I provide an increasingly mathematical description of the standard model
 of physics, specifically in reference to the Higgs boson. I provide a basic overview of some 
@@ -37,7 +36,7 @@ The SU(3)$_{\text{C}}$ group describes the local symmetry of color charge.
 
 \section{Electroweak Symmetry Breaking}
 Glashow, Weinberg, and Salam demonstrated a unified description of the electromagnetic force 
-and weak force which merge at energies around 100\GeV into the electroweak force,
+and weak force which merge at energies of order 100\GeV into the electroweak force,
 described by the electroweak Lagrangian~\cite{Glashow:1961tr,SM1,SM3}.
 The electroweak Lagrangian defines a gauge field theory which is 
 invariant under the SU(2)$_{\text{L}} \, \times \, $U(1)$_{\text{Y}}$ symmetry group. 
@@ -96,6 +95,10 @@ known as the Higgs boson with a mass
 \mH^{2} = 2\lambda v^2
 \end{equation}
 
+%Applying EWSB to the SM takes the symmetries expressed as 
+%SU(3)$_{\text{C}} \,\times \,$ SU(2)$_{\text{L}} \,\times \,$ U(1)$_{\text{Y}}$ and turns them into
+%SU(3)$_{\text{C}} \, \times \,$ U(1)$_{\text{em}}$.
+
 \begin{figure*}[htbp]
 \centering
      \includegraphics[width=0.55\textwidth]{phenomology_of_processes/plots/higgs_potential.pdf}
@@ -106,6 +109,9 @@ at the origin and a stable state in the circular trough.
      \label{fig:higgs_potential}
 \end{figure*}
 
+
+
+\section{Higgs Yukawa Couplings}
 In addition to providing a mechanism for the $\PW$ and $\PZ$ bosons to gain mass in the SM, EWSB also
 provides a mechanism for the fermions to acquire mass through their interactions with the Higgs boson
 via Yukawa couplings. A Yukawa coupling is an interaction between a scalar field and a Dirac field
@@ -114,7 +120,7 @@ similar to,
 V \approx h_{f}\bar{\psi_{f}}\phi\psi_{f},
 \end{equation}
 
-where the Dirac fields describe fermions and the scalar field is taken to be that of the Higgs boson. 
+where the Dirac fields, $\psi$, describe fermions and the scalar field, $\phi$, is taken to be that of the Higgs boson. 
 The introduction of a Yukawa interaction linking together the fermions and the Higgs boson,
 results in massive fermions where their mass can be written as,
 \begin{equation}
@@ -127,9 +133,14 @@ The EWSB mechanism nor the Yukawa interaction provide insight into the larger va
 masses. Instead, the fermion masses are taken as free parameters of the SM and the values
 $h_{f}$ represent the Yukawa coupling parameter for each of the fermions.
 
-The mass of the $\Pgt$ lepton is known experimentally to high precision, $1776.82\pm0.16\MeV$~\cite{PDG}.
+The mass of nine charged fermions are known experimentally, most to very high precision.
+The $\Pgt$ lepton is known to be $1776.82\pm0.16\MeV$~\cite{PDG}.
 Knowing this, the $\Pgt$ lepton to Higgs boson Yukawa coupling can be calculated from theory
-and compared against experimental results.
+and compared against experimental results. 
+
+Exploring the Higgs boson to fermions decay process is the most promissing way to directly probe
+the Higgs boson Yukawa couplings. The Higgs boson decay process are discussed below in 
+Section~\ref{sec:higgs_decays} where this discussion continues.
 
 %with equation~\ref{eqn:yukawa_c},
 %\begin{equation}
@@ -137,29 +148,31 @@ and compared against experimental results.
 %\label{eqn:yukawa_tau}
 %\end{equation}
 
-Applying EWSB to the SM takes the symmetries expressed as 
-SU(3)$_{\text{C}} \,\times \,$ SU(2)$_{\text{L}} \,\times \,$ U(1)$_{\text{Y}}$ and turns them into
-SU(3)$_{\text{C}} \, \times \,$ U(1)$_{\text{em}}$.
 
-
-
-
-
-
-
-
-\section{Higgs Yukawa Couplings}
-To establish the mass generation mechanism for fermions,
- it is necessary to probe the direct coupling of
-the Higgs boson to such particles.
-The most promising decay channel is $\Pgt^+\Pgt^-$,
-because of the large event rate expected in the SM compared to the $\Pgm^+\Pgm^-$ decay channel ($\mathcal{B}(\PH\to\Pgt^+\Pgt^-)=6.3$\% for a mass of 125.09\GeV), and of the smaller contribution from background events
-with respect to the $\bbbar$ decay channel.
 
 \section{Higgs Production}
+The Higgs boson is produced according to it couplings and interactions in the SM
+Lagrangian. Understanding the different production mechanisms for the Higgs boson
+allows experimentalists to search for unique signatures in collisions to better
+help separate the Higgs boson process from the many other interactions.
+At a hadron collider like the LHC, the Higgs boson production
+mechanisms begin from initial states of quarks and gluons. The Higgs boson
+only couples to massive particles eliminating direct gluon to Higgs boson processes
+as is seen in Figure~\ref{fig:sm_forces} from the introduction.
+However, the largest Higgs boson production process at the LHC begins with a gluon
+initial state and is called gluon fusion and is discussed below.
 
-Feynman diagrams for the leading Higgs boson production processes
-are shown in Figure~\ref{fig:higgs_feyn}.
+Feynman diagrams of the leading Higgs boson production processes for
+proton-proton collsisions, at the LHC, when operating at 13\TeV center-of-mass energy,
+are shown in Figure~\ref{fig:higgs_feyn}. 
+The cross sections for the leading Higgs boson production processes
+are shown in Figure~\ref{fig:higgs_production}. The values for the leading
+processes are approximately: $ggH \approx 49\pb$, VBF$ \approx 3.8\pb$, $\PW\PH \approx 1.4\pb$,
+and $\PZ\PH \approx 0.88\pb$~\cite{deFlorian:2016spz}. The $\ttbar\PH$ process,
+which is found to be relatively insignificant in the following analyses, has a cross
+section approximatly half the size of the next smallest one, $\PZ\PH$, where
+$\ttbar\PH \approx 0.51\pb$.
+
 
 \begin{figure*}[htbp]
 \centering
@@ -176,14 +189,6 @@ and (bottom right) top-quark associated production.
      }
      \label{fig:higgs_feyn}
 \end{figure*}
-
-The cross sections for the leading Higgs boson production processes
-are shown in Figure~\ref{fig:higgs_production}. The values for the leading
-process are approximately: $ggH \approx 49\pb$, VBF$ \approx 3.8\pb$, $\PW\PH \approx 1.4\pb$,
-and $\PZ\PH \approx 0.88\pb$~\cite{deFlorian:2016spz}. The $\ttbar\PH$ process,
-which is found to be relatively insignificant in the following analyses, has a cross
-section approximatly half the size of the next smallest one, $\PZ\PH$, where
-$\ttbar\PH \approx 0.51\pb$.
 
 
 \begin{figure*}[htbp]
@@ -209,6 +214,7 @@ Higgs production via VBF, qq → qqH, proceeds by the scattering of two (anti-)q
 \subsection{Associated Production}
 
 \section{Higgs Decays}
+\label{sec:higgs_decays}
 
 After a Higgs boson is produced, it will decay extremly rapidly. The theorized lifetime of a Higgs
 boson particle is $1.6 \times 10^{-22}$ s~\cite{Dittmaier:2012vm} meaning that, when created
@@ -230,6 +236,13 @@ The CMS and ATLAS experiments have determined $\mH = 125.09\GeV$~\cite{Aad:2015z
      \label{fig:higgs_decay}
 \end{figure*}
 
+
+To establish the mass generation mechanism for fermions,
+ it is necessary to probe the direct coupling of
+the Higgs boson to such particles.
+The most promising decay channel is $\Pgt^+\Pgt^-$,
+because of the large event rate expected in the SM compared to the $\Pgm^+\Pgm^-$ decay channel ($\mathcal{B}(\PH\to\Pgt^+\Pgt^-)=6.3$\% for a mass of 125.09\GeV), and of the smaller contribution from background events
+with respect to the $\bbbar$ decay channel.
 
 \subsection{Higgs to $\tau\tau$ Decay Process}
 
