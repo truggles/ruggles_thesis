@@ -1,4 +1,4 @@
-\chapter{Higgs Phenomology}
+\chapter{Higgs Phenomenology}
 \label{sec:pheno}
 
 %Dasu -
@@ -8,7 +8,7 @@ In this chapter I provide an increasingly mathematical description of the standa
 of physics, specifically in reference to the Higgs boson. I provide a basic overview of some 
 properties of the Higgs boson including how it is created in a hadron collider, an overview
 of the possible decay paths for a Higgs boson, and a discussion of the Higgs boson
-couplings, or interactions, with different fundamental particles. A description of the
+couplings with different fundamental particles. A description of the
 Higgs boson requires covering the process of electroweak symmetry breaking (EWSB) which
 provides the mathematical description of the process defining the Higgs boson and the
 Higgs field.
@@ -29,9 +29,10 @@ hypercharge U(1)$_{\text{Y}}$ symmetry group.
 
 The two SU($n$) groups are special unitary groups which represent rotations.
 In the SM, the SU(2) group provides a description of particle spin.
-The ``L'' subscript for the SU(2)$_{\text{L}}$ group indicates that that it only couples to
-and describes left handed fermions.
-The SU(3)$_{\text{C}}$ group describes the local symmetry of color charge.
+The ``L'' subscript for the SU(2)$_{\text{L}}$ group indicates that that it
+only describes left handed fermions.
+The SU(3)$_{\text{C}}$ group describes the local symmetry of color charge and
+color charge conservation.
 
 
 \section{Electroweak Symmetry Breaking}
@@ -42,9 +43,9 @@ The electroweak Lagrangian defines a gauge field theory which is
 invariant under the SU(2)$_{\text{L}} \, \times \, $U(1)$_{\text{Y}}$ symmetry group. 
 Prior to the introduction of Electroweak Symmetry Breaking (EWSB),
 the electroweak Lagrangian describes massless $\PW$ and $\PZ$ bosons.
-However, as previously mentioned, the $\PW$ and $\PZ$ bosons were discovered in 1983
-and found to be two of the most massive particles~\cite{AUBERT1983275,1983398}. 
-EWSB rescues what would be a colossal disagreement between theoretical prediction
+However, as previously mentioned, the $\PW$ and $\PZ$ bosons discovered in 1983
+are two of the most massive particles~\cite{AUBERT1983275,1983398}. 
+The EWSB mechanism rescues what would be a colossal disagreement between theoretical prediction
 and experimental results. The introduction of EWSB to the theory preserves the structure of
 the electroweak interactions and succeeds in endowing the $\PW$ and $\PZ$ bosons
 with mass.
@@ -56,8 +57,8 @@ leading, in its minimal version, to the prediction of the existence of one physi
 commonly known as the Higgs boson. The EWSB mechanism, defined by Brout, Englert, and Higgs,
 proposes a self-interacting complex doublet scalar field,
 \begin{equation}
-\phi = \Bigg(\frac{\phi_{\alpha}}{\phi_{\beta}}\Bigg) = 
-    \sqrt{\frac{1}{2}} \Bigg(\frac{\phi_{1} + i\phi_{1}}{\phi_{3} + i\phi_{4}}\Bigg),
+\phi = \begin{pmatrix} \phi_{\alpha} \\ \phi_{\beta} \end{pmatrix} = 
+    \sqrt{\frac{1}{2}} \begin{pmatrix}\phi_{1} + i\phi_{1} \\ \phi_{3} + i\phi_{4} \end{pmatrix},
 \label{eqn:phi_doublet}
 \end{equation}
 
@@ -77,11 +78,11 @@ The Lagrangian describes a system of four scalar particles, the $\phi_{i}$,
 of equation~\ref{eqn:phi_doublet} each with mass $\mu$. 
 To achieve EWSB, the constants in the potential $V\big(\phi\big)$ are defined such that $\mu^{2} < 0$
 and $\lambda > 0$. The choice $\mu^{2} < 0$ and $\lambda > 0$ lead to a potential $V\left(\phi\right)$
-similar to what is shown in Figure~\ref{fig:higgs_potential}. Expanding around a chosen minima of the potential
+as shown in Figure~\ref{fig:higgs_potential}. Expanding around a chosen minima of the potential
 $V\big(\phi\big)$, $v$, and taking $\phi_{1} = \phi_{2} = \phi_{4} = 0$ and
 $\phi_{3}^{2} = -\frac{\mu^{2}}{\lambda} \equiv v^{2}$, $\phi$ becomes
 \begin{equation}
-\phi = \sqrt{\frac{1}{2}} \Bigg(\frac{0}{v}\Bigg),
+\phi = \sqrt{\frac{1}{2}} \begin{pmatrix} 0 \\ v \end{pmatrix},
 \label{eqn:phi_doublet_exp}
 \end{equation}
 
@@ -101,7 +102,7 @@ known as the Higgs boson with a mass
 
 \begin{figure*}[htbp]
 \centering
-     \includegraphics[width=0.55\textwidth]{phenomology_of_processes/plots/higgs_potential.pdf}
+     \includegraphics[width=0.55\textwidth]{phenomenology_of_processes/plots/higgs_potential.pdf}
      \caption{
 The potential $V\left(\phi\right)$ from Equation~\ref{eqn:v_pot} showing a non-stable state
 at the origin and a stable state in the circular trough.
@@ -112,7 +113,7 @@ at the origin and a stable state in the circular trough.
 
 
 \section{Higgs Yukawa Couplings}
-In addition to providing a mechanism for the $\PW$ and $\PZ$ bosons to gain mass in the SM, EWSB also
+In addition to providing a mechanism for the $\PW$ and $\PZ$ bosons to gain mass in the SM, the EWSB mechanism also
 provides a mechanism for the fermions to acquire mass through their interactions with the Higgs boson
 via Yukawa couplings. A Yukawa coupling is an interaction between a scalar field and a Dirac field
 similar to,
@@ -124,21 +125,20 @@ where the Dirac fields, $\psi$, describe fermions and the scalar field, $\phi$, 
 The introduction of a Yukawa interaction linking together the fermions and the Higgs boson,
 results in massive fermions where their mass can be written as,
 \begin{equation}
-m_{f} = \frac{h_{f} v}{\sqrt{2}}
+m_{f} = \frac{h_{f} v}{\sqrt{2}},
 \label{eqn:yukawa_c}
 \end{equation}
 
 which covers the masses for the nine charged fermions: the three charged leptons and six quarks.
-The EWSB mechanism nor the Yukawa interaction provide insight into the larger variety of fermion
+Neither the EWSB mechanism nor the Yukawa interaction provide insight into the larger variety of fermion
 masses. Instead, the fermion masses are taken as free parameters of the SM and the values
 $h_{f}$ represent the Yukawa coupling parameter for each of the fermions.
 
 The mass of nine charged fermions are known experimentally, most to very high precision.
 The $\Pgt$ lepton is known to be $1776.82\pm0.16\MeV$~\cite{PDG}.
-Knowing this, the $\Pgt$ lepton to Higgs boson Yukawa coupling can be calculated from theory
-and compared against experimental results. 
-
-Exploring the Higgs boson to fermions decay process is the most promising way to directly probe
+Knowing this, the $\Pgt$ lepton to Higgs boson Yukawa coupling can be calculated from 
+Equation~\ref{eqn:yukawa_c} and compared against experimental results. 
+Exploring the multiple Higgs boson to fermions decay processes is the most promising way to directly probe
 the Higgs boson Yukawa couplings. The Higgs boson decay process are discussed below in 
 Section~\ref{sec:higgs_decays} where this discussion continues.
 
@@ -155,16 +155,17 @@ The Higgs boson is produced through interactions with the particles it couples t
 Lagrangian. Understanding the different production mechanisms for the Higgs boson
 allows experimentalists to search for unique signatures in collisions to better
 help separate Higgs bosons from the myriad other interactions occurring in collisions at the LHC.
-At a hadron collider like the LHC, the Higgs boson production
+At a hadron collider like the LHC, the relevant Higgs boson production
 mechanisms begin from initial states of quarks and gluons. The Higgs boson
 only couples to massive particles eliminating direct gluon to Higgs boson processes
 as is seen in Figure~\ref{fig:sm_forces} from the introduction.
 However, the Higgs boson production process at the LHC which occurs most often
-begins with two gluons in the initial state, is called gluon fusion, and is discussed below.
+begins with two gluons in the initial state and is called gluon fusion discussed below.
 
 Feynman diagrams of the leading Higgs boson production processes for
-proton-proton based colliders, like the LHC, are shown in Figure~\ref{fig:higgs_feyn}. 
-The cross sections for the leading Higgs boson production processes
+proton-proton based colliders are shown in Figure~\ref{fig:higgs_feyn}. 
+The cross sections for the leading Higgs boson production processes for a 
+center-of-mass energy of 13\TeV
 are shown in Figure~\ref{fig:higgs_production}. The values for the leading
 processes are approximately: gluon fusion ($ggH$) $\approx 49\pb$, 
 vector boson fusion (VBF) $\approx 3.8\pb$, $\PW$ boson associated production ($\PW\PH$) $\approx 1.4\pb$,
@@ -178,10 +179,10 @@ cross section.
 
 \begin{figure*}[htbp]
 \centering
-     \includegraphics[width=0.35\textwidth]{phenomology_of_processes/plots/feyn_ggH.pdf}
-     \includegraphics[width=0.35\textwidth]{phenomology_of_processes/plots/feyn_qqH.pdf}
-     \includegraphics[width=0.35\textwidth]{phenomology_of_processes/plots/feyn_VH.pdf}
-     \includegraphics[width=0.35\textwidth]{phenomology_of_processes/plots/feyn_ttH.pdf}
+     \includegraphics[width=0.35\textwidth]{phenomenology_of_processes/plots/feyn_ggH.pdf}
+     \includegraphics[width=0.35\textwidth]{phenomenology_of_processes/plots/feyn_qqH.pdf}
+     \includegraphics[width=0.35\textwidth]{phenomenology_of_processes/plots/feyn_VH.pdf}
+     \includegraphics[width=0.35\textwidth]{phenomenology_of_processes/plots/feyn_ttH.pdf}
      \caption{
 Feynman diagrams representing the leading Higgs boson production processes.
 Progressing in order of largest to smallest in production cross sections:
@@ -195,9 +196,9 @@ and (bottom right) $\ttbar\PH$.
 
 \begin{figure*}[htbp]
 \centering
-     \includegraphics[width=0.65\textwidth]{phenomology_of_processes/plots/plot_13tev_H_sqrt.pdf}
+     \includegraphics[width=0.65\textwidth]{phenomenology_of_processes/plots/plot_13tev_H_sqrt.pdf}
      \caption{
-The theorized Higgs boson production cross sections and their uncertainties
+The calculated Higgs boson production cross sections and their uncertainties
 as a function of the Higgs boson mass, are shown. The $ggH$ process
 is denoted as pp $\to$ H in the figure.
 The CMS and ATLAS experiments have determined $\mH = 125.09\GeV$~\cite{Aad:2015zhl}.
@@ -209,8 +210,8 @@ The CMS and ATLAS experiments have determined $\mH = 125.09\GeV$~\cite{Aad:2015z
 \subsection{Gluon Fusion}
 The Higgs boson does not couple directly to gluons. Thus, the $ggH$ process is mediated by 
 a virtual top quark loop, Figure~\ref{fig:higgs_feyn}. There are contributions from the other lighter quarks; however,
-their contribution in the loop is suppressed proportional to $m^{2}_{q}$.
-Because of the relatively large mass of the top-quark, to a very good approximation, 
+their contributions in the loop are suppressed proportional to $m^{2}_{q}$.
+When calculating the cross section for $ggH$, because of the relatively large mass of the top-quark, to a very good approximation, 
 the leading top-quark contribution can be evaluated in the limit 
 $m_{t} \to \infty$~\cite{ELLIS1976292,Shifman:1979eb}.
 
@@ -220,9 +221,10 @@ in conjunction with one or multiple ``jets''~\ref{sec:obj_reco_jets}. In these
 cases the Higgs boson recoils off of the jet creating a boosted topology
 which is a more unique event signature. In this thesis the boosted event topology
 is used as a handle in the ``Boosted'' event selection category discussed in
-Section~\ref{sec:htt_categorization}. The majority of $ggH$ events are produced without
-additional jets. While not having as clear or a handel to separate these events from
-the background, these events are kept and are categorized into the less sensitive ``0-Jet'' category.
+Section~\ref{sec:htt_categorization}. However, the majority of $ggH$ events are produced without
+additional jets. 
+These events are categorized into the ``0-Jet'' category which is less sensitive because of the
+lack of a clear handel to separate $ggH$ events with zero jets from the background. 
 
 
 \subsection{Vector Boson Fusion}
@@ -231,7 +233,7 @@ the scattering of two quarks or anti-quarks. The scattering is mediated by the t
 or u-channel exchange of a $\PW$ or $\PZ$ boson. The Higgs boson is radiated off
 of the $\PW$ or $\PZ$ boson~\cite{PhysRevD.70.113009}, Figure~\ref{fig:higgs_feyn}. 
 The quarks or anti-quarks which are scattered
-lead to the generation of high-energy jets present in the Higgs boson event.
+lead to the generation of high-energy jets.
 This is a highly unique event signature and is used in nearly all Higgs analyses
 to identify Higgs bosons produced via VBF. In this thesis, events with two high-energy
 jets consistent with VBF topology are categorized into a ``VBF'' category for analysis.
@@ -242,20 +244,21 @@ The Higgs boson associated production mechanism makes up the third and fourth la
 Higgs boson cross sections for $\PW\PH$ and $\PZ\PH$ respectively. Both processes are 
 depicted in the lower left Feynman diagram in Figure~\ref{fig:higgs_feyn} where
 the $V$ represents vector bosons covering both $\PW$ and $\PZ$. Associated
-production is often called Higgs-strahlung in reference to bremsstrahlung, the
+production is often called Higgs-strahlung in reference to bremsstrahlung which is the
 process where a decelerating charged particle emits radiation, often an electron
 emitting a photon. In the case of Higgs-strahlung, the vector boson created 
 from two initial state quarks or anti-quarks emits a Higgs boson. The associated
 production event topology is quite unique with the presence of a $\PW$ or $\PZ$
 boson plus a Higgs boson. In this thesis there is an analysis targeted at each
-of these process, $\PW\PH$ and $\PZ\PH$.
+of these process, $\PW\PH$ and $\PZ\PH$. We focuse on events where the vector
+bosons decay leptonically: $\PW^{\pm} \to \ell^{\pm} + \bar{\nu}$ and $\PZ \to \ell^{+}\ell^{-}$.
 
 
 
-\section{Higgs Decays}
+\section{Higgs Boson Decays}
 \label{sec:higgs_decays}
-After a Higgs boson is produced, it will decay extremely rapidly. The theorized lifetime of a Higgs
-boson particle is $1.6 \times 10^{-22}$ s~\cite{Dittmaier:2012vm}. This means that when created
+After a Higgs boson is produced, it will decay extremely rapidly with a theorized lifetime
+of $1.6 \times 10^{-22}\text{s}$~\cite{Dittmaier:2012vm}. When created
 inside of the CMS detector, a Higgs boson will always decay
 within the CMS detector. In all Higgs boson analyses, experimentalists search for the
 signatures of the decay products in energy deposits in their detectors, not the Higgs
@@ -263,12 +266,12 @@ boson itself. There are multiple possible decay
 paths each with its own branching ratio; the largest branching ratio
 processes are shown in Figure~\ref{fig:higgs_decay}. The $\htt$ process has a branching
 ratio of approximately 6.3\% with a relative theoretical uncertainty of 
-$\pm5.7\%$~\cite{deFlorian:2016spz} for $\mH = 125\GeV$. This places $\htt$ below $\PH\to\bbbar$, 
+$\pm5.7\%$~\cite{deFlorian:2016spz} for $\mH = 125.09\GeV$. This places $\htt$ below $\PH\to\bbbar$, 
 $\PH\to\PW\PW$, and $\PH\to\Pg\Pg$ in branching fraction.
 
 \begin{figure*}[htbp]
 \centering
-     \includegraphics[width=0.65\textwidth]{phenomology_of_processes/plots/SMHiggsBR_YR4-square.pdf}
+     \includegraphics[width=0.65\textwidth]{phenomenology_of_processes/plots/SMHiggsBR_YR4-square.pdf}
      \caption{
 The different theorized Higgs boson decay process are shown as a 
 as a function of the Higgs boson mass.
@@ -278,28 +281,31 @@ The CMS and ATLAS experiments have determined $\mH = 125.09\GeV$~\cite{Aad:2015z
 \end{figure*}
 
 The leading Higgs boson decay processes each have certain advantages and disadvantages
-to elucidating the properties of the Higgs boson. The dominant Higgs boson decay 
+for measuring the properties of the Higgs boson. The dominant Higgs boson decay 
 process, $\PH\to\bbbar$, comprises well over half of all Higgs boson decays yet suffers
 from very large background processes making it difficult to distinguish Higgs bosons.
 Additionally, the $m_{\bar{b}b}$ resolution is limited making the expected Higgs boson
 signal a broad distribution on top of a large background~\cite{PDG}.
-The $\PH\to\PW\PW$ process has a large branching ratio which is reduced after requiring
-$\PW\to\ell + \bar{\nu}$ where $\ell$ is a charged lepton. Additionally, the presence of neutrinos
+The $\PH\to\PW\PW$ process has a large branching ratio, but this is reduced after requiring
+$\PW^{\pm}\to\ell^{\pm} + \bar{\nu}$ where $\ell$ is a charged lepton. Additionally, the presence of neutrinos
 in the final state decreases the Higgs boson mass resolution, $\approx 20\% \, \mH$~\cite{PDG}.
 The $\PH\to\Pg\Pg$ is an extraordinarily difficult process to attempt to observe at a
 hadron collider because the final state provides no helpful handles to disentangle it from
-the dominant multijet backgrounds.
+the dominant multijet backgrounds. This processes is mediated through a quark loop just
+like the $ggH$ process.
 
 The $\htt$ process is the largest direct Higgs boson to leptons decay process.
-This provides a unique opportunity to probe the Higgs boson Yukawa couplings to the leptons,
-while both the $\PH\to\bbbar$ and $\htt$ processes can directly probe the Higgs boson
-Yukawa couplings to fermions. Similar to the $\PH\to\PW\PW$ process, $\htt$ has neutrinos
-in the final state making reconstructing the Higgs boson mass non-trivial.
+This provides a unique opportunity to probe the Higgs boson Yukawa couplings to the leptons.
+Both the $\PH\to\bbbar$ and $\htt$ processes can directly probe the Higgs boson
+Yukawa couplings to fermions. 
+The mass resolution for the Higgs boson reconstructed from the $\htt$ process suffers like
+the previously mentioned decays. The neutrinos resulting from the decay of the $\Pgt$
+leptons make the mass reconstruction non-trivial.
 The relative size of the backgrounds with event signatures similar to the Higgs boson
-are much smaller for the $\htt$ process versus the $\PH\to\bbbar$ process. This is one
+are much smaller than those for the $\PH\to\bbbar$ process. This is one
 of the significant benefits of studying the Higgs boson through the $\htt$ process.
 
-In this thesis, the various Higgs boson production cross sections and branching fractions 
+In this thesis, the various Higgs boson production cross sections and branching ratios
 for Higgs boson production, and their corresponding uncertainties are taken from 
 References~\cite{deFlorian:2016spz,Denner:2011mq,Ball:2011mu} and references therein.
 
