@@ -446,10 +446,51 @@ from $\PZ \to \ell\ell$ events is large.
 \section{Background Estimation}
 \label{sec:background_estimation}
 A number of different background estimation techniques are employeed in this
-analysis. In all cases all Monte Carlo base backgrounds used in the techniques
+analysis. In all cases all Monte Carlo based backgrounds used in the techniques
 have corrections applied to them. These corrections are discussed in the following
 section, ~\ref{sec:mc_corrections}, and are derived to increase the agreement
-between the simulated backgrounds and data.
+between the simulated backgrounds and data. The simulated background processes 
+are all scaled to their NLO cross section in Table~\ref{tab:htt_bkg_xsec}.
+
+\begin{table}[htpb]
+\begin{center}
+\begin{footnotesize}
+\begin{tabular}{lc}
+Background Process& Cross section (pb) \\
+\hline
+Z+jets Inclusive Jet Production & 5746.64 \\
+EWK $Z \rightarrow \ell\ell+ 2\text{jets}$& 3.987\\
+EWK $Z \rightarrow \nu\nu + 2\text{jets}$ & 10.01\\
+QCD (multijet)& Data-Driven\\
+Single $\bar{t}$ + W & 35.6 \\
+Single $t$ + W & 35.6 \\
+Single $t$ & 80.95\\
+Single $\bar{t}$ & 136.02 \\
+$t\bar{t}$ & 831.76\\
+W+jets Inclusive Jet Production& 60959.8\\
+EWK $W^- +2\text{jets}$ & 20.25\\
+EWK $W^+ +2\text{jets}$ & 25.62\\
+$WZ \rightarrow 1\ell3\nu$ & 3.05 \\
+$WZ \rightarrow 1\ell1\nu2Q$ & 10.71\\
+$WZ \rightarrow 2\ell2Q$ & 5.595\\
+EWK $WZ \rightarrow 3\ell\nu$& 4.708\\
+$WW \rightarrow 1\ell1\nu2Q$ & 1.212\\ %49.997
+$WW \rightarrow 2\ell2\nu$ & 12.178 \\
+$ZZ \rightarrow 2\ell2Q$ & 3.22 \\
+$ZZ \rightarrow 2\ell2\nu$ & 0.564\\
+$ZZ \rightarrow 4\ell$& 1.212\\
+$gg \rightarrow \PH \rightarrow WW \rightarrow 2\ell 2\nu$& 1.001\\
+VBF $H \rightarrow WW \rightarrow 2\ell 2\nu$ & 0.0858\\
+\hline
+\end{tabular} 
+\end{footnotesize}
+\end{center}
+\caption{
+    NLO cross sections for considered backgrounds. In this table, $\ell$ represents all three generations of charged leptons, $\Pe$,$\Pgm$,$\Pgt$. In some cases the production mechanism is listed: quarks ($qq$) versus gluons ($gg$).
+}
+\label{tab:htt_bkg_xsec} 
+\end{table}
+
 
 \subsubsection{Drell--Yan Background}
 The largest irreducible source of background is the Drell--Yan production
