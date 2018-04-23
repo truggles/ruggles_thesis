@@ -1,20 +1,13 @@
-\chapter{The CMS Experiment and the CERN LHC}
+\chapter{The CMS Experiment and the LHC}
 \label{sec:cms_lhc}
-In this chapter I discuss the machines we use to conduct high energy particle
-physics research at CERN. Specifically, I cover the machine used to create the
-proton-proton collisions which we study as well as the
-detector used to detect the energy deposits from the collisions. The Large Hadron
-Collider (LHC) is the final stage of multi-stage particle accelerator. The full
-accelerator chain takes hydrogen gas, strips the electrons off of the protons,
+The CERN accelerator complex takes hydrogen gas, strips the electrons off of the protons,
 accelerates the protons and creates proton-proton collisions in the middle of the
 Compact Muon Solenoid (CMS) detector. The CMS detector is a large general purpose 
-physics detector designed to precisely measure the energy signatures of particles
+physics detector designed to precisely measure the energy of particles
 emanating from the proton-proton collisions to allow physicists to reconstruct
 the details of the initial collisions. Smooth operation of the LHC and the delivery
 of the proton-proton collisions and high efficiency operation of the CMS detector
-are both necessary to the data we gather and analyze. With either piece lacking,
-the CMS collaboration would not be able to probe details of the Standard Model
-or complete new measurements of the Higgs boson and its properties.
+are both necessary to the data we gather and analyze.
 
 
 \section{The LHC}
@@ -62,9 +55,8 @@ achieved for protons is 6.5 \TeV.
 The LHC accelerator complex has been built up over the years as technology progressed,
 physics goals advanced, and continued funding allowed for the expansion and repurposing
 of previous accelerators. The LHC acceleration injector chain begins with the LINAC2 linear
-accelerator which accelerates protons from rest to an energy of 50 \MeV, 
-or $\frac{1}{3}$ the speed of light (c).
-The proton come from a simple bottle of hydrogen gas which feeds hydrogen
+accelerator which accelerates protons from rest to an energy of 50 \MeV. 
+The protons come from a bottle of hydrogen gas which feeds hydrogen
 into the source chamber of the LINAC2. A large electric field is applied in the source
 chamber which breaks the electron-proton bonds separating the electrons from the protons.
 The positive electric charge of the protons allows them to be accelerated by electric
@@ -121,8 +113,7 @@ or collision rate, of 40 MHz.
 
 \begin{table*}[htbp]
 \centering
-\begin{tabular}{|l|l|l|l|}
-\hline
+\begin{tabular}{llll}
                   & Units     &   LHC Design  &   2016 LHC Operations \\
 \hline
 Center of Mass Energy & [\TeV] &    14      &       13      \\
@@ -152,9 +143,10 @@ design of the CMS detector was inspired by decades of previous high energy parti
 primary purpose the detection and measurement of the characteristics of the Standard Model Higgs boson. The 
 detector was designed and built targeting high efficiency detection and excellent energy resolution for specific Higgs 
 boson decay modes. The high granularity of the electromagnetic calorimeter and superb energy
-resolution make it perfect for reconstructing photons from $\PH \to \gamma\gamma$ decays. The
-strong, 3.8 T magnetic field combined with the muon spectrometer provide precise Higgs boson
-mass resolution in the $\PH \to \PZ\PZ \to \Pgm\Pgm\Pgm\Pgm$ decays. The detector is a large
+resolution make it perfect for reconstructing high-energy ($>$ few \GeV) electrons and photons. The
+strong, 3.8 T magnetic field combined with the muon spectrometer provide precise momentum
+resolution. Charged hadrons are precisely measured in the tracker with momenta ranging from a few 
+hundred \MeV to a \TeV. The detector is a large
 cylinder 15.0 m in diameter and 28.7 m in length. It has a mass of approximately 14,000,000 kg.
 
 The CMS detector is composed of many individual subdetectors. Progressing radially outwards from the collision point,
@@ -213,17 +205,8 @@ $\phi$ is defined in the $x-y$ plane.
 The CMS superconducting magnet, as is noted in the collaboration name, is 
 a solenoid magnet and is one of the most fundamental
 pieces of the CMS experiment. The superconducting magnet bends the trajectories of charged particles
-within the CMS detector. The curve in the flight path of a charged particle can be used to help
-calculate the energy or momentum of the particle in accordance with the Lorenetz force.
-Within the CMS detector, where the electric field is negligible compared to the magnetic field
-from the superconducting magnet, the Lorentz force can be written as~\ref{eqn:lorentz},
-
-\begin{equation}
-\textbf{F} = q\textbf{v} \times \textbf{B},
-\label{eqn:lorentz}
-\end{equation}
-
-relating the mass, acceleration and momentum of a particle with the magnetic field.
+within the CMS detector. The curvature of the flight path of a charged particle can be used to help
+calculate the momentum of the particle in accordance with the Lorenetz force.
 
 The CMS superconducting magnetic is constructed from a 4-layer winding of stabilized
 reinforced NbTi conductor. When in operation, the magnet is kept in a superconducting state
@@ -281,9 +264,6 @@ reconstruct tracks which are close to each other.
 The tracker measures the $\pt$ of 
 charged hadrons in the barrel region with a resolution of 1\% for $\pt < 20\GeV$.
 Details of track reconstruction are in Section~\ref{sec:pf_tracks}.
-The information from the tracker systems is
-not used by the L1 Trigger. However, the tracker information is heavily used by the HLT to
-reduce the 100 kHz event rate from the L1 Trigger to the final rate of 1000 Hz.
 
 A serious concern during the design of the tracker systems was the amount of
 material used to build the systems. All of the electronics, hardware, 
@@ -320,12 +300,10 @@ The ECAL barrel crystal cross-section is approximately $0.0174 \times 0.0174$
 in \etaphi, or about $22 \times 22 \, \textrm{mm}^{2}$
 on the front face of a crystal~\cite{Chatrchyan:2008zzk}. Twenty-two millimeters is also the Moli\`ere radius
 for $(\textrm{PbWO}_{4})$, meaning an electromagnetic shower could be
-contained by as few as 4 crystals. As mentioned earlier, this fine grain resolution is extremely
-helpful for precise energy measurements of electrons and photons and specifically
-enables the $\PH \to \gamma\gamma$ analysis to resolve a relatively narrow Higgs
-boson mass peak above a large background. 
-The energy resolution for $\PH \to \gamma\gamma$ photons is between 1.1\% 
-to 2.6\% in the barrel and between 2.2\% to 5\% in the endcaps~\cite{1748-0221-8-09-P09009}.
+contained by as few as 4 crystals. The fine grain resolution is extremely
+helpful for precise energy measurements of electrons, photons, and $\PGpz$ all of which
+contribute to better $\tauh$ reconstruction and more more effective
+$\tauh$ identification and isolation.
 
 The ECAL barrel crystals are 230 mm in length corresponding to a
 radiation length of 25.8 $X_{0}$ which is sufficient to contain 98\% of the energy
@@ -442,14 +420,8 @@ effective thickness of the HB detector increases with increasing $\abs\eta$.
 \subsection{Muon System}
 With ``Muon'' in the name of the experiment, it is clear that the muon spectrometer
 is important to the physics goals of the CMS experiment. Excellent muon reconstruction, 
-identification, and momentum measurement allows Higgs analyses, such as $\PH \to \PZ\PZ$
-where $\PZ\PZ \to \Pgm\Pgm\Pgm\Pgm$ to achieve their most precise mass measurements. Using
-2016 data, the $\PH \to \PZ\PZ$ analysis measured the Higgs boson mass with an uncertainty
-of approximately 0.2\%, 
-$m^{4\Pgm}_{\textrm{H}} = 124.94 \pm 0.25 (\stat) \pm 0.08 (\syst) \GeV$~\cite{cms-2016-hzz}.
-In addition to the mentioned functions of the muon system, the high purity of reconstructed
-muons makes the system very useful for selecting data events to store and is used extensively
-in the L1 Trigger and HLT.
+identification, and momentum measurement lead to a high purity of reconstructed
+muons and makes the system very useful for selecting data events to store.
 The muon spectrometer is composed of three subsystems, the drift tubes (DT) which cover
 $\abs\eta < 1.2$, the cathode strip chambers (CSC) which cover $0.9 < \abs\eta < 2.4$, and
 the resistive plate chambers (RPC) covering $\abs\eta < 1.6$, see Figure~\ref{fig:cms_muon_syst}.
