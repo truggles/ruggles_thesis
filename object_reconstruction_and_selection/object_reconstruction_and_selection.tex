@@ -1,8 +1,7 @@
 \chapter{Object Reconstruction and Selection}
 \label{sec:obj_reconstruction}
 
-In this chapter I discuss the progression from detector-based signals through to an
-overall event reconstruction within CMS. At CMS, physics-object reconstruction draws
+At CMS, particle and object reconstruction draws
 on input from all detector subsystems simultaneously to build particle tracks
 and cluster together energy deposits, to link together these tracks and energy
 deposits to construct basic physics-objects such as electrons and charged
@@ -12,15 +11,10 @@ To achieve all of this, CMS uses its Particle Flow (PF) reconstruction
 algorithm~\cite{Sirunyan:2017ulk}. The particle flow concept has been used in the 
 past by other experiments such as ALEPH at LEP~\cite{PF-ALEPH}. CMS is the first
 experiment to fully utilize the particle flow technique in a hadron collider environment.
-A discussion of the reconstruction of the two elemental PF objects, tracks and energy
-clusters, follows in the next section. Afterwards I detail the construction of 
-the PF physics-objects then move to composite objects and full event variables.
-The PF approach allows particles from pileup interactions to be identified 
-and enables efficient pileup mitigation methods.
 
 \section{Particle Flow Input}
-The CMS detector and the PF reconstruction algorithm were specifically designed to
-compliment each other. The CMS detector features: a highly-segmented tracker well
+The CMS detector and the PF reconstruction algorithm compliment each other. 
+The CMS detector features: a highly-segmented tracker well
 suited to precise track reconstruction, a fine-grained electromagnetic calorimeter necessary
 to separate the individual energy deposits from particles within ``jets'' and
 for efficient photon and electron identification, a hermetic hadron 
@@ -192,9 +186,8 @@ for seeding a cluster and cluster inclusion threshold are in Table~\ref{tab:pf_c
 \centering
 \begin{footnotesize}
 %\begin{scriptsize}
-\begin{tabular}{|l|cc|cc|}
-\hline
-        &       \multicolumn{2}{|c|}{ECAL}        &       \multicolumn{2}{|c|}{HCAL}        \\  %&   Preshower \\
+\begin{tabular}{lcccc}
+        &       \multicolumn{2}{c}{ECAL}        &       \multicolumn{2}{c}{HCAL}        \\  %&   Preshower \\
         &   barrel  &   endcaps        &       barrel   &   endcaps        \\  %&    \\
 \hline
 Cell $E$ threshold (\MeV) & 80 & 300    &   800 &   800 \\   %& 0.06 \\
@@ -308,9 +301,8 @@ must have a value less than 20
     \2 Candidate has a segment compatibility score of at least 0.303 which is looser than the value
 required in Option 1
 \end{outline}
-The \texttt{PF ID Medium} muon working is still very efficient for prompt muon selection but
-does bring some additional reduction in fake object selection which is helpful in the high
-statistics $\htt$ analysis. 
+The \texttt{PF ID Medium} muon working point is still very efficient for prompt muon selection but
+does bring some additional reduction in fake object selection.
 
 To reject non-prompt or misidentified muons and electrons, a relative lepton isolation is defined as:
 \begin{equation}
@@ -332,8 +324,7 @@ approximately to the ratio of neutral to charged hadron production in the hadron
 of inelastic $\Pp\Pp$ collisions, as estimated from simulation. The expression $\pt^{\ell}$ 
 stands for the $\pt$ of the lepton. Isolation requirements used in the following analyses
 for electrons and muons range from $I^{\ell} < 0.1$ to $I^{\ell} < 0.25$ depending on the signal efficiency and
-background rejection needs of the specific final state. For the $\htt$ analysis, these
-working points are listed in the $\htt$ analysis section, Table~\ref{tab:htt_obj_selection}.
+background rejection needs of the specific final state. 
 
 
 \subsubsection{Electrons and Prompt Photons}
@@ -446,10 +437,6 @@ corrected via calibrations based on simulation and data~\cite{CMS-JME-10-011}.
 
 \subsection{b-jet Identification}
 \label{sec:reco_b_jet}
-Jets which result from the decay and hadronization of b quarks are used to help classify events
-in the $\htt$ analyses. B quarks are not produced from the four leading Higgs boson production
-mechanisms. Therefore, in multiple final states, events with jets which are likely caused by the decay and
-hadronization of b quarks are a likely sign of a background event.
 The combined secondary vertex (CSV) algorithm is used to identify jets that likely resulted
 from a b quark decay, a ``b-jet''~\cite{CMS:2016kkf, 1748-0221-8-04-P04013}. 
 The CSV algorithm uses track-based lifetime information together with 
@@ -481,8 +468,7 @@ high genuine tau purity in the $\Pgm\tauh$ final state.
 
 \begin{table*}[htbp]
 \centering
-\begin{tabular}{|l|cc|}
-\hline
+\begin{tabular}{lcc}
 Decay Mode                                             &   Meson Resonance     & $\mathcal{B}$ (\%) \\
 \hline
 $\tau^{-}  \to  \Pe^{-}\bar{\nu}_{\text{e}}\nu_{\tau}$ &                        &     17.8  \\
