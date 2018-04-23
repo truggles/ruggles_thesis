@@ -1,9 +1,10 @@
 
 \section{Results}
 
-The extraction of the results uses a global maximum likelihood fit based on the 2D distributions in all 
-channels simultaneously fit together with the control regions for the $\ttbar$, QCD multijet, and $\PW +\text{jets}$ backgrounds. 
-The following Section~\ref{sec:htt_2d} shows six of the tweleve distributions used in the
+The extraction of the results uses a global maximum likelihood fit based on visible or 
+corrected invariant mass of the $\Pgt$-pair. All 
+channels are simultaneously fit together with the control regions for the $\ttbar$, QCD multijet, and $\PW +\text{jets}$ backgrounds. 
+The following Section~\ref{sec:htt_2d} shows six of the twelve distributions used in the
 global maximum likelihood fit. A more detailed description of the fit and fitting process is 
 laid out afterwards in section~\ref{sec:htt_fit_details}. After these two sections,
 the rest of the $\htt$ results are discussed.
@@ -15,7 +16,9 @@ follows in Chapter~\ref{sec:cmb_results}.
 \subsection{Two-Dimensional Distributions}
 \label{sec:htt_2d}
 A selection of the 2D distributions used in the fit, including the three $\tauh\tauh$ distributions and
-the three $\Pgm\tauh$ distributions, is shown in figures~\ref{fig:mass_tt_vbf}--\ref{fig:mass_mt_0jet}.
+the three $\Pgm\tauh$ distributions, are shown in figures~\ref{fig:mass_tt_vbf}--\ref{fig:mass_mt_0jet}.
+In these distributions, the normalization of the predicted background distributions corresponds to the result of the global fit
+and the signal distribution is normalized to its best fit signal strength.
 The choice of the binning is driven by the available statistics of the background and data templates. This leads to wider 
 $\mtt$ bins and fewer slices of $\mjj$ in the poorly-populated VBF category. And, conversely, the ability of the $\Pgm\tauh$,
 $\Pe\tauh$, and $\Pe\Pgm$ channels to include many slices of $\pth$ in the Boosted category. 
@@ -28,11 +31,11 @@ The background distributions are adjusted to the results of the global maximum l
      \includegraphics[width=1.0\textwidth]{higgs_to_taus/plots/Figure_006.pdf}
      \caption{
 Observed and predicted 2D distributions in the VBF category of the $\tauh\tauh$ channel.
-The normalization of the predicted background distributions corresponds to the result of the global fit.
-The signal distribution is normalized to its best fit signal strength. The background histograms are stacked. 
-The ``Others" background contribution includes events from diboson and single top quark production as well 
-as Higgs boson decays to a pair of $\PW$ bosons. The background uncertainty band accounts for all sources 
-of background uncertainty, both systematic and statistical, after the global fit. 
+The two variables are the mass, $\mtt$, and the di-jet mass, $\mjj$.
+%The ``Others" background contribution includes events from diboson and single top quark production as well 
+%as Higgs boson decays to a pair of $\PW$ bosons. 
+The background uncertainty band accounts for all sources 
+of background uncertainty. 
 The signal is shown both as a stacked filled histogram and as an open overlaid non-stacked histogram.
 }
      \label{fig:mass_tt_vbf}
@@ -121,7 +124,8 @@ The signal is shown both as a stacked filled histogram and as an open overlaid n
 
 \subsection{Results Extraction}
 \label{sec:htt_fit_details}
-The 2D distributions of the final discriminating variables obtained for each category and each channel in the 
+The 2D distributions of the final discriminating variables, see Table~\ref{tab:htt_categories}, 
+obtained for each category and each channel in the 
 signal regions, along with the control regions, are combined in a binned likelihood fit involving the 
 background and signal expectations and observed data in each bin.
 The expected number of signal events is the one predicted for the production of
@@ -207,12 +211,12 @@ Another way to visualize the results of the global maximum likelihood fit
 is to collapse the second dimension of the 2D distributions. An excess of observed events relative 
 to the best fit background expectation is visible in figure~\ref{fig:htt_massweighted},
 with the details of the figures construction following.
-All of the $\mtt$ distributions with a commong binning scheme are collapsed into a single $\mtt$ distribution.
+All of the $\mtt$ distributions with a common binning scheme are collapsed into a single $\mtt$ distribution.
 A reweighting scheme defines a weight for each $\mtt$ range within a slice of $\mjj$ or $\pth$. The reweighting
 scheme is designed to increase the contribution of the most sensitive distributions. The reweighting is defined
 by summing the best fit background expectations and summing the best fit signal contributions for a given slice
 of $\mjj$ or $\pth$; a weight of $S/(S+B)$ is applied to the these contributions when plotting them in the described
-distribtion. As a detail $S$ and $B$ are computed as the signal or background contribution in the mass distribution 
+distribution. As a detail $S$ and $B$ are computed as the signal or background contribution in the mass distribution 
 excluding the first and last bins, in which the amount of signal is negligible. 
 The signal regions that use $\mvis$ instead 
 of $\mtt$, namely the 0-jet category of the $\Pgm\tauh$, $\Pe\tauh$ and $\Pe\Pgm$ channels, are not included. 
@@ -327,7 +331,7 @@ the frozen uncertainty group.
 1D likelihood scans which were used to extract the uncertainty associated with each of the four uncertainty
 components: theoretical uncertainties, bin-by-bin statistical uncertainties on the backgrounds, other 
 systematic uncertainties, and the statistical uncertainty of the data gathered. The difference between
-the nominal scan in black and the scans representd as dotted lines show the effect of freezing out certain
+the nominal scan in black and the scans represented as dotted lines show the effect of freezing out certain
 uncertainty components from the analysis. Freezing out an uncertainty component shows how the analysis
 results would change if there was zero uncertainty associated with that component. For example, the green
 dotted curve shows how the analysis results would change if theoretical Higgs boson uncertainties were
