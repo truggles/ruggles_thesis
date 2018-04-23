@@ -44,8 +44,9 @@ particles deposit most of their energy on average.
 
 \subsection{Particle Flow Tracks}
 \label{sec:pf_tracks}
-Energy deposits, often called ``hits'', are recorded by the pixel and strip tracker during
-a collision. From these, charged particle tracks are reconstructed in subsequent layers
+Energy deposits, often called ``hits'', are recorded by the pixel and strip tracker 
+and the muon detectors after a collision . 
+From these, charged particle tracks are reconstructed in subsequent layers
 mapping the progression of charged particles from the beam axis outwards into the detector
 volume. Attempting to reconstruct tracks from every possible hit combination quickly
 because unreasonable considering the over 70 million tracker pixels and strips which can
@@ -137,17 +138,18 @@ muon spectrometer information.
 The hits in the muon spectrometer are quite pure in genuine muon hits. This is because of the
 calorimeters and the solenoid which absorb the vast majority of non-muon particles, except neutrinos, 
 before they reach the muon spectrometer. There are three different categories of muon tracks
-reconstructed:
+reconstructed using the KF technique:
 \begin{itemize}
-\item Standalone muons are based on hits within each DT or CSC detector. Hits are clustered to form 
-track segments that are used as seeds for the pattern recognition in the muon spectrometer to gather
-other hits in the muon systems along the track trajectory.
+\item Standalone muons are based on hits within each DT, CSC, and RPC detector. Hits in the DT and 
+CSC detectors are clustered to form track segments that are used as seeds for the pattern 
+recognition in the muon spectrometer to gather other hits in the all three muon systems 
+along the track trajectory.
 \item Global muons are reconstructed from a standalone-muon track which is matched to a track 
 from the inner tracker. If the trajectories of the two tracks propagate onto a common surface 
 they are considered compatible and the hits from the inner tracker and from the standalone-muon 
 track are combined and fit to form a global-muon track.
 \item Tracker muons are built from an extrapolation of a track from the inner track system to a
-single compatible muon segment within the muon spectrometer system. The inner tracker-based track must have 
+minimum of one compatible muon segment within the muon spectrometer system. The inner tracker-based track must have 
 a $\pt > 0.5\GeV$ and a total momentum $p > 2.5\GeV$.
 \end{itemize}
 
@@ -245,6 +247,8 @@ function of their true energy $E$.
 \end{figure*}
 
 
+
+\subsection{Particle Flow Candidates}
 In general, a given particle (physics-object) propagating through the CMS detector 
 is expected to result in multiple PF elements (tracks and energy
 clusters) in various CMS subdetectors. The reconstruction of a particle begins 
@@ -255,9 +259,6 @@ in the case of hadronic energy deposits above which can span both the ECAL and H
 when the cluster position in the more granular calorimeter (ECAL) is within the cluster envelope
 in the less granular calorimeter (HCAL). Once PF elements are linked together they are referred to as a PF block which can contain 
 elements associated either by a direct link or by an indirect link through common elements.
-
-
-\subsection{Particle Flow Candidates}
 Particle Flow candidates are selected from the PF blocks based on compatibility with
 different physics-object characteristics and designated quality cuts.
 
@@ -290,7 +291,7 @@ linked to the PF muon candidate. The number of valid inner tracker
 hits must be greater than 80\%. Additionally, either one of the following criteria must be met:
 \begin{outline}
 \1 Option 1 - ``Tight Segment Compatibility''
-    \2 Candidate has a segment compatibility score of at least 0.451 which ensures that the 
+    \2 Candidate has a segment compatibility~\cite{1748-0221-5-03-T03022} score of at least 0.451 which ensures that the 
 track is reasonably compatible with inner tracker-based track
 \1 Option 2 - ``Good Global Muon'':
     \2 PF muon candidate is a global muon
@@ -314,7 +315,7 @@ I^{\ell} \equiv \frac{\sum_{charged}  \pt + \max\left( 0, \sum_{neutral}  \pt
 
 Some of the quantities mentioned here refer to descriptions in the following sections.
 In this expression, $\sum_{charged}  \pt$ is the scalar sum of the transverse energy of the 
-charged particles originating from the primary vertex and located in a cone of size
+charged particles originating from the primary vertex (see Section~\ref{sec:pv_reco}) and located in a cone of size
 $\dr = \sqrt{\smash[b]{(\Delta \eta)^2 + (\Delta \phi)^2}} = 0.4$\,(0.3)
 centered on the muon (electron) direction. The sum, $\sum_{neutral}  \pt$, represents
 a similar quantity for neutral particles. The contribution of photons and neutral hadrons 
@@ -340,7 +341,7 @@ from an electron propagating through the detector can be spread out in the
 $\phi$ direction. PF electrons are built from the linking of a GSF track to an
 ECAL-based energy cluster. To suppress the amount of charged hadrons faking electrons, the 
 sum of the energies measured in HCAL hits behind ($\dr < 0.15$) 
-the electron-linked ECAL energy cluster must no exceed 10\% of the ECAL-based 
+the electron-linked ECAL energy cluster must not exceed 10\% of the ECAL-based 
 energy cluster energy~\cite{Sirunyan:2017ulk}. The energy assignment for an electron candidate is obtained from a 
 combination of the calibrated ECAL energy with the momentum of the GSF track. The electron 
 direction is chosen to be that of the GSF track.
@@ -391,6 +392,7 @@ calculation.
 
 
 \subsection{Primary Vertex Reconstruction}
+\label{sec:pv_reco}
 The original location of the $\pp$ collisions which gave rise to a given event can be found by tracing
 the reconstructed physics-object tracks back to the collision region and grouping together tracks that share a common
 origin; the origins are called vertices. In any given recorded collision there will usually be a 
@@ -459,14 +461,17 @@ $\PGpz  \to  \gamma\gamma$. The $\PGpz$ are
 reconstructed in strips of \etaphi elongated in the $\phi$ direction to catch photon conversions.
 Since the start of Run-II, the HPS algorithm has moved from using a fixed width strip,
 $0.05 \eta \times 0.20 \phi$, to a dynamic width strip where the width depends on the 
-$\pt$ of the electron or photon used to seed the strip. More dynamic strip details in the following paragraph.
+$\pt$ of the electron or photon used to seed the strip. More dynamic strip details are in the following paragraph.
 Based on the number of
-charged hadrons and $\PGpz$s, the $\tauh$ candidate is assigned a decay mode. For the $\tau$
+charged hadrons and $\PGpz$s, the $\tauh$ candidate is assigned a decay mode. 
+The invariant mass of the $\tauh$ is calculated from all hadrons and $\PGpz$ which are
+assigned as the $\tauh$ decay products. For the $\tau$
 decay modes involving a meson resonance, there is a mass window requirement that necessitates
 that the $\tauh$ invariant mass be consistent with the meson resonance. $\tauh$ with only a single
 charged hadron are assigned a mass equal to the mass of a $\pi^{\pm}$, 140\MeV. Figure~\ref{fig:tau_mass}
 shows the reconstructed mass for hadronically decaying taus in 2012 data using a selection with
 high genuine tau purity in the $\Pgm\tauh$ final state.
+
 
 \begin{table*}[htbp]
 \centering
