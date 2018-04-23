@@ -63,7 +63,7 @@ The positive electric charge of the protons allows them to be accelerated by ele
 fields. The LINAC2 and the subsequent circular accelerators all use radio frequency (RF)
 cavities to accelerate the protons.
 With the electrons removed, a group of protons can begin progressing through the accelerator
-chain; each grouping of protons accelerated in the LINAC2 eventually become one of the 
+chain; each grouping of protons accelerated in the LINAC2 eventually contributing to one of the 
 circulating proton bunches used for collisions in the LHC.
 
 The LINAC2 feeds into the circular Proton Synchrotron Booster accelerator boosting
@@ -78,14 +78,14 @@ A diagram of the LHC accelerator complex can be seen in Figure~\ref{fig:lhc_comp
 
 \subsection{LHC Magnets}
 The path of the proton bunches is controlled by magnetic fields throughout
-the accelerator chain. In all of the circular accelerators, magnetic fields are applied
+the accelerator chain. In all of the circular accelerators, dipole magnetic fields are applied
 at right angles to the protons direction of travel which applies a force orthogonal to
 the magnetic field and proton velocity bending the trajectory into a circular path. The LHC
 relies on 1232 15-m long superconducting dipole magnets, see Figure~\ref{fig:lhc_dipole},
 to maintain the roughly circular path around the LHC.
 The maximum magnetic field the superconducting dipole magnets can attain is 8.33 T which
-corresponds to a proton beam energy of 7 \TeV. However, the field is limited to 6.5 \TeV by the LHC
-beam losses which heat up the interior of the superconducting dipole magnets~\cite{Voss:2009zz}.
+corresponds to a proton beam energy of 7 \TeV. However, for physics operations the field is limited to 
+6.5 \TeV due to the difficult and time committment of training the dipole magnets to 7\TeV~\cite{7372416-ieee-dipole}.
 The LHC dipole magnets must be cooled by liquid helium to 1.9 Kelvin to maintain their superconducting
 characteristics~\cite{lhc_magnets}. The superconducting coils are made from NbTi Rutherford
 cables~\cite{1018583}.
@@ -101,8 +101,9 @@ surrounded by the the superconducting coils.
 \end{figure*}
 
 The LHC superconducting dipole magnets are complimented by 392 main superconducting quadrupole
-magnets, 688 sextupole magnets, and 168 octupole-type magnets, which are dedicated to proton 
-beam focusing keeping the beam from spreading out laterally unintentionally~\cite{lhc_magnets, Voss:2009zz}. 
+magnets, 688 sextupole magnets, and 168 octupole-type magnets. These additional magnets are dedicated to proton 
+beam focusing keeping the beam from spreading out laterally at the collision point. The beam has
+much more lateral spread throughout the rest of the LHC ring~\cite{lhc_magnets, Voss:2009zz}. 
 
 The accelerator chain and superconducting magnets of the LHC provide a proton beam segmented
 into discrete bunches which can be focused, defocused, and otherwise adjusted to deliver a target
@@ -142,9 +143,14 @@ The Compact Muon Solenoid (CMS) detector is located at Point 5 along the LHC rin
 design of the CMS detector was inspired by decades of previous high energy particle physics detectors and has as its
 primary purpose the detection and measurement of the characteristics of the Standard Model Higgs boson. The 
 detector was designed and built targeting high efficiency detection and excellent energy resolution for specific Higgs 
-boson decay modes. The high granularity of the electromagnetic calorimeter and superb energy
-resolution make it perfect for reconstructing high-energy ($>$ few \GeV) electrons and photons. The
-strong, 3.8 T magnetic field combined with the muon spectrometer provide precise momentum
+boson decay modes. 
+The strong, 3.8 T magnetic field, is created by a superconducting magnet with a central bore of 6.3\m.
+There is enough room inside the magnet to fully contain a track system, the electromagnetic calorimeter, and
+the hadronic calorimeter. Having the electromagnetic calorimeter within the magnet is the key unique feature of 
+CMS that allows it to have such good electromagnetic energy resolution. 
+Additionally, the high granularity of the electromagnetic calorimeter and superb energy
+resolution make it perfect for reconstructing high-energy ($>$ few \GeV) electrons and photons. 
+The superconducting magnet combined with the muon spectrometer provide precise momentum
 resolution. Charged hadrons are precisely measured in the tracker with momenta ranging from a few 
 hundred \MeV to a \TeV. The detector is a large
 cylinder 15.0 m in diameter and 28.7 m in length. It has a mass of approximately 14,000,000 kg.
@@ -222,18 +228,19 @@ leaving limited room for the CMS tracker and calorimeter systems.
 
 \subsection{Inner Tracking System}
 The inner tracking system is composted of two subdetectors, the pixel tracker and the
-strips tracker. They are designed to deliver precise and efficient measurement of
+strip tracker. They are designed to deliver precise and efficient measurement of
 the trajectories of charged particles propagating outwards from the 
 proton-proton collisions. Beyond reconstructing tracks, the information from the
 tracking systems can be used to reconstruct the 
 proton collision points and secondary decay vertices. The
 tracking systems surround the interaction point and have a length of 5.8 m and 
 diameter of 2.5 m. Both the pixel and strip trackers have cylindrical barrel
-layers and disk-like endcap layers. A schematic of the track systems
+layers and disk-like endcap layers. A schematic of the tracking systems
 can be seen in Figure~\ref{fig:cms_tracker}.
 
 The pixel tracker has three barrel layers at radii between 4.4 cm and 10.2 cm. The
-close proximity to the interaction point is helpful for track seeding and vertex
+incredibly high granularity and low relative occupancy of the pixel tracker 
+is helpful for track seeding and vertex
 reconstruction discussed in the track reconstruction section~\ref{sec:pf_tracks}.
 The silicon strip tracker is composed of 10 barrel detection layers extending 
 outwards to a radius of 1.1 m. During the 2016-2017 extended year end technical stop,
@@ -312,7 +319,7 @@ the crystals have an interaction length, $\lambda_{l}$, of about 1.0. This cause
 roughly two thirds of the hadrons passing through the ECAL to start showering
 within the ECAL~\cite{Chatrchyan:2008zzk}. 
 
-As particles interact with the crystals, energy is deposited at a rate of about 4.5
+As electrons and photons interact with the crystals, energy is deposited at a rate of about 4.5
 photoelectrons per \MeV.
 The scintillation decay time of the $(\textrm{PbWO}_{4})$ crystals is approximately the
 same order of magnitude as the LHC bunch crossing time; about 80\% of the light is 
@@ -347,9 +354,9 @@ The crystals are inclined towards the interaction region.
 
 
 \subsection{Hadronic Calorimeter}
-The hadronic calorimeter (HCAL) provide the necessary energy measurements
-to reconstruct charged and neutral hadrons in CMS. These particle are the
-primary measurable constituents in ``jets'' and hadronically decay $\tau$
+The hadronic calorimeter (HCAL) provides necessary energy measurements
+to reconstruct neutral hadrons and total event energy sums, see Section~\ref{sec:obj_reco_met}. 
+These particle are the primary measurable constituents in ``jets'' and hadronically decay $\tau$
 leptons. Additionally, measurement of the energy imbalance from a collision
 can indicate the presence of neutrinos or possibly exotic particles~\cite{CMS-Proposal}.
 The HCAL is segmented into four calorimeters: the barrel detector, the endcap detector,
@@ -528,7 +535,11 @@ and finally deliver the event content to storage. The 40 MHz bunch crossing rate
 the LHC makes this a remarkable challenge. The Trigger and DAQ system must operate rapidly
 and in close synchronization so that the event content read-out by each subdetector is attributed
 to the proper LHC bunch crossing. In total, the trigger system reduces the throughput rate from the
-initial 40 MHz to a storage rate of 1 kHz. Storing more events for physics analysis is
+initial 40 MHz to a storage rate of around 1 kHz. In certain circumstances, a technique called
+``data parking'' is used to store lower priority events passing the HLT. Parked events undergo
+offline reconstruction many months after their initial collections. This can help increase the
+effective HLT rate towards 2 kHz. This technique was not used directly for any of the data events
+analyzed in this thesis. Storing more events for physics analysis is
 always desired, but with each event requiring roughly 1 MB of disk space for storage in its
 raw format, storing many more events is not currently an option for the CMS experiment based 
 on available storage space~\cite{CMS-Proposal}. 
