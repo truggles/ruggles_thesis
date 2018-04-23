@@ -13,14 +13,20 @@ without the existence of a 125 \GeV Higgs boson versus the Standard Model with t
 of a 125 \GeV Higgs boson. Both of these predictions rely on the Standard Model processes and
 Higgs boson processes being well modeled via simulation.
 Following, I briefly discuss how events are simulated for proton-proton collisions,
-how the initial products of the collision decay, and how the decay products are simulated
+how the initial products of the collision decay, the steps of parton showering,
+fragmentation and hadronization, and how the decay products are simulated
 to interact with a model of the CMS detector.
 
 There are many different Monte Carlo (MC) event generators which can contribute to the 
 simulation of high energy particle collisions and decays. There are three main MC event
 generators which are commonly used to model the full proton-proton collision: 
-\PYTHIA~\cite{Sjostrand:2014zea}, \HERWIG~\cite{Bahr:2008pv}, and \textsc{Sherpa}~\cite{Gleisberg:2008ta}. 
-In this thesis, the \textsc{Pythia8} MC event generator is used. \textsc{Pythia8} includes a set of physics models
+\PYTHIA~\cite{Sjostrand:2014zea}, \HERWIG~\cite{Bahr:2008pv}, and \textsc{Sherpa}~\cite{Gleisberg:2008ta}
+including both hard scattering processes and subsequent evolution of the products to final 
+state products. Several other generators, including \POWHEG~\cite{Alioli:2010xd,Frixione:2007vw}
+and \MGAMCNLO~\cite{Alwall:2011uj,Alwall:2014hca}, 
+are also used to model only hard scattering processes and, in this thesis, 
+interface to \textsc{Pythia8} for evolution to the final state products.
+\textsc{Pythia8} includes a set of physics models
 which can simulate the particle evolution from a few-body hard-scattering process through
 to a complex multiparticle final states.
 
@@ -31,9 +37,7 @@ to their final state products. The
 choice to stitch together multiple MC generators is made when the internal
 hard-scattering physics library in \textsc{Pythia8} is not as complete as other generators or other
 generators are able to achieve higher order accuracy in their treatment of the
-hard-scattering process. The two MC generators which are used for the hard-scatter
-process are \POWHEG~\cite{Alioli:2010xd,Frixione:2007vw} and 
-\MGAMCNLO~\cite{Alwall:2011uj,Alwall:2014hca}.
+hard-scattering process.
 
 The signal samples with a Higgs boson produced through gluon fusion ($\cPg\cPg\PH$), vector boson fusion (VBF),
 or in association with a $\PW$ or $\PZ$ boson ($\PW\PH$ or $\PZ\PH$), are all
@@ -158,21 +162,24 @@ partons is technically not possible with current best Monte Carlo generators~\ci
 Instead, these partons are decayed using the parton shower method. 
 Parton shower evolution can be viewed as a probabilistic process 
 which occurs with unit total probability where each produced parton has a probability
-of radiating another parton. Partons iteratively decay through three 
+of radiating another parton. Partons iteratively emit other partons through three 
 dominant processes: $\textrm{q} \to \textrm{gq}$, $\textrm{g} \to \textrm{gg}$, 
 and $\textrm{g} \to \textrm{q}\bar{\textrm{q}}$. Swap $\textrm{q}$ for $\bar{\textrm{q}}$
 to complete the set. 
 
 Technically, there is a matching and merging of the hard-scatter matrix element with the
 parton shower contribution. This does not affect the total process cross section.
-%The $\PZ+$jets and $\PW+$jets samples, which were simulated with \MGAMCNLO, 
-%use MLM jet matching and merging~\cite{Alwall:2007fs}.
+The $\PZ+$jets and $\PW+$jets samples, which were simulated with \MGAMCNLO at LO, 
+use MLM jet matching and merging~\cite{Alwall:2007fs}.
+The diboson production samples simulated with \MGAMCNLO at NLO use the 
+FxFx jet matching and merging~\cite{Frederix:2012ps}. 
+In contrast, \POWHEG 2.0 and 1.0 are used for \ttbar
 The Monte Carlo generators used in this thesis are interfaced with 
 \PYTHIA 8.212~\cite{Sjostrand:2014zea} to model the parton shower evolution.
 
 
 
-\section{Hadronization}
+\section{Fragmentation and Hadronization}
 As mentioned previously, due to color confinement, quarks and gluons can not exist in isolation
 and must be transformed in color-neutral final states~\cite{Hoche:2014rga}. 
 To resolve the lone quarks and gluons which resulted from the hard-scatter process and the parton 
@@ -200,19 +207,19 @@ The final representation depicts a seven mesons final state.
      \label{fig:sim_lund_string}
 \end{figure*}
 
-While not technically part of the hadronization process, \textsc{Pythia8} is also used for the 
-decay of any hard-scatter resonances such as $\PZ$ or $\PW$ bosons and their subsequent
-decay products. \textsc{Pythia8} is also used to model $\tau$ lepton decays where the spin
+\textsc{Pythia8} also decays vector boson sometimes creating pairs of quarks where
+it then models the subsequent parton shower, fragmentation, and hadronization.
+In addition, \textsc{Pythia8} is also used to model $\tau$ lepton decays where the spin
 correlations are fully included. All $\tau$ decay modes with branch ratios greater than 0.04\%
 are included in the simulation~\cite{ILTEN201477}.
 
 
 
 \section{Pileup}
-There where 27 proton-proton collisions per bunch crossing on average
+There were 27 proton-proton collisions per bunch crossing on average
 in the 2016 data collected by CMS.
 For most bunch crossings all of these proton-proton collisions are soft
-scattering events and, with no hard process present, the event it unlikely to be stored for
+scattering events and, with no hard process present, the event is unlikely to be stored for
 future physics analysis because it will fail the Level-1 or High Level Trigger selections. 
 When there is a hard-scattering process present in a bunch crossing,
 the soft scattering collisions will still be present and must be modeled. 
@@ -242,7 +249,7 @@ detector~\cite{Agostinelli:2002hh}. At its most basic, \textsc{Geant4} is a
 toolkit for simulating the passage of particles through matter. It contains a 
 vast library of functionality allowing the creation of model physics detectors
 made out of any desired material and in any desired geometrical configuration.
-To validate the \textsc{Geant4} modeling of the CMS detector, test beam data and
+To initially validate the \textsc{Geant4} modeling of the CMS detector, test beam data and
 collision data are used. Good agreement is seen between the data and the
 simulated particles passing through the CMS detector for the energy response
 and resolution for pions and protons~\cite{geant4_cms_2017}.
