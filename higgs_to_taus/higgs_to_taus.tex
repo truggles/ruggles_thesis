@@ -22,7 +22,8 @@ or the VBF production mechanisms. A study of the Higgs boson produced in associa
 $\PW\PH$/$\PZ\PH$ is presented in Chapter~\ref{sec:vh_analysis}. This study utilizes the
 full 2016 $\pp$ dataset collected by CMS corresponding to 35.9$\fbinv$ of integrated luminosity.
 In the following pages the symbol $\ell$ refers to electrons and muons and $\tauh$ refers to hadronically
-decaying $\Pgt$ leptons. We study all possible $\Pgt\Pgt$ final state combinations with the
+decaying $\Pgt$ leptons while $\Pgt_{e}$ and $\Pgt_{\mu}$ refer to leptonically decay $\Pgt$ to electrons
+and muons, respectively. We study all possible $\Pgt\Pgt$ final state combinations with the
 exception of two electron and two muon final states because of the low 
 $\Pgt\Pgt \to \Pgt_{e}\Pgt_{e}/\Pgt_{\mu}\Pgt_{\mu}$
 branching fractions and high background from $\PZ \to \Pe\Pe/\Pgm\Pgm$. The $\htt$ final states which are
@@ -37,10 +38,10 @@ no data or simulated event is double counted in two channels.
 Selected events are classified into three different categories targeting different characteristics
 of the gluon fusion and VBF production topologies. The categories are defined according to the
 number and kinematics of the associated jets in each event along with the reconstructed $\pt^{Higgs}$.
-A number of different control regions are used in the final fit for signal extraction. This allows
-the fit to simultaneously adjust and constrain all processes targeted by a control region. This is in
-contrast to extracting a scale factor which is applied as a fixed value in an analysis which is not
-allowed to adjust as other background process adjust in the final fit. The backgrounds which are
+A number of different control regions enriched in various background processes 
+are used in the final fit for signal extraction. This allows
+the fit to simultaneously adjust and constrain the normalization and shape of
+processes targeted by a control region. The backgrounds which are
 targeted with dedicated control regions are: $\PW$+jets, QCD multijet, and $\ttbar$.
 
 
@@ -49,15 +50,14 @@ targeted with dedicated control regions are: $\PW$+jets, QCD multijet, and $\ttb
 
 There are specific baseline criteria applied to all electrons, muons, $\tauh$, and jets for every
 event. Depending on the final state, additional requirements are placed on these objects based
-on suppressing target backgrounds or to meet trigger requirements and analysis optimization. The baseline criteria ensure
-that each object is well reconstructed and well identified and consistent with the analysis
-strategy. 
+on suppressing target backgrounds or to meet trigger requirements and analysis optimization. The baseline criteria ensure that each object is well reconstructed, well identified, and
+consistent with a objects that are searched for as part of the analysis strategy.
 
 \subsection{Triggers}
 \label{sec:htt_triggers}
 Selected events are required to to have fired a high level trigger consistent with their categorized final
 state channel. For the $\Pgm\tauh$ channel, events are selected using a combination
-of a single isolated muon trigger as well as a cross trigger firing on an isolated muon and
+of a single isolated muon trigger as well as a cross trigger selecting events with an isolated muon and
 an isolated $\tauh$. The $\Pgm\tauh$ cross trigger allows for a lower $\pt$ threshold
 on the selected muon. In contrast, due to the HLT menu available in 2016, the $\Pe\tauh$ cross triggers
 do not bring a substantial increase in acceptance and were not used in this analysis.
@@ -129,7 +129,8 @@ being available towards the end of the 2016 run.
 
 \subsection{Baseline Object Selection}
 \label{sec:htt_obj_sel}
-All electrons and muons must meet the minimum requirement
+All electrons and muons are selected in accordance with Sections~\ref{sec:pf_muons} and ~\ref{sec:pf_egamma}.
+In addition, they must meet the minimum requirement
 that the distance of closest approach to the primary vertex satisfies $\abs{d_z}<0.2$ cm
 along the beam direction, and $\abs{d_{xy}}<0.045$ cm in the transverse plane. Ensuring
 compatibility with the primary vertex is consistent with the predicted infinitesimal life-time of
@@ -145,7 +146,8 @@ applied are always higher than the HLT $\pt$ threshold to ensure a stable measur
 of trigger efficiencies. An offline $\pt$ threshold applied right at the HLT $\pt$ threshold
 makes measurement of the steeply rising efficiency at the HLT threshold absolutely critical.
 This is very difficult to do perfectly and would lead to very large trigger systematics
-at low $\pt$ in the turn-on region. Additionally, there are offline $\eta$ restrictions
+at low $\pt$ in the turn-on region for a fractional gain in acceptance. 
+Additionally, there are offline $\eta$ restrictions
 enforced which align with those at the HLT.
 
 All selected electrons, muons, and $\tauh$ must be well identified and isolated from overlapping
@@ -155,7 +157,8 @@ working points used have been selected through an optimization process selecting
 for increased analysis sensitivity. The optimum working points strike a balance
 between signal efficiency and background rejection. For electrons an MVA-based ID
 is used in both the $\Pe\tauh$ and $\Pe\Pgm$ channels which has been tuned to provide 
-80\% electron selection efficiency. Muons in both the $\mu\tauh$ and $\Pe\Pgm$ channels
+80\% electron selection efficiency, Section~\ref{sec:pf_egamma}. 
+Muons in both the $\mu\tauh$ and $\Pe\Pgm$ channels
 require the Particle Flow Medium ID. The selection of $\tauh$ relies on MVA-based working
 points. The $\tauh$ MVA-based working points combine both object identification and object
 isolation together into a single set of working points. Table~\ref{tab:htt_obj_selection}
@@ -190,13 +193,14 @@ and $\tauh$ selected in the study.
 
 
 Signal extraction categories rely on the details of reconstructed jets, or
-lack there of, in each event.  Jets are reconstructed using the anti-$k_{\text{T}}$ algorithm with distance
-parameter $\Delta\text{R}=0.4$~\cite{Cacciari:2008gp}.  Charged hadrons that are not consistent with
+lack there of, in each event. Jets are reconstructed using the anti-$k_{\text{T}}$ algorithm with distance
+parameter $\Delta\text{R}=0.4$~\cite{Cacciari:2008gp}. Charged hadrons that are not consistent with
 the primary vertex are removed from the anti-$k_{\text{T}}$ clustering.  Jets are only considered
 if they pass they pass the loose working point of the PF Jet ID discriminator~\cite{jetID}.
-Jets must have $\pt > 30 \GeV$ and $\abs\eta<4.7$.  The $\pt$ and $\eta$ requirements are altered
-for cases where the jet is identified as having likely originated from a b-quark.  Jets likely originating
-from a b-quark are considered if they pass the combined secondard vertex (CSV) version 2 Medium working point are then labeled as b-tagged jets.
+Jets must have $\pt > 30 \GeV$ and $\abs\eta<4.7$. The $\pt$ and $\eta$ requirements are altered
+for cases where the jet is identified as having likely originated from a b-quark. Jets likely originating
+from a b-quark are considered if they pass the combined secondard vertex (CSV) Medium working point 
+are then labeled as b-tagged jets, Section~\ref{sec:reco_b_jet}.
 B-tagged jets have a relaxed $\pt$ requirement but much tighter $\eta$ requirement: $\pt > 20 \GeV$ 
 and $\abs\eta<2.4$.  The tightened $\eta$ requirement necessitates that b-tagged jets are located within
 the detector volume fully covered by the CMS pixel and strip tracker.
@@ -451,6 +455,9 @@ between the simulated backgrounds and data.
 The largest irreducible source of background is the Drell--Yan production
 of $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$. Proper shape and normalization for this
 leading background is critical to the success of the analysis.
+In certain Drell--Yan enriched regions of phase space discrepancies between
+data and simulation can reach as much as 20\% for distributions of $\m_{\ell\ell}$,
+$\pt^{\ell\ell}$, and $\mjj$ in events with two or more jets.
 A dedicated, high purity, $\PZ/\Pgg^*\to\Pgm\Pgm$ control region was
 used to measure reweighting factors for application to all Drell--Yan
 simulated events and is detailed in the Monte Carlo Corrections 
@@ -961,8 +968,10 @@ among the different $\tauh$ decay modes: 1-prong, 1-prong+$\PGpz$, and 3-prong.
 The magnitude of the uncertainty was determined based on the uncertainties on the measured $\tauh$ energy 
 corrections in Section~\ref{sec:htt_tec}. The measurement was conducted in the $\Pgm\tauh$ final state and
 does have some overlap with the $\Pgm\tauh$ channel signal regions. However, the event overlap is found to be
-less than 50\% between the $\tauh$ energy correction/visible $\tauh$ energy scale measurement region and the
-$\Pgm\tauh$ signal region used in this analysis.
+less than 50\% between the $\tauh$ energy correction and visible $\tauh$ energy scale measurement region and the
+$\Pgm\tauh$ signal region used in this analysis. To prevent overconstraining the uncertainties from
+fitting the data twice, the measured uncertainties which are approximately 0.5\% are inflated to the
+value used in the analysis, 1.2\%.
 
 The fit constrains the visible $\tauh$ energy scale uncertainty to about 0.3\%, a 75\% constraint, for all 
 decay modes. The constraint mostly comes from highly populated regions with high $\tauh$ purity, for example,
@@ -1019,7 +1028,8 @@ the \etvecmiss scale leads to an uncertainty of about 10\% in the measured signa
 
 
 \subsubsection{Electron And Muon Energy Scale}
-The uncertainty in the electron energy scale is 2.5\% in the endcaps and 1\% in the barrel of the detector. 
+The uncertainty in the electron energy scale is 2.5\% in the endcaps and 1\% in the barrel of the 
+detector~\cite{Chatrchyan:2014nva}. 
 It is only relevant in the $\Pe\Pgm$ decay channel, where it affects the final distributions shape and yield.
 In all channels, the effect of the uncertainty in the muon energy scale is negligible and is not included
 in the systematic model.
