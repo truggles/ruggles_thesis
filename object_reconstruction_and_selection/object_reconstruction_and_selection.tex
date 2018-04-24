@@ -14,14 +14,14 @@ experiment to fully utilize the particle flow technique in a hadron collider env
 
 \section{Particle Flow Input}
 The CMS detector and the PF reconstruction algorithm compliment each other. 
-The CMS detector features: a highly-segmented tracker well
+The CMS detector features a highly-segmented tracker well
 suited to precise track reconstruction, a fine-grained electromagnetic calorimeter necessary
 to separate the individual energy deposits from particles within ``jets'' and
 for efficient photon and electron identification, a hermetic hadron 
 calorimeter for the measurement and identification of charged and neutral hadrons, 
 a strong magnetic field for the measurement of the momenta of charged particles and to
 separate the calorimeter energy deposits of charged and neutral hadrons within ``jets'', and 
-an excellent muon spectrometer for muon identification and to disentangle the muon
+a muon spectrometer for muon identification and to separate the muon
 tracks from other tracks in the tracker. A schematic of a slice of the CMS detector
 and different physics-objects transversing the detector subsystems can be see in
 Figure~\ref{fig:cms_slice}. The different detector systems all contribute
@@ -49,15 +49,15 @@ and the muon detectors after a collision .
 From these, charged particle tracks are reconstructed in subsequent layers
 mapping the progression of charged particles from the beam axis outwards into the detector
 volume. Attempting to reconstruct tracks from every possible hit combination quickly
-because unreasonable considering the over 70 million tracker pixels and strips which can
+because intractable considering the over 70 million tracker pixels and strips which can
 each record a hit. PF uses a combinatorial track finder based on Kalman 
-Filtering (KF); the algorithm is broken down into three successive steps.
+Filtering (KF)~\cite{Adam:2005cg}; the algorithm is broken down into three successive steps.
 \begin{itemize}
 \item Generate seed tracks from a few hits which are compatible with a charged
 particle trajectory
-\item Gathering other hits along the seed track trajectory when propagated through
+\item Gather other hits along the seed track trajectory when propagated through
 the rest of the tracker subsystem
-\item Final track fitting to determine track properties such as the origin, transverse
+\item Fit the final track to determine track properties such as the origin, transverse
 momentum, and direction.
 \end{itemize}
 Only tracks meeting certain quality standards are kept for analysis. These tracks must
@@ -66,27 +66,28 @@ to be reconstructed with at least eight tracker hits in total, and with at most 
 missing hit along the track trajectory. Tracks must also have a curvature corresponding
 to a momentum greater than 0.9\GeV.
 
-There is a balance that must be struck between imposing tight quality cuts on reconstructed
+There is a balance between imposing tight quality cuts on reconstructed
 tracks, which increases the purity of genuine track within the reconstructed track collection,
 but also decreases the efficiency for reconstructing genuine tracks, and loosening
 quality cuts to reconstruct genuine tracks with a higher efficiency and lower purity.
 After an initial pass through what is called the global combinatorial track finder,
-which has the stringent track quality criteria imposed by the eight hit requirement
+which has the stringent track quality criteria imposed by the eight-hit requirement
 mentioned above, the efficiency to reconstruct
 genuine tracks is roughly 80\% for charged pions with $\pt = 10\GeV$, and 99\%
 for isolated muons. This corresponds to a misreconstructed track rate of
-about 2.5\% for charged pions with $\pt = 10\GeV$, see Figure~\ref{fig:kf_tracking}.
+about 2.5\% for charged pions with $\pt = 10\GeV$~\cite{Sirunyan:2017ulk}, see Figure~\ref{fig:kf_tracking}.
 As hits are recorded in a reconstructed track, they are removed from the available,
 unused hits which can be combined in subsequent passes through the tracking algorithm.
 
-There are ten passes through the tracking algorithm in total. Each pass loosens the track quality criteria,
+There are ten passes through the tracking algorithm~\cite{Sirunyan:2017ulk} in total. 
+Each pass loosens the track quality criteria,
 such as $\chi^2$ and number of hits requirements, beyond the stringent initial criteria.
 This helps to reconstruct difficult to build tracks. Tracks can be difficult to 
 reconstruct for multiple reasons such as detector inefficiencies leading to missing
 detector hits, or particles originating from elsewhere in the detector 
 besides along the beam axis. These tracks could be from hadrons interacting
 within the tracker material before reaching the eight-hits threshold, or from the decay
-of particles with finite life-times. Additionally, there can be difficulty disentangling
+of particles with finite lifetimes. Additionally, there can be difficulty disentangling
 the many tracks within a collimated ``jet'' where many of the tracks are close to or
 nearly overlapping with one another.
 The misreconstruction rate is suppressed in each iterative step despite the loosening
@@ -96,8 +97,11 @@ next iteration and allows moderate efficiency gains for only small misreconstruc
 The efficiency and misreconstruction rate in Figure~\ref{fig:kf_tracking} shows the
 results for i) the initial pass through the tracking algorithm, ii) the results after all
 passes which require the track seed to contain hits in the pixel detector, and iii) the
-final results after considering displaced tracks.
-After all iterations the efficiency is about 90\% for a charged pions with $\pt = 10\GeV$
+final results after considering displaced tracks~\cite{CMS-PAS-TRK-10-003}.
+Displaced tracks are tracks which do not originate from the collision region. They
+can be created from a number of processes included Bremsstrahlung and the 
+inelastic nuclear interaction of particles with the tracker material.
+After all iterations the efficiency is about 90\% for a charged pion with $\pt = 10\GeV$
 for a misreconstruction rate of 3\%.
 
 \begin{figure*}[htbp]
@@ -124,19 +128,19 @@ When energetic photons are radiated from an electron, the pattern recognition in
 may have difficulty accommodating the sudden change in electron momentum. This can cause the track to 
 be reconstructed with a smaller number of hits than would be associated with the true electron
 path. A new collection of tracks is created based on a preselection on the number of hits and 
-the $\chi^2$ for the reconstructed KF-based tracks. The new collection which is a subset of the
+the $\chi^2$ for the reconstructed KF-based tracks. The new collection, which is a subset of the
 KF-based tracks are fit again with a Gaussian-sum filter (GSF)~\cite{gsf_electrons}. Instead of
 modeling the energy loss of particles as a single gaussian probability density function (PDF) like the KF
 algorithm does, the GSF models the energy loss as a mixture of multiple gaussian PDFs. 
 The GSF fitting algorithm is more adapted to electrons than the KF algorithm.
-It allows for sudden and substantial energy losses along the trajectory. The
-additional freedom here allows much better fits for the electron-based tracks and provides
-better estimates for the track origin, trajectory towards the calorimeters, and $\pt$.
+It allows for sudden and substantial energy losses along the trajectory. This
+additional freedom allows much better fits for the electron-based tracks and provides
+more precise$\pt$ estimates~\cite{gsf_electrons}.
 
 Muon tracks are built from a combination of the pixel and strip tracker (inner tracker) information and the
 muon spectrometer information. 
-The hits in the muon spectrometer are quite pure in genuine muon hits. This is because of the
-calorimeters and the solenoid which absorb the vast majority of non-muon particles, except neutrinos, 
+The hits in the muon spectrometer are quite pure in genuine muon hits. This is because the
+calorimeters and the solenoid absorb the vast majority of non-muon particles, except neutrinos, 
 before they reach the muon spectrometer. There are three different categories of muon tracks
 reconstructed using the KF technique:
 \begin{itemize}
@@ -154,7 +158,7 @@ a $\pt > 0.5\GeV$ and a total momentum $p > 2.5\GeV$.
 \end{itemize}
 
 About 99\% of the muons produced within the geometrical acceptance of the muon system are 
-reconstructed either as a global muon or a tracker muon and very often as both.
+reconstructed either as a global muon or a tracker muon and very often as both~\cite{Sirunyan:2017ulk}.
 For muons with $\pt > 200\GeV$, the momentum resolution, based on the inner track, is 
 improved by the inclusion of the track extension to the muon system.
 For muons with $\pt < 200\GeV$, the inner tracker already provides a precise measurement of 
@@ -163,7 +167,7 @@ their momentum.
 
 \subsection{Particle Flow Energy Clusters}
 Energy clusters make up the second basic PF building block. The PF energy
-clustering algorithm used to constructs the energy clusters serves multiple purposes:
+clustering algorithm used to construct the energy clusters serves multiple purposes:
 \begin{itemize}
 \item Detect and measure the energy and direction of stable neutral particles (photons and neutral hadrons)
 \item Separate neutral particles from charged hadron energy deposits
@@ -179,7 +183,8 @@ ECAL barrel allows
 for the clustering to consider all eight adjacent hits, four on the sides and four on the corners.
 The HCAL barrel has a more coarse granularity. Only the four adjacent sides are considered when
 selecting a seed candidate. From the starting seed, topological clusters are grown outward by aggregating
-hits with at least a corner in common with a cell already included in the cluster. Hits must have an energy
+hits with at least a corner in common with a cell already included in the cluster~\cite{Sirunyan:2017ulk}. 
+Hits must have an energy
 in excess of two times the subdetector noise level to be considered for clustering. The energy thresholds
 for seeding a cluster and cluster inclusion threshold are in Table~\ref{tab:pf_cluster_thresholds}.
 
@@ -257,8 +262,8 @@ tracks are linked to energy clusters if the extrapolated trajectory of the track
 angular acceptance of an energy cluster in \etaphi. Energy clusters can be linked between subdetectors as mentioned
 in the case of hadronic energy deposits above which can span both the ECAL and HCAL. A link is established
 when the cluster position in the more granular calorimeter (ECAL) is within the cluster envelope
-in the less granular calorimeter (HCAL). Once PF elements are linked together they are referred to as a PF block which can contain 
-elements associated either by a direct link or by an indirect link through common elements.
+in the less granular calorimeter (HCAL). Once PF elements are linked together 
+they are referred to as a PF block. 
 Particle Flow candidates are selected from the PF blocks based on compatibility with
 different physics-object characteristics and designated quality cuts.
 
@@ -268,13 +273,14 @@ different physics-object characteristics and designated quality cuts.
 Isolated global muons are selected from the global muon track collection by looking at the inner
 tracker tracks and calorimeter 
 energy deposits within a distance $\dr < 0.3$ to the muon trajectory. 
-The sum of the $\pt$ of the tracks and of the $E_{\text{T}}$ of the energy deposits is required not to 
+The sum of the $\pt$ of these tracks and of the $E_{\text{T}}$ of the energy deposits is required not to 
 exceed 10\% of the muon $\pt$. This isolation criterion alone successfully reject hadrons that would
 otherwise be misidentified as muons. No further selection is applied to these muon candidates.
 If the muon track $\pt < 200\GeV$, then the momentum assigned to the muon PF candidate is that of 
 the inner track. For muon tracks with $\pt > 200\GeV$, the momentum assigned is the momentum associated
-with the smallest $\chi^2$ probability from these different track fits: tracker only, tracker and 
-first muon detector plane, global, and global without the muon detector planes featuring a high occupancy.
+with the smallest $\chi^2$ probability from multiple different track fits: tracker only, tracker and 
+first muon detector plane, global, and global without the muon detector planes featuring a high 
+occupancy~\cite{Chatrchyan:2012xi}.
 The PF elements and blocks that make up an identified PF muon candidate are masked against further processing
 to prevent their inclusion in other PF candidates.
 
@@ -285,7 +291,7 @@ working point is only slightly tighter than the baseline criteria for a PF muon 
 a \texttt{PF ID Loose} muon must be either a global or a tracker PF muon. This selection is highly efficient
 for prompt muons.
 
-The \texttt{PF ID Medium} muon working point requires first that muons pass \texttt{PF ID Loose} then
+The \texttt{PF ID Medium} muon working point requires first that muons pass \texttt{PF ID Loose} and then
 applies additional track-quality and muon-quality requirements on the different muon tracks which are
 linked to the PF muon candidate. The number of valid inner tracker
 hits must be greater than 80\%. Additionally, either one of the following criteria must be met:
@@ -300,10 +306,10 @@ track is reasonably compatible with inner tracker-based track
 less than 12
     \2 The muon track kink-finder, which is designed to remove muons produced from in-flight decays, 
 must have a value less than 20
-    \2 Candidate has a segment compatibility score of at least 0.303 which is looser than the value
+    \2 Candidate has a segment compatibility score of at least 0.303, which is looser than the value
 required in Option 1
 \end{outline}
-The \texttt{PF ID Medium} muon working point is still very efficient for prompt muon selection but
+The \texttt{PF ID Medium} muon working point is very efficient for prompt muon selection but
 does bring some additional reduction in fake object selection.
 
 To reject non-prompt or misidentified muons and electrons, a relative lepton isolation is defined as:
@@ -337,7 +343,7 @@ Electron identification is based on information from the inner tracker tracks an
 energy clusters. Because of bremsstrahlung radiation, electron tracks can be much more kinked
 than those for other particles as was discussed above in relation to the GSF algorithm track
 fitting. Additionally, because of radiated bremsstrahlung photons, the resulting energy clusters 
-from an electron propagating through the detector can be spread out in the
+from an electron bending in the magnetic field can be spread out in the
 $\phi$ direction. PF electrons are built from the linking of a GSF track to an
 ECAL-based energy cluster. To suppress the amount of charged hadrons faking electrons, the 
 sum of the energies measured in HCAL hits behind ($\dr < 0.15$) 
@@ -348,8 +354,8 @@ direction is chosen to be that of the GSF track.
 
 Before being saved to the PF electron collection, electron candidates must satisfy additional
 identification criteria targeted at reducing electron fakes. Up to fourteen variables are
-fed into a Boosted Decision Tree (BDT) which determines the passing PF electrons. The BDT
-input variables include track and energy cluster details such as:
+fed into a Boosted Decision Tree (BDT) which determines the passing PF electrons~\cite{Sirunyan:2017ulk}. 
+The BDT input variables include track and energy cluster details such as:
 \begin{itemize}
 \item Amount of energy radiated off the GSF track
 \item Distance between the GSF track extrapolation to the ECAL entrance and the position of the ECAL cluster
@@ -363,11 +369,11 @@ They are retained as PF photons if they are isolated from other tracks and calor
 and if the ECAL energy distribution and the ratio between the HCAL and ECAL energies, $H/E$, are 
 compatible with those expected from a photon shower. Similar to the PF masking after the muon 
 reconstruction, tracks and energy clusters used to
-build PF electron and photons are masked from further processing simplifying the task ahead
+build PF electron and photons are masked from further processing, simplifying the task ahead
 for charged and neutral hadron identification.
 
 There are additional electron identification requirements used in these analyses which are tighter
-than the PF electron criteria. The additional identification criteria relies on a multivariate (MVA) discriminant
+than the PF electron criteria. The additional identification criteria rely on a multivariate (MVA) discriminant
 which combines many of the same variables used in the PF electron BDT~\cite{Khachatryan:2015hwa} 
 and adds some additional energy cluster distribution variables such as $\sigma_{i\eta i\eta}$ and
 $\sigma_{i\phi i\phi}$ cluster shape covariance. The analyses use
@@ -421,7 +427,7 @@ All particles reconstructed in the event are used to determine the missing trans
 
 
 \section{Composite Object Identification and Selection}
-Composite objects reconstructed by PF cluster together physics-objects which likely
+Composite objects reconstructed by PF are clustered together into physics-objects which likely
 resulted from the jet fragmentation or hadronization process. The three groups used in these
 analyses are discussed below.
 
@@ -443,11 +449,14 @@ corrected via calibrations based on simulation and data~\cite{CMS-JME-10-011}.
 \label{sec:reco_b_jet}
 The combined secondary vertex (CSV) algorithm is used to identify jets that likely resulted
 from a b quark decay, a ``b-jet''~\cite{CMS:2016kkf, Chatrchyan:2012jua}. 
+Algorithms designed for b-jet identification exploit the long lifetime of b-hadrons 
+which can be present in jets originating from the hadronization of b-quarks. This long 
+lifetime results in a decay of the b-hadron that is displaced with respect to the primary vertex. 
 The CSV algorithm uses track-based lifetime information together with 
 the reconstructed secondary vertices associated with the jet to provide a likelihood ratio 
 discriminator for b-jet identification. The b jet identification working point chosen in the $\htt$ analyses 
 gives an efficiency for identifying genuine b jets of about 70\%, and for misidentifying light flavor jets
-as b jets of about 1\%.
+as b jets of about 1\%~\cite{CMS:2016kkf}.
 
 
 \subsection{Taus}
@@ -456,13 +465,13 @@ Hadronically decaying $\Pgt$ leptons are reconstructed in PF with the hadron-plu
 algorithm~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002} which is seeded with the collection of 
 anti-\kt jets discussed above. The HPS algorithm reconstructs $\tauh$ candidates based on their
 compatibility with one of the primary $\tau\to\tauh$ decay modes listed in Table~\ref{tab:tau_dms}.
-A large number of decay modes include decays of $\PGpz$ which immediately decay as 
+A large number of decay modes include decays of a $\PGpz$ which immediately decay as 
 $\PGpz  \to  \gamma\gamma$. The $\PGpz$ are
-reconstructed in strips of \etaphi elongated in the $\phi$ direction to catch photon conversions.
+reconstructed in strips of \etaphi elongated in the $\phi$ direction (due to magnetic bending) to catch photon conversions.
 Since the start of Run-II, the HPS algorithm has moved from using a fixed width strip,
 $0.05 \eta \times 0.20 \phi$, to a dynamic width strip where the width depends on the 
-$\pt$ of the electron or photon used to seed the strip. More dynamic strip details are in the following paragraph.
-Based on the number of
+$\pt$ of the electron or photon used to seed the strip. More dynamic strip details are 
+provided in the following paragraph. Based on the number of
 charged hadrons and $\PGpz$s, the $\tauh$ candidate is assigned a decay mode. 
 The invariant mass of the $\tauh$ is calculated from all hadrons and $\PGpz$ which are
 assigned as the $\tauh$ decay products. For the $\tau$
@@ -519,8 +528,8 @@ to the energy or momentum of the $\tauh$. Widening the fixed width strips can be
 these escaping particles. However, considering that more boosted $\tauh$ will have a more 
 collimated structure, it is also helpful to narrow the strip at higher $\tauh$ $\pt$ to suppress
 pileup or other non-$\tau$ contributions when possible. The strip widths are calibrated to
-on simulations that target retaining 95\% of the $\PGpz$ decay products, see Figure~\ref{fig:tau_dyn_strip}.
-Strips containing one or more electron of photon constituent and passing a cut of $\pt > 2.5\GeV$
+simulations that target retaining 95\% of the $\PGpz$ decay products, see Figure~\ref{fig:tau_dyn_strip}.
+Strips containing one or more electron or photon constituent and passing a cut of $\pt > 2.5\GeV$
 for the sum of the electrons and photons are kept as $\PGpz$ candidates. 
 
 \begin{figure*}[htbp]
@@ -538,7 +547,7 @@ to define the widths of the dynamic strip.
      \label{fig:tau_dyn_strip}
 \end{figure*}
 
-A multivariate (MVA) discriminator~\cite{Hocker:2007ht}, including isolation, shape-based variables
+A multivariate (MVA) discriminator~\cite{Hocker:2007ht, CMS-PAS-TAU-16-002}, including isolation, shape-based variables
 and lifetime information, is used to reduce the rate for  quark and gluon initiated jets
 to be identified as $\tauh$ candidates. The working point used in the $\htt$ analysis, \texttt{Tight Tau MVA},
 has an efficiency of about 60\% for genuine $\tauh$,
@@ -547,10 +556,11 @@ of $\tauh$ originating from a $\PZ$ boson. A looser working point is used in the
 production analysis ZH final states, \texttt{Medium Tau MVA}, which as an efficiency of 65\% for genuine
 $\tauh$ with a 2\% misidentification rate. In the $\PW\PH$ final states, the \texttt{Very Tight Tau MVA}
 is used in certain circumstances and has a 55\% efficiency for a 1\% misidentification rate.
+Details on the $\tauh$ MVA working points can be found in Reference~\cite{CMS-PAS-TAU-16-002}.
 
 Electrons and muons can both be reconstructed as $\tauh$ candidates, usually into the 1-prong or
 1-prong+$\PGpz$ decay modes. For electrons this can happen easily when an electron emits a bremsstrahlung
-photon mimicking a $\PGpz$s in the decay mode reconstruction. MVA discriminants have been developed 
+photon mimicking a $\PGpz$ in the decay mode reconstruction. MVA discriminants have been developed 
 which specifically target the suppression of electrons and muons being misidentified as 
 $\tauh$~\cite{Khachatryan:2015dfa, CMS-PAS-TAU-16-002}.
 A range of anti-e and anti-$\Pgm$ discriminant working points are used in these analyses. The choice
