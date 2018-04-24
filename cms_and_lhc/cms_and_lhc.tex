@@ -14,12 +14,14 @@ are both necessary to the data we gather and analyze.
 The LHC is a hadron accelerator and collider built in the existing 26.7 km tunnel,
 under France and Switzerland, that was originally used for the Large Electron-Positron (LEP)
 collider. It is a two ring system with counter-rotating beams which are accelerated by
-radio frequency (RF) cavities spread along the rings. The LHC uses superconducting magnets to 
+radio frequency (RF) cavities located in dedicated sections along the LHC ring. 
+The LHC uses superconducting magnets to 
 bend the path of the protons around the circular path of the ring and also to steer
 the proton beams into collisions. The original design center-of-mass energy for the LHC
-was 14 \TeV, 7 \TeV per beam. The 27 km LHC tunnel is on average 100 m underground.
+was 14\TeV, 7\TeV per beam. The 27 km LHC tunnel is on average 100 m underground.
 The original LEP tunnel was built underground to help offset the high cost of land
-acquisition in the Swiss and French countrysides. Additionally, there are physics
+acquisition in the Swiss and French countrysides and to reduce the emission of radiation
+from the experiments into the countryside. Additionally, there are physics
 benefits from housing the detectors underground coming from a reduced rate of cosmic
 ray background~\cite{Voss:2009zz}.
 
@@ -43,8 +45,8 @@ quark-gluon plasmas from heavy ion collisions
      \includegraphics[width=1.0\textwidth]{cms_and_lhc/plots/lhc_complex.png}
      \caption{
 Diagram of the LHC accelerator complex showing the five accelerators used to accelerate
-protons to their design collision energy of 7 \TeV. For the LHC Run II, the highest energy 
-achieved for protons is 6.5 \TeV.
+protons to their design collision energy of 7\TeV. For the LHC Run II, the highest energy 
+achieved for protons is 6.5\TeV.
      }
      \label{fig:lhc_complex}
 \end{figure*}
@@ -55,9 +57,9 @@ achieved for protons is 6.5 \TeV.
 The LHC accelerator complex has been built up over the years as technology progressed,
 physics goals advanced, and continued funding allowed for the expansion and repurposing
 of previous accelerators. The LHC acceleration injector chain begins with the LINAC2 linear
-accelerator which accelerates protons from rest to an energy of 50 \MeV. 
-The protons come from a bottle of hydrogen gas which feeds hydrogen
-into the source chamber of the LINAC2. A large electric field is applied in the source
+accelerator which accelerates protons from rest to an energy of 50\MeV. 
+The protons come from a bottle of hydrogen gas which feeds
+the source chamber of the LINAC2. A large electric field is applied in the source
 chamber which breaks the electron-proton bonds separating the electrons from the protons.
 The positive electric charge of the protons allows them to be accelerated by electric
 fields. The LINAC2 and the subsequent circular accelerators all use radio frequency (RF)
@@ -67,10 +69,10 @@ chain; each grouping of protons accelerated in the LINAC2 eventually contributin
 circulating proton bunches used for collisions in the LHC.
 
 The LINAC2 feeds into the circular Proton Synchrotron Booster accelerator boosting
-the protons to an energy of 1.4 \GeV, or 91.6\% c, followed by the Proton Synchrotron further
-accelerating the protons to 26 \GeV, 99.9\% c. Next comes the Super Proton Synchrotron
-accelerating the protons to 450 \GeV, the input energy for the LHC. From 450 \GeV the LHC 
-will accelerate the proton bunches to their maximum energy of 6.5 \TeV before 
+the protons to an energy of 1.4\GeV, or 91.6\% c, followed by the Proton Synchrotron further
+accelerating the protons to 26\GeV, 99.9\% c. Next comes the Super Proton Synchrotron
+accelerating the protons to 450\GeV, the input energy for the LHC. From 450\GeV the LHC 
+will accelerate the proton bunches to their maximum energy of 6.5\TeV before 
 collisions~\cite{Voss:2009zz}.
 A diagram of the LHC accelerator complex can be seen in Figure~\ref{fig:lhc_complex}.
 
@@ -84,8 +86,8 @@ the magnetic field and proton velocity bending the trajectory into a circular pa
 relies on 1232 15-m long superconducting dipole magnets, see Figure~\ref{fig:lhc_dipole},
 to maintain the roughly circular path around the LHC.
 The maximum magnetic field the superconducting dipole magnets can attain is 8.33 T which
-corresponds to a proton beam energy of 7 \TeV. However, for physics operations the field is limited to 
-6.5 \TeV due to the difficult and time committment of training the dipole magnets to 7\TeV~\cite{7372416-ieee-dipole}.
+corresponds to a proton beam energy of 7\TeV. However, for physics operations in Run-II, the field was limited to 
+6.5\TeV due to the time consuming process of retraining the dipole magnets to 7\TeV~\cite{7372416-ieee-dipole}.
 The LHC dipole magnets must be cooled by liquid helium to 1.9 Kelvin to maintain their superconducting
 characteristics~\cite{lhc_magnets}. The superconducting coils are made from NbTi Rutherford
 cables~\cite{1018583}.
@@ -100,9 +102,9 @@ surrounded by the the superconducting coils.
      \label{fig:lhc_dipole}
 \end{figure*}
 
-The LHC superconducting dipole magnets are complimented by 392 main superconducting quadrupole
+The LHC superconducting dipole magnets are complemented by 392 main superconducting quadrupole
 magnets, 688 sextupole magnets, and 168 octupole-type magnets. These additional magnets are dedicated to proton 
-beam focusing keeping the beam from spreading out laterally at the collision point. The beam has
+beam focusing, keeping the beam from spreading out laterally at the collision point. The beam has
 much more lateral spread throughout the rest of the LHC ring~\cite{lhc_magnets, Voss:2009zz}. 
 
 The accelerator chain and superconducting magnets of the LHC provide a proton beam segmented
@@ -110,7 +112,9 @@ into discrete bunches which can be focused, defocused, and otherwise adjusted to
 rate of proton-proton collisions~\cite{Benedikt:2004wm}. Basic proton 
 beam design parameters are detailed in Table~\ref{tab:lhc_beam}~\cite{Benedikt:2004wm}.
 The bunch spacing for the proton bunches in the beam corresponds to a bunch crossing rate,
-or collision rate, of 40 MHz.
+or collision rate, of 40 MHz. The bunch length is measured in ns which is the
+relevant value for determining the frequency of the LHC RF cavities (400 MHz) used
+to accelerate the beam; this length roughly corresponds to 1 meter.
 
 \begin{table*}[htbp]
 \centering
@@ -123,14 +127,12 @@ Peak Luminosity        & [$\textrm{cm}^{-2}\textrm{s}^{-1}$]   & $1 \times 10^{3
 Number of Bunches   & N/A  &   2808    &  2208     \\
 Bunch Spacing      & [ns]  &       25      & 25        \\
 Protons per Bunch   &  N/A     &   $1.15 \times 10^{11}$   & $1.25 \times 10^{11}$      \\
-Bunch Length, total (4$\sigma$) & [ns] &    1.0     &   1.0 \\
+Bunch Length, total (4$\sigma$) & [ns] &    2.5     &   2.5 \\
 \hline
 \end{tabular}
 \caption{
 LHC beam characteristics after the LHC has increased the energy of the proton beam from
-the input 450 \GeV to the target collision energy. The bunch length is measured in ns which is the
-relevant value for determining the frequency of the LHC RF cavities (400 MHz) used
-to accelerate the beam; this length roughly corresponds to 1 meter.
+the input 450\GeV to the target collision energy.
 }
 \label{tab:lhc_beam}
 \end{table*}
@@ -140,8 +142,9 @@ to accelerate the beam; this length roughly corresponds to 1 meter.
 \section{The CMS Experiment}
 \label{sec:cms}
 The Compact Muon Solenoid (CMS) detector is located at Point 5 along the LHC ring near Cessy, France. The
-design of the CMS detector was inspired by decades of previous high energy particle physics detectors and has as its
-primary purpose the detection and measurement of the characteristics of the Standard Model Higgs boson. The 
+design of the CMS detector was inspired by decades of previous high energy particle physics detectors and has as 
+one of its
+primary purposes the detection and measurement of the characteristics of the Standard Model Higgs boson. The 
 detector was designed and built targeting high efficiency detection and excellent energy resolution for specific Higgs 
 boson decay modes. 
 The strong, 3.8 T magnetic field, is created by a superconducting magnet with a central bore of 6.3\m.
@@ -158,7 +161,8 @@ cylinder 15.0 m in diameter and 28.7 m in length. It has a mass of approximately
 The CMS detector is composed of many individual subdetectors. Progressing radially outwards from the collision point,
 there is first the silicon pixel tracker then the silicon strip systems. Next is the 
 electromagnetic calorimeter followed by the hadronic calorimeter. These systems are all contained
-within the bore of the CMS superconducting magnet. After the the superconducting magnet, there are additional subsystems
+within the bore of the CMS superconducting magnet. After the superconducting magnet, there are 
+additional gas ionization detector subsystems for muon detection
 embedded within the steel flux-return yoke. In the central region of the detector, there is an 
 outer portion of the hadronic calorimeter, and lastly, the muon spectrometer. These systems can all be viewed in
 Figure~\ref{fig:cms_detector}.
@@ -178,14 +182,14 @@ The first level of the trigger system, the L1 Trigger, is composed of custom har
 from the calorimeters and muon detectors to select interesting events at a rate of around 100 kHz. The second level of
 the trigger, known as the high-level trigger (HLT), consists of a farm of commercial processors further
 filtering out less interesting data events resulting in a final event rate of about 1 kHz which is stored
-for further processing an analysis.
+for further processing and analysis.
 
 
 
 \subsection{Geometry}
 To understand the CMS detector, an understanding of the geometry and coordinate system used by the 
 CMS experiment is necessary. The CMS detector is a hermetic, cylindrical particle detector surrounding
-a central region where the proton-proton collisions delivered LHC occur. This central
+a central region where the proton-proton collisions delivered by they LHC occur. This central
 point, inside the LHC beam pipe is designated as the origin for the CMS coordinate system, (0,0,0) in
 $(x, y, z)$ coordinates. Positive $x$ points towards the center of the LHC ring.
 Positive $y$ points vertically upwards. The positive $z$ is along the LHC ring in the
@@ -219,8 +223,8 @@ reinforced NbTi conductor. When in operation, the magnet is kept in a supercondu
 by cooling it with liquid helium to a temperature of 4.6 Kelvin. With a nominal current
 of 19.14 kA, the superconducting solenoid magnet is able to produce a roughly uniform
 magnetic field of 3.8 T within its central bore~\cite{Chatrchyan:2008zzk}. The magnetic field created is approximately
-100,000 times stronger than the Earth's magnetic field. The stronger the magnetic fields the
-more highly curved a particle's trajectory will be leading to better momentum and energy measurements.
+100,000 times stronger than the Earth's magnetic field. The stronger the magnetic field the
+more highly curved a particle's trajectory will be, leading to better momentum and energy measurements.
 The central bore of the magnet is only 6.3 m in diameter
 leaving limited room for the CMS tracker and calorimeter systems.
 
@@ -261,7 +265,7 @@ Double lines indicate back-to-back modules which deliver stereo hits.
 \end{figure*}
 
 The pixel tracker contains 66 million individual pixels. The strips tracker
-contains 9.3 million individual strips. This phenomenal resolution is necessary
+contains 9.3 million individual strips. The high granularity is necessary
 because of the extremely high particle flux through the tracker and need to
 reconstruct tracks which are close to each other.
 % During 2016 data
@@ -270,11 +274,11 @@ reconstruct tracks which are close to each other.
 %interactions during a single bunch crossing. 
 The tracker measures the $\pt$ of 
 charged hadrons in the barrel region with a resolution of 1\% for $\pt < 20\GeV$.
-Details of track reconstruction are in Section~\ref{sec:pf_tracks}.
+Details of track reconstruction are discussed in Section~\ref{sec:pf_tracks}.
 
 A serious concern during the design of the tracker systems was the amount of
 material used to build the systems. All of the electronics, hardware, 
-cooling systems, and wiring contribute to the tracker material budget. Any and all material
+cooling systems, and wiring contribute to the tracker material budget. Material
 located between the interaction region and the calorimeters will reduce the precision 
 of the calorimeter energy measurements as well as potentially degrade the track-based
 measurement of the energy of a particle. This is because of potential electromagnetic
@@ -314,7 +318,7 @@ $\tauh$ identification and isolation.
 
 The ECAL barrel crystals are 230 mm in length corresponding to a
 radiation length of 25.8 $X_{0}$ which is sufficient to contain 98\% of the energy
-of electrons and photons up to 1 \TeV. Despite the large number of radiation lengths,
+of electrons and photons up to 1\TeV. Despite the large number of radiation lengths,
 the crystals have an interaction length, $\lambda_{l}$, of about 1.0. This causes
 roughly two thirds of the hadrons passing through the ECAL to start showering
 within the ECAL~\cite{Chatrchyan:2008zzk}. 
@@ -325,14 +329,14 @@ The scintillation decay time of the $(\textrm{PbWO}_{4})$ crystals is approximat
 same order of magnitude as the LHC bunch crossing time; about 80\% of the light is 
 emitted in 25 ns~\cite{dafinei_auffray_lecoq_schneegans_1994}.
 This provides the fast response necessary to separate out-of-time ECAL energy deposit
-from a given LHC bunch crossing. To read-out the energy deposited in each barrel
+from a given LHC bunch crossing. To read out the energy deposited in each barrel
 crystal, there is an avalanche photodiode (APD) mounted to the backside-facing surface
 of the crystal. For the endcap crystals, a more radiation hardened readout is used,
 vacuum phototriodes (VPTs). typical ECAL electronics noise 
-$\sigma ^{\text{ECAL}} _{\text{noise}}$ is measured to be $\approx$ 40 (150) \MeV 
+$\sigma ^{\text{ECAL}} _{\text{noise}}$ is measured to be $\approx$ 40 (150)\MeV 
 per crystal in noise the barrel (endcaps).
-The energy resolution of the ECAL barrel crystals derived from test beams is given by
-Equation~\ref{eqn:ecal_res}~\cite{1748-0221-8-09-P09009}.
+The ECAL barrel energy resolution for electrons in beam tests has been measured 
+and is given by Equation~\ref{eqn:ecal_res}~\cite{Adzic:2007mi}.
 
 \begin{equation}
 \label{eqn:ecal_res}
@@ -357,7 +361,7 @@ The crystals are inclined towards the interaction region.
 The hadronic calorimeter (HCAL) provides necessary energy measurements
 to reconstruct neutral hadrons and total event energy sums, see Section~\ref{sec:obj_reco_met}. 
 These particle are the primary measurable constituents in ``jets'' and hadronically decay $\tau$
-leptons. Additionally, measurement of the energy imbalance from a collision
+leptons. Additionally, measurement of the transverse energy imbalance from a collision
 can indicate the presence of neutrinos or possibly exotic particles~\cite{CMS-Proposal}.
 The HCAL is segmented into four calorimeters: the barrel detector, the endcap detector,
 the forward hadronic detector, and the barrel outer detector. 
@@ -370,23 +374,27 @@ same area as 25 ECAL crystals.
 The HCAL barrel occupies the space between the ECAL and the superconducting magnet
 from a radial distance of 1.77 m to 2.95 m form the beam line. Particles propagating
 outwards at an angle of $\eta = 0$ will encounter the thinnest portion of the
-HCAL barrel corresponding to 5.82 $\lambda_{l}$. The effective thickness increases
-with $\eta$ resulting in 10.6 $\lambda_{l}$ at $\abs\eta = 1.3$~\cite{Chatrchyan:2008zzk}.
-The HCAL detector is depicted in Figure~\ref{fig:cms_hcal}.
+HCAL barrel corresponding to 5.82 $\lambda_{l}$. 
+The HCAL barrel effective thickness increases with polar angle ($\theta$) 
+as $1/sin\theta$, resulting in 10.6 $\lambda_{l}$ at 
+$\abs\eta = 1.3$. The electromagnetic crystal calorimeter in front of HB adds about 
+1.1 $\lambda_{l}$ of material~\cite{Chatrchyan:2008zzk}.
 
-To increase the effective
-thickness in the barrel region, $\abs\eta < 1.3$, an outer hadronic calorimeter is placed 
-outside the superconducting magnet extending the barrel calorimeter
-effective thickness to a minimum of 11.8$\lambda_{l}$ in the barrel. 
+To increase the effective thickness in the barrel region, $\abs\eta < 1.3$, an outer hadronic calorimeter is placed 
+outside the superconducting magnet. This helps to identify late starting showers and 
+to measure the shower energy deposited after the HCAL barrel detector.
+The outer HCAL detector utilises the solenoid coil as an additional absorber equal to 
+$1.4/sin\theta$ interaction lengths~\cite{Chatrchyan:2008zzk}.
 The HCAL endcap system partially overlaps with the barrel detector and ranges from
 $1.3 < \abs\eta < 3.0$.
+The HCAL detector is depicted in Figure~\ref{fig:cms_hcal}.
 
 The forward hadronic calorimeter, located
-11.2 m from the interaction point, extend the HCAL $\eta$ coverage over $3 < \abs\eta < 5.2$.
+11.2 m from the interaction point, extends the HCAL $\eta$ coverage over $3 < \abs\eta < 5.2$.
 The high particle and radiation flux, at high $\abs\eta$ values
 severely limits the types of detector systems which can survive years of LHC operating
-conditions. On average, 760 \GeV per proton-proton interaction is deposited into the forward 
-calorimeters, compared to only 100 \GeV for the rest of the detector~\cite{Chatrchyan:2008zzk}.
+conditions. On average, 760\GeV per proton-proton interaction is deposited into the forward 
+calorimeters, compared to only 100\GeV for the rest of the detector~\cite{Chatrchyan:2008zzk}.
 Because of this, the forward hadronic calorimeter is not the same style sampling
 calorimeter like the rest of HCAL. Instead it uses Cherenkov-based, 
 radiation-hard, fused-silica quartz fibers embedded in grooves within the steel structure
@@ -404,11 +412,10 @@ For the forward HCAL system the energy resolution is~\cite{Baiatian:951395},
 \end{equation}
 These two equations show the much poorer energy resolution of HCAL compared to ECAL.
 There are multiple reasons for this include the fact that the HCAL is a sampling 
-calorimeter thus much of the energy deposits occur in absorber layers and the 
-size of the deposits must be estimated and calibrated for.
+calorimeter. Much of the energy deposits in HCAL occur in absorber layers reducing
+the amount of photons entering the scintillator material available to the readout electronics.
 Additionally, typical HCAL electronics noise $\sigma ^{\text{HCAL}} _{\text{noise}}$ 
-is measured to be $\approx$ 200 MeV per tower, about 5 times the noise level of
-the ECAL barrel crystals, but comparable to the ECAL endcap crystals.
+is measured to be $\approx$ 200\MeV per tower.
 
 \begin{figure*}[htbp]
 \centering
@@ -425,7 +432,7 @@ effective thickness of the HB detector increases with increasing $\abs\eta$.
 
 
 \subsection{Muon System}
-With ``Muon'' in the name of the experiment, it is clear that the muon spectrometer
+The muon spectrometer
 is important to the physics goals of the CMS experiment. Excellent muon reconstruction, 
 identification, and momentum measurement lead to a high purity of reconstructed
 muons and makes the system very useful for selecting data events to store.
@@ -448,7 +455,7 @@ When passing through ionizing gas detectors, charged particles leave a trail of 
 molecules which can be detected and measured.
 
 The drift tubes are used in the barrel region
-because of the relatively low expected occupancy rate and the relatively low strength of the local
+because of the relatively low occupancy rate and the relatively low strength of the local
 magnetic field (which is well contained in the flux-return yoke through the barrel region).
 The DTs rely on 172,000 2.4 m long sensitive wires maintained at a high voltage to detect the ionized traces
 of passing charged particles. The wires are housed in a drift cell with a maximum path length
@@ -502,12 +509,13 @@ built from RPCs which cover the barrel and a portion of the endcap
 region of the detector, $\abs\eta < 1.6$. The RPCs are gaseous parallel-plate ionizing gas 
 detectors with two gas chambers per module. The RPC system is used to compliment the excellent spacial resolution of the
 DTs and CSCs with a high precision timing measurement that can resolve which LHC bunch
-crossing a certain energy deposit is associated. The timing resolution is comparable
-to that of scintillator-based detectors~\cite{rpc_dev}.
+crossing a certain energy deposit is associated with. The timing resolution is comparable
+to that of scintillator-based detectors~\cite{rpc_dev}. The RPCs are also used to 
+resolve x-y ambiguity from the DTs and CSCs when applicable.
 
 The RPCs are constructed with two chambers per module that are both operated in avalanche mode.
-Common pick-up read-out strips are located in between the two chambers. With the common
- read-out strips, the total induced signal is the sum total of the signal in each of the
+Common pick-up readout strips are located in between the two chambers. With the common
+ readout strips, the total induced signal is the sum total of the signal in each of the
 chambers. The two-fold signal allows the RPCs to operate at a lower voltage than a single
 chamber detector and leads to increased efficiency. 
 The RPC subsystem is operated with a nominal gas mixture of 
@@ -533,7 +541,7 @@ information from each of the CMS subdetectors, make a rapid assessment if the th
 associated with a specific LHC bunch crossing is worth storing for future physics analysis,
 and finally deliver the event content to storage. The 40 MHz bunch crossing rate of
 the LHC makes this a remarkable challenge. The Trigger and DAQ system must operate rapidly
-and in close synchronization so that the event content read-out by each subdetector is attributed
+and in close synchronization so that the event content read out by each subdetector is attributed
 to the proper LHC bunch crossing. In total, the trigger system reduces the throughput rate from the
 initial 40 MHz to a storage rate of around 1 kHz. In certain circumstances, a technique called
 ``data parking'' is used to store lower priority events passing the HLT. Parked events undergo
@@ -548,16 +556,17 @@ on available storage space~\cite{CMS-Proposal}.
 
 \subsubsection{Level-1 Trigger}
 The CMS Trigger system is broken down into two tiers. This approach relies on
-the first level, the Level-1 (L1) Trigger, to assess basic event content from each LHC
-bunch crossing and make an initial determination of whether the event appears interesting.
+the first level, the Level-1 (L1) Trigger, to assess a reduced set of muon and calorimeter 
+data from each LHC
+bunch crossing and make an initial determination of whether an event appears interesting.
 The L1 Trigger reduces the input 40 MHz rate to a more manageable
 100 kHz. The L1 Trigger is restricted to 4 $\mu$s of latency
 to make the determination of whether the event should be passed the the next tier or whether
 the event should be deleted~\cite{Khachatryan:2016bia}. 
 The speed and throughput requirements of the L1 Trigger necessitate that the system 
 is built from dedicated, custom hardware. The latency requirement eliminates
-the possibility of using inner tracker information as well as full ECAL crystal-level
-granularity.
+the possibility of using inner tracker information, due to its 7 $\mu$s readout time, 
+as well as full ECAL crystal-level granularity.
 
 The L1 Trigger utilizes input from the calorimeter subsystems, ECAL and HCAL, and the muon 
 subsystems, DT, CSC, and RPC. A systems flow chart of the L1 Trigger is in
@@ -582,7 +591,7 @@ ECAL crystals~\cite{Khachatryan:2016bia}.
 
 Following the 18 Layer-1 CTP7s is the Calorimeter Layer-2 trigger which further aggregates
 data from a singular event so that one Layer-2 hardware card (MP7) has calorimeter data for
-the full detector. This allows computation
+the full detector~\cite{Cadamuro:2017slr}. This allows computation
 of full event-based characteristics like the missing transverse energy. Refer to
 Section~\ref{sec:obj_reco_met} for a description of missing transverse energy. A detailed
 layout of the L1 calorimeter trigger can be found in Figure~\ref{fig:cms_l1t} beginning
@@ -611,7 +620,7 @@ The Calorimeter Layer-1 Trigger systems was designed and built by the University
 Wisconsin--Madison and is currently operated by a team of engineers, research
 scientists, and graduate students. I was part of the team of graduate students maintaining
 the system and would regularly be on-call in case of any trigger related issues. The
-excellent design and engineering that built the Layer-1 CTP7 hardware and firmware
+excellent design and engineering that built the calorimeter trigger Layer-1 CTP7 hardware and firmware
 has resulted in a very robust system. More often than not, the Layer-1 on-call
 helps representatives from other subdetector systems diagnose their detector and link related problems.
 
@@ -623,11 +632,12 @@ event rate, from 40 MHz to 100 kHz, allows for a higher latency trigger which
 has access to information from all detector subsystems at full granularity.
 Specifically, the HLT has access to full ECAL crystal granularity and
 information from the inner tracker subsystem. At the start of Run 2, the HLT
-was composed of 15,000 commercially available CPU cores running Scientific
+was composed of 15,000 commercial CPU cores running Scientific
 Linux~\cite{cms_daq_7097437}. The HLT reconstructs events in a similar way
-to what is used offline for even reconstruction, see Section~\ref{sec:obj_reconstruction}. 
-The exception is that the HLT algorithm is optimized to run quicker with some small sacrifices 
-in precision which are mostly related to the track reconstruction 
+to what is used offline for event reconstruction, see Section~\ref{sec:obj_reconstruction}. 
+The exception is that the HLT algorithm is optimized to run with a hierarchical set of
+algorithms of increasing execution time and complexity. Some sacrifices 
+in precision are made mostly related to the track reconstruction 
 algorithms~\cite{Khachatryan:2016bia}.
 
 The HLT event processing is centered around the concept of an \texttt{HLT path}.
@@ -649,7 +659,7 @@ passing selection criteria move to the next sequence which adds track informatio
 from the inner tracker to calculate the isolation of the associated ``jet''.
 Only after ``jets'' are determined to be well-isolated is the full HLT event 
 reconstruction run~\cite{Khachatryan:2016bia}. This reduces computing time significantly
-and keeps the $\tauh$ paths within the roughly 200 ms time requirement for
+and keeps the $\tauh$ paths within the roughly 200 ms average processing time requirement for
 the HLT.
 
 Just like the L1 Trigger, the HLT is used to decide if an event should progress
