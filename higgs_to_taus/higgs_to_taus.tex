@@ -32,8 +32,8 @@ $\Pgt_{e}\Pgt_{\mu}$ denoted here as $\Pe\Pgm$, and lastly, $\tauh\tauh$ denoted
 This combination of final states covers about 94\% of all possible $\Pgt\Pgt$ final states.
 The different $\Pgt\Pgt$ final states will be referred to as different channels in the following pages.
 We ensure uniqueness between the four studied channels be applying veto criteria to events based
-on the number of reconstructed loosely identified electrons and muons. This ensures that 
-no data or simulated event is double counted in two channels.
+on the number of reconstructed loosely identified electrons and muons, see Section~\ref{sec:htt_obj_sel}. 
+This ensures that no data or simulated event is double counted in two channels.
 
 Selected events are classified into three different categories targeting different characteristics
 of the gluon fusion and VBF production topologies. The categories are defined according to the
@@ -55,72 +55,103 @@ consistent with a objects that are searched for as part of the analysis strategy
 
 \subsection{Triggers}
 \label{sec:htt_triggers}
-Selected events are required to to have fired a high level trigger consistent with their categorized final
-state channel. For the $\Pgm\tauh$ channel, events are selected using a combination
-of a single isolated muon trigger as well as a cross trigger selecting events with an isolated muon and
-an isolated $\tauh$. The $\Pgm\tauh$ cross trigger allows for a lower $\pt$ threshold
-on the selected muon. In contrast, due to the HLT menu available in 2016, the $\Pe\tauh$ cross triggers
-do not bring a substantial increase in acceptance and were not used in this analysis.
-For the $\Pe\tauh$ channel, events are selected using only a trigger firing on a 
-single isolated electron. For the $\Pe\Pgm$ channel, events are selected with electron-muon cross
-triggers requiring an isolated online electron and an isolated online muon. There are two 
-different electron-muon cross triggers used with their HLT $\pt$ thresholds detailed following.
-For the $\tauh\tauh$ channel, events are selected requiring two loosely isolated $\tauh$ 
-with $\pt$ over 35\GeV.
-The HLT paths used and their online $\pt$ thresholds are detailed in table~\ref{tab:htt_hlt_triggers}.
+Selected events are required to to have passed a high level trigger consistent with their categorized final
+state channel. For leptons at the HLT, there are multiple isolation and identification working points.
+Depending on the physics needs of an HLT path, a working point will be selected that leads to the highest
+efficiency possible while maintaining a rate which fits into the allocated rate budget. Descriptions of the working points
+can be found in References~\cite{Khachatryan:2016bia, CMS-PAS-TAU-16-002, Khachatryan:2015hwa}.
 
-Due to changing data gathering conditions and a changing HLT menu throughout 2016 data taking, the HLT path
-requirements changed throughout 2016 and are era dependent. During latter eras, at higher instantaneous 
-luminosity, some HLT paths became disabled or prescaled. The study avoids using any prescaled
-HLT paths. For the $\Pgm\tauh$ channel this 
-leads to changes in the $\abs\eta$ requirement on the online muon in the single muon triggers.
-There are two muon-tau cross triggers available throughout 2016. One of them requires only the
-presence of a single muon at the Level-1 trigger and has ``SingleL1'' appended to its path
-name. The other requires the presence of both a muon and a $\tauh$ at the Level-1 trigger.
-The single electron trigger used in the $\Pe\tauh$ channel remained constant through the year.
-Due to changing pileup conditions and increasing luminosity during the final eras, the online
-isolation criteria was changed for the $\tauh\tauh$ channel triggers. The online $\tauh$ 
-isolation changed from being based on purely charged energy deposits to being based on a 
-combination of charged and neutral based energy deposits. The triggers used in the
-$\Pe\Pgm$ channel changed during the final two eras, G and H, and had a lepton DZ filter
-applied to them. The DZ filter requires that the electron and muon match to the HLT primary
-vertex. This is a common method used to reduce rate at the HLT. In all channels, the electrons, muons, and
+The HLT paths used in this analysis, the lepton $\pt$ thresholds, and $\abs\eta$ 
+requirements are detailed in table~\ref{tab:htt_hlt_triggers}. 
+For the $\Pgm\tauh$ channel, a combination of single muon and muon-$\tauh$ cross triggers
+are used. The cross trigger allows for a lower $\pt$ threshold on the muon increasing
+signal acceptance.
+In contrast, due to the HLT menu available in 2016, the $\Pe\tauh$ cross triggers
+do not bring a substantial increase in acceptance and were not used in this analysis.
+For the $\Pe\tauh$ channel, events are selected using a trigger requiring a 
+single tightly isolated electron. For the $\Pe\Pgm$ channel, events are selected with electron-muon cross
+triggers. For the $\tauh\tauh$ channel, events are selected with an HLT path requiring two loosely isolated $\tauh$.
+
+Due to changing data gathering conditions and a changing HLT menu throughout 2016 data taking, the
+2016 dataset is broken down into different time dependant eras beginning with ``B'' and sequentially
+progressing to ``H.'' 
+During the final eras of 2016, the instantaneous 
+luminosity and the average pileup per event increased compared to the initial eras. Because of this,
+some HLT paths became disabled or prescaled to keep the overall L1 Trigger and HLT rate within
+the allocated budget. This study avoids using any prescaled HLT paths. 
+
+As the instantaneous luminosity increased the HLT paths for the $\Pgm\tauh$,
+$\Pe\Pgm$, and $\tauh\tauh$ channel changed to maintain the budgeted rate.
+The single muon triggers introduced a tighter $\abs\eta$ restrictions.
+Towards the end of 2016, the $\Pe\Pgm$ triggers introduced a $\Delta \text{z}$
+requirement matching the leptons to the primary vertex (Section~\ref{sec:pv_reco}) to reduce rate.
+The isolation criteria was changed for the $\tauh\tauh$ channel triggers to maintain a reasonable rate. The $\tauh$ 
+isolation changed from being based on purely charged energy deposits, which are defined by
+energy deposits linked to a track, to being based on a 
+combination of charged and neutral energy deposits. Neutral energy deposits are not linked to a
+track.
+
+In all channels, the electrons, muons, and
 $\tauh$ in each event must be matched to within $\Delta R < 0.5$ with the associated
 HLT object which triggered the event.
+
+%For the $\Pgm\tauh$ channel, events are selected using a combination
+%of a single isolated muon trigger as well as a cross trigger selecting events with an isolated muon and
+%an isolated $\tauh$. The $\Pgm\tauh$ cross trigger allows for a lower $\pt$ threshold
+%on the selected muon. In contrast, due to the HLT menu available in 2016, the $\Pe\tauh$ cross triggers
+%do not bring a substantial increase in acceptance and were not used in this analysis.
+%For the $\Pe\tauh$ channel, events are selected using only a trigger firing on a 
+%single tightly isolated electron. For the $\Pe\Pgm$ channel, events are selected with electron-muon cross
+%triggers requiring an isolated electron and an isolated muon. There are two 
+%different electron-muon cross triggers used with their HLT $\pt$ thresholds detailed following.
+%For the $\tauh\tauh$ channel, events are selected requiring two loosely isolated $\tauh$ 
+%with $\pt$ over 35\GeV.
+%
+%For the $\Pgm\tauh$ channel this 
+%leads to changes in the $\abs\eta$ requirement on the muon in the single muon triggers.
+%There are two muon-tau cross triggers available throughout 2016. One of them requires only the
+%presence of a single muon at the Level-1 trigger and has ``SingleL1'' appended to its path
+%name. The other requires the presence of both a muon and a $\tauh$ at the Level-1 trigger.
+%The single electron trigger used in the $\Pe\tauh$ channel remained constant through the year.
+%Due to changing pileup conditions (Section~\ref{sec:sim_pu}) and increasing luminosity during the final 2016 eras, the
+%isolation criteria was changed for the $\tauh\tauh$ channel triggers to maintain a reasonable rate. The $\tauh$ 
+%isolation changed from being based on purely charged energy deposits to being based on a 
+%combination of charged and neutral based energy deposits. The triggers used in the
+%$\Pe\Pgm$ channel changed during the final two eras, G and H, and had a lepton DZ filter
+%applied to them. The DZ filter requires that the electron and muon match to the HLT primary
+%vertex. This is a common method used to reduce rate at the HLT. 
+%In all channels, the electrons, muons, and
+%$\tauh$ in each event must be matched to within $\Delta R < 0.5$ with the associated
+%HLT object which triggered the event.
 
 
 \begin{table*}[htbp]
 \centering
 \begin{footnotesize}
 %\begin{scriptsize}
-\begin{tabular}{|l|l|l|l|}
+\begin{tabular}{lccc}
+  Channel           &         Trigger ($\pt$/$\abs\eta$) Req.              &     High Level Trigger Description  &   Eras  \\
 \hline
-  Channel           &         Trigger $\pt$ Req.              &     High Level Trigger Path  &   Eras  \\
+  $\mu\tauh$       &         $\Pgm(22/2.4)$                     &  single iso muon & B-F  \\ 
+                   &         $\Pgm(22/2.1)$                     &  single iso muon & C-H  \\
+                   &         $\Pgm(19/2.1)\,\&\,\tauh (20/2.1)$     &  iso muon \& loose iso $\tauh$ &  All Eras  \\
 \hline
-  $\mu\tauh$       &         $\Pgm(22)$                     &  \scriptsize{HLT\_IsoMu22\_v*} & B-F  \\ 
-                   &         $\Pgm(22)$                     &  \scriptsize{HLT\_IsoTrkMu22\_v*} & B-F   \\ 
-                   &         $\Pgm(22)$                     &  \scriptsize{HLT\_IsoMu22\_eta2p1\_v*} & C-H  \\
-                   &         $\Pgm(22)$                     &  \scriptsize{HLT\_IsoTrkMu22\_eta2p1\_v*} & C-H   \\
-                   &         $\Pgm(19)\,\&\,\tauh (20)$     &  \scriptsize{HLT\_IsoMu19\_eta2p1\_LooseIsoPFTau20\_SingleL1\_v*} &  All Eras  \\
-                   &         $\Pgm(19)\,\&\,\tauh (20)$     &  \scriptsize{HLT\_IsoMu19\_eta2p1\_LooseIsoPFTau20\_v*} &  All Eras \\
+  $\Pe\tauh$       &         $\Pe(25/2.1)$                     &  single tight iso electron  & All Eras \\
 \hline
-  $\Pe\tauh$       &         $\Pe (25)$                     &  \scriptsize{HLT\_Ele25\_eta2p1\_WPTight\_Gsf\_v*}   & All Eras \\
+ $\tauh\tauh$      &         $\tauh(35/2.1)\,\&\,\tauh (35/2.1)$   &  two iso $\tauh$ (charged isolation) & B-G   \\ 
+                   &         $\tauh(35/2.1)\,\&\,\tauh (35/2.1)$   &  two iso $\tauh$ (combined isolation) & H  \\
 \hline
- $\tauh\tauh$      &         $\tauh (35)\,\&\,\tauh (35)$   &  \scriptsize{HLT\_DoubleMediumIsoPFTau35\_Trk1\_eta2p1\_Reg\_v*} & B-G   \\ 
-                   &         $\tauh (35)\,\&\,\tauh (35)$   &  \scriptsize{HLT\_DoubleMediumCombinedIsoPFTau35\_Trk1\_eta2p1\_Reg\_v*} & H  \\
-\hline
-  $\Pe\Pgm$        &         $\Pe(12)\,\&\,\Pgm (23)$       &  \scriptsize{HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v*} & B-F \\
-                   &         $\Pe(12)\,\&\,\Pgm (23)$       &  \scriptsize{HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v*} & G-H  \\
-                   &         $\Pe(23)\,\&\,\Pgm (8)$        &  \scriptsize{HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_v*} & B-F  \\
-                   &         $\Pe(23)\,\&\,\Pgm (8)$        &  \scriptsize{HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v*} & G-H  \\
+  $\Pe\Pgm$        &         $\Pe(12/2.5)\,\&\,\Pgm(23/2.4)$       &  loose iso muon \& loose iso electron & B-F \\
+                   &         $\Pe(12/2.5)\,\&\,\Pgm(23/2.4)$       &  loose iso muon \& loose iso electron \& DZ req. & G-H  \\
+                   &         $\Pe(23/2.5)\,\&\,\Pgm(8/2.4)$        &  loose iso muon \& loose iso electron & B-F  \\
+                   &         $\Pe(23/2.5)\,\&\,\Pgm(8/2.4)$        &  loose iso muon \& loose iso electron \& DZ req. & G-H  \\
 \hline
 \end{tabular}
 \end{footnotesize}
 %\end{scriptsize}
-\caption{For each channel the online HLT $\pt$ threshold is listed along with the specific associated
-HLT paths. Throughout 2016 data taking, the HLT menu changed to respond to changing online
-conditions at CMS and the LHC. This is reflected in progressively tighter triggers
-being available towards the end of the 2016 run.
+\caption{For each channel the HLT $\pt$ threshold and $\abs\eta$ range is listed along 
+with a description of the HLT path where ``iso'' stands for ``isolated.'' Changes in the available triggers with respect to
+the data collection era are noted.
 \label{tab:htt_hlt_triggers}
 }
 \end{table*}
@@ -147,8 +178,8 @@ of trigger efficiencies. An offline $\pt$ threshold applied right at the HLT $\p
 makes measurement of the steeply rising efficiency at the HLT threshold absolutely critical.
 This is very difficult to do perfectly and would lead to very large trigger systematics
 at low $\pt$ in the turn-on region for a fractional gain in acceptance. 
-Additionally, there are offline $\eta$ restrictions
-enforced which align with those at the HLT.
+Additionally, selected objects are required to meet the same $\abs\eta$ restrictions
+as are emposed by the HLT paths.
 
 All selected electrons, muons, and $\tauh$ must be well identified and isolated from overlapping
 energy deposits and reconstructed objects. This study uses identification criteria
@@ -159,17 +190,23 @@ between signal efficiency and background rejection. For electrons an MVA-based I
 is used in both the $\Pe\tauh$ and $\Pe\Pgm$ channels which has been tuned to provide 
 80\% electron selection efficiency, Section~\ref{sec:pf_egamma}. 
 Muons in both the $\mu\tauh$ and $\Pe\Pgm$ channels
-require the Particle Flow Medium ID. The selection of $\tauh$ relies on MVA-based working
+require the Particle Flow Medium ID, Section~\ref{sec:pf_muons}. The selection of $\tauh$ relies on MVA-based working
 points. The $\tauh$ MVA-based working points combine both object identification and object
-isolation together into a single set of working points. Table~\ref{tab:htt_obj_selection}
+isolation together into a single set of working points, Section~\ref{sec:obj_reco_tau}. Table~\ref{tab:htt_obj_selection}
 details the $\pt$, $\abs\eta$, identification and isolation criteria for all electrons, muons,
 and $\tauh$ selected in the study.
+
+To prevent data and simulated events from being used in multiple final states, we
+remove events with a loosely identified electrons and muons. The loosened 
+identification is consistent in $\eta$ with Table~\ref{tab:htt_obj_selection} while
+the $\pt$ threshold is lowered to $\pt > 10\GeV$.
+For electrons we use: MVA 90\% WP, $I^{\Pe}<0.3$, while for muons we use: PF ID Medium, $I^{\Pgm}<0.3$.
 
 
 \begin{table*}[htbp]
 \centering
 \begin{small}
-\begin{tabular}{l|l|l|l|l}
+\begin{tabular}{lcccc}
   Channel       & $\pt$ ($\GeV$) & $\eta$ & Identification & Isolation \\
 \hline
   $\mu\tauh$       &   $\pt^\Pgm>20$     &  $\abs{\eta^\Pgm}<2.1$    &   PF ID Medium &  $I^{\Pgm}<0.15$       \\
@@ -196,13 +233,13 @@ Signal extraction categories rely on the details of reconstructed jets, or
 lack there of, in each event. Jets are reconstructed using the anti-$k_{\text{T}}$ algorithm with distance
 parameter $\Delta\text{R}=0.4$~\cite{Cacciari:2008gp}. Charged hadrons that are not consistent with
 the primary vertex are removed from the anti-$k_{\text{T}}$ clustering.  Jets are only considered
-if they pass they pass the loose working point of the PF Jet ID discriminator~\cite{jetID}.
+if they pass they pass the loose working point of the PF Jet ID discriminator~\cite{CMS-PAS-JME-13-005,CMS-PAS-PFT-09-001}.
 Jets must have $\pt > 30 \GeV$ and $\abs\eta<4.7$. The $\pt$ and $\eta$ requirements are altered
 for cases where the jet is identified as having likely originated from a b-quark. Jets likely originating
 from a b-quark are considered if they pass the combined secondard vertex (CSV) Medium working point 
 are then labeled as b-tagged jets, Section~\ref{sec:reco_b_jet}.
 B-tagged jets have a relaxed $\pt$ requirement but much tighter $\eta$ requirement: $\pt > 20 \GeV$ 
-and $\abs\eta<2.4$.  The tightened $\eta$ requirement necessitates that b-tagged jets are located within
+and $\abs\eta<2.4$.  The tightened $\eta$ requirement ensures that b-tagged jets are located within
 the detector volume fully covered by the CMS pixel and strip tracker.
 Lastly, all jets must be separated from the selected electrons, muons, and $\tauh$ by $\Delta\text{R}>0.5$.
 
@@ -220,8 +257,10 @@ where $\pt^\ell$ is the transverse momentum of the lepton $\ell$,
 and $\Delta\phi$ is the azimuthal angle between its direction and the \etvecmiss.
 
 In the $\Pe\Pgm$ channel, the large \ttbar background is reduced by requiring 
-$p_\zeta - 0.85 \, p_\zeta^{\text{vis}} > -35$ or $-10$\GeV depending on which category the event is
-classified within.  $p_\zeta$ is the component of the \etvecmiss projected along the bisector 
+$p_\zeta - 0.85 \, p_\zeta^{\text{vis}} > -35\GeV$ in the ``0-jet'' and ``Boosted'' categories,
+or $p_\zeta - 0.85 \, p_\zeta^{\text{vis}} > -10\GeV$ in the ``VBF'' category where the
+categories are defined in the following section. 
+$p_\zeta$ is the component of the \etvecmiss projected along the bisector 
 of the transverse momenta of the two leptons and $p_\zeta^{\text{vis}}$ is the sum of the components 
 of the lepton transverse momenta along the same direction~\cite{Khachatryan:2014wca}, also see
 figure~\ref{fig:htt_pZeta} for visual reference.
@@ -256,7 +295,7 @@ two-dimensional (2D) distributions.
 
 The three categories are defined as:
 \begin{itemize}
-\item {0-jet}: This category targets Higgs boson events produced via gluon fusion.
+\item {0-jet}: This category targets Higgs boson events produced via gluon fusion (Section~\ref{sec:higgs_production}).
 The two variables chosen to extract the results are $\mvis$ and
 the reconstructed $\tauh$ decay mode in the $\Pgm\tauh$ and $\Pe\tauh$ decay channels.
 In the $\Pe\Pgm$ channel, $\mvis$ and the $\pt$ of the muon are used. The $\PZ\to\ell\ell$ background 
@@ -264,7 +303,7 @@ is large in the 1-prong and 1-prong + $\PGpz$(s) $\tauh$ decay modes in the
 $\Pgm\tauh$ and $\Pe\tauh$ channels. By using only $\mvis$ instead of $\mtt$ the \etvecmiss
 does not smear the mass reconstruction for $\PZ\to\ell\ell$ which retains a nice sharp peak.
 The sharp Z peak of $\PZ\to\ell\ell$ provides 
-an excellent handel to distinguish $\PZ\to\ell\ell$ from the other background process and
+an excellent handle to distinguish $\PZ\to\ell\ell$ from the other background process and
 helps constrain the associated uncertainties for electrons and muons faking $\tauh$.
 As electrons and muons almost exclusively fake 1-prong and 1-prong + $\PGpz$(s) $\tauh$,
 the reconstructed $\tauh$ decay mode is used as the second of the 2D variables in the
@@ -278,7 +317,7 @@ because of the sharply falling $\tauh$ $\pt$ distribution. Simulations indicate 
 of signal events in the 0-jet category correspond to Higgs bosons produced via the gluon 
 fusion production mechanism.
 
-\item {VBF}: This category targets Higgs boson events produced via the VBF process.
+\item {VBF}: This category targets Higgs boson events produced via the VBF process (Section~\ref{sec:higgs_production}).
 The presence of jets from the hard scattering process in VBF production leads the study to heavily
 utilize jet kinematics and the jet topology in the VBF category.
 Events are selected with at least two (exactly two) jets with $\pt>30$\GeV in the
@@ -298,8 +337,8 @@ The two observables used in the VBF category are $\mtt$ and $\mjj$ for all chann
 distributions for the signal and $\PZ\to\Pgt\Pgt$ background
 in the VBF category of the $\Pgm\tauh$ decay channel are shown in Fig.~\ref{fig:htt_2Dcategories} (center). 
 Integrating over the whole $\mjj$ phase space, up to 57\% of the signal events in the VBF 
-category are produced in the VBF production mode, but this proportion increases with $\mjj$ allowing
-for signal production process discrimination in the highest $\mjj$ ranges.
+category are produced via the VBF production mode. This proportion increases with $\mjj$ which allows
+disambiguation of the gluon fusion and VBF signals in the highest $\mjj$ ranges.
 
 \item {Boosted}: This category contains all selected events that do not enter one of the previous 
 categories, namely events with one jet and events with several jets that fail the specific requirements of the VBF category.
@@ -387,7 +426,7 @@ luminosity worth of data usable for physics analysis in 2016.
 
 In this analysis only a subset of the total data marked as good is used.  During data
 gathering, data is filtered into primary datasets (PDs) corresponding to which HLT trigger
-made the determination to save a given event.  The HLT triggers using in this analysis,
+made the determination to save a given event. The HLT triggers used in this analysis,
 detailed in table~\ref{tab:htt_hlt_triggers}, correspond to: the Single Electron/Photon
 PD, the Single Muon PD, the Muon and Electron PD, and the Tau PD.
 
@@ -396,61 +435,17 @@ PD, the Single Muon PD, the Muon and Electron PD, and the Tau PD.
 \section{Monte Carlo Samples}
 \label{sec:htt_mc_samples}
 Signal and background processes are modeled with samples of simulated events.
-For details on the production for simulated events, see section~\ref{sec:simulation}.
-
-The signal samples with a Higgs boson produced via the gluon fusion production
-mechanism ($\cPg\cPg\PH$), vector boson fusion (VBF), or in association with a $\PW$ or $\PZ$ boson ($\PW\PH$ or $\PZ\PH$), 
-are generated at next-to-leading order (NLO) in perturbative quantum chromodynamics (pQCD) 
-with the \POWHEG 2.0~\cite{Nason:2004rx,Frixione:2007vw, Alioli:2010xd, Alioli:2010xa, Alioli:2008tz} 
-generator. For the $\PW\PH$ and $\PZ\PH$ simulated samples, the \textsc{minlo hvJ}~\cite{Luisoni:2013kna} 
-extension of \POWHEG 2.0 is used. The set of parton distribution functions (PDFs) used for all
-simulated samples is NNPDF30\_nlo\_as\_0118~\cite{Ball:2011uy}. It is found that the $\ttbar\PH$ 
-process is negligible in comparison with the other signal processes and is therefor excluded.
-Mass dependent production cross sections and $\htt$ branching fractions for the SM Higgs boson production, 
-and their corresponding uncertainties are taken from 
-Refs.~\cite{deFlorian:2016spz,Denner:2011mq,Ball:2011mu} and references therein.
-
-The \MGAMCNLO~\cite{Alwall:2014hca} generator is used for $\PZ+$jets and $\PW+$jets processes. 
-They are simulated at leading order (LO) with MLM jet matching and merging~\cite{Alwall:2007fs}.
-The \MGAMCNLO generator is also used for diboson production simulated at next-to-LO (NLO) with the 
-FxFx jet matching and merging~\cite{Frederix:2012ps}. In contrast, \POWHEG 2.0 and 1.0 are used for \ttbar
-and single top quark production, respectively. The generators are interfaced with \PYTHIA 
-8.212 ~\cite{Sjostrand:2014zea} to model the parton showering and fragmentation, as well as 
-the decay of the $\Pgt$ leptons. The \PYTHIA parameters affecting the description of the 
-underlying event are set to the {CUETP8M1} tune~\cite{Khachatryan:2015pea}.
+For details on the production for simulated events, see Section~\ref{sec:simulation}.
+The simulated background processes 
+are all scaled to their NLO cross section in Table~\ref{tab:htt_bkg_xsec}.
+The cross sections of the Higgs boson production processes are listed in Section~\ref{sec:higgs_production}.
 
 For each simulated event, a number of additional pileup interactions is simulated and added. 
 The number of pileup interactions added is based on best efforts to match the simulated
 events to the pileup in data which is estimated from the measured instantaneous
-luminosity for each bunch crossing. The average number of additional pileup interactions in
-the 2016 CMS data is approximately 27 interactions per bunch crossing.
+luminosity for each bunch crossing. The average number of pileup interactions in
+the 2016 CMS data is approximately 27 interactions per bunch crossing, Figure~\ref{fig:pileup_2016}.
 
-
-\section{Mass Reconstruction}
-\label{sec:svfit}
-FIXME -- need to edit this part
-The visible mass of the $\Pgt\Pgt$ system, $\mvis$, can be used to separate
-the $\PH\to \Pgt \Pgt$ signal events
-from the large contribution of irreducible $\PZ \to \Pgt \Pgt$ events.
-However, the neutrinos from the $\Pgt$ lepton decays carry a large fraction of
-the $\Pgt$ lepton energy and reduce the discriminating power of this variable.
-The \textsc{svfit} algorithm combines the \etvecmiss with the four-vectors of both $\Pgt$ candidates
-to calculate a more accurate estimate of the mass of the parent boson, denoted as $\mtt$. 
-The resolution of $\mtt$ is between 15 and 20\% depending on the $\Pgt\Pgt$ final state.
-A detailed description of the algorithm can be found
-in Ref.~\cite{Bianchini:2014vza}. Both variables are used in the analysis, as detailed in 
-Section~\ref{sec:htt_categorization}, and $\mvis$ is preferred over $\mtt$ when the background 
-from $\PZ \to \ell\ell$ events is large.
-
-
-\section{Background Estimation}
-\label{sec:background_estimation}
-A number of different background estimation techniques are employeed in this
-analysis. In all cases all Monte Carlo based backgrounds used in the techniques
-have corrections applied to them. These corrections are discussed in the following
-section, ~\ref{sec:mc_corrections}, and are derived to increase the agreement
-between the simulated backgrounds and data. The simulated background processes 
-are all scaled to their NLO cross section in Table~\ref{tab:htt_bkg_xsec}.
 
 \begin{table}[htpb]
 \begin{center}
@@ -491,6 +486,42 @@ VBF $H \rightarrow WW \rightarrow 2\ell 2\nu$ & 0.0858\\
 \label{tab:htt_bkg_xsec} 
 \end{table}
 
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.65\textwidth]{higgs_to_taus/plots/pileup_pp_2016.pdf}
+     \caption{
+Mean number of interactions per bunch crossing for the 2016 proton-proton run at 13\TeV.
+The cross section is taken to be 80 mb.
+     }
+     \label{fig:pileup_2016}
+\end{figure*}
+
+
+\section{Mass Reconstruction}
+\label{sec:svfit}
+FIXME -- need to edit this part
+The visible mass of the $\Pgt\Pgt$ system, $\mvis$, can be used to separate
+the $\PH\to \Pgt \Pgt$ signal events
+from the large contribution of irreducible $\PZ \to \Pgt \Pgt$ events.
+However, the neutrinos from the $\Pgt$ lepton decays carry a large fraction of
+the $\Pgt$ lepton energy and reduce the discriminating power of this variable.
+The \textsc{svfit} algorithm combines the \etvecmiss with the four-vectors of both $\Pgt$ candidates
+to calculate a more accurate estimate of the mass of the parent boson, denoted as $\mtt$. 
+The resolution of $\mtt$ is between 15 and 20\% depending on the $\Pgt\Pgt$ final state.
+A detailed description of the algorithm can be found
+in Ref.~\cite{Bianchini:2014vza}. Both variables are used in the analysis, as detailed in 
+Section~\ref{sec:htt_categorization}, and $\mvis$ is preferred over $\mtt$ when the background 
+from $\PZ \to \ell\ell$ events is large.
+
+
+\section{Background Estimation}
+\label{sec:background_estimation}
+A number of different background estimation techniques are employeed in this
+analysis. In all cases all Monte Carlo based backgrounds used in the techniques
+have corrections applied to them. These corrections are discussed in the following
+section, ~\ref{sec:mc_corrections}, and are derived to increase the agreement
+between the simulated backgrounds and data. 
+
 
 \subsubsection{Drell--Yan Background}
 The largest irreducible source of background is the Drell--Yan production
@@ -508,11 +539,11 @@ section~\ref{sec:htt_dy_reweighting}.
 The $\PW+\text{jets}$ process is modelled using simulation.
 In the $\tauh\tauh$ and $\Pe\Pgm$ channels the $\PW+\text{jets}$ contribution 
 is small compared to other backgrounds. In these two channels both the shape and 
-yield are taken from simulation.
+yield are taken from simulation based on the samples and cross sections in Table~\ref{tab:htt_bkg_xsec}.
 The background from $\PW+\text{jets}$ production contributes significantly to the
 $\Pgm\tauh$ and $\Pe\tauh$ channels, when the $\PW$ boson decays leptonically and
 a jet is misidentified as a $\tauh$ candidate. In the $\ell\tauh$ channels
-the shape of the background is from simulation. The yield is estimated 
+the shape of the background is from the simulated samples in Table~\ref{tab:htt_bkg_xsec}. The yield is estimated 
 using data in a $\PW+\text{jets}$ enriched dedicated side-band region defined
 based on a transverse mass cut, $\MT > 80\GeV$. In this high-$\MT$ side-band region, the $\PW+\text{jets}$
 process is scaled so that the sum total of expected background events is equivalent
@@ -525,7 +556,7 @@ side-band regions varies from about 50\% in the Boosted category to 85\% in the 
 
 The high-$\MT$ side-bands, described above, are included as control regions in the final fit.
 These high-$\MT$ $\PW+\text{jets}$ control regions can be seed in Figure~\ref{fig:htt_wj_CR1}.
-The control regions are only a singular bin because they are used solely to constrain 
+The control regions have one bin because they are used solely to constrain 
 the normalization of the $\PW+\text{jets}$ process.
 
 \begin{figure*}[!htbp]
@@ -594,17 +625,17 @@ fit because QCD multijet events contribute little to the total background in thi
 
 In the $\tauh\tauh$ channel, the large QCD multijet background is estimated differently than
 the other channels. Instead of deriving the QCD multijet shape template from the same-sign
-region, the template is instead derived from the opposite-sign region. 
+region, the template is instead derived from the background-subtracted opposite-sign region. 
 The reason for this is that the shape of the QCD multijet
 distributions have statistically significant differences in their distribution shape 
 between the same-sign and opposite-sign regions. The difference in these shape templates is
-evaluated using Kolmogorov--Smirnov (KS) tests. The KS test is a nonparametric test of the compatibility
-of continuous, one-dimensional probability distributions. Specifically, this study relied
+evaluated using Kolmogorov--Smirnov (KS) tests~\cite{ks}. 
+Specifically, this study relied
 on a two sample, binned KS test which tested the compatibility of the QCD multijet
 estimated background in the same-sign region with that estimated in the opposite-sign region.
 Beyond the KS tests showing the incompatibility of same-sign and opposite-sign shape templates, different
 isolation requirements were used to test the compatibility of QCD multijet shapes
-across different isolation ranges for i) the same-sign events, and ii) again for the
+across different isolation ranges for i) the same-sign events, and ii) for the
 opposite-sign events. These tests showed a much higher degree of shape compatibility
 for events with different isolation requirements, but the same charge configuration.
 Because of this, a relaxed isolation criteria is used to derive the QCD multijet
@@ -664,14 +695,12 @@ template for the $\tauh\tauh$ channel.
 
 The selection used to estimate the QCD multijet background shape template and raw yield requires 
 that at least one of the $\tauh$
-must fail the \texttt{Tight Tau MVA} requirement which is the isolation selection used to 
+must fail the \texttt{Tight Tau MVA} requirement (Section~\ref{sec:obj_reco_tau}) which is the isolation selection used to 
 define the signal region. This selection
 ensures that the side-band sample is disjoin from the signal region.
 In this region, the QCD multijet background shape and raw yield are obtained
 by subtracting the contribution of the Drell--Yan, \ttbar, and $\PW+\text{jets}$ processes
-from the data as in equation~\ref{eqn:qcd_eqn}.
-A schematic representation of the $\tauh\tauh$ signal region and QCD multijet relaxed
-isolation estimation region is in figure~\ref{fig:htt_tautau_qcd_schematic1}.
+from the data.
 
 
 %\begin{figure*}[htbp]
@@ -689,8 +718,8 @@ isolation estimation region is in figure~\ref{fig:htt_tautau_qcd_schematic1}.
 A scaling factor is required to adjust the raw yield estimated in the relaxed isolation region to the expected
 QCD multijet yield in the signal extraction region. This extrapolation factor
 is estimated in the same-sign charge region. Two same-sign QCD multijet samples are constructed
-using 1) the exact same isolation requirements as the signal region; all selections are identical
-here except for the $\tauh$ charge configuration. And, 2) a second region with the exact 
+using 1) the same isolation requirements as the signal region with all selections are identical
+except for the $\tauh$ charge configuration. And, 2) a second region with the
 same relaxed isolation requirements as the region used to estimate the opposite-sign
 QCD multijet shape template and raw yield. From these two samples a ``Relaxed-Region-to-Signal-Region''
 scaling factor is calculated as,
@@ -708,8 +737,7 @@ for the QCD multijet estimation process.
 
 \begin{table*}[htbp]
 \centering
-\begin{tabular}{|l|c|}
-\hline
+\begin{tabular}{lc}
 Category   &   ``Relaxed-Region-to-Signal-Region''   \\
            &   Scale Factor   \\
 \hline
@@ -721,8 +749,8 @@ Boosted    &    0.23 $\pm$ 1.4\%  \\
 \label{tab:htt_qcd_sf}
 \caption{
 The category dependent scale factors used to adjust the QCD multijet yield to correspond 
-to the expected yield in the signal region. The large uncertainty on the VBF scale factor shows the
-limited amount of QCD multijet events in the VBF same-sign region. 
+to the expected yield in the signal region. The large uncertainty on the VBF scale factor 
+is due to the limited amount of QCD multijet events in the VBF same-sign region. 
 }
 \end{table*}
 
@@ -747,13 +775,14 @@ in the $\tauh\tauh$ channel.}
 
 \subsubsection{\ttbar Background}
 The \ttbar production process is one of the main backgrounds in the $\Pe\Pgm$ channel.
-In all channels \ttbar is predicted from simulation. The normalization is adjusted using
+In all channels \ttbar is predicted from simulation, see Chapter~\ref{sec:simulation}. The normalization is adjusted using
 a \ttbar-enriched control region orthogonal to the signal region. This control region is included
-in the global fit. The control region is defined from the $\Pe\Pgm$ channel and the yield
-of \ttbar in all channels and categories is adjusted by this singular \ttbar control region.
-It is shown in figure~\ref{fig:htt_ttbar_CR2},
-Orthogonality from the $\Pe\Pgm$ signal region is achieved by inverting the $p_\zeta$ requirement
-and the events should contain at least one jet.
+in the global fit. The control region is defined using events in the $\Pe\Pgm$ channel and is
+made orthogonal from the signal region by inverting the $p_\zeta$ requirement to:
+$p_\zeta - 0.85 \, p_\zeta^{\text{vis}} < -35\GeV$. The region is enriched in \ttbar by
+requiring that events should contain at least one jet.
+The yield of \ttbar in all channels and categories is adjusted by this singular \ttbar control region.
+It is shown in figure~\ref{fig:htt_ttbar_CR2}.
 
 \begin{figure}[htb]
 \centering
@@ -768,7 +797,7 @@ yields of the \ttbar background in all channels.}
 \end{figure}
 
 Other background processes, such as, contributions from diboson and single top quark production, are estimated 
-from simulation.
+from simulation using the samples and cross sections listed in Table~\ref{tab:htt_bkg_xsec}.
 
 
 \section{Monte Carlo Corrections}
@@ -776,9 +805,9 @@ from simulation.
 
 Corrections are applied to the simulated Monte Carlo samples to help correct for measured differences
 between observed data and expectations based on simulation. Many of these corrections are designed
-to correct differences in reconstruction and identification efficiencies for objects between data
+to account for differences in reconstruction and identification efficiencies for objects between data
 and simulation. These corrections are derived in
-fully orthogonal regions from the analysis signal regions when ever possible. There are however a
+fully orthogonal regions from the analysis signal regions whenever possible. There are however a
 number of
 instances where the $\Pgm\tauh$ channel is used to derive corrections. In these cases the measurement
 region used to derive corrections will overlap with a subset of the analysis signal regions. This
@@ -797,7 +826,8 @@ in resolution and response depending on the number of pileup interactions in an 
 \subsection{Tau Identification Efficiency}
 \label{sec:htt_tau_id_eff}
 The reconstruction efficiency for hadronically decaying taus is observed to be different in data and in simulated samples.
-Correction factors are derived by the Tau POG in the $\Pgm\tauh$ channel using a tag-and-probe method. Essentially,
+Correction factors are derived by the Tau POG in the $\Pgm\tauh$ channel using a tag-and-probe method
+to the method defined in Reference~\cite{CMS-PAS-TAU-16-002}. Essentially,
 the Tau ID Efficiency measurement selects $\PZ/\Pgg^*\to\Pgt\Pgt\to\Pgm\tauh$ events on the $\PZ$
 mass peak and performs a fit with the $\PZ\to\Pgm\tauh$ process treated as a signal. The degree
 to which the $\PZ\to\Pgm\tauh$ process is scaled up to down is the resulting Tau ID Efficiency
@@ -811,13 +841,12 @@ level to $\tau$ leptons.
 The energy of each simulated $\tauh$, which matches to a $\tau$ at the generator level, is corrected
 to better represent the observed energy of $\tauh$ in data. The correction is measured and applied
 as a function of $\tauh$ decay mode with each correction listed in table~\ref{tab:htt_tec}. The measurement
-of this correction is performed in the $\Pgm\tauh$ final state by the Tau POG. The effect of
+of this correction is performed in the $\Pgm\tauh$ final state by the Tau POG~\cite{CMS-PAS-TAU-16-002}. The effect of
 the shifted $\tauh$ energy is fully propagated through to the \etvecmiss for each event.
 
 \begin{table*}[htbp]
 \centering
-\begin{tabular}{|l|c|}
-\hline
+\begin{tabular}{lc}
 $\tauh$ Decay Mode   &   Energy Correction   \\
 \hline
 1-prong            &   -1.8\%  $\pm$ 1.2\%  \\
@@ -847,10 +876,12 @@ method.
 Trigger efficiencies are measured in data and in simulation for all of the channels. For the channels
 which trigger on $\tauh$, the $\Pgm\tauh$ and $\tauh\tauh$ channels, the $\tauh$ efficiency is measured
 using tag-and-probe in the $\Pgm\tauh$ final state. The efficiencies for the $\tauh\tauh$ channel
-are measured with dedicated muon+$\tauh$ monitoring triggers. The $\tauh$ trigger requirements
-are identical between the monitoring trigger and the $\tauh\tauh$ trigger paths. The tag-and-probe
+are measured with dedicated muon+$\tauh$ monitoring triggers which are triggers with the same $\tauh$
+requirements as the $\tauh\tauh$ trigger while they have a muon instead of a second $\tauh$ to enable the
+tag-and-probe method. The tag-and-probe
 is conducted using the Single Muon dataset. The selection for the $\tauh$ trigger efficiency measurements 
-requires one well identified and isolated muon per event. The muon is required to fire a single muon trigger.
+requires one well identified and isolated muon per event which is required to fire a single muon trigger,
+see Table~\ref{tab:htt_hlt_triggers} and Reference~\cite{CMS-PAS-TAU-16-002}.
 All events with at least one isolated $\tauh$ identified by its decay mode are considered.
 Of those events those passing the trigger under study are counted.
 The ratio of the count of events passing the trigger to those considered for the study
@@ -884,15 +915,20 @@ The simulated Monte Carlo Drell--Yan sample used in the analysis is simulated at
 using the \MGAMCNLO generator discussed in section~\ref{sec:simulation}. To assess Monte Carlo to
 data agreement a dedicated $\PZ/\Pgg^*\to\Pgm\Pgm$ control region with high Drell--Yan purity was used.
 The $\PZ/\Pgg^*\to\Pgm\Pgm$ control region selected events from the Single Muon PD and requires the 
-presence of two well-identified muons with $\pt > 25 \GeV$ and an invariant mass between 70 and 110\GeV.
+presence of two well-identified muons (Table~\ref{tab:htt_obj_selection}) with $\pt > 25 \GeV$ 
+and an invariant mass between 70 and 110\GeV.
 With this selection criteria over 99\% of the events are attributed to $\PZ/\Pgg^*\to\Pgm\Pgm$ decays.
 
 Differences in the distributions of $m_{\ell\ell}$ and $\pt^{\ell\ell}$ between data and 
 in simulations are observed in this control region. To correct for this, 2D weights based on these variables 
 are derived and applied to simulated $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$ events in the signal region of the analysis. 
+These corrections range from 1\%--10\% with a relative uncertainty of 10\%.
 In addition, corrections depending on $\mjj$ are derived from the $\PZ/\Pgg^*\to\Pgm\Pgm$ region and 
 applied to the $\PZ/\Pgg^*\to\Pgt\Pgt, \ell\ell$ simulation for events with at least two jets passing the 
-VBF category selection criteria. After this reweighting, good agreement between data in the 
+VBF category selection criteria. These corrections range from 2\%--6\% and have an assigned uncertainty
+of 100\%. The uncertainty covers the range of different corrections which can be measured based on
+varying the measurement region phase space.
+After this reweighting, good agreement between data in the 
 $\PZ/\Pgg^*\to\Pgm\Pgm$ region and simulation is found for all other variables used in the analysis.
 These derived corrections are also applied to the simulated samples of electroweak production of $\PZ$ 
 bosons. Electroweak produced $\PZ$ bosons contribute up to 8\% of the $\PZ$ boson production in the VBF category.
@@ -930,11 +966,9 @@ parallel to $\vec{p}_{\text{T,B}}$ ($\vec{U_{1}}$) and one which is orthogonal (
 
 
 \subsection{Generator Event Weights}
-Generator weights are applied on a per event basis. Samples produced with the \MGAMCNLO generator
-contain both positive and negative event weights, as discussed in the Simulation chapter~\ref{sec:simulation}.
-Negative generator weights in a sample reduces the effective statists of that sample. This reduction
-in statistical power is often the trade off for increased precision in the modeling of a chosen
-background or signal process.
+Generator weights are applied on a per event basis. 
+Samples produced with the \MGAMCNLO generator
+contain both positive and negative event weights.
 
 
 \subsection{Luminosity Weighting}
@@ -957,7 +991,7 @@ properly account for the negative event weights.
 \label{sec:htt_systematics}
 
 The systematic uncertainty model for the $\htt$ study was critical to the success of the analysis.
-The goal of the analysis was to reach an observed significance for the Higgs boson of 5.0$\sigma$.
+The goal of the analysis was to reach an observed significance for the $\htt$ process of 5.0$\sigma$.
 To achieve this the description of the expected background processes and Higgs boson signal
 needed to be as close to data as possible. The previous Monte Carlo Reweighting 
 section~\ref{sec:mc_corrections} detailed this process. Many of the corrections and weights applied
@@ -975,16 +1009,18 @@ on this 35.9\fbinv integrated luminosity value amounts to 2.5\%~\cite{CMS-PAS-LU
 
 \subsection{Object Reconstruction, Identification and Trigger Uncertainties}
 The total uncertainty in the $\tauh$ identification efficiency measurement for genuine $\tauh$ leptons is 
-5\% mentioned in Section~\ref{sec:htt_tau_id_eff}.
+5\% as mentioned in Section~\ref{sec:htt_tau_id_eff}.
 The $\tauh$ are required to pass different identification criteria per channel
 specifically aimed at reducing the chance of fake $\tauh$ originating from different background
 processes in each final state. Because of the different anti-$\Pe$ and anti-$\Pgm$ discriminators
 applied in each channel, the 5\% uncertainty is not fully correlated among all the di-$\Pgt$ channels.
 
-The trigger efficiency uncertainty per $\tauh$ candidate amounts to 5\%. This leads to a total 
-trigger uncertainty of 10\% for processes estimated from simulation in the $\tauh\tauh$ decay channel. 
-This uncertainty is based off of the tag-and-probe trigger efficiency measurement in 
-$\PZ\to\Pgt\Pgt$ events detailed in section~\ref{sec:htt_trigger_eff}.
+The trigger efficiency uncertainty per $\tauh$ candidate results from the
+uncertainties on the efficiency fit function where the fit is shown in Figure~\ref{fig:htt_tt_trig}
+for the $\tauh\tauh$ channel. The uncertainties result from limited statistics in the $\Pe\tauh$ and $\Pgm\tauh$
+channels as a fit funtion is not used for application of the efficiencies for these channels. 
+The $\tauh$ trigger uncertainties amounts to 5\%. This results in a total 
+trigger uncertainty of $5\% + 5\% = 10\%$ for processes estimated from simulation in the $\tauh\tauh$ decay channel. 
 
 In the decay channels with muons or electrons, the uncertainties for the muon and electron identification, 
 isolation, and trigger efficiencies lead to a total rate uncertainty of 2\% for muons and 2\% for electrons.
@@ -992,7 +1028,7 @@ isolation, and trigger efficiencies lead to a total rate uncertainty of 2\% for 
 
 \subsection{Tau Fake Rate}
 For events where muons or electrons are misidentified as $\tauh$ candidates, the $\tauh$ identification leads 
-to rate uncertainties of 25\% and 12\%, respectively, per reconstructed $\tauh$ decay mode. These fake $\tauh$
+to rate uncertainties of 25\% and 12\%, respectively, per reconstructed $\tauh$ decay mode~\cite{CMS-PAS-TAU-16-002}. These fake $\tauh$
 dominantly come from $\PZ\to\Pgm\Pgm$ events in the $\Pgm\tauh$ decay channel and $\PZ\to\Pe\Pe$ events 
 in the $\Pe\tauh$ decay channel. Using $\mvis$ and the reconstructed 
 $\tauh$ decay mode as the observables in the 0-jet category of the $\Pgm\tauh$ and $\Pe\tauh$ channels helps constrain these 
@@ -1004,7 +1040,7 @@ misidentified as $\tauh$ rate and a 40\% constraint on the electron misidentifie
 \subsection{Energy Scales}
 \subsubsection{Visible Tau Energy Scale}
 An uncertainty of 1.2\% in the visible energy scale of genuine $\tauh$ leptons affects both the shape of the
-signal and background distributions and the expected yields. The 1.2\% uncertainty is treated as uncorrelated 
+signal and background distributions and the expected yields~\cite{CMS-PAS-TAU-16-002}. The 1.2\% uncertainty is treated as uncorrelated 
 among the different $\tauh$ decay modes: 1-prong, 1-prong+$\PGpz$, and 3-prong.
 The magnitude of the uncertainty was determined based on the uncertainties on the measured $\tauh$ energy 
 corrections in Section~\ref{sec:htt_tec}. The measurement was conducted in the $\Pgm\tauh$ final state and
@@ -1014,11 +1050,13 @@ $\Pgm\tauh$ signal region used in this analysis. To prevent overconstraining the
 fitting the data twice, the measured uncertainties which are approximately 0.5\% are inflated to the
 value used in the analysis, 1.2\%.
 
-The fit constrains the visible $\tauh$ energy scale uncertainty to about 0.3\%, a 75\% constraint, for all 
+When extracting the results from the maximum likelihood fit discussed in Section~\ref{sec:htt_results},
+the fit constrains the visible $\tauh$ energy scale uncertainty to about 0.3\%, a 75\% constraint, for all 
 decay modes. The constraint mostly comes from highly populated regions with high $\tauh$ purity, for example,
 the 0-jet and Boosted categories of the $\Pgm\tauh$ and $\tauh\tauh$ channels. The constraint on the size of the 
-uncertainty is explained by the addition of two other decay channels
-with $\tauh$ candidates ($\tauh\tauh$ and $\Pe\tauh$) in addition to to the $\Pgm\tauh$ measurement region.
+uncertainty is largely explained by the addition of two other decay channels
+with $\tauh$ candidates ($\tauh\tauh$ and $\Pe\tauh$) in addition to to the $\Pgm\tauh$ measurement region
+which significantly increase the available statistics reducing the uncertainty.
 Additionally, the higher number of events in the Monte Carlo simulations and the finer categorization which 
 leads to regions with a high $\PZ\to\Pgt\Pgt$ event purity also contribute to the post-fit constraint on the
 visible tau energy scale.
@@ -1033,7 +1071,8 @@ of the signal strength.
 
 \subsubsection{Energy Scale for Fake Taus}
 The energy scale uncertainty for muons or electrons
-misidentified as $\tauh$ candidates is 1.5 or 3\%, respectively. It is uncorrelated between reconstructed $\tauh$ decay
+misidentified as $\tauh$ candidates is 1.5 or 3\%, respectively~\cite{CMS-PAS-TAU-16-002}. 
+It is uncorrelated between reconstructed $\tauh$ decay
 modes. The fit constrains these uncertainties to about one third of their initial values. For events where quark- or 
 gluon-initiated jets are misidentified as $\tauh$ candidates, a linear uncertainty that increases by 20\% per 100\GeV 
 in $\tauh$ $\pt$ accounts for a potential mismodeling of the jet$\to\tauh$ misidentification rate as a
@@ -1046,8 +1085,8 @@ The uncertainties in the jet energy scale depend on the $\pt$ and $\eta$ of the 
 They are factorized into 27 distinct uncorrelated contributions. These factorized uncertainties target jet related 
 mismodeling for different CMS subdetectors, namely ECAL and HCAL, uncertainties in jet energy corrections, timing dependence,
 high $\pt$ jet extrapolations uncertainties, and large $\abs\eta$ jet related uncertainties. The uncertainties
-affect the $\pt$ of each jet in an event. As the $\pt$ for each jet increasing or decreasing, the 
-the number of jets with passing $\pt > 30\GeV$ is recomputed as is the $\mjj$ for each event. The adjusted number of
+affect the $\pt$ of each jet in an event. As the $\pt$ for each jet increases or decreases,
+the number of jets with $\pt > 30\GeV$ is recomputed as is the $\mjj$ for each event. The adjusted number of
 jets and $\mjj$ are used to determine the new, shifted, event categorization. For example,
 events can shift between the 0-jet and Boosted category if a jet has a $\pt$ value near 30\GeV that shifts into
 or out of categorization as a jet by the analysis (jet $\pt > 30\GeV$). As $\mjj$ is shifted, the shifted $\mjj$ value is used
