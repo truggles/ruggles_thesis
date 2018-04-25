@@ -263,7 +263,7 @@ categories are defined in the following section.
 $p_\zeta$ is the component of the \etvecmiss projected along the bisector 
 of the transverse momenta of the two leptons and $p_\zeta^{\text{vis}}$ is the sum of the components 
 of the lepton transverse momenta along the same direction~\cite{Khachatryan:2014wca}, also see
-figure~\ref{fig:htt_pZeta} for visual reference.
+Figure~\ref{fig:htt_pZeta} for visual reference.
 The $p_\zeta$ selection criteria has a high signal efficiency. The \etvecmiss is typically oriented
 in the same direction as the visible di-$\Pgt$ system in signal events because the \etvecmiss is 
 the results of neutrinos from the signal $\Pgt$ leptons.  The orientation of the \etvecmiss with respect
@@ -353,7 +353,7 @@ Example 2D distributions for the signal and $\PW+\text{jets}$ background in the 
 the $\Pgm\tauh$ decay channel are shown in Fig.~\ref{fig:htt_2Dcategories} (bottom).
 \end{itemize}
 
-In figure~\ref{fig:htt_2Dcategories}, the background processes are chosen for illustrative 
+In Figure~\ref{fig:htt_2Dcategories}, the background processes are chosen for illustrative 
 purpose for their separation from 
 the signal. The $\PZ\to\Pgm\Pgm$ background in the 0-jet category is concentrated in 
 the regions where the visible mass is close to 90\GeV and is negligible when the $\tauh$ 
@@ -577,6 +577,7 @@ $\PW+\text{jets}$ background in the $\Pgm\tauh$ and $\Pe\tauh$ channels.
 
 
 \subsubsection{QCD Multijet Background}
+\label{sec:qcd_bkg}
 The QCD multijet process constitutes an important source of reducible background 
 in the $\tauh\tauh$ and $\ell\tauh$ channels. The QCD multijet process is subdominant
 in the $\Pe\Pgm$ channel. For all four channels, the QCD multijet, is estimated from data.  
@@ -638,8 +639,9 @@ isolation requirements were used to test the compatibility of QCD multijet shape
 across different isolation ranges for i) the same-sign events, and ii) for the
 opposite-sign events. These tests showed a much higher degree of shape compatibility
 for events with different isolation requirements, but the same charge configuration.
-Because of this, a relaxed isolation criteria is used to derive the QCD multijet
-template for the $\tauh\tauh$ channel.
+Because of this, a relaxed isolation criteria for both $\tauh$ leptons, shown
+in Figure~\ref{fig:htt_tautau_qcd_schematic1},
+is used to derive the QCD multijet template for the $\tauh\tauh$ channel.
 
 %\begin{table}[h!]
 %\begin{center}
@@ -703,17 +705,18 @@ by subtracting the contribution of the Drell--Yan, \ttbar, and $\PW+\text{jets}$
 from the data.
 
 
-%\begin{figure*}[htbp]
-%\centering
-%     \includegraphics[width=0.6\textwidth]{higgs_to_taus/plots/tautau_QCD_signal_region.pdf}
-%     \caption{
-%Schematic depicting the range of $\tauh$ MVA working points ranging from very loose (\texttt{VLoose})
-%to very tight (\texttt{VTight}). The signal region is depicted in orange where both $\tauh$ meet the \texttt{Tight}
-%or \texttt{VTight} criteria. The QCD multijet relaxed isolation estimation region is depicted in blue and
-%does not overlap with the signal region.
-%     }
-%     \label{fig:htt_tautau_qcd_schematic1}
-%\end{figure*}
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.6\textwidth]{higgs_to_taus/plots/tautau_QCD_signal_region.pdf}
+     \caption{
+Schematic depicting the range of $\tauh$ MVA working points, defined in Section~\ref{sec:obj_reco_tau}, 
+ranging from very loose (\texttt{VLoose})
+to very tight (\texttt{VTight}). The signal region is depicted in orange where both $\tauh$ meet the \texttt{Tight}
+or \texttt{VTight} criteria. The QCD multijet relaxed isolation estimation region is depicted in blue and
+does not overlap with the signal region.
+     }
+     \label{fig:htt_tautau_qcd_schematic1}
+\end{figure*}
 
 A scaling factor is required to adjust the raw yield estimated in the relaxed isolation region to the expected
 QCD multijet yield in the signal extraction region. This extrapolation factor
@@ -782,7 +785,7 @@ made orthogonal from the signal region by inverting the $p_\zeta$ requirement to
 $p_\zeta - 0.85 \, p_\zeta^{\text{vis}} < -35\GeV$. The region is enriched in \ttbar by
 requiring that events should contain at least one jet.
 The yield of \ttbar in all channels and categories is adjusted by this singular \ttbar control region.
-It is shown in figure~\ref{fig:htt_ttbar_CR2}.
+It is shown in Figure~\ref{fig:htt_ttbar_CR2}.
 
 \begin{figure}[htb]
 \centering
@@ -1070,6 +1073,7 @@ of the signal strength.
 
 
 \subsubsection{Energy Scale for Fake Taus}
+\label{sec:fake_taus_es}
 The energy scale uncertainty for muons or electrons
 misidentified as $\tauh$ candidates is 1.5 or 3\%, respectively~\cite{CMS-PAS-TAU-16-002}. 
 It is uncorrelated between reconstructed $\tauh$ decay
@@ -1101,7 +1105,7 @@ propagation of these uncertainties
 to the di-$\Pgt$ mass $\mtt$. The \etvecmiss scale uncertainties which have the largest impact on the signal significance
 in this analysis are from jet related uncertainties and unclustered energy deposits in the detector.
 The unclustered energy deposits come from four independent sources related to the tracker, ECAL, HCAL, and 
-forward calorimeter subdetectors. The jet related \etvecmiss scale uncertainties arise from uncertainties
+forward calorimeter subdetectors~\cite{CMS-PAS-JME-16-004}. The jet related \etvecmiss scale uncertainties arise from uncertainties
 in the jet energy scale measurement. As the scale of the jet energy is varied, these changes are propagated to
 the \etvecmiss. The combination of both sources of uncertainties in 
 the \etvecmiss scale leads to an uncertainty of about 10\% in the measured signal strength.
@@ -1116,7 +1120,8 @@ in the systematic model.
 
 
 \subsection{b-Tagging Uncertainties}
-The $\htt$ analysis only applies a b-tagged jet selection criteria in the $\Pe\Pgm$ channel where the number
+The $\htt$ analysis only applies a b-tagged jet selection (Section~\ref{sec:htt_obj_sel}) 
+criteria in the $\Pe\Pgm$ channel, where the number
 of b-tagged jets must equal zero in the signal region. The rate uncertainty related to discarding events 
 with a b-tagged jet in the $\Pe\Pgm$ channel is up to 5\% for the $\ttbar$ background. The uncertainty 
 in the mistagging rate of gluon and light-flavor jets is negligible.
@@ -1140,7 +1145,8 @@ Section~\ref{sec:htt_dy_reweighting}. The extrapolation uncertainty related to k
 in the signal and control regions ranges between 3 and 10\%, depending
 on the category. Shape uncertainties related to the uncertainties in the applied corrections are considered.
 They reach 20\% for some ranges of $\mjj$ in the VBF category, but are more modest in the $\tauh\tauh$ channel where
-the uncertainties range from 0\% in the lowest $\mjj$ region to 6\% in the $500\GeV < \mjj < 800\GeV$ region.
+the uncertainties range from 0\% in the lowest $\mjj$ region to 6\% in the $500\GeV < \mjj < 800\GeV$ 
+region~\cite{sm-htt-2017}.
 These uncertainties arise from the different level of agreement between data and simulation in the 
 $\PZ\to\Pgm\Pgm$ control region obtained when varying the threshold on the muon $\pt$.
 
@@ -1149,8 +1155,13 @@ $\PZ\to\Pgm\Pgm$ control region obtained when varying the threshold on the muon 
 The uncertainties in the $\PW+\text{jets}$ event yield for the $\Pgm\tauh$ and $\Pe\tauh$ channels are determined 
 from their $\PW+\text{jets}$ control regions. The uncertainties account for the statistical uncertainties of the
 data and $\PW+\text{jets}$ simulated samples. An extrapolation uncertainty is also determined which accounts for
-the high-\MT ($\MT>80\GeV$) control regions to the low-\MT ($\MT<50\GeV$) signal regions scaling.
-These uncertainties ranges from 5 to 10\%.
+scaling from the high-\MT ($\MT>80\GeV$) control regions to the low-\MT ($\MT<50\GeV$) signal regions.
+The scaling uncertainty is obtained by comparing the \MT distributions 
+of simulated and observed $\PZ \to \Pgm\Pgm$ events where
+one of the muons is removed and the \etvecmiss is adjusted accordingly, to mimic $\PW+\text{jets}$ events. The
+reconstructed invariant mass of the $\PZ$ in the rest frame is multiplied by the ratio of
+the $\PW$ to the $\PZ$ boson masses before removing the muon.
+These uncertainties range from 5 to 10\%~\cite{sm-htt-2017}.
 % and is obtained by comparing the \MT distributions of simulated and observed 
 %$\PZ\to\Pgm\Pgm$ events where one of the muons is removed and the \etvecmiss adjusted accordingly, to mimic 
 %$\PW+\text{jets}$ events. The reconstructed invariant mass of the parent boson in the rest frame is multiplied by the 
@@ -1160,26 +1171,30 @@ In the $\tauh\tauh$ and $\Pe\Pgm$ channels, where the $\PW+\text{jets}$ backgrou
 uncertainty on the yield of this small background is 4\% and 20\%, respectively. The larger value for the 
 $\Pe\Pgm$ channel includes uncertainties in the misidentification rates of jets as electrons and muons, whereas the 
 uncertainty in the misidentification rate of jets as $\tauh$ candidates in the $\tauh\tauh$ channel is accounted for 
-by the linear uncertainty as a function of the $\tauh$ $\pt$ described earlier.
+by the linear uncertainty as a function of the $\tauh$ $\pt$ described in Section~\ref{sec:fake_taus_es}.
 
 
 \subsubsection{QCD Multijet Uncertainties}
-The uncertainty in the QCD multijet background yield in the $\ell\tauh$ and $\Pe\Pgm$ channels ranges from 10 to 20\%.
+The uncertainty in the QCD multijet background yield in the $\ell\tauh$ and $\Pe\Pgm$ channels 
+ranges from 10 to 20\%~\cite{sm-htt-2017}.
 They are category dependent and account for the uncertainty on the extrapolation from the same-sign measurement to 
 the opposite-sign signal regions. In the  $\ell\tauh$ channels, statistical uncertainties in the QCD multijet
 control regions are automatically taken into account by the global fit with the control regions and signal regions.
 
-In the $\tauh\tauh$ channel, the uncertainty in the QCD mutlijet background yield reflects a combination of the statistical
+In the $\tauh\tauh$ channel, the uncertainty in the QCD multijet background yield reflects a combination of the statistical
 uncertainties obtained from fitting the dedicated control regions with $\tauh$ candidates passing relaxed isolation 
-criteria, and for extrapolation uncertainties to the signal region. Limited 
+criteria defined in Section~\ref{sec:qcd_bkg}, and for extrapolation uncertainties to the signal region. Limited 
 disagreement between prediction and data in signal-free regions with various loose isolation criteria is also accounted
 for in the QCD multijet uncertainties. 
 
 The level of agreement for the $\tauh\tauh$ QCD multijet estimation method
 is determined in signal free regions where the $\tauh$ have loosened isolation requirements and at least
-one of the $\tauh$ must not meet the signal region \texttt{Tight Tau MVA} criteria. A schematic depiction
-of the signal region, QCD multijet control region, and method validation regions are in 
-figure~\ref{fig:htt_tautau_qcd_schematic2}.
+one of the $\tauh$ must not meet the signal region \texttt{Tight Tau MVA} criteria 
+(Section~\ref{sec:obj_reco_tau}). A schematic depiction
+of the signal region, QCD multijet control region, and method validation regions are shown in 
+Figure~\ref{fig:htt_tautau_qcd_schematic2}.
+With both validation regions constructed to not overlap with the
+signal region, the method closure can be assessed.
 
 \begin{figure*}[htbp]
 \centering
@@ -1187,21 +1202,21 @@ figure~\ref{fig:htt_tautau_qcd_schematic2}.
      \includegraphics[width=0.45\textwidth]{higgs_to_taus/plots/tautau_QCD_closureTestRegions.pdf}\\
      \caption{
 (Left) For reference, previously shown signal region and QCD multijet relaxed isolation estimation region.
-(Right) Schematic of the further loosened MVA isolation selections used for the QCD multijet validation.
+(Right) Schematic of the further loosened MVA isolation (defined in Section~\ref{sec:obj_reco_tau}) 
+selections used for the QCD multijet validation.
 The \texttt{Tighter Validation Region} (red) in the right plot is treated just like the \texttt{Signal Isolation Region}
 on the left plot. The \texttt{Looser Validation Region} (pink) in the right plot is treated just like the 
-\texttt{Looser Isolation Region} on the left plot. With both validation regions constructed to not overlap with the
-signal region, the method closure can be assessed.
+\texttt{Looser Isolation Region} on the left plot. 
      }
      \label{fig:htt_tautau_qcd_schematic2}
 \end{figure*}
 
 The QCD multijet estimation method in the $\tauh\tauh$ channel is found to agree well when validated using closure
-checks in the loosened isolation control regions depicted in figure~\ref{fig:htt_tautau_qcd_schematic2}.
+checks in the loosened isolation control regions depicted in Figure~\ref{fig:htt_tautau_qcd_schematic2}.
 Closure is estimated by comparing the ``predicted'' QCD multijet yield in the opposite-sign
 \texttt{Tighter Validation Region} against the ``measured'' QCD multijet yield in the same region. 
-The ``measured'' QCD multijet yield in the \texttt{Tighter Validation Region} is calculated as 
-$\text{QCD multijet} = \text{data} - \text{Other Backgrounds}$ just like equation~\ref{eqn:qcd_eqn}.
+The ``measured'' QCD multijet yield in the \texttt{Tighter Validation Region} is calculated from
+background subtracted data.
 The ``predicted'' QCD multijet yield in the same region comes from multiplying the measured yield in the
 opposite-sign \texttt{Looser Validation Region} by a loose-to-tight scale factor derived in the same-sign
 region just like equation~\ref{eqn:htt_tt_qcd_sf}. The closure values for the three analysis categories
@@ -1240,7 +1255,7 @@ quadrature of the QCD method systematic uncertainty and QCD method statistical u
 The uncertainty from the fit in the \ttbar control region, discussed in section~\ref{sec:background_estimation}, 
 is automatically propagated to the signal regions. It results in an uncertainty of about 5\% on the 
 \ttbar cross section. Per-channel uncertainties related to the object reconstruction and identification are 
-considered when extrapolating from the $\Pe\Pgm$ final state to the others. The \ttbar simulation is corrected 
+considered when extrapolating from the $\Pe\Pgm$ final state to the others~\cite{sm-htt-2017}. The \ttbar simulation is corrected 
 for differences in the top quark $\pt$ distributions observed between data and simulation. An uncertainty 
 in the correction is taken into account.
 
@@ -1279,7 +1294,8 @@ The theoretical uncertainties in the signal production depend on the jet multipl
 by following the prescriptions in Ref.~\cite{Stewart:2011cf}. These uncertainties need to be taken into account because 
 the definitions of the three categories used in the analysis are based partially on the number of reconstructed 
 jets. Additional shape uncertainties for boosted Higgs bosons, related to the treatment of the top quark mass in 
-the calculations, are considered for signal events with $\pth>150\GeV$.
+the calculations, are considered for signal events with $\pth>150\GeV$. The boosted Higgs boson shape
+uncertainties are motivated by the treatment suggested in Reference~\cite{deFlorian:2016spz}.
 
 Theory uncertainties in the signal prediction contribute an uncertainty of 10\% to the measurement of the signal strength.
 
@@ -1289,7 +1305,7 @@ There are additional uncertainties related to the finite number of simulated eve
 of events in data control regions which are taken into account. They are considered for all bins of the 
 distributions used to extract the results. In total, these per-bin uncertainties contribute an uncertainty of 
 about 12\% to the signal strength measurement where the majority of this uncertainty comes from sparsely populated 
-shape template in the VBF category.
+shape templates in the VBF category.
 
 
 \subsection{Systematic Model Summary}
