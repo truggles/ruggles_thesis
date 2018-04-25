@@ -499,19 +499,29 @@ The cross section is taken to be 80 mb.
 
 \section{Mass Reconstruction}
 \label{sec:svfit}
-FIXME -- need to edit this part
+%The observables measured in each $\htt$ event do not provide sufficient information to solve 
+%for the $\Pgt$ pair mass analytically. 
 The visible mass of the $\Pgt\Pgt$ system, $\mvis$, can be used to separate
 the $\PH\to \Pgt \Pgt$ signal events
 from the large contribution of irreducible $\PZ \to \Pgt \Pgt$ events.
 However, the neutrinos from the $\Pgt$ lepton decays carry a large fraction of
-the $\Pgt$ lepton energy and reduce the discriminating power of this variable.
-The \textsc{svfit} algorithm combines the \etvecmiss with the four-vectors of both $\Pgt$ candidates
+the $\Pgt$ lepton energy. Leptonically decaying $\Pgt$ produce two neutrinos through their decay
+while hadronically decaying $\Pgt$ produce a single neutrino, see Table~\ref{tab:tau_dms}.
+The presence of the neutrinos reduces the discriminating power of $\mvis$.
+The \textsc{svfit} algorithm~\cite{Bianchini:2014vza} combines the \etvecmiss 
+with the four-vectors of both $\Pgt$ candidates
 to calculate a more accurate estimate of the mass of the parent boson, denoted as $\mtt$. 
+The \textsc{svfit} algorithm is based on a likelihood 
+method which, given the input parameters, in discrete $\mtt$ slices, estimates the compatibility 
+of $\mtt$ with the inputs. The $\mtt$ value for an event is taken from the $\mtt$ slice with the highest compatibility.
+A more detailed description of the algorithm can be found
+in Reference~\cite{Bianchini:2014vza}.
+
 The resolution of $\mtt$ is between 15 and 20\% depending on the $\Pgt\Pgt$ final state.
-A detailed description of the algorithm can be found
-in Ref.~\cite{Bianchini:2014vza}. Both variables are used in the analysis, as detailed in 
-Section~\ref{sec:htt_categorization}, and $\mvis$ is preferred over $\mtt$ when the background 
+Both mass variables, $\mvis$ and $\mtt$ are used in the analysis, as detailed in 
+Section~\ref{sec:htt_categorization}. The $\mvis$ variable is preferred over $\mtt$ when the background 
 from $\PZ \to \ell\ell$ events is large.
+
 
 
 \section{Background Estimation}
@@ -1291,7 +1301,7 @@ are considered as additional uncertainties, and amount to up to 7\% in the Boost
 uncertainty in the branching fraction of the Higgs boson to $\Pgt$ leptons is equal to 2.1\%~\cite{deFlorian:2016spz}.
 
 The theoretical uncertainties in the signal production depend on the jet multiplicity. This effect is included 
-by following the prescriptions in Ref.~\cite{Stewart:2011cf}. These uncertainties need to be taken into account because 
+by following the prescriptions in Reference~\cite{Stewart:2011cf}. These uncertainties need to be taken into account because 
 the definitions of the three categories used in the analysis are based partially on the number of reconstructed 
 jets. Additional shape uncertainties for boosted Higgs bosons, related to the treatment of the top quark mass in 
 the calculations, are considered for signal events with $\pth>150\GeV$. The boosted Higgs boson shape
