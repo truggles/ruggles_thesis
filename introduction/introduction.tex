@@ -6,7 +6,7 @@ of tau leptons ($\Pgt^{+}\Pgt^{-}$) at 13\TeV. It includes two analyses which ta
 ways the Higgs boson is produced. The analyses are performed using
 13\TeV center-of-mass energy proton-proton collision data from the CERN LHC.
 The data is collected by the CMS experiment and corresponds to an integrated
-luminosity of 35.9\fbinv. The results here constitutes an important
+luminosity of 35.9\fbinv. The results here constitute an important
 milestone in the effort to better understand the fundamental properties of nature and
 the Higgs boson, one of the fundamental particles of the standard model (SM) of physics.
 
@@ -17,30 +17,30 @@ theoretical prediction of the existence of a neutral scalar boson, now called th
 Higgs boson.
 The SM incorporates descriptions of three of the four fundamental forces of nature:
 the strong force, the electromagnetic force, and the weak force.
-The gravitational force is the one fundamental force not described in the SM. 
+The gravitational force is the one known fundamental force not described in the SM. 
 
 The Higgs boson eluded observation by experimental particle physicists
 for 40 years after the establishment of its theoretical prediction. 
 In 2012, the Higgs boson was discovered 
 by the CMS and ATLAS collaborations at CERN~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba}.
 With this discovery, all particles predicted and described in the SM have been observed.
-Based on research leading up to today, the SM is the most well tested theory of nature at the fundamental level.
-Over all, the SM shows remarkable consistency between theoretical predictions and
+Based on research leading up to today, the SM is the best tested theory of nature at the fundamental level.
+Overall, the SM shows remarkable consistency between theoretical predictions and
 the resulting experimental observations.
 
-Reflecting on the discovery of the Higgs boson, the focus of the experimental particle physics community has transitioned from
+Since the discovery of the Higgs boson, the focus of the experimental particle physics community has transitioned from
 Higgs boson ``discovery'' mode to Higgs boson ``measurement'' mode. High energy particle physics experiments
 are dedicating a vast portion of their research effort and person power towards
 efforts to measure the Higgs boson properties as precisely as possible. Many 
 of of these properties are firmly predicted by theory. Affirmation or negation of these predictions,
 such as how often a Higgs boson decays into a pair of $\Pgt$ leptons,
-are critical to further testing the merits of the SM. Affirmation of the
-predicted Higgs boson properties would further support the SM along with the myriad previous
+are critical to further testing the merits of the SM. Confirmation of the
+predicted Higgs boson properties would further support the SM, along with the myriad previous
 experimental results. Significant discrepancies between the SM
 theoretical predictions and the observed Higgs boson properties could point to
 flaws in the SM and would lead to a more full and complete understanding of nature.
 
-This thesis is arranged to build up a theoretical understand of the SM and the
+This thesis is arranged to build up a theoretical understanding of the SM and the
 Higgs boson in Chapter~\ref{sec:pheno}. A description of the LHC machine and
 CMS detector follow in Chapter~\ref{sec:cms_lhc}. The next two Chapters, ~\ref{sec:simulation} and
 ~\ref{sec:obj_reconstruction}, discuss the foundations of physics analyses at CMS including physics
@@ -68,8 +68,8 @@ of the fundamental particles of nature. Fundamental particles can be grouped
 together by behavior and common characteristics and arranged diagrammatically as in
 Figure~\ref{fig:sm_particles}. The particles are split vertically into two categories:
 fermions which have spin $\frac{1}{2}$, and the bosons which have integer
-spin of either 0 or 1. In general, the fermions constitute what we are familiar of
-as matter while bosons are the mediators of the fundamental forces.
+spin of either 0 or 1. In general, the fermions constitute 
+matter while bosons are the mediators of the fundamental forces.
 
 \begin{figure*}[htbp]
 \centering
@@ -96,8 +96,8 @@ The first
 mass generation column composes the fundamental particles which make up the ordinary matter
 interact with every day. Up-quarks and down-quarks are the fundamental constituents within
 protons and neutrons which build the atoms and molecules
-making up the paper pages of this thesis or the metals and plastics in your computer. High energy protons
-have a different composition and are discussed later in the thesis. Electrons are the
+making up the paper pages of this thesis or the metals and plastics in your computer.
+Electrons are the
 remaining fundamental particles we are familiar with and are also part of the basic 
 structure of atoms. The electron neutrino is less familiar because it only
 interacts with the other particles through the weak force and does not directly
@@ -129,6 +129,18 @@ There has been no observed mediator for the gravitational force.
 \label{tab:sm_forces}
 \end{table*}
 
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.7\textwidth]{introduction/plots/elementary_particle_interactions_SM.pdf}
+     \caption{
+Diagram showing the bosons arranged into a central column with the fermions in the
+upper corners. The blue lines linking particles and groups of particles together
+indicate that those fermions can be influenced by force associated to that mediator
+boson. The Higgs boson in the center is discussed in Chapter~\ref{sec:pheno}.
+     }
+     \label{fig:sm_forces}
+\end{figure*}
+
 The strong force has the largest relative strength of the fundamental forces but
 the reach, or distance over which the force can be felt, is very limited and is 
 confined to the sub-atomic scale, $10^{-15}$m. The strong force is experienced
@@ -139,15 +151,13 @@ For example, a line links the quarks with the gluons representing the
 strong force.
 
 The electromagnetic force follows after the strong force in order of largest relative
-strength. The reach of the electromagnetic force is infinite and decreases with
+strength. The reach of the electromagnetic force decreases with
 distance as $\frac{1}{r^{2}}$. Despite its infinite reach, the electromagnetic 
 force is not experienced on the macroscopic scale because stable matter is composed
 of equal portions positively charged and negatively charged matter. This leads to
 an overall neutral electrical charge for the universe. The electromagnetic force is experienced by all
 electrically charged particles: quarks, the charged leptons, and the $\PW^{\pm}$ bosons.
-This force is mediated by the photon which has neutral electric charged.
-% XXX Add example of electrons holding you up in your chair, preventing you from
-% falling through it?
+This force is mediated by the photon which has neutral electric charge.
 
 The next force in descending order of relative strength is the weak force.
 The weak force is experienced by
@@ -156,7 +166,7 @@ bosons. It is responsible for familiar phenomena such as the radioactive decay o
 Beta decay is one example of radioactive decay where, within an atomic nucleus,
 a neutron is transformed into a proton and an electron and an electron antineutrino
 (more on antiparticles following). Fundamentally, what happens
-is the quark composition within the proton changes thereby changing the proton to a
+is the quark composition within the proton changes, thereby changing the proton to a
 neutron. This process is mediated by a $\PW^{-}$ boson which subsequently decays
 to an electron and the antielectron neutrino.
 
@@ -169,18 +179,6 @@ The force we are most colloquially familiar with is actually the
 weakest of the four fundamental forces. Because the gravitational force is so weak
 when talking about the effect on a single particle, it can be ignored for
 all of the particle physics calculations throughout this thesis.
-
-\begin{figure*}[htbp]
-\centering
-     \includegraphics[width=0.7\textwidth]{introduction/plots/elementary_particle_interactions_SM.pdf}
-     \caption{
-Diagram showing the bosons arranged into a central column with the fermions in the
-upper corners. The blue lines linking particles and groups of particles together
-indicate that those fermions can be influenced by force associated to that mediator
-boson. The Higgs boson in the center is discussed in Chapter~\ref{sec:pheno}.
-     }
-     \label{fig:sm_forces}
-\end{figure*}
 
 In addition to the particles shown in Figure~\ref{fig:sm_particles}, there exist antiparticles
 which were mentioned previously in regard to beta decay.
@@ -201,7 +199,7 @@ Chapter~\ref{sec:pheno}.
 
 
 \section{The Standard Model: Experimental Context}
-The gap between the prediction of the Higgs boson and its discovery was a long 40 years.
+There was a gap of 40 years between the prediction of the Higgs boson and its discovery.
 Many of the particles making up the SM were not discovered when the Higgs boson
 was originally being theorized. In fact, the existence of quarks or the discovery 
 of gluons, the mediator of the strong force, were still to happen. The same is true
@@ -222,7 +220,8 @@ and was not found until 1995 at Fermilab~\cite{PhysRevLett.74.2626,PhysRevLett.7
 The gluon which mediates the strong force for all of the quarks was discovered in 
 1979 at DESY~\cite{PhysRevLett.43.830}.
 
-Beyond the partons, physicists made discoveries of new bosons, specifically the mediators
+Beyond the partons, physicists discovered the weak neutral current~\cite{HASERT1973121,HASERT1973138} which 
+led to the discoveries of new bosons, specifically the mediators
 of the weak force.
 In 1983 the $\PW$ and the $\PZ$ bosons were discovered~\cite{AUBERT1983275,1983398}. 
 These two bosons were the
@@ -238,8 +237,8 @@ research supporting the SM.
 As more pieces of the SM fell into place and particle accelerators became more powerful,
 searches for the Higgs boson were conducted at multiple experiments such as the searches
 at the LEP at CERN in the 1990s~\cite{Barate:2000ts,Abdallah:2003ip,Achard:2001pj,Abbiendi:2000ac}.
-In the datasets corresponding to these searches, there were few enough potential Higgs
-boson events that no discoveries could be made.
+In the datasets corresponding to these searches, there were not enough potential Higgs
+boson events for discovery.
 Instead, these searches all resulted in placing limits on the possible mass and cross section
 of the Higgs boson. The Tevatron at Fermilab was active in Higgs boson searches through the early 2000s
 with multiple analyses targeting the same decay process studied in this thesis, $\htt$. 
@@ -278,7 +277,7 @@ strength for the Higgs boson production and decay processes. As can be seen, the
 majority of the $\Pgt\Pgt$ decay process measurements shows agreement with the SM predictions for the Higgs
 boson. The measurements corresponding to $\htt$ with the Higgs bosons produced in association
 with a $\PW$ boson ($\PW\PH$) and the measurement of the Higgs boson produced with
-two top-quarks ($\ttbar\PH$) show some deviation from the SM prediction. However, 
+two top-quarks ($\ttbar\PH$) show non-significant deviation from the SM prediction. However, 
 the uncertainties are sizable and are represented by the size of the 1$\sigma$ band. Further data collection and analysis
 will reduce the size of the 1$\sigma$ uncertainty band and will show if 
 these deviations are statistically significant or if they are 
