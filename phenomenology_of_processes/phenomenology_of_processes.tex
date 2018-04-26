@@ -4,7 +4,7 @@
 %Dasu -
 %The pheno chapter need not start from the Dirac equation and build up. It should have crisp intro to Higgs phenomenology starting from that portion of the Lagrangian. You don't need all the myriad details of SM like the quark mixing matrices, etc.
 
-In this chapter I provide an increasingly mathematical description of the standard model
+In this chapter I provide an increasingly detailed description of the standard model
 of physics, specifically in reference to the Higgs boson. I provide a basic overview of some 
 properties of the Higgs boson including how it is created in a hadron collider, an overview
 of the possible decay paths for a Higgs boson, and a discussion of the Higgs boson
@@ -20,7 +20,8 @@ to say that physics is the study of symmetry''~\cite{pw_anderson:1972}.
 One way of expressing many types of patterns mathematically is with symmetries, properties which 
 remain invariant under certain transformations. The SM is defined by a group of symmetries
 representing certain conserved properties. Specifically, the SM is represented by  the
-symmetries of the unitary product group SU(3)$_{\text{C}} \,\times \,$ SU(2)$_{\text{L}} \, \times\,$ U(1)$_{\text{Y}}$.
+symmetries of the unitary product group SU(3)$_{\text{C}} \,\times \,$ SU(2)$_{\text{L}} \, 
+\times\,$ U(1)$_{\text{Y}}$~\cite{SLANSKY19811}.
 These three terms all reflect symmetries and conserved quantities discussed below.
 
 Electric charge ($Q$), the third component of weak isospin ($T_{3}$), and hypercharge ($Y$) act together to define a conserved 
@@ -93,8 +94,9 @@ symmetries giving masses to the $\PW$ and $\PZ$ bosons. The single remaining com
 original complex doublet $\phi$ becomes a new fundamental scalar particle 
 known as the Higgs boson with a mass
 \begin{equation}
-\mH^{2} = 2\lambda v^2
+\mH^{2} = 2\lambda v^2,
 \end{equation}
+but the value of this is not predicted.
 
 %Applying EWSB to the SM takes the symmetries expressed as 
 %SU(3)$_{\text{C}} \,\times \,$ SU(2)$_{\text{L}} \,\times \,$ U(1)$_{\text{Y}}$ and turns them into
@@ -158,8 +160,8 @@ allows experimentalists to search for unique signatures in collisions to better
 help separate Higgs bosons from the myriad other interactions occurring in collisions at the LHC.
 At a hadron collider like the LHC, the relevant Higgs boson production
 mechanisms begin from initial states of quarks and gluons. The Higgs boson
-only couples to massive particles eliminating direct gluon to Higgs boson processes
-as is seen in Figure~\ref{fig:sm_forces} from the introduction.
+only couples to massive particles, eliminating direct gluon to Higgs boson processes
+as is seen in Figure~\ref{fig:sm_forces}.
 However, the Higgs boson production process at the LHC which occurs most often
 begins with two gluons in the initial state and is called gluon fusion discussed below.
 
@@ -217,15 +219,18 @@ the leading top-quark contribution can be evaluated in the limit
 $m_{t} \to \infty$~\cite{ELLIS1976292,Shifman:1979eb}.
 
 Despite the $ggH$ process having the largest cross section, it is the hardest process to 
-isolate from background events. A portion of $ggH$ produced Higgs bosons are produced in
-in conjunction with one or multiple ``jets''~\ref{sec:obj_reco_jets}. In these
-cases the Higgs boson recoils off of the jet creating a boosted topology
-which is a more unique event signature. In this thesis the boosted event topology
+isolate from background events. A portion of $ggH$ produced Higgs bosons are produced
+in conjunction with one or multiple ``jets'' (``jets'' are defined in Section~\ref{sec:obj_reco_jets}).
+In these cases, conservation of momentum in the transverse plane will result in the jets
+and the Higgs boson recoiling off each other with their transverse momenta being
+equal in magnitude and in opposite directions. This reoil can lead to a boosted topology
+where the Higgs boson has a large transverse momentum
+which is a unique event signature. In this thesis the boosted event topology
 is used as a handle in the ``Boosted'' event selection category discussed in
 Section~\ref{sec:htt_categorization}. However, the majority of $ggH$ events are produced without
 additional jets. 
 These events are categorized into the ``0-Jet'' category which is less sensitive because of the
-lack of a clear handel to separate $ggH$ events with zero jets from the background. 
+lack of a clear handle to separate $ggH$ events with zero jets from the background. 
 
 
 \subsection{Vector Boson Fusion}
@@ -258,10 +263,10 @@ bosons decay leptonically: $\PW^{\pm} \to \ell^{\pm} + \bar{\nu}$ and $\PZ \to \
 
 \section{Higgs Boson Decays}
 \label{sec:higgs_decays}
-After a Higgs boson is produced, it will decay extremely rapidly with a theorized lifetime
+After a Higgs boson is produced, it will decay extremely rapidly with a predicted lifetime
 of $1.6 \times 10^{-22}\text{s}$~\cite{Dittmaier:2012vm}. When created
 inside of the CMS detector, a Higgs boson will always decay
-within the CMS detector. In all Higgs boson analyses, experimentalists search for the
+within the LHC beampipe. In all Higgs boson analyses, experimentalists search for the
 signatures of the decay products in energy deposits in their detectors, not the Higgs
 boson itself. There are multiple possible decay
 paths each with its own branching ratio; the largest branching ratio
@@ -284,8 +289,8 @@ The CMS and ATLAS experiments have determined $\mH = 125.09\GeV$~\cite{Aad:2015z
 The leading Higgs boson decay processes each have certain advantages and disadvantages
 for measuring the properties of the Higgs boson. The dominant Higgs boson decay 
 process, $\PH\to\bbbar$, comprises well over half of all Higgs boson decays yet suffers
-from very large background processes making it difficult to distinguish Higgs bosons.
-Additionally, the $m_{\bar{b}b}$ resolution is limited making the expected Higgs boson
+from very large background processes, making it difficult to distinguish Higgs bosons.
+Additionally, the $m_{\bar{b}b}$ resolution is limited, making the expected Higgs boson
 signal a broad distribution on top of a large background~\cite{PDG}.
 The $\PH\to\PW\PW$ process has a large branching ratio, but this is reduced after requiring
 $\PW^{\pm}\to\ell^{\pm} + \bar{\nu}$ where $\ell$ is a charged lepton. Additionally, the presence of neutrinos
