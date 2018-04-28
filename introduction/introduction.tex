@@ -1,8 +1,8 @@
 \chapter{Introduction}
 \label{sec:introduction}
 
-This thesis presents the first observation of the Higgs boson decaying to a pair
-of tau leptons ($\Pgt^{+}\Pgt^{-}$) at 13\TeV. It includes two analyses which target different
+This thesis presents a 5.5 standard deviation observation of the Higgs boson decaying to a pair
+of tau leptons ($\Pgt^{+}\Pgt^{-}$). It includes two analyses which target different
 ways the Higgs boson is produced. The analyses are performed using
 13\TeV center-of-mass energy proton-proton collision data from the CERN LHC.
 The data is collected by the CMS experiment and corresponds to an integrated
@@ -17,7 +17,6 @@ theoretical prediction of the existence of a neutral scalar boson, now called th
 Higgs boson.
 The SM incorporates descriptions of three of the four fundamental forces of nature:
 the strong force, the electromagnetic force, and the weak force.
-The gravitational force is the one known fundamental force not described in the SM. 
 
 The Higgs boson eluded observation by experimental particle physicists
 for 40 years after the establishment of its theoretical prediction. 
@@ -40,40 +39,40 @@ experimental results. Significant discrepancies between the SM
 theoretical predictions and the observed Higgs boson properties could point to
 flaws in the SM and would lead to a more full and complete understanding of nature.
 
-This thesis is arranged to build up a theoretical understanding of the SM and the
-Higgs boson in Chapter~\ref{sec:pheno}. A description of the LHC machine and
-CMS detector follow in Chapter~\ref{sec:cms_lhc}. The next two Chapters, ~\ref{sec:simulation} and
-~\ref{sec:obj_reconstruction}, discuss the foundations of physics analyses at CMS including physics
-simulations and details of how detector information is processed to reconstruct $\Pgt$
-leptons and other particles. Chapter~\ref{sec:htt_analysis} covers the analysis
-of the Higgs boson when produced via the gluon fusion or vector boson fusion
-processes and Chapter~\ref{sec:vh_analysis} covers the Higgs boson associated
-production processes. In Chapter~\ref{sec:cmb_results}, the results of
-both analysis are combined together to achieve the most robust 13\TeV Higgs
-boson decaying to $\Pgt^{+}\Pgt^{-}$ results possible. Finally, the thesis
-is drawn to a conclusion in Chapter~\ref{sec:conclusion}.
+%This thesis is arranged to build up a theoretical understanding of the SM and the
+%Higgs boson in Chapter~\ref{sec:pheno}. A description of the LHC machine and
+%CMS detector follow in Chapter~\ref{sec:cms_lhc}. The next two Chapters, ~\ref{sec:simulation} and
+%~\ref{sec:obj_reconstruction}, discuss the foundations of physics analyses at CMS including physics
+%simulations and details of how detector information is processed to reconstruct $\Pgt$
+%leptons and other particles. Chapter~\ref{sec:htt_analysis} covers the analysis
+%of the Higgs boson when produced via the gluon fusion or vector boson fusion
+%processes and Chapter~\ref{sec:vh_analysis} covers the Higgs boson associated
+%production processes. In Chapter~\ref{sec:cmb_results}, the results of
+%both analysis are combined together to achieve the most robust 13\TeV Higgs
+%boson decaying to $\Pgt^{+}\Pgt^{-}$ results possible. Finally, the thesis
+%is drawn to a conclusion in Chapter~\ref{sec:conclusion}.
 
-The Higgs boson decay process to a pair of $\Pgt$ leptons will be denoted
-$\htt$ through out this thesis where the $\pm$ are dropped from the $\Pgt$ superscript
-for convenience.
-The rest of this chapter introduces the particles and forces of the SM as well
-as previous experimental results. For a more detailed mathematical treatment
-of the phenomenology of SM see the following Chapter~\ref{sec:pheno}.
+In this thesis, the Higgs boson decay process to a pair of $\Pgt$ leptons will be denoted
+$\htt$ where the $\pm$ are dropped from the $\Pgt$ superscript
+for convenience. This same approach is used for $\hww$ and $\hzz$.
+%The rest of this chapter introduces the particles and forces of the SM as well
+%as previous experimental results. For a more detailed mathematical treatment
+%of the phenomenology of SM see the following Chapter~\ref{sec:pheno}.
 
 
 \section{The Standard Model of Particle Physics}
 The standard model of particle physics~\cite{Glashow:1961tr,SM1,SM3} is currently
 the best mathematical framework for predictions and explanations of the behavior
 of the fundamental particles of nature. Fundamental particles can be grouped
-together by behavior and common characteristics and arranged diagrammatically as in
-Figure~\ref{fig:sm_particles}. The particles are split vertically into two categories:
-fermions which have spin $\frac{1}{2}$, and the bosons which have integer
-spin of either 0 or 1. In general, the fermions constitute 
-matter while bosons are the mediators of the fundamental forces.
+together by their characteristics and arranged diagrammatically as in
+Figure~\ref{fig:sm_particles}. The particles are split vertically into categories:
+fermions which have spin $\frac{1}{2}$, the vector bosons which have spin 1, and
+the Higgs boson with spin 0. In general, the fermions constitute 
+matter while the vector bosons are the mediators of the fundamental forces.
 
 \begin{figure*}[htbp]
 \centering
-     \includegraphics[width=0.7\textwidth]{introduction/plots/sm_particles.pdf}
+     \includegraphics[width=0.7\textwidth]{introduction/plots/Standard_Model_of_Elementary_Particles.pdf}
      \caption{
 The fundamental particles of the SM and some of their properties including their:
 mass, electric charge, and spin. The units for mass are reported as electron volts divided by
@@ -84,8 +83,8 @@ M for million, G for billion.
 \end{figure*}
 
 The fermions can be further grouped into either quarks or leptons based on whether
-they carry ``color'' charge or not. 
-Quarks carry a color charge and have a fractional electric charge of either $-\frac{1}{3}e$ or $\frac{2}{3}e$
+they interact strongly or not. Strong interactions of the quarks are described in the SM by assigning them a 
+color charge. Quarks have a fractional electric charge of either $-\frac{1}{3}e$ or $\frac{2}{3}e$
 where $e$ is the elementary charge ($1.602 \times 10^{-19}$ Coulombs).
 Where as the leptons are colorless (carry no color charge) and
 have integer electric charge of 0$e$ or -1$e$. In Figure~\ref{fig:sm_particles} the fermions are
@@ -103,9 +102,18 @@ structure of atoms. The electron neutrino is less familiar because it only
 interacts with the other particles through the weak force and does not directly
 contribute to the basic atoms.
 
-The bosons are split into two groups, the gauge bosons which mediate the three fundamental
-forces of the SM, and the solo Higgs boson which behaves differently
-and will be discussed in the following chapter. 
+In addition to the particles shown in Figure~\ref{fig:sm_particles}, there exist antiparticles.
+Each SM particle has an antiparticle, though some particles, such as the photon
+are their own antiparticle. Antiparticles have the same mass as their
+``normal'' particle pair except they have opposite electric charge. The antiparticle
+partner of the electron is the positron which is sometimes called an antielectron.
+Antiparticles can be created in many types of interactions in particle physics experiments
+and are relatively common. One characteristic of antiparticles is that when a particle and its 
+corresponding antiparticle are in close proximity they can annihilate each other resulting in
+a burst of energy.
+Antiparticles are denoted in this thesis with a ``bar'' over the top of a particle symbol. For example
+a top-quark is $t$ while an antitop-quark is $\bar{t}$.
+
 The fundamental forces, their mediator particles, and the relative strength of that force
 are listed in Table~\ref{tab:sm_forces}. The relatively weak strength of the gravitational
 force is what allows the SM to still successfully predict the behavior
@@ -136,7 +144,7 @@ There has been no observed mediator for the gravitational force.
 Diagram showing the bosons arranged into a central column with the fermions in the
 upper corners. The blue lines linking particles and groups of particles together
 indicate that those fermions can be influenced by force associated to that mediator
-boson. The Higgs boson in the center is discussed in Chapter~\ref{sec:pheno}.
+boson. The Higgs boson plays a central role in the SM, coupling to all massive particles.
      }
      \label{fig:sm_forces}
 \end{figure*}
@@ -180,22 +188,6 @@ weakest of the four fundamental forces. Because the gravitational force is so we
 when talking about the effect on a single particle, it can be ignored for
 all of the particle physics calculations throughout this thesis.
 
-In addition to the particles shown in Figure~\ref{fig:sm_particles}, there exist antiparticles
-which were mentioned previously in regard to beta decay.
-Each SM particle has an antiparticle, though some particles, such as the photon
-are their own antiparticle. Antiparticles have the same mass as their
-``normal'' particle pair except they have opposite electric charge. The antiparticle
-partner of the electron is the positron which is sometimes called an antielectron.
-Antiparticles can be created in many types of interactions in particle physics experiments
-and are relatively common. One characteristic of antiparticles is that when a particle and its 
-corresponding antiparticle are in close proximity they can annihilate each other resulting in
-a burst of energy.
-Antiparticles are denoted in this thesis with a ``bar'' over the top of a particle symbol. For example
-a top-quark is $t$ while an antitop-quark is $\bar{t}$.
-
-For a more thorough treatment of the SM, its particles, and its forces see
-Chapter~\ref{sec:pheno}.
-
 
 
 \section{The Standard Model: Experimental Context}
@@ -233,76 +225,87 @@ in 1975 by Martin Perl~\cite{PhysRevLett.35.1489}. While far from an exhaustive 
 these many discoveries give an indication of the strong background of experimental
 research supporting the SM.
 
-\section{Higgs Boson: Experimental Results}
 As more pieces of the SM fell into place and particle accelerators became more powerful,
-searches for the Higgs boson were conducted at multiple experiments such as the searches
-at the LEP at CERN in the 1990s~\cite{Barate:2000ts,Abdallah:2003ip,Achard:2001pj,Abbiendi:2000ac}.
-In the datasets corresponding to these searches, there were not enough potential Higgs
-boson events for discovery.
-Instead, these searches all resulted in placing limits on the possible mass and cross section
-of the Higgs boson. The Tevatron at Fermilab was active in Higgs boson searches through the early 2000s
-with multiple analyses targeting the same decay process studied in this thesis, $\htt$. 
-Similar to the LEP results, these analyses
-placed limits on the possible mass and cross section of the Higgs boson~\cite{Aaltonen:2012jh, Abazov:2012zj}.
+searches for the Higgs boson were conducted at multiple experiments in the 
+1990s~\cite{Barate:2000ts,Abdallah:2003ip,Achard:2001pj,Abbiendi:2000ac} and early
+2000s~\cite{Aaltonen:2012jh, Abazov:2012zj}. 
+Before discussing these experimental results and those that followed leading to the
+discovery of the Higgs boson by the CMS and ATLAS collaborations at 
+CERN in 2012~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba}, 
+I first provide a more detailed discussion
+of the Higgs boson itself in Chapter~\ref{sec:pheno}.
 
-The discovery of the Higgs boson required higher collision energies than those provided
-by the Tevatron, which reached a maximum center-of-mass collision energy of 1.96\TeV. The
-LHC at CERN was designed to deliver this increase in collision energy and in 2010 the LHC started
-delivering proton-proton collisions at up to 7\TeV; an increase to 8\TeV followed in 2012.
-Using the proton-proton collision data with center-of-mass energy 7 and 8\TeV,
-a particle compatible with the Higgs boson expectations was observed by the CMS and ATLAS experiments at the CERN LHC
-in events where the Higgs boson decays to $\PZ\PZ$, $\Pgg\Pgg$, and 
-$\PW\PW$~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba}.
 
-Using this same set of data, other analysts pursued the $\htt$ decay process and
-the CMS Collaboration showed evidence for the $\htt$ process with an observed
-significance of 3.2 based on an expected significance of 3.7 standard deviations (s.d.)
-for a Higgs boson mass of 125\GeV~\cite{Chatrchyan:2014nva}.
-The ATLAS experiment reported evidence for the $\htt$ process 
-with an observed (expected) significance of 4.5\,(3.4)
-s.d. for a Higgs boson mass of 125\GeV~\cite{Aad:2015vsa}.
-The combination of results from both experiments yields an observed (expected)
-significance of 5.5\,(5.0) s.d.~\cite{Khachatryan:2016vau}.
-
-Further analysis from both experiments, described in References~\cite{Aad:2015gba, Khachatryan:2014jba, 
-Chatrchyan:2012jja, Aad:2013xqa, Khachatryan:2014kca,Sirunyan:2017exp},
-established that the measured properties of the new particle,
-including its spin, charge-parity properties, and coupling strengths to SM particles, 
-are consistent with those expected for the Higgs boson predicted by the SM.
-The mass of the Higgs boson ($\mH$) has been determined to be
-$125.09\pm0.21\stat\pm0.11\syst\GeV$, from a combination of
-ATLAS and CMS measurements~\cite{Aad:2015zhl}. An example of these measurements
-can be seen in Figure~\ref{fig:run_1_comb_mu} which shows the best fit value for the signal
-strength for the Higgs boson production and decay processes. As can be seen, the
-majority of the $\Pgt\Pgt$ decay process measurements shows agreement with the SM predictions for the Higgs
-boson. The measurements corresponding to $\htt$ with the Higgs bosons produced in association
-with a $\PW$ boson ($\PW\PH$) and the measurement of the Higgs boson produced with
-two top-quarks ($\ttbar\PH$) show non-significant deviation from the SM prediction. However, 
-the uncertainties are sizable and are represented by the size of the 1$\sigma$ band. Further data collection and analysis
-will reduce the size of the 1$\sigma$ uncertainty band and will show if 
-these deviations are statistically significant or if they are 
-temporary fluctuations that are smoothed out with more data collection.
-
-\begin{figure*}[htbp]
-\centering
-     \includegraphics[width=0.6\textwidth]{introduction/plots/run_1_comb_mu.pdf}
-     \caption{
-The best fit values for the signal strength of the listed Higgs boson production
-processes and decay processes. A value of 1 indicates perfect agreement with the SM.
-The error bars indicate the 1$\sigma$ intervals. The green shaded bands indicate the
-theoretical uncertainties in the predictions.
-     }
-     \label{fig:run_1_comb_mu}
-\end{figure*}
-
-This thesis builds on these previous experimental results at 7 and 8\TeV and measures the
-properties of the Higgs boson in the $\htt$ decay process at 13\TeV center-of-mass 
-collision energy. We establish the first 13\TeV observation of the $\htt$
-process with an observed (expected) significance of 5.5\,(4.8) s.d.~\cite{HIG-18-007}. 
-The best fit signal strengths are measured similar
-to what is seen in Figure~\ref{fig:run_1_comb_mu}. Additionally, the couplings of the
-Higgs boson to fermions and vector bosons is measured and is discussed in the final results
-section of this thesis, Chapter~\ref{sec:cmb_results}.
+%\section{Higgs Boson: Experimental Results}
+%As more pieces of the SM fell into place and particle accelerators became more powerful,
+%searches for the Higgs boson were conducted at multiple experiments such as the searches
+%at the LEP at CERN in the 1990s~\cite{Barate:2000ts,Abdallah:2003ip,Achard:2001pj,Abbiendi:2000ac}.
+%In the datasets corresponding to these searches, there were not enough potential Higgs
+%boson events for discovery.
+%Instead, these searches all resulted in placing limits on the possible mass and cross section
+%of the Higgs boson. The Tevatron at Fermilab was active in Higgs boson searches through the early 2000s
+%with multiple analyses targeting the same decay process studied in this thesis, $\htt$. 
+%Similar to the LEP results, these analyses
+%placed limits on the possible mass and cross section of the Higgs boson~\cite{Aaltonen:2012jh, Abazov:2012zj}.
+%
+%The discovery of the Higgs boson required higher collision energies than those provided
+%by the Tevatron, which reached a maximum center-of-mass collision energy of 1.96\TeV. The
+%LHC at CERN was designed to deliver this increase in collision energy and in 2010 the LHC started
+%delivering proton-proton collisions at up to 7\TeV; an increase to 8\TeV followed in 2012.
+%Using the proton-proton collision data with center-of-mass energy 7 and 8\TeV,
+%a particle compatible with the Higgs boson expectations was observed by the CMS and ATLAS experiments at the CERN LHC
+%in events where the Higgs boson decays to $\PZ\PZ$, $\Pgg\Pgg$, and 
+%$\PW\PW$~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba}.
+%
+%Using this same set of data, other analysts pursued the $\htt$ decay process and
+%the CMS Collaboration showed evidence for the $\htt$ process with an observed
+%significance of 3.2 based on an expected significance of 3.7 standard deviations (s.d.)
+%for a Higgs boson mass of 125\GeV~\cite{Chatrchyan:2014nva}.
+%The ATLAS experiment reported evidence for the $\htt$ process 
+%with an observed (expected) significance of 4.5\,(3.4)
+%s.d. for a Higgs boson mass of 125\GeV~\cite{Aad:2015vsa}.
+%The combination of results from both experiments yields an observed (expected)
+%significance of 5.5\,(5.0) s.d.~\cite{Khachatryan:2016vau}.
+%
+%Further analysis from both experiments, described in References~\cite{Aad:2015gba, Khachatryan:2014jba, 
+%Chatrchyan:2012jja, Aad:2013xqa, Khachatryan:2014kca,Sirunyan:2017exp},
+%established that the measured properties of the new particle,
+%including its spin, charge-parity properties, and coupling strengths to SM particles, 
+%are consistent with those expected for the Higgs boson predicted by the SM.
+%The mass of the Higgs boson ($\mH$) has been determined to be
+%$125.09\pm0.21\stat\pm0.11\syst\GeV$, from a combination of
+%ATLAS and CMS measurements~\cite{Aad:2015zhl}. An example of these measurements
+%can be seen in Figure~\ref{fig:run_1_comb_mu} which shows the best fit value for the signal
+%strength for the Higgs boson production and decay processes. As can be seen, the
+%majority of the $\Pgt\Pgt$ decay process measurements shows agreement with the SM predictions for the Higgs
+%boson. The measurements corresponding to $\htt$ with the Higgs bosons produced in association
+%with a $\PW$ boson ($\PW\PH$) and the measurement of the Higgs boson produced with
+%two top-quarks ($\ttbar\PH$) show non-significant deviation from the SM prediction. However, 
+%the uncertainties are sizable and are represented by the size of the 1$\sigma$ band. Further data collection and analysis
+%will reduce the size of the 1$\sigma$ uncertainty band and will show if 
+%these deviations are statistically significant or if they are 
+%temporary fluctuations that are smoothed out with more data collection.
+%
+%\begin{figure*}[htbp]
+%\centering
+%     \includegraphics[width=0.6\textwidth]{introduction/plots/run_1_comb_mu.pdf}
+%     \caption{
+%The best fit values for the signal strength of the listed Higgs boson production
+%processes and decay processes. A value of 1 indicates perfect agreement with the SM.
+%The error bars indicate the 1$\sigma$ intervals. The green shaded bands indicate the
+%theoretical uncertainties in the predictions.
+%     }
+%     \label{fig:run_1_comb_mu}
+%\end{figure*}
+%
+%This thesis builds on these previous experimental results at 7 and 8\TeV and measures the
+%properties of the Higgs boson in the $\htt$ decay process at 13\TeV center-of-mass 
+%collision energy. We establish the first 13\TeV observation of the $\htt$
+%process with an observed (expected) significance of 5.5\,(4.8) s.d.~\cite{HIG-18-007}. 
+%The best fit signal strengths are measured similar
+%to what is seen in Figure~\ref{fig:run_1_comb_mu}. Additionally, the couplings of the
+%Higgs boson to fermions and vector bosons is measured and is discussed in the final results
+%section of this thesis, Chapter~\ref{sec:cmb_results}.
 
 
 %Wesley -
