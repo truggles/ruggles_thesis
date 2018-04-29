@@ -1,16 +1,20 @@
 \chapter{Higgs $\to \Pgt\Pgt$: $\PW\PH$ and $\PZ\PH$ Associated Production}
 \label{sec:vh_analysis}
 
-This chapter describes a study of Higgs boson produced via the $\PW\PH$ and
-$\PZ\PH$ associated production processes. The Higgs boson subsequently
-decays to a pair of $\tau$ leptons.
+Associated production of the Higgs Boson with vector bosons, $\PW\PH$ and $\PZ\PH$,
+is suppressed by almost an order of magnitude compared to $ggH$ production. However, 
+these processes, when studying fermionic decays of the Higgs boson, such as $\htt$, 
+provide simultaneous access to the Higgs boson couplings to fermions and vector bosons
+in a single measurement. By focusing on the leptonic decays of the vector bosons,
+the $\PW$ and $\PZ$ decay products are well reconstructed, including at the trigger level, resulting
+in highly suppressed backgrounds.
 This study is complementary to the previously described $ggH$ and VBF targeted
 $\htt$ analysis in Chapter~\ref{sec:htt_analysis} and is performed 
 using data corresponding to 35.9\fbinv of integrated luminosity 
 collected at center-of-mass energy 13\TeV. Combining
 the results from this associated production targeted analysis with the results 
-of the $ggH$ and VBF targeted analysis~\ref{HIG-16-043}
-we produce the first single experiment observation of the $\htt$ process at 13\TeV, 
+of the $ggH$ and VBF targeted analysis~\cite{cms_13TeV_htt_jhep_2017}
+we produce an observation of the $\htt$ process at 13\TeV, 
 measured at the 5.5 $\sigma$ confidence level. 
 
 For the $\PZ\PH$ targeted final states, $\PZ\rightarrow \Pe\Pe$
@@ -63,8 +67,9 @@ boson lepton fires the trigger ensures that there is negligible
 isolation or identification
 bias in the selection of the Higgs boson leptons from the trigger
 requirements. The lack of bias in the Higgs boson lepton selection 
-allows us to use specific background estimation techniques which are described
-in the background estimation Section~\ref{sec:vh_background_estimation}.
+allows us to use specific background estimation techniques.
+% which are described
+%in the background estimation Section~\ref{sec:vh_background_estimation}.
 
 Double electron and double muon triggers are used in 
 the $\PZ\PH$ targeted final states to trigger on the $\PZ$ decay products.
@@ -439,8 +444,8 @@ $\ttbar$ events. Identical to the $\PW\PH$ final states, the rates are measured
 in bins of the lepton $\pt$, and are split between reconstructed decay modes for 
 the $\tauh$ candidates.
 
-In these four lepton final states, the leptons most susceptible 
-to being misidentified jets are the Higgs boson leptons.
+In the four lepton final states, it is more likely that a jet will be misidentified
+as one of the leptons resulting from the $\htt$ decay compared to the $\PZ \to \ell\ell$ leptons.
 In the $\PZ\PH$ final states, data events which pass the full
 signal region selection, except either or both of the Higgs boson leptons 
 fail identification or isolation criteria, are weighted by the misidentification
@@ -464,8 +469,81 @@ shape compatibility between this relaxed same charge selection and the signal re
 reducible background distributions. The KS tests indicate there is likely no
 shape bias.
 
+A high level of agreement is seen in Figures~\ref{fig:llet_pts}, ~\ref{fig:llmt_pts},
+~\ref{fig:lltt_pts}, and~\ref{fig:llem_pts}
+of the $\pt$ distributions for the four leptons per $\PZ\PH$
+final state when using the simulated events for the irreducible background estimation and
+the misidentification method for the reducible jet fake backgrounds.
 The events estimated from these misidentification methods are labeled
 as ``jet fakes'' in the following distributions.
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLET/pt_1.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLET/pt_2.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLET/pt_3.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLET/pt_4.pdf}
+     \caption{
+Pre-fit $\pt$ distributions showing statistical uncertainties only for the 
+four leptons in the $\ell\ell\Pe\tauh$ final states.
+(top left) and (top right) leading and subleading $\ell$ from $\PZ$,
+(bottom left) and (bottom right) $\Pe$ and $\tauh$ from Higgs boson candidate.
+The $\PW\PH$ and $\PZ\PH$ signals are summed as $VHiggs$ and multipled by a factor of
+10 times their SM expected yield.
+     }
+     \label{fig:llet_pts}
+\end{figure*}
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLMT/pt_1.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLMT/pt_2.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLMT/pt_3.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLMT/pt_4.pdf}
+     \caption{
+Pre-fit $\pt$ distributions showing statistical uncertainties only for the 
+four leptons in the $\ell\ell\Pgm\tauh$ final states.
+(top left) and (top right) leading and subleading $\ell$ from $\PZ$,
+(bottom left) and (bottom right) $\Pgm$ and $\tauh$ from Higgs boson candidate.
+The $\PW\PH$ and $\PZ\PH$ signals are summed as $VHiggs$ and multipled by a factor of
+10 times their SM expected yield.
+     }
+     \label{fig:llmt_pts}
+\end{figure*}
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLTT/pt_1.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLTT/pt_2.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLTT/pt_3.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLTT/pt_4.pdf}
+     \caption{
+Pre-fit $\pt$ distributions showing statistical uncertainties only for the 
+four leptons in the $\ell\ell\tauh\tauh$ final states.
+(top left) and (top right) leading and subleading $\ell$ from $\PZ$,
+(bottom left) and (bottom right) leading and subleading $\tauh$ from Higgs boson candidate.
+The $\PW\PH$ and $\PZ\PH$ signals are summed as $VHiggs$ and multipled by a factor of
+10 times their SM expected yield.
+     }
+     \label{fig:lltt_pts}
+\end{figure*}
+
+\begin{figure*}[htbp]
+\centering
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLEM/pt_1.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLEM/pt_2.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLEM/pt_3.pdf}
+     \includegraphics[width=0.49\textwidth]{higgs_to_taus_vh/plots/zh/fr_OS_control/LLEM/pt_4.pdf}
+     \caption{
+Pre-fit $\pt$ distributions showing statistical uncertainties only for the 
+four leptons in the $\ell\ell\Pe\Pgm$ final states.
+(top left) and (top right) leading and subleading $\ell$ from $\PZ$,
+(bottom left) and (bottom right) $\Pe$ and $\Pgm$ from Higgs boson candidate.
+The $\PW\PH$ and $\PZ\PH$ signals are summed as $VHiggs$ and multipled by a factor of
+10 times their SM expected yield.
+     }
+     \label{fig:llem_pts}
+\end{figure*}
 
 
 
@@ -611,9 +689,9 @@ The global maximum likelihood fit results in a best fit signal
 strength for this dedicated $\PW\PH$ and $\PZ\PH$ associated production analysis of
 $\mu = 2.5 ^{+1.4} _{-1.3}$. This corresponds to 
 a significance of 2.3 standard deviations while a significance of 1.0 standard deviation was expected.
-Chapter~\ref{sec:cmb_results} discusses results for the combination of the
-$ggH$ and VBF targeted analysis with the associated production targeted
-analysis.
+%Chapter~\ref{sec:cmb_results} discusses results for the combination of the
+%$ggH$ and VBF targeted analysis with the associated production targeted
+%analysis.
 
 \subsection{Signal Region Details}
 \label{sec:vh_sr}
