@@ -4,36 +4,69 @@
 %Dasu -
 %The pheno chapter need not start from the Dirac equation and build up. It should have crisp intro to Higgs phenomenology starting from that portion of the Lagrangian. You don't need all the myriad details of SM like the quark mixing matrices, etc.
 
-In this chapter I provide an increasingly detailed description of the standard model
-of physics, specifically in reference to the Higgs boson. I provide a basic overview of some 
-properties of the Higgs boson including how it is created in a hadron collider, an overview
-of the possible decay paths for a Higgs boson, and a discussion of the Higgs boson
-couplings with different fundamental particles. A description of the
-Higgs boson requires covering the process of electroweak symmetry breaking (EWSB) which
-provides the mathematical description of the process defining the Higgs boson and the
-Higgs field.
+%In this chapter I provide an increasingly detailed description of the standard model
+%of physics, specifically in reference to the Higgs boson. I provide a basic overview of some 
+%properties of the Higgs boson including how it is created in a hadron collider, an overview
+%of the possible decay paths for a Higgs boson, and a discussion of the Higgs boson
+%couplings with different fundamental particles. A description of the
+%Higgs boson requires covering the process of electroweak symmetry breaking (EWSB) which
+%provides the mathematical description of the process defining the Higgs boson and the
+%Higgs field.
+
+Electromagnetic and weak interactions are described using very similar relativistic quantum mechanics 
+theory and can be described in a single unified electroweak theory.
+Despite this, these forces are manifestly non-symmetric in their behavior. The photon traverses the 
+universe at the highest speeds possible while the $\PW$ and $\PZ$ bosons decay before they traverse 
+subnuclear distances. The theoretical framework which breaks the symmetry of the electroweak theory (EWSB)
+is the Brout--Englert--Higgs mechanism which results in masses for the $\PW$ and $\PZ$ bosons,
+confining the weak force to subnuclear distances, while leaving the photon massless and capable of
+traversing great distances.
+The EWSB also predicts a massive scalar boson, the Higgs boson, whose properties are entirely 
+determined by the parameters of the SM, except for its mass and self-coupling.
 
 \section{Standard Model Symmetries}
 Many people are attracted to physics because of the beauty they see in the patterns of nature.
 PW Anderson, a physics Nobel laureate, stated, ``it is only slightly overstating the case 
 to say that physics is the study of symmetry''~\cite{pw_anderson:1972}.
 One way of expressing many types of patterns mathematically is with symmetries, properties which 
-remain invariant under certain transformations. The SM is defined by a group of symmetries
-representing certain conserved properties. Specifically, the SM is represented by  the
+remain invariant under certain transformations. 
+Noether's theorem, first proven in 1915, states that symmetries result in conserved quantities~\cite{Noether1918}. 
+The SM is defined by a group of symmetries
+representing certain conserved properties. Specifically, the properties of the fundamental
+particles can be related to representations of Lie algebras~\cite{SLANSKY19811}.
+Using Lie algebra, the SM is represented by the
 symmetries of the unitary product group SU(3)$_{\text{C}} \,\times \,$ SU(2)$_{\text{L}} \, 
-\times\,$ U(1)$_{\text{Y}}$~\cite{SLANSKY19811}.
+\times\,$ U(1)$_{\text{Y}}$.
 These three terms all reflect symmetries and conserved quantities discussed below.
 
-Electric charge ($Q$), the third component of weak isospin ($T_{3}$), and hypercharge ($Y$) act together to define a conserved 
-quantity in the SM, $Q = T_{3} + \frac{Y}{2}$. This is represented by the
-hypercharge U(1)$_{\text{Y}}$ symmetry group.
+%Electric charge ($Q$), the third component of weak isospin ($T_{3}$), and hypercharge ($Y$) act together to define a conserved 
+%quantity in the SM, $Q = T_{3} + \frac{Y}{2}$. This is represented by the
+%hypercharge U(1)$_{\text{Y}}$ symmetry group.
 
-The two SU($n$) groups are special unitary groups which represent rotations.
-In the SM, the SU(2) group provides a description of particle spin.
-The ``L'' subscript for the SU(2)$_{\text{L}}$ group indicates that that it
-only describes left handed fermions.
-The SU(3)$_{\text{C}}$ group describes the local symmetry of color charge and
-color charge conservation.
+Relating back to Noether's theorm, each of the symmetries above describes a unique conserved
+quantity. The matter fields are invariant under phase rotations. This rotational symmetry is described by the U(1) group.
+Hypercharge, denoted as $Y$, is the conserved quantity for this group.
+
+Pairs of matter fields, such as the electron and the same-flavor neutrino, the electron-neutrino, can transform into each other 
+through weak interactions. This is described through the SU(2) symmetry group. Each left-handed charged lepton 
+and the same-flavor neutrino form a weak isospin doublet which
+couples to the $\PW$ and $\PZ$ bosons, the mediators of the weak force, allowing these transformations.
+Weak isospin is the conserved quantity of the weak interactions.
+%Then you can introduce the concept that neutrinos are observed to be maximally parity violating and only left-handed. You can then say that only left-handed components of the charged leptons and quarks are introduced in these doublets and the right-handed components are singlets in the SM.  
+%You can mention that the right-handed neutrino fields were not included in the SM as the neutrino masses were known to be negligibly small. 
+
+Quantum chromodynamics (QCD) provides a description of the strong force and the interactions
+between the particles with a color charge, the quarks and gluons. In QCD each quark and anti-quark
+is represented by a color triplet. Strong interactions are described by SU(3)$_{\text{C}}$
+where the ``C'' stands for color denoting the conserved quantity of strong interations,
+color charge.
+
+%The two SU($n$) groups are special unitary groups which represent rotations.
+%In the SM, the SU(2) group provides a description of particle spin.
+%The ``L'' subscript for the SU(2)$_{\text{L}}$ group indicates that that it
+%only describes left handed fermions.
+%The SU(3)$_{\text{C}}$ group describes the local symmetry of color charge and
+%color charge conservation.
 
 
 \section{Electroweak Symmetry Breaking}
@@ -42,6 +75,10 @@ and weak force which merge at energies of order 100\GeV into the electroweak for
 described by the electroweak Lagrangian~\cite{Glashow:1961tr,SM1,SM3}.
 The electroweak Lagrangian defines a gauge field theory which is 
 invariant under the SU(2)$_{\text{L}} \, \times \, $U(1)$_{\text{Y}}$ symmetry group. 
+Electric charge ($Q$), the third component of weak isospin ($T_{3}$), and hypercharge ($Y$) act together to define a conserved 
+quantity in the SM, $Q = T_{3} + \frac{Y}{2}$. This is represented by the
+hypercharge U(1)$_{\text{Y}}$ symmetry group.
+
 Prior to the introduction of Electroweak Symmetry Breaking (EWSB),
 the electroweak Lagrangian describes massless $\PW$ and $\PZ$ bosons.
 However, as previously mentioned, the $\PW$ and $\PZ$ bosons discovered in 1983
@@ -262,10 +299,12 @@ bosons decay leptonically: $\PW^{\pm} \to \ell^{\pm} + \bar{\nu}$ and $\PZ \to \
 
 \section{Higgs Boson Decays}
 \label{sec:higgs_decays}
-After a Higgs boson is produced, it will decay extremely rapidly with a predicted lifetime
-of $1.6 \times 10^{-22}\text{s}$~\cite{Dittmaier:2012vm}. When created
+After a Higgs boson is produced, it will decay rapidly with a predicted lifetime
+of $1.6 \times 10^{-22}\text{s}$~\cite{Dittmaier:2012vm} corresponding to a decay length of 
+$4.8 \times 10^{-12}\text{cm}$. When created
 inside of the CMS detector, a Higgs boson will always decay
-within the LHC beampipe. In all Higgs boson analyses, experimentalists search for the
+within the LHC beampipe which has a radius measured in centimeters not picometers. 
+In all Higgs boson analyses, experimentalists search for the
 signatures of the decay products in energy deposits in their detectors, not the Higgs
 boson itself. There are multiple possible decay
 paths each with its own branching ratio; the largest branching ratio
@@ -303,7 +342,7 @@ The $\PH\to\Pg\Pg$ is an extraordinarily difficult process to attempt to observe
 hadron collider because the final state provides no helpful handles other than $\mH$ to disentangle it from
 the dominant multijet backgrounds. 
 
-The $\htt$ process is the largest direct Higgs boson to leptons decay process.
+The $\htt$ branching fraction is the largest of the Higgs boson decays directly resulting in leptons.
 It provides a unique opportunity to probe the Higgs boson Yukawa couplings to the leptons.
 The $\PH\to\bbbar$ and $\htt$ decay processes and the $\ttbar\PH$ 
 production process can all directly probe the Higgs boson Yukawa couplings to fermions.
