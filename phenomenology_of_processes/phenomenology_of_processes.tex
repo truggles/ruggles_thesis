@@ -55,7 +55,7 @@ Electroweak symmetry breaking is an application of spontaneous symmetry breaking
 the electroweak Lagrangian. It is achieved via the Brout--Englert--Higgs
 mechanism~\cite{Englert:1964et,Higgs:1964ia,Higgs:1964pj,Guralnik:1964eu,Higgs:1966ev,Kibble:1967sv},
 leading, in its minimal version, to the prediction of the existence of one physical neutral scalar particle,
-commonly known as the Higgs boson. The EWSB mechanism, defined by Brout, Englert, and Higgs,
+commonly known as the Higgs boson. The EWSB mechanism
 proposes a self-interacting complex doublet scalar field,
 \begin{equation}
 \phi = \begin{pmatrix} \phi_{\alpha} \\ \phi_{\beta} \end{pmatrix} = 
@@ -140,7 +140,7 @@ The mass of nine charged fermions are known experimentally, most to very high pr
 The $\Pgt$ lepton is known to be $1776.82\pm0.16\MeV$~\cite{PDG}.
 Knowing this, the $\Pgt$ lepton to Higgs boson Yukawa coupling can be calculated from 
 Equation~\ref{eqn:yukawa_c} and compared against experimental results. 
-Exploring the multiple Higgs boson to fermions decay processes is the most promising way to directly probe
+Exploring the Higgs boson to fermion decay processes is the most promising way to directly probe
 the Higgs boson Yukawa couplings. The Higgs boson decay process are discussed below in 
 Section~\ref{sec:higgs_decays} where this discussion continues.
 
@@ -214,10 +214,9 @@ The CMS and ATLAS experiments have determined $\mH = 125.09\GeV$~\cite{Aad:2015z
 The Higgs boson does not couple directly to gluons. Thus, the $ggH$ process is mediated by 
 a virtual top quark loop, Figure~\ref{fig:higgs_feyn}. There are contributions from the other lighter quarks; however,
 their contributions in the loop are suppressed proportional to $m^{2}_{q}$.
-When calculating the cross section for $ggH$, because of the relatively large mass of the top-quark, to a very good approximation, 
-the leading top-quark contribution can be evaluated in the limit 
-$m_{t} \to \infty$~\cite{ELLIS1976292,Shifman:1979eb}.
-
+%When calculating the cross section for $ggH$, because of the relatively large mass of the top-quark, to a very good approximation, 
+%the leading top-quark contribution can be evaluated in the limit 
+%$m_{t} \to \infty$~\cite{ELLIS1976292,Shifman:1979eb}.
 Despite the $ggH$ process having the largest cross section, it is the hardest process to 
 isolate from background events. A portion of $ggH$ produced Higgs bosons are produced
 in conjunction with one or multiple ``jets'' (``jets'' are defined in Section~\ref{sec:obj_reco_jets}).
@@ -270,10 +269,15 @@ within the LHC beampipe. In all Higgs boson analyses, experimentalists search fo
 signatures of the decay products in energy deposits in their detectors, not the Higgs
 boson itself. There are multiple possible decay
 paths each with its own branching ratio; the largest branching ratio
-processes are shown in Figure~\ref{fig:higgs_decay}. The $\htt$ process has a branching
+processes are shown in Figure~\ref{fig:higgs_decay}. 
+In this thesis, the Higgs boson decay process to a pair of $\Pgt$ leptons will be denoted
+$\htt$ where the $\pm$ are dropped from the $\Pgt$ superscript
+for convenience. This same approach is used for $\hww$ and $\hzz$.
+The $\htt$ process has a branching
 ratio of approximately 6.3\% with a relative theoretical uncertainty of 
 $\pm5.7\%$~\cite{deFlorian:2016spz} for $\mH = 125.09\GeV$. This places $\htt$ below $\PH\to\bbbar$, 
 $\PH\to\PW\PW$, and $\PH\to\Pg\Pg$ in branching fraction.
+The $\PH\to\Pg\Pg$ processes is mediated through a quark loop just like the $ggH$ process.
 
 \begin{figure*}[htbp]
 \centering
@@ -296,19 +300,23 @@ The $\PH\to\PW\PW$ process has a large branching ratio, but this is reduced afte
 $\PW^{\pm}\to\ell^{\pm} + \bar{\nu}$ where $\ell$ is a charged lepton. Additionally, the presence of neutrinos
 in the final state decreases the Higgs boson mass resolution, $\approx 20\% \, \mH$~\cite{PDG}.
 The $\PH\to\Pg\Pg$ is an extraordinarily difficult process to attempt to observe at a
-hadron collider because the final state provides no helpful handles to disentangle it from
-the dominant multijet backgrounds. This processes is mediated through a quark loop just
-like the $ggH$ process.
+hadron collider because the final state provides no helpful handles other than $\mH$ to disentangle it from
+the dominant multijet backgrounds. 
 
 The $\htt$ process is the largest direct Higgs boson to leptons decay process.
-This provides a unique opportunity to probe the Higgs boson Yukawa couplings to the leptons.
-Both the $\PH\to\bbbar$ and $\htt$ processes can directly probe the Higgs boson
-Yukawa couplings to fermions. 
+It provides a unique opportunity to probe the Higgs boson Yukawa couplings to the leptons.
+The $\PH\to\bbbar$ and $\htt$ decay processes and the $\ttbar\PH$ 
+production process can all directly probe the Higgs boson Yukawa couplings to fermions.
 The mass resolution for the Higgs boson reconstructed from the $\htt$ process suffers like
 the previously mentioned decays. The neutrinos resulting from the decay of the $\Pgt$
 leptons make the mass reconstruction non-trivial.
-The relative size of the backgrounds with event signatures similar to the Higgs boson
-are much smaller than those for the $\PH\to\bbbar$ process. This is one
+One large benefit when studying $\htt$ versus $\PH\to\bbbar$ is that each $\Pgt$
+has a 35\% probability to decay leptonically to either an electron or a muon (Table~\ref{tab:tau_dms})
+which provides a clean handle for selecting the event. The other 65\% of $\Pgt$ decays
+result in hadronic $\Pgt$ decays which provide a cleaner handle for
+event selection compared to the $\PH\to\bbbar$ bottom-quark decays (Section~\ref{sec:obj_reco_tau}).
+This reduces the relative size of the backgrounds with event signatures similar to the Higgs boson
+in $\htt$ events compared to those for the $\PH\to\bbbar$ process and is one
 of the significant benefits of studying the Higgs boson through the $\htt$ process.
 
 In this thesis, the various Higgs boson production cross sections and branching ratios
