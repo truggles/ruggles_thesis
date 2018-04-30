@@ -11,7 +11,7 @@ in highly suppressed backgrounds.
 This study is complementary to the previously described $ggH$ and VBF targeted
 $\htt$ analysis in Chapter~\ref{sec:htt_analysis} and is performed 
 using data corresponding to 35.9\fbinv of integrated luminosity 
-collected at center-of-mass energy 13\TeV. Combining
+collected at center-of-mass energy 13\TeV~\cite{HIG-18-007}. Combining
 the results from this associated production targeted analysis with the results 
 of the $ggH$ and VBF targeted analysis~\cite{cms_13TeV_htt_jhep_2017}
 we produce an observation of the $\htt$ process at 13\TeV, 
@@ -132,6 +132,13 @@ decay products, either $\PZ\to\Pe\Pe$ or $\PZ\to\Pgm\Pgm$.
 
 \subsection{Event Selection}
 \label{sec:vh_evt_selection}
+In each final state, the event selection criteria was chosen to reject background
+events while preserving as many signal events as possible. For continuous variables such as
+$\pt$, the thresholds were optimized by scanning along the range of possible thresholds
+and maximizing the signal sensitivity. For discrete variables such as the electron,
+muon, and $\tauh$ identification working points, the different working points were
+tested in the optimization process~\cite{HIG-18-007}.
+
 In the semileptonic $\PW\PH$ associated production final states, $\Pe\Pgm\tauh$ and 
 $\Pgm\Pgm\tauh$,
 the two light leptons are required to have the same charge to reduce the $\ttbar$ 
@@ -144,7 +151,7 @@ to fire the single lepton triggers and to have a $\pt$ that is 1\GeV above the o
 thresholds, whereas the subleading light lepton has $\pt>15\GeV$; this $\pt$ threshold
 is the result of optimizing the selection for maximum signal significance. 
 Based on optimizing for signal sensitivity, selection criteria based 
-on three variables improve the sensitivity of the results in both final states:
+on three variables improve the sensitivity of the results in both final states~\cite{HIG-18-007}:
 \begin{itemize}
 \item $L_{\text{T}}>100\GeV$, where $L_{\text{T}}$ is the scalar $\pt$ sum of the three leptons in the final state
 \item $\abs{\Delta\phi(\ell_1,\PH)}>2.0$, where $\ell_1$ is the leading light lepton, and 
@@ -413,7 +420,7 @@ as a function of a misidentification rate to estimate the
 contribution of these processes in the signal region. 
 
 In the $\PW\PH$ final states, the misidentification rate of jets as electrons, muons, 
-or $\tauh$ candidates is measured in $\PZ+\textrm{jets}$ events. The $\PZ$ boson is reconstructed 
+or $\tauh$ candidates is measured in $\PZ+\textrm{jets}$ events~\cite{HIG-18-007}. The $\PZ$ boson is reconstructed 
 in its dielectron decay mode for measuring the jet to muon misidentification
 rate, and is reconstructed in its dimuon decay mode for measuring the jet to electron
 or $\tauh$ misidentification rate.
@@ -440,7 +447,7 @@ In the $\PZ\PH$ final states, a similar misidentification rate is used
 to estimate the contribution of jets misidentified as electrons, muons, or $\tauh$
 in signal region events. The misidentification rate is measured in four lepton final states which
 is dominated by $\PZ+\textrm{jets}$ events with a small contribution from 
-$\ttbar$ events. Identical to the $\PW\PH$ final states, the rates are measured 
+$\ttbar$ events~\cite{HIG-18-007}. Identical to the $\PW\PH$ final states, the rates are measured 
 in bins of the lepton $\pt$, and are split between reconstructed decay modes for 
 the $\tauh$ candidates.
 
@@ -464,9 +471,17 @@ contribution of irreducible backgrounds in the same charge region used to
 derive the shape template is less than 1\%. This means that the data derived template is
 a very pure reducible background selection.
 A high statistics, relaxed identification and isolation selection is used to reduce
-statistical uncertainties for the shape template. Kolmogorov-Smirnov (KS) tests have been performed to validate
+statistical uncertainties for the shape template. The relaxed section is consistent
+with Table~\ref{tab:vh_inclusive_selection} except for the identification and isolation criteria listed below:
+\begin{itemize}
+\item electron: MVA Loose ID
+\item muon: Loose ID, $I^\Pgm<5.0$
+\item $\tauh$: raw Tau MVA score $> -0.8$ (Reference~\cite{CMS-PAS-TAU-16-002})
+\end{itemize}
+
+Kolmogorov-Smirnov (KS) tests have been performed to validate
 shape compatibility between this relaxed same charge selection and the signal region
-reducible background distributions. The KS tests indicate there is likely no
+reducible background distributions~\cite{HIG-18-007}. The KS tests indicate there is likely no
 shape bias.
 
 A high level of agreement is seen in Figures~\ref{fig:llet_pts}, ~\ref{fig:llmt_pts},
