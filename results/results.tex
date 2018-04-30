@@ -3,23 +3,44 @@
 
 The previous two Chapters, ~\ref{sec:htt_analysis} and ~\ref{sec:vh_analysis}, discussed
 analyses targeted at specific Higgs boson production mechanisms. In this chapter
-I present results from combining the previously mentioned 
+I present results combining the 
 $ggH$ and VBF targeted analysis~\cite{cms_13TeV_htt_jhep_2017}
 with the $\PW\PH$ and $\PZ\PH$ associated production targeted analysis~\cite{HIG-18-007}.
-By combining these two $\htt$ analyses we have signal regions targeting the four leading Higgs 
+By combining these two $\htt$ analyses we have signal regions targeting the leading Higgs 
 boson production processes: $ggH$, VBF, and $\PW\PH$ and $\PZ\PH$ associated production. 
-By combining the results, signal strengths, significance and, Higgs
+Combining the results, signal strengths, the $\htt$ significance and, Higgs
 boson couplings can be probed with greater precision than either analysis alone.
+
+Changes in the $ggH$ signal modeling and uncertainties were made between
+publication of the $ggH$ and VBF targeted analysis~\cite{cms_13TeV_htt_jhep_2017} 
+and the combination here to take advantage of the most accurate, available
+simulations~\cite{CMS-PAS-HIG-17-031}.
+The $ggH$ and VBF results presented in Chapters~\ref{sec:htt_analysis} uses $ggH$ simulated with NLO 
+accuracy (Chapter~\ref{sec:simulation}). In this combination, 
+the NLO $ggH$ samples were reweighted using the \textsc{NNLOPS} generator which is accurate at
+the next-to-next-to-leading order in the strong coupling~\cite{Hamilton2013}.
+The reweighting matches the Higgs boson
+$\pt$ spectrum and the quantity of jets from the hard-scattering process between these generators
+and is defined to preserve the normalization
+of the inclusive $ggH$, $\htt$ simulated process~\cite{CMS-PAS-HIG-17-031}. 
+Additionally, the
+$ggH$ cross section uncertainty scheme has been updated to align 
+with the one proposed in Reference~\cite{deFlorian:2016spz}.
+This uncertainty scheme includes 9 nuisance parameters accounting for uncertainties in the cross 
+section prediction for exclusive jet bins, the 2 jet and 3 jet VBF phase spaces, different Higgs boson $\pt$ 
+regions, and the uncertainty in the Higgs boson $\pt$ distribution due to missing higher order finite 
+top quark mass corrections.
+
 
 \section{Signal Strength and Significance}
 The best fit signal strength ($\mu$) and significance can be computed for the combination and
-result in a decrease in the relative uncertainty on $\mu$ and an increase
+leads to a decrease in the relative uncertainty on $\mu$ and an increase
 in significance. The $\mu$ and significance
 for each analysis and the combined values are presented in Table~\ref{tab:cmb_mu_and_sig}.
 The slight excess in signal strength for the associated production analysis is tempered
 when combined with the $ggH$ and VBF analysis, resulting in a $\mu$ fully consistent 
 with the SM. The combination leads to an 
-observed significance of 5.5 standard deviations, surpassing the threshold for a
+observed significance of 5.5 standard deviations (4.8 expected), surpassing the threshold for a
 purely 13\TeV based CMS observation of the $\htt$ process.
 
 \begin{table*}[htbp]
@@ -35,13 +56,13 @@ $\htt$ combination        &   $\mu = 1.24 ^{+0.29} _{-0.27}$   &  5.5 $\sigma$  
 \end{tabular}
 \caption{
 Best fit signal strength and significance for three fit scenarios: $ggH$ and VBF,
-associated production, and the combination.
+associated production, and the combination with the updated $ggH$ modeling.
 }
 \label{tab:cmb_mu_and_sig}
 \end{table*}
 
 
-The signal strength can be decomposed by the four leading Higgs boson production 
+The signal strength can be decomposed into the four leading Higgs boson production 
 mechanisms. Figure~\ref{fig:cmb_mu_higgs_processes} shows this decomposition for
 the combined results. 
 
@@ -62,7 +83,7 @@ the combined results.
 
 \section{Higgs Boson Couplings}
 The Higgs boson couplings to different particles can be measured in different
-ways. In this thesis the couplings are decomposed into two groups, couplings to
+ways. In this thesis the couplings are split into two groups, couplings to
 fermions ($\kappa_\text{f}$) and couplings to vector bosons ($\kappa_\text{V}$) 
 and are measured using couplings on both the production and decay processes. 
 $\kappa_\text{V}$ and $\kappa_\text{f}$ quantify
@@ -74,10 +95,10 @@ provides direct access to the Higgs boson fermion couplings. While all
 $\htt$ events provide access to fermionic couplings on the decay side,
 the differenct production mechanisms provide access to different couplings on that side.
 The $ggH$ process provides indirect access to fermionic couplings through
-the top-quark loop. The VBF and $\PW\PH$ 
-and $\PZ\PH$ associated production processes provide access to the
+the top-quark loop. The VBF and associated production processes provide access to the
 vector boson couplings via Higgs boson production.
-The same combination of the dedicated $ggH$ and VBF analysis with 
+The same combination of the dedicated $ggH$ and VBF analysis, including
+the updates to the $ggH$ modeling, with
 the dedicated $\PW\PH$ and $\PZ\PH$ analysis can place the tightest
 $\htt$ analysis limits in the $(\kappa_\text{V}$,$\kappa_\text{f})$ parameter space
 because there is simultaneous access to processes which can constrain both
@@ -98,15 +119,16 @@ agreement with the SM Higgs boson couplings to fermions and vector bosons.
 
 \begin{figure}[!ht]
  \begin{center}
-  \includegraphics[width=0.60\textwidth]{higgs_to_taus_vh/plots/combined/kFkV_HIG-18-007_plus_HIG-16-043_up.pdf}
+  \includegraphics[width=0.60\textwidth]{higgs_to_taus_vh/plots/combined/kFkV_HIG-18-007_plus_HIG-16-043_comp_up.pdf}
  \end{center}
  \caption{Scan of the negative 
  log-likelihood difference as a function of $\kappa_V$ and $\kappa_f$, for 
  $\mH = 125.09$\GeV.  All nuisance parameters are profiled for each point. 
  This scan is a combination of the $ggH$ and VBF targeted analysis with the 
- $\PW\PH$ and $\PZ\PH$ targeted analysis. For reference the results for just
- the $ggH$ and VBF targeted analysis are presented as ``HIG-16-043''.
- For this scan, the $\hww$ and $\hzz$ processes 
+ $\PW\PH$ and $\PZ\PH$ targeted analysis. For reference, the results for just
+ the $ggH$ and VBF targeted analysis are presented as ``HIG-16-043'' and correspond
+ to the updated $ggH$ modeling.
+ For this scan, all $\hww$ and $\hzz$ processes 
  are treated as signal.
  }
  \label{fig:cmb_kFkV}
